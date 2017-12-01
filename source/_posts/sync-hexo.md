@@ -2,10 +2,9 @@
 title: 如何解决github+Hexo的博客多终端同步问题
 date: 2017-05-12 15:51:06
 categories: "常见问题集锦"
-tags:
+tags: "hexo"
 ---
-如何解决github+Hexo的博客多终端同步问题
-===
+
 
 本文转载自：[http://blog.csdn.net/Monkey_LZL/article/details/60870891](http://blog.csdn.net/Monkey_LZL/article/details/60870891)
 

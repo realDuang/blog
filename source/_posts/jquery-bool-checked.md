@@ -2,10 +2,9 @@
 title: "jquery 判断 checked 的三种方法"
 date: 2017-01-05 16:28:03
 categories: "常见问题集锦"
-tags:
+tags: "javascript"
 ---
-jquery 判断 checked 的三种方法
-======
+
 
 .attr(‘checked): //看版本1.6+返回:”checked”或”undefined” ;1.5-返回: true 或 false
 .prop(‘checked’): //16+:true/false

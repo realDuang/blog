@@ -2,10 +2,9 @@
 title: MongoDB 极简实践入门
 date: 2017-09-17 17:13:38
 categories: "mongoDB"
-tags:
+tags: "nodejs"
 ---
-MongoDB 极简实践入门
-==========================
+
 
 <h4>1. 为什么用MongoDB？</h4>
 传统的计算机应用大多使用关系型数据库来存储数据，比如大家可能熟悉的MySql, Sqlite等等，它的特点是数据以表格(table)的形式储存起来的。数据库由一张张排列整齐的表格构成，就好像一个Excel表单一样，每个表格会有若干列，比如一个学生信息表，可能包含学号、姓名、性别、入学年份、高考成绩、籍贯等等。而表格的每一排，则是一个个学生的具体信息。在企业级应用和前互联网时代，关系型数据库几乎是不二选择。关系型数据库的特点是有整齐划一的组织，很方便对数据进行描述、插入、搜索。
@@ -17,24 +16,24 @@ SELECT ID, name FROM products WHERE cate='shoes' AND price<300 and AND promotion
 
 SQL具备了强大了的深度查询能力，能满足各式各样的查询要求。而如果要对数据进行添加和删除，成本也是非常低的。这些是SQL的优势之一， 但随着互联网的兴起以及数据形式的多样化，四平八稳的SQL表单在一些领域渐渐显现出它的劣势。让我们通过一个例子来说明。考虑一个博客后台系统，如果我们用关系型数据库为每篇博客(article)建一个表单的话，这个表单大概会包括以下这些列：
 
-| ID | Title  | Description       | Author | Content  | Likes |
-|----|:-----: |:-----------------:|:------:|:-------: |:-----:|
-| A_1  | Title1 | Political Article | Joe    | Content 1| 12    |
-| A_2  | Title2 | Humorous Story    | Sam    | Content 2| 50    |
+| ID   | Title  |    Description    | Author |  Content  | Likes |
+| ---- | :----: | :---------------: | :----: | :-------: | :---: |
+| A_1  | Title1 | Political Article |  Joe   | Content 1 |  12   |
+| A_2  | Title2 |  Humorous Story   |  Sam   | Content 2 |  50   |
 
 这时候用SQL数据库来存储是非常方便的，但假如我们要位每篇文章添加评论功能，会发现每篇文章可能要多篇评论，而且这个数目是动态变化的，而且每篇评论还包括好几项内容：评论的人、评论的时间、以及评论内容。这时候要将这些内容都塞进上述的那个表，就显得很困难。通常的做法是为评论(comment)单独建一个表：
 
-| ID | Author  | Time   | Content  | Article |
-|----|:-----: |:-----------------:|:------:|:------:|
-| C_1  | Anna | 2014-12-26 08:23 | Really good articles! | A_1 | 
-| C_2  | David | 2014-12-25 09:30     | I like it! |  A_1 |
+| ID   | Author |       Time       |        Content        | Article |
+| ---- | :----: | :--------------: | :-------------------: | :-----: |
+| C_1  |  Anna  | 2014-12-26 08:23 | Really good articles! |   A_1   |
+| C_2  | David  | 2014-12-25 09:30 |      I like it!       |   A_1   |
 
 类似地，每篇文章可能会有若干标签(tags)。标签本身又是一个表单：
 
-| ID | Category  | Tags   | Content  | Article |
-|----|:-----: |:-----------------:|:------:|:------:|
-| T_1  | Anna | 2014-12-26 08:23 | Really good articles!|  A_1 |
-| T_2  | David | 2014-12-25 09:30     | I like it!| A_2 |
+| ID   | Category |       Tags       |        Content        | Article |
+| ---- | :------: | :--------------: | :-------------------: | :-----: |
+| T_1  |   Anna   | 2014-12-26 08:23 | Really good articles! |   A_1   |
+| T_2  |  David   | 2014-12-25 09:30 |      I like it!       |   A_2   |
 
 而博客的表格则要通过foreign key跟这些相关联的表格联系起来(可能还包括作者、出版社等其它表格)。这样一来，当我们做查询的时候，比如说，“找出评论数不少于3的标签为‘政治评论’的作者为Sam的文章”，就会涉及到复杂的跨表查询，需要大量使用`join`语句。这种跨表查询不仅降低了查询速度，而且这些语句写起来也不简单。
 
