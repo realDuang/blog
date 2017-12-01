@@ -7,7 +7,7 @@ title: 枫之谷
 subtitle: 浮生若梦，铁马冰河
 description:
 author: Chrison Chan
-language: zh-CN
+language: zh-Hans
 timezone:
 
 # URL
@@ -47,7 +47,7 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 5
+  per_page: 4
   order_by: -date
   
 # Category & Tag
@@ -64,7 +64,7 @@ time_format: HH:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 5
+per_page: 8
 pagination_dir: page
 
 # Disqus
@@ -73,7 +73,7 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: Yelee
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
