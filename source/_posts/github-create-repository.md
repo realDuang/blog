@@ -3,6 +3,7 @@ title: github建立repository并上传工程的方法
 date: 2017-07-02 23:46:32
 categories: "常见问题集锦"
 tags: "github"
+description: "这不是什么新知识了，自从我用github以来一直就是这么用着的，但是最近有一段时间没上传过自己的project了，竟然手生了忘了怎么做了。想了想还是记录下来比较好，也给大家分享分享。"
 ---
 
 ---

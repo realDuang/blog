@@ -3,6 +3,7 @@ title: 如何解决github+Hexo的博客多终端同步问题
 date: 2017-05-12 15:51:06
 categories: "常见问题集锦"
 tags: "hexo"
+description: "解决github+Hexo的博客多终端同步的思路是将博文内容相关文件放在Github项目中master中，将Hexo配置写博客用的相关文件放在Github项目的hexo分支上，这个是关键，多终端的同步只需要对分支hexo进行操作。"
 ---
 
 ---

@@ -3,6 +3,7 @@ title: "jquery 判断 checked 的三种方法"
 date: 2017-01-05 16:28:03
 categories: "常见问题集锦"
 tags: "javascript"
+description: "jquery 判断 checked 状态"
 ---
 
 ---
