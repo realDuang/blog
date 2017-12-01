@@ -1,11 +1,11 @@
 ---
-title: '''redux深入理解（二）'''
+title: redux深入理解（二）
 date: 2017-12-01 12:44:56
 categories: "react"
 tags: "javascript"
 ---
 
-
+---
 
 在理解了redux的作用原理后，我们来看看redux的基本概念。
 

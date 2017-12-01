@@ -5,8 +5,10 @@ categories: "mongoDB"
 tags: "nodejs"
 ---
 
+---
 
-<h4>1. 为什么用MongoDB？</h4>
+## 为什么用MongoDB？
+
 传统的计算机应用大多使用关系型数据库来存储数据，比如大家可能熟悉的MySql, Sqlite等等，它的特点是数据以表格(table)的形式储存起来的。数据库由一张张排列整齐的表格构成，就好像一个Excel表单一样，每个表格会有若干列，比如一个学生信息表，可能包含学号、姓名、性别、入学年份、高考成绩、籍贯等等。而表格的每一排，则是一个个学生的具体信息。在企业级应用和前互联网时代，关系型数据库几乎是不二选择。关系型数据库的特点是有整齐划一的组织，很方便对数据进行描述、插入、搜索。
 
 想象有一个传统的网上服装商店吧，它的主要的数据可能是储存在一张叫products的表单里，表单可能包含这些列：商品编号(ID)、名称(Name)、商家(brand)、主目录(cate)、子目录(sub-cat)、零售价(price)、是否促销(promotion)等等。如果有一个用户想要查找所有价格低于300元的正在促销的鞋子的编号和名称，则可以执行类似于以下的SQL语句：
@@ -39,25 +41,25 @@ SQL具备了强大了的深度查询能力，能满足各式各样的查询要�
 
 那么，如果用MongoDB数据库来实现，可以如何设计数据模型呢？很简单，像下面这样<a href="http://www.tutorialspoint.com/mongodb/mongodb_data_modeling.htm">[1]</a>：
 
-```
+```json
  _id: POST_ID
-   title: TITLE_OF_POST, 
-   description: POST_DESCRIPTION,
-   author: POST_BY,
-   tags: [TAG1, TAG2, TAG3],
-   likes: TOTAL_LIKES, 
-   comments: [	
-      {
-         user:'COMMENT_BY',
-         message: TEXT,
-         dateCreated: DATE_TIME,
-      },
-      {
-         user:'COMMENT_BY',
-         message: TEXT,
-         dateCreated: DATE_TIME,
-      }
-   ]
+ title: TITLE_OF_POST, 
+ description: POST_DESCRIPTION,
+ author: POST_BY,
+ tags: [TAG1, TAG2, TAG3],
+ likes: TOTAL_LIKES, 
+ comments: [	
+    {
+       user:'COMMENT_BY',
+       message: TEXT,
+       dateCreated: DATE_TIME,
+    },
+    {
+       user:'COMMENT_BY',
+       message: TEXT,
+       dateCreated: DATE_TIME,
+    }
+ ]
 ```
 在MongoDB里，每篇博客文章以一个文档(document)的形式保存起来，而文档内部包含了很多项目，比如`title tags`等，每一个项目都是`key-value`的形式，即有一个项目的名字，比如`title`，以及它的值`TITLE_OF_POST`。而重要的是，一个`key`可以有多个`values`，他们用`[]`括起来。
 
@@ -65,7 +67,7 @@ SQL具备了强大了的深度查询能力，能满足各式各样的查询要�
 
 当然，除了上述的优点，MongoDB还有不少别的优势，比如MongoDB的数据是用JSON(Javascript Object Notation)存储的(就是上面的这种key-value的形式)，而几乎所有的web应用都是基于Javascript的。因此，存储的数据和应用的数据的格式是高度一致的，不需经过转换。更多的优点可以查看：<a href="http://www.tutorialspoint.com/mongodb/mongodb_advantages.htm">[2]</a>。
 
-<h4>2. 关于这篇文章</h4>
+## 关于这篇文章
 
 这个极简教程，或者说笔记，并不是一个覆盖MongoDB方方面面的教程。所谓极简的意思，就是只选取那些最重要、最常用的内容进行基于实例的介绍，从而让读者能够在最短的时间内快速上手，并且能顺利地进行后续的纵深的学习。
 
