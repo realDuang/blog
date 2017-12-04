@@ -51,7 +51,7 @@ var EventEmitter = {
 
 是不是看起来很简单？事实上，redux本身的思路就是这么简单，甚至你可以直接拿这个自己写的“myRedux”中的发布订阅功能投入到react项目的使用中。举个例子：
 
-```js
+```jsx
 var MyContainer = React.createClass({
   render: function(){
     return (
@@ -112,7 +112,7 @@ redux本身的思路就是这么简洁明了。
 
 如果你的工程的数据流动没有那么繁杂，不想加入redux库来强行增加代码复杂度，但又实在觉得单项数据流的祖先传值太不友好的话，react本身还提供了一个解决办法：Context（上下文）。它同样能解决层次传递的痛点，可以使子组件直接访问祖先组件数据，先写一个示例：
 
-```js
+```jsx
 var CurItemWrapper = React.createClass({
   render: function(){
     return (
