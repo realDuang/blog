@@ -1,9 +1,9 @@
 ---
 title: es6学习笔记（一）
 date: 2017-4-16 22:41:33
-categories: "es6"
+categories: "JavaScript"
 tags: 
-- javascript
+- es6
 description: "面向未来的javascript语法————ES6"
 ---
 

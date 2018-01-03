@@ -1,8 +1,8 @@
 ---
 title: js学习笔记梳理（一）
 date: 2017-02-10 01:11:38
-categories: "es5"
-tags: "javascript"
+categories: "JavaScript"
+tags: "es5"
 description: "最近在梳理关于js一些原理层次的东西，感觉学的有点乱，是时候整理沉淀一下记录成文字了。在我看来，最难理解的核心就两点，一是对闭包的理解，二是对原型链的深入。"
 ---
 
