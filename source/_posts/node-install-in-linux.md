@@ -1,8 +1,7 @@
 ---
 title: 在linux下nodejs的安装方法大全
 date: 2017-06-11 01:06:46
-categories: 杂项
-tags: "nodejs"
+categories: "杂项"
 description: "这段时间为了上线测试很多nodejs代码的部署，开始鼓捣云服务器。由于不是很懂运维知识，首先在安装上就踩了很多大坑，于是决定记录下来做个备忘。"
 ---
 
