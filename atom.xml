@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>枫之谷</title>
+  
+  <subtitle>浮生若梦，铁马冰河</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://kelekexiao.cn/"/>
+  <updated>2018-11-14T08:25:49.559Z</updated>
+  <id>http://kelekexiao.cn/</id>
+  
+  <author>
+    <name>Chrison Chan</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用 React 高阶组件实现一个面包屑导航</title>
+    <link href="http://kelekexiao.cn/2018/11/12/%E5%88%A9%E7%94%A8%20React%20%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%9D%A2%E5%8C%85%E5%B1%91%E5%AF%BC%E8%88%AA/"/>
+    <id>http://kelekexiao.cn/2018/11/12/利用 React 高阶组件实现一个面包屑导航/</id>
+    <published>2018-11-12T03:51:01.000Z</published>
+    <updated>2018-11-14T08:25:49.559Z</updated>
+    
+    <summary type="html">
+    
+      在工作中，我们经常会有很多功能相似，组件代码重复的页面需求，通常我们可以通过完全复制一遍代码的方式实现功能，但是这样页面的维护可维护性就会变得极差，需要对每一个页面里的相同组件去做更改。因此，我们可以将其中共同的部分，比如接受相同的查询操作结果、组件外同一的标签包裹等抽离出来，做一个单独的函数，并传入不同的业务组件作为子组件参数，而这个函数不会修改子组件，只是通过组合的方式将子组件包装在容器组件中，是一个无副作用的纯函数，从而我们能够在不改变这些组件逻辑的情况下将这部分代码解耦，提升代码可维护性。
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+    
+    
+      <category term="react" scheme="http://kelekexiao.cn/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS常用技巧笔记</title>
+    <link href="http://kelekexiao.cn/2018/03/14/CSS%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E7%AC%94%E8%AE%B0/"/>
+    <id>http://kelekexiao.cn/2018/03/14/CSS常用技巧笔记/</id>
+    <published>2018-03-14T08:51:25.000Z</published>
+    <updated>2018-11-14T03:55:58.367Z</updated>
+    
+    <summary type="html">
+    
+      CSS是每一个前端工程师都绕不过去的坎，熟练运用CSS后，实现同样一种效果我们可以有很多种写法，但由于兼容问题，通常简洁的写法并不能实现全平台统一效果，复杂的写法对性能又不太友好，导致我们在编写CSS过程中有很多需要注意的点，要踩很多的坑，因此用一个笔记来集中记录一下方法。
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://kelekexiao.cn/categories/CSS/"/>
+    
+    
+      <category term="css" scheme="http://kelekexiao.cn/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git常用命令笔记</title>
+    <link href="http://kelekexiao.cn/2018/01/03/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/"/>
+    <id>http://kelekexiao.cn/2018/01/03/git常用命令笔记/</id>
+    <published>2018-01-03T08:53:25.000Z</published>
+    <updated>2018-11-14T03:55:58.369Z</updated>
+    
+    <summary type="html">
+    
+      git是现如今最火的版本控制工具，尽管已经使用了github数年的时间了，但一直没有对git命令以及作用进行深入的分析和学习，对git的使用还仅停留在add、commit、push、clone上，这根本算不得掌握git。因此，这次一得出空来就开始从头恶补git知识了，分享出来与大家一同学习进步。
+    
+    </summary>
+    
+      <category term="技术栈" scheme="http://kelekexiao.cn/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+    
+    
+      <category term="git" scheme="http://kelekexiao.cn/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react原理深入（一）--virtual DOM</title>
+    <link href="http://kelekexiao.cn/2017/12/17/react%E5%8E%9F%E7%90%86%E6%B7%B1%E5%85%A5%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94virtual%20DOM/"/>
+    <id>http://kelekexiao.cn/2017/12/17/react原理深入（一）——virtual DOM/</id>
+    <published>2017-12-17T08:02:34.000Z</published>
+    <updated>2018-11-14T03:55:58.370Z</updated>
+    
+    <summary type="html">
+    
+      工欲善其事，必先利其器。想要用好react这个前端View层大杀器，深入理解其工作原理必不可少。理解一个框架是如何让某种操作得到优化的至关重要，知其然也要知其所以然，它有助于我们对这个框架的正确高效的使用，这是一个前端工程师成长的必经路程。
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+    
+    
+      <category term="react" scheme="http://kelekexiao.cn/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redux深入理解（四）</title>
+    <link href="http://kelekexiao.cn/2017/12/04/redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
+    <id>http://kelekexiao.cn/2017/12/04/redux深入理解（四）/</id>
+    <published>2017-12-04T07:22:30.000Z</published>
+    <updated>2018-11-14T03:55:58.371Z</updated>
+    
+    <summary type="html">
+    
+      学习react的过程中，redux的熟练掌握是一个绕不开并且很难绕过去的坎。接触react已经有一段时间了，甚至连一些小项目都用react做了不少了，但redux的使用上还是有诸多不理解不熟练的地方。正好有很长一段时间没有更过博客了，就从这里着手，增强一下自己的理解。
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+    
+    
+      <category term="react" scheme="http://kelekexiao.cn/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redux深入理解（三）</title>
+    <link href="http://kelekexiao.cn/2017/12/03/redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>http://kelekexiao.cn/2017/12/03/redux深入理解（三）/</id>
+    <published>2017-12-03T05:00:52.000Z</published>
+    <updated>2018-11-14T03:55:58.371Z</updated>
+    
+    <summary type="html">
+    
+      学习react的过程中，redux的熟练掌握是一个绕不开并且很难绕过去的坎。接触react已经有一段时间了，甚至连一些小项目都用react做了不少了，但redux的使用上还是有诸多不理解不熟练的地方。正好有很长一段时间没有更过博客了，就从这里着手，增强一下自己的理解。
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+    
+    
+      <category term="react" scheme="http://kelekexiao.cn/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redux深入理解（二）</title>
+    <link href="http://kelekexiao.cn/2017/12/01/redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>http://kelekexiao.cn/2017/12/01/redux深入理解（二）/</id>
+    <published>2017-12-01T04:44:56.000Z</published>
+    <updated>2018-11-14T03:55:58.371Z</updated>
+    
+    <summary type="html">
+    
+      学习react的过程中，redux的熟练掌握是一个绕不开并且很难绕过去的坎。接触react已经有一段时间了，甚至连一些小项目都用react做了不少了，但redux的使用上还是有诸多不理解不熟练的地方。正好有很长一段时间没有更过博客了，就从这里着手，增强一下自己的理解。
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+    
+    
+      <category term="react" scheme="http://kelekexiao.cn/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redux深入理解（一）</title>
+    <link href="http://kelekexiao.cn/2017/11/30/redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://kelekexiao.cn/2017/11/30/redux深入理解（一）/</id>
+    <published>2017-11-30T03:10:37.000Z</published>
+    <updated>2018-11-14T03:55:58.371Z</updated>
+    
+    <summary type="html">
+    
+      学习react的过程中，redux的熟练掌握是一个绕不开并且很难绕过去的坎。接触react已经有一段时间了，甚至连一些小项目都用react做了不少了，但redux的使用上还是有诸多不理解不熟练的地方。正好有很长一段时间没有更过博客了，就从这里着手，增强一下自己的理解。
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+    
+    
+      <category term="react" scheme="http://kelekexiao.cn/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB 极简实践入门</title>
+    <link href="http://kelekexiao.cn/2017/09/17/mongodb%E6%9E%81%E7%AE%80%E5%AE%9E%E8%B7%B5%E5%85%A5%E9%97%A8/"/>
+    <id>http://kelekexiao.cn/2017/09/17/mongodb极简实践入门/</id>
+    <published>2017-09-17T09:13:38.000Z</published>
+    <updated>2018-11-14T03:55:58.370Z</updated>
+    
+    <summary type="html">
+    
+      传统的计算机应用大多使用关系型数据库来存储数据，比如大家可能熟悉的MySql, Sqlite等等，它的特点是数据以表格(table)的形式储存起来的。数据库由一张张排列整齐的表格构成，就好像一个Excel表单一样，每个表格会有若干列，比如一个学生信息表，可能包含学号、姓名、性别、入学年份、高考成绩、籍贯等等。而表格的每一排，则是一个个学生的具体信息。在企业级应用和前互联网时代，关系型数据库几乎是不二选择。关系型数据库的特点是有整齐划一的组织，很方便对数据进行描述、插入、搜索。
+    
+    </summary>
+    
+      <category term="NodeJS" scheme="http://kelekexiao.cn/categories/NodeJS/"/>
+    
+    
+      <category term="mongoDB" scheme="http://kelekexiao.cn/tags/mongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>github建立repository并上传工程的方法</title>
+    <link href="http://kelekexiao.cn/2017/07/02/github-create-repository/"/>
+    <id>http://kelekexiao.cn/2017/07/02/github-create-repository/</id>
+    <published>2017-07-02T15:46:32.000Z</published>
+    <updated>2018-11-14T03:55:58.369Z</updated>
+    
+    <summary type="html">
+    
+      这不是什么新知识了，自从我用github以来一直就是这么用着的，但是最近有一段时间没上传过自己的project了，竟然手生了忘了怎么做了。想了想还是记录下来比较好，也给大家分享分享。
+    
+    </summary>
+    
+      <category term="技术栈" scheme="http://kelekexiao.cn/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+    
+    
+      <category term="git" scheme="http://kelekexiao.cn/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在linux下nodejs的安装方法大全</title>
+    <link href="http://kelekexiao.cn/2017/06/11/node-install-in-linux/"/>
+    <id>http://kelekexiao.cn/2017/06/11/node-install-in-linux/</id>
+    <published>2017-06-10T17:06:46.000Z</published>
+    <updated>2018-11-14T03:55:58.370Z</updated>
+    
+    <summary type="html">
+    
+      这段时间为了上线测试很多nodejs代码的部署，开始鼓捣云服务器。由于不是很懂运维知识，首先在安装上就踩了很多大坑，于是决定记录下来做个备忘。
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://kelekexiao.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>flex布局初体验</title>
+    <link href="http://kelekexiao.cn/2017/05/25/flex/"/>
+    <id>http://kelekexiao.cn/2017/05/25/flex/</id>
+    <published>2017-05-25T06:17:25.000Z</published>
+    <updated>2018-11-14T03:55:58.368Z</updated>
+    
+    <summary type="html">
+    
+      2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://kelekexiao.cn/categories/CSS/"/>
+    
+    
+      <category term="css" scheme="http://kelekexiao.cn/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何解决github+Hexo的博客多终端同步问题</title>
+    <link href="http://kelekexiao.cn/2017/05/12/sync-hexo/"/>
+    <id>http://kelekexiao.cn/2017/05/12/sync-hexo/</id>
+    <published>2017-05-12T07:51:06.000Z</published>
+    <updated>2018-11-14T03:55:58.371Z</updated>
+    
+    <summary type="html">
+    
+      解决github+Hexo的博客多终端同步的思路是将博文内容相关文件放在Github项目中master中，将Hexo配置写博客用的相关文件放在Github项目的hexo分支上，这个是关键，多终端的同步只需要对分支hexo进行操作。
+    
+    </summary>
+    
+      <category term="技术栈" scheme="http://kelekexiao.cn/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+    
+    
+      <category term="hexo" scheme="http://kelekexiao.cn/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>es6学习笔记（一）</title>
+    <link href="http://kelekexiao.cn/2017/04/16/es6-learning-01/"/>
+    <id>http://kelekexiao.cn/2017/04/16/es6-learning-01/</id>
+    <published>2017-04-16T14:41:33.000Z</published>
+    <updated>2018-11-14T03:55:58.368Z</updated>
+    
+    <summary type="html">
+    
+      面向未来的javascript语法————ES6
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+    
+    
+      <category term="es6" scheme="http://kelekexiao.cn/tags/es6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js学习笔记梳理（二）</title>
+    <link href="http://kelekexiao.cn/2017/02/20/javascript-native-02/"/>
+    <id>http://kelekexiao.cn/2017/02/20/javascript-native-02/</id>
+    <published>2017-02-20T14:08:38.000Z</published>
+    <updated>2018-11-14T03:55:58.369Z</updated>
+    
+    <summary type="html">
+    
+      最近在梳理关于js一些原理层次的东西，感觉学的有点乱，是时候整理沉淀一下记录成文字了。在我看来，最难理解的核心就两点，一是对闭包的理解，二是对原型链的深入。
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+    
+    
+      <category term="es5" scheme="http://kelekexiao.cn/tags/es5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js学习笔记梳理（一）</title>
+    <link href="http://kelekexiao.cn/2017/02/10/javascript-native-01/"/>
+    <id>http://kelekexiao.cn/2017/02/10/javascript-native-01/</id>
+    <published>2017-02-09T17:11:38.000Z</published>
+    <updated>2018-11-14T03:55:58.369Z</updated>
+    
+    <summary type="html">
+    
+      最近在梳理关于js一些原理层次的东西，感觉学的有点乱，是时候整理沉淀一下记录成文字了。在我看来，最难理解的核心就两点，一是对闭包的理解，二是对原型链的深入。
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+    
+    
+      <category term="es5" scheme="http://kelekexiao.cn/tags/es5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jquery 判断 checked 的三种方法</title>
+    <link href="http://kelekexiao.cn/2017/01/05/jquery-bool-checked/"/>
+    <id>http://kelekexiao.cn/2017/01/05/jquery-bool-checked/</id>
+    <published>2017-01-05T08:28:03.000Z</published>
+    <updated>2018-11-14T03:55:58.370Z</updated>
+    
+    <summary type="html">
+    
+      jquery 判断 checked 状态
+    
+    </summary>
+    
+      <category term="常见问题集锦" scheme="http://kelekexiao.cn/categories/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
+    
+    
+      <category term="jquery" scheme="http://kelekexiao.cn/tags/jquery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>代码重构之我见</title>
+    <link href="http://kelekexiao.cn/2016/10/16/code-refactoring/"/>
+    <id>http://kelekexiao.cn/2016/10/16/code-refactoring/</id>
+    <published>2016-10-16T12:41:33.000Z</published>
+    <updated>2018-11-14T03:55:58.368Z</updated>
+    
+    <summary type="html">
+    
+      最近在看一些软件工程和构建方面的书籍。俗话说，书读百遍，其义自见，看得多了，自然也就有一些知识可以拿得出手分享一二了。
+    
+    </summary>
+    
+      <category term="技术栈" scheme="http://kelekexiao.cn/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>建站成功撒花~~~</title>
+    <link href="http://kelekexiao.cn/2016/05/10/blog-build-success/"/>
+    <id>http://kelekexiao.cn/2016/05/10/blog-build-success/</id>
+    <published>2016-05-10T12:37:38.000Z</published>
+    <updated>2018-11-14T03:55:58.367Z</updated>
+    
+    <summary type="html">
+    
+      一直看网上各种大神的精工巧作，今天终于下定决心要自己写下第一篇博客了。
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://kelekexiao.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://kelekexiao.cn/2016/05/10/hello-world/"/>
+    <id>http://kelekexiao.cn/2016/05/10/hello-world/</id>
+    <published>2016-05-10T06:18:35.000Z</published>
+    <updated>2018-11-14T03:55:58.369Z</updated>
+    
+    <summary type="html">
+    
+      Hello, world
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://kelekexiao.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
+  
+</feed>
