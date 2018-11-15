@@ -7,7 +7,7 @@ title: 枫之谷
 subtitle: 浮生若梦，铁马冰河
 description:
 author: Chrison Chan
-language: zh-Hans
+language: zh-CN
 timezone:
 
 # URL
@@ -73,8 +73,9 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: Yelee
+# theme: Yelee
 # theme: yilia
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -91,7 +92,12 @@ baidusitemap:
 feed:
     type: atom
     path: atom.xml
-    limit: 100
+    limit: 20
+    hub:
+    content:
+    content_limit: 140
+    content_limit_delim: ' '
+    order_by: -date
 
 jsonContent:
   meta: false
@@ -111,3 +117,9 @@ jsonContent:
     excerpt: false
     categories: false
     tags: true
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
