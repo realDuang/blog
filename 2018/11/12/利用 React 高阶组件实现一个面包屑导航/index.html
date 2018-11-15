@@ -31,7 +31,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -491,9 +491,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/11/12/利用 React 高阶组件实现一个面包屑导航/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/11/12/利用 React 高阶组件实现一个面包屑导航/" itemprop="commentCount"></span>
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/12/利用 React 高阶组件实现一个面包屑导航/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -657,11 +655,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
     </div>
-
   
 
 
@@ -1013,45 +1007,8 @@
 
     
 
-  
-    <script id="dsq-count-scr" src="https://kelekexiao.disqus.com/count.js" async></script>
-  
 
-  
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'http://kelekexiao.cn/2018/11/12/利用 React 高阶组件实现一个面包屑导航/';
-        this.page.identifier = '2018/11/12/利用 React 高阶组件实现一个面包屑导航/';
-        this.page.title = '利用 React 高阶组件实现一个面包屑导航';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://kelekexiao.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      }
-      
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              // offsetTop may changes because of manually resizing browser window or lazy loading images.
-              var offsetTop = $('#comments').offset().top - $(window).height();
-              var scrollTop = $(window).scrollTop();
 
-              // pre-load comments a bit? (margin or anything else)
-              if (offsetTop - scrollTop < 60) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
-      
-    </script>
   
 
 
@@ -1061,7 +1018,30 @@
 
 
 
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'vuKPEPz00exVOwrWac9xk1zS-gzGzoHsz',
+        appKey: '3Wk4OVuTzLpXdfiqwea1DaNc',
+        placeholder: '快来留下你的足迹吧~',
+        avatar:'retro',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 
@@ -1417,12 +1397,12 @@
     
 
 
+   <!--
     <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
    <script type="text/javascript" src="/js/src/fireworks.js"></script>
-
-   <!--
-    <script type="text/javascript" src="/js/src/love.js"></script>
     -->
+
+    <script type="text/javascript" src="/js/src/love.js"></script>
   <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
 </html>
