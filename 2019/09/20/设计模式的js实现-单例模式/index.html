@@ -109,13 +109,18 @@
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="枫之谷">
-<meta property="og:url" content="http://kelekexiao.cn/archives/2017/01/index.html">
+    <meta name="description" content="了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了23类，分别为： 创建型模式（5种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合">
+<meta name="keywords" content="es5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式的js实现--单例模式">
+<meta property="og:url" content="http://kelekexiao.cn/2019/09/20/设计模式的js实现-单例模式/index.html">
 <meta property="og:site_name" content="枫之谷">
+<meta property="og:description" content="了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了23类，分别为： 创建型模式（5种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式（11种）：策略模式、模板方法模式、观察者模式、迭代">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-22T11:12:01.473Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="枫之谷">
+<meta name="twitter:title" content="设计模式的js实现--单例模式">
+<meta name="twitter:description" content="了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了23类，分别为： 创建型模式（5种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式（11种）：策略模式、模板方法模式、观察者模式、迭代">
 
 
 
@@ -124,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://kelekexiao.cn/archives/2017/01/"/>
+  <link rel="canonical" href="http://kelekexiao.cn/2019/09/20/设计模式的js实现-单例模式/"/>
 
 
 
@@ -134,7 +139,7 @@
   };
 </script>
 
-    <title>归档 | 枫之谷</title>
+    <title>设计模式的js实现--单例模式 | 枫之谷</title>
     
 
 
@@ -183,7 +188,7 @@
     
     
 
-    <div class="container sidebar-position-left page-archive">
+    <div class="container sidebar-position-left page-post-detail">
       <div class="headband"></div>
 
       <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -292,7 +297,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -374,106 +379,267 @@
 	    
 	    
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
 	    
 	    <div id="content" class="content">
 	      
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 21 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kelekexiao.cn/2019/09/20/设计模式的js实现-单例模式/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chrison Chan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="枫之谷">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/01/05/jquery-bool-checked/" itemprop="url">
-              
-                <span itemprop="name">jquery 判断 checked 的三种方法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">设计模式的js实现--单例模式
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-01-05T16:28:03+08:00"
-              content="2017-01-05" >
-          01-05
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
+              
+                
+              
+
+              <time title="创建时间：2019-09-20 16:58:52" itemprop="dateCreated datePublished" datetime="2019-09-20T16:58:52+08:00">2019-09-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-22 19:12:01" itemprop="dateModified" datetime="2019-09-22T19:12:01+08:00">2019-09-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/20/设计模式的js实现-单例模式/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/09/20/设计模式的js实现-单例模式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了23类，分别为： 创建型模式（5种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式（11种）：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。 接下来我将针对其中常用的几种设计模式进行解读与实现，供大家参考。</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在所有设计模式中，最基础同时也非常实用的一类就是单例模式了。单例模式，顾名思义，指的是在此种设计模式下，整个系统将只会构建一次实例，接下来每一次的新的生成都视为对第一次生成实例的引用。</p>
+<p>其实，单例模式在我们的项目中运用的十分广泛，例如浏览器的全局变量window就是一个例子，所有声明的全局变量都要挂靠在window下，并且window变量只生成一次，全局都能够调用。再比如一些一些需要保持唯一性的组件，例如顶部提示框、对话框、抽屉组件等等，也都可以用单例模式来解决。</p>
+<h2 id="基础实现"><a href="#基础实现" class="headerlink" title="基础实现"></a>基础实现</h2><p>接下来我们尝试着来实现一下单例模式的构造函数。假设我们现在想实现一个单例的顶部提示框组件，简单展示如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Notification</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(message = "") &#123;</span><br><span class="line">    <span class="keyword">this</span>.message = message;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getMessage() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.message;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了实现所需的目标，我们需要为该类增添一个获取单例实例的函数getInstance。先定义一个标志位记录生成的实例，每次调用时检查，若未实例化则生成一个实例，否则返回之前生成实例的引用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Notification.getInstance = <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 若未生成过实例，则实例化该方法，并将实例引用赋值给一个属性，之后返回该属性</span></span><br><span class="line">  <span class="keyword">if</span> (!Notification.instance) &#123;</span><br><span class="line">    Notification.instance = <span class="keyword">new</span> Notification(...args);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> Notification.instance;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = Notification.getInstance();</span><br><span class="line"><span class="keyword">const</span> b = Notification.getInstance();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a === b); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>这样就实现了这个组件的单例化。</p>
+<h2 id="能不能更通用"><a href="#能不能更通用" class="headerlink" title="能不能更通用"></a>能不能更通用</h2><p>上面这个例子能够实现所需要的目标，但是代码过于耦合，且不方便复用。我们可以考虑使用更通用的方法来实现这一目标。比如我们可以将单例逻辑抽离出来，在原组件外层包裹一个用于生成单例的函数，返回一个功能相同，但拥有单例功能的新组件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Singleton = <span class="function"><span class="keyword">function</span>(<span class="params">Class</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> instance = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!instance) instance = <span class="keyword">new</span> Class(...args);</span><br><span class="line">    <span class="keyword">return</span> instance;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> SingleNotification = <span class="keyword">new</span> Singleton(Notification);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="keyword">new</span> SingleNotification(<span class="string">"info"</span>);</span><br><span class="line"><span class="keyword">const</span> b = <span class="keyword">new</span> SingleNotification(<span class="string">"warning"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.message); <span class="comment">// "info"</span></span><br><span class="line"></span><br><span class="line">b.message = <span class="string">"warning"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.message); <span class="comment">// "warning"</span></span><br></pre></td></tr></table></figure>
+<p>这样就实现了单例逻辑与实际功能组件的解耦。这里实际上用到了装饰器模式的一些思想，关于装饰器模式我们留到下一节说。</p>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>这里，空空的。</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Chrison Chan 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Chrison Chan 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/es5/" rel="tag"><i class="fa fa-tag"></i> es5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/12/利用 React 高阶组件实现一个面包屑导航/" rel="next" title="利用 React 高阶组件实现一个面包屑导航">
+                <i class="fa fa-chevron-left"></i> 利用 React 高阶组件实现一个面包屑导航
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
 	    </div>
 	    
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
 	  </div>
 	  
@@ -494,8 +660,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -640,6 +815,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础实现"><span class="nav-number">2.</span> <span class="nav-text">基础实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#能不能更通用"><span class="nav-number">3.</span> <span class="nav-text">能不能更通用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -800,6 +991,10 @@
 
 
     
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
 
     
 
