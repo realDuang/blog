@@ -56,7 +56,7 @@ favicon:
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.
 # Set rss to specific value if you have burned your feed already.
-rss: 
+rss:
 
 footer:
   # Specify the date when the site was setup.
@@ -64,7 +64,7 @@ footer:
   since: 2016
 
   # Icon between year and copyright info.
-  icon: 
+  icon:
     # Icon name in fontawesome, see: https://fontawesome.com/v4.7.0/icons
     # `heart` is recommended with animation in red (#ff0000).
     name: heart
@@ -176,6 +176,7 @@ site_state: true
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
   GitHub: https://github.com/kelekexiao123 || github
+  QQ: http://wpa.qq.com/msgrd?v=3&uin=250407778&site=qq&menu=yes || qq
   邮箱: mailto:250407778@qq.com || envelope
   知乎: https://www.zhihu.com/people/cheng-long-96-27/activities || heartbeat
   #Weibo: https://weibo.com/yourname || weibo
@@ -391,48 +392,35 @@ cheers_enabled: true
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: false
-
-  # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
-  host:
-
-  # Font options:
-  # `external: true` will load this font family from `host` above.
-  # `family: Times New Roman`. Without any quotes.
-  # `size: xx`. Use `px` as unit.
-
-  # Global font settings used for all elements in <body>.
+  enable: true
+  # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
+  host: https://fonts.googleapis.com
+  # 全局字体，应用在 body 元素上
   global:
     external: true
-    family: Lato
-    size:
+    family: Microsoft YaHei
+    size: 14
 
-  # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
-  # Fallback to `global` font settings.
+  # 标题字体 (h1, h2, h3, h4, h5, h6)
   headings:
     external: true
-    family:
-    size:
+    family: Microsoft YaHei
 
-  # Font settings for posts.
-  # Fallback to `global` font settings.
+  # 文章字体
   posts:
     external: true
-    family:
+    family: Microsoft YaHei
 
-  # Font settings for Logo.
-  # Fallback to `global` font settings.
+  # Logo 字体
   logo:
     external: true
-    family:
-    size:
+    family: STCaiyun
+    size: 24
 
-  # Font settings for <code> and code blocks.
+  # 代码字体，应用于 code 以及代码块
   codes:
     external: true
-    family:
-    size:
-
+    family: Source Code Pro
 
 # ---------------------------------------------------------------
 # Third Party Services Settings
@@ -826,33 +814,21 @@ fastclick: false
 
 # Added switch option for separated repo in 6.0.0.
 # Dependencies: https://github.com/theme-next/theme-next-jquery-lazyload
-lazyload: false
+lazyload: true
 
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
-pace: true
-# Themes list:
-#pace-theme-big-counter
-#pace-theme-bounce
-#pace-theme-barber-shop
-#pace-theme-center-atom
-#pace-theme-center-circle
-#pace-theme-center-radar
-#pace-theme-center-simple
-#pace-theme-corner-indicator
-#pace-theme-fill-left
-#pace-theme-flash
-#pace-theme-loading-bar
-#pace-theme-mac-osx
-#pace-theme-minimal
-# For example
-# pace_theme: pace-theme-center-simple
-pace_theme: pace-theme-loading-bar
+pace:
+  enable: false
+  # Themes list:
+  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
+  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
+  theme: flat-top
 
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
 canvas_nest:
-  enable: true
+  enable: false
   onmobile: true # display on mobile or not
   color: '9,78,212' # RGB values, use ',' to separate
   opacity: 0.7 # the opacity of line: 0~1
@@ -982,9 +958,9 @@ vendors:
   # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_lines.min.js
   # canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_sphere.min.js
   three:
-  three_waves: 
-  canvas_lines: 
-  canvas_sphere: 
+  three_waves:
+  canvas_lines:
+  canvas_sphere:
 
   # Internal version: 1.0.0
   # See: https://github.com/zproo/canvas-ribbon
@@ -1036,4 +1012,4 @@ images: images
 
 # 音乐播放器
 # 网易云音乐
-music: //music.163.com/outchain/player?type=0&id=2523494975&auto=1&height=66
+music: //music.163.com/outchain/player?type=0&id=2523494975&auto=0&height=66

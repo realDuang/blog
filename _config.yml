@@ -134,10 +134,15 @@ live2d:
   log: false
   model:
     use: live2d-widget-model-koharu
+    scale: 0.75
   display:
     position: right
-    width: 75
-    height: 150
   mobile:
     show: true
+  dialog:
+    enable: true
+    hitokoto: true
+  react:
+    opacityDefault: 0.8
+    opacityOnHover: 1
 

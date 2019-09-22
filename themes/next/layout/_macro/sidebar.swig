@@ -115,7 +115,7 @@
 
 
           {% if theme.creative_commons.license and theme.creative_commons.sidebar %}
-             <div class="cc-license motion-element" itemprop="license">
+            <div class="cc-license motion-element" itemprop="license">
               {% if theme.creative_commons.license === 'zero' %}
                 {% set ccType = 'publicdomain/zero/1.0/' %}
               {% else %}
@@ -124,7 +124,7 @@
               {% set ccURL = 'https://creativecommons.org/' + ccType %}
               {% set ccImage = '<img src="' + url_for(theme.images) + '/cc-' + theme.creative_commons.license + '.svg" alt="Creative Commons" />' %}
               {{ next_url(ccURL, ccImage, {class: 'cc-opacity'}) }}
-             </div>
+            </div>
           {% endif %}
 
           {# Blogroll #}
@@ -184,12 +184,12 @@
         </div>
       {% endif %}
 
-	  <!-- 音乐播放器 -->
-          {% if theme.music %}
-	    <div id="musicPlayer"> 
-	      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=210 height=86 src="{{ theme.music }}"></iframe> 
-	    </div>
-          {% endif %}
+	    <!-- 音乐播放器 -->
+      {% if theme.music %}
+        <div id="musicPlayer">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="20" width=210 height=86 src="{{ theme.music }}"></iframe>
+        </div>
+      {% endif %}
 
     </div>
   </aside>
