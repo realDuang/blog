@@ -185,7 +185,7 @@ th {
 }
 body {
   position: relative;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Microsoft YaHei', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 14px;
   line-height: 2;
   color: #222;
@@ -216,7 +216,7 @@ h6 {
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Microsoft YaHei', 'Microsoft YaHei', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 h1,
 h2,
@@ -285,7 +285,7 @@ span.exturl {
   color: #222;
   text-decoration: none;
   outline: none;
-  border-bottom: 1px solid #afb0b2;
+  border-bottom: 1px solid #5f6062;
   cursor: pointer;
 }
 a:hover,
@@ -392,7 +392,7 @@ kbd {
 .translation {
   margin-top: -20px;
   font-size: 14px;
-  color: #afb0b2;
+  color: #5f6062;
 }
 .scrollbar-measure {
   width: 100px;
@@ -513,7 +513,7 @@ pre,
 }
 pre,
 code {
-  font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+  font-family: 'Source Code Pro', consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
 }
 code {
   overflow-wrap: break-word;
@@ -1144,9 +1144,9 @@ pre .javascript .function {
   display: inline-block;
   vertical-align: top;
   line-height: 36px;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: normal;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'STCaiyun', 'Microsoft YaHei', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1345,7 +1345,7 @@ pre .javascript .function {
 .post-body {
   overflow-wrap: break-word;
   word-wrap: break-word;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Microsoft YaHei', 'Microsoft YaHei', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .post-body .exturl .fa {
   font-size: 14px;
@@ -1363,7 +1363,7 @@ pre .javascript .function {
   margin: -20px auto 15px;
   text-align: center;
   font-size: 14px;
-  color: #afb0b2;
+  color: #5f6062;
   font-weight: bold;
   line-height: 1;
 }
@@ -1627,8 +1627,8 @@ pre .javascript .function {
 }
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
-  color: #afb0b2;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #5f6062;
+  font-family: 'Microsoft YaHei', 'Microsoft YaHei', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
   text-align: center;
 }
@@ -1638,14 +1638,14 @@ pre .javascript .function {
   padding: 3px;
 }
 .posts-expand .post-meta .post-category-list-link {
-  color: #afb0b2;
+  color: #5f6062;
 }
 .posts-expand .post-meta .post-description {
   font-size: 14px;
   margin-top: 2px;
 }
 .posts-expand .post-meta time {
-  border-bottom: 1px dashed #afb0b2;
+  border-bottom: 1px dashed #5f6062;
   cursor: help;
 }
 .post-meta-divider {
@@ -1911,7 +1911,7 @@ pre .javascript .function {
 }
 .sidebar a,
 .sidebar .exturl {
-  color: #afb0b2;
+  color: #5f6062;
   border-bottom-color: #222;
 }
 .sidebar a:hover,
@@ -1931,7 +1931,7 @@ pre .javascript .function {
 .sidebar-inner {
   position: relative;
   padding: 20px 10px;
-  color: #afb0b2;
+  color: #5f6062;
   text-align: center;
 }
 .site-overview-wrap {
@@ -2014,7 +2014,7 @@ pre .javascript .function {
   margin-top: 0;
   text-align: center;
   font-size: 13px;
-  color: #afb0b2;
+  color: #5f6062;
 }
 .site-state {
   overflow: hidden;
@@ -2042,7 +2042,7 @@ pre .javascript .function {
 }
 .site-state-item-name {
   font-size: 13px;
-  color: #afb0b2;
+  color: #5f6062;
 }
 .feed-link {
   margin-top: 20px;
@@ -2089,7 +2089,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d088ff;
+  background: #ffdd26;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2211,7 +2211,7 @@ pre .javascript .function {
 }
 .footer {
   font-size: 14px;
-  color: #afb0b2;
+  color: #5f6062;
 }
 .footer img {
   border: none;
@@ -3386,11 +3386,15 @@ body {
 #footer a {
   color: #eee;
 }
-.header-inner {
-  opacity: 0.8;
+.header-inner,
+.sidebar-inner {
+  border-radius: 2%;
 }
 .main-inner {
-  opacity: 0.8;
+  opacity: 0.9;
+}
+.pagination {
+  border-radius: 50%;
 }
 .post-body p a {
   color: #094ed4;
