@@ -1,5 +1,5 @@
 ---
-title: js学习笔记梳理（二）
+title: js学习笔记梳理(2)
 date: 2017-02-20 22:08:38
 categories: "JavaScript"
 tags: "es5"

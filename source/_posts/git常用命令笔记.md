@@ -1,7 +1,7 @@
 ---
 title: git常用命令笔记
 date: 2018-01-03 16:53:25
-categories: "技术栈"
+categories: "git"
 tags: "git"
 description: "git是现如今最火的版本控制工具，尽管已经使用了github数年的时间了，但一直没有对git命令以及作用进行深入的分析和学习，对git的使用还仅停留在add、commit、push、clone上，这根本算不得掌握git。因此，这次一得出空来就开始从头恶补git知识了，分享出来与大家一同学习进步。"
 ---
