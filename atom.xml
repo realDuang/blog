@@ -2,26 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>枫之谷</title>
   
-  <subtitle>浮生若梦，铁马冰河</subtitle>
+  <subtitle>好看的皮囊千篇一律，有趣的灵魂二百多斤。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://kelekexiao.cn/"/>
-  <updated>2019-09-22T11:31:50.412Z</updated>
-  <id>http://kelekexiao.cn/</id>
+  <link href="https://kelekexiao.cn/"/>
+  <updated>2019-09-24T03:43:53.767Z</updated>
+  <id>https://kelekexiao.cn/</id>
   
   <author>
-    <name>Chrison Chan</name>
+    <name>Synccheng</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>设计模式的js实现--单例模式</title>
-    <link href="http://kelekexiao.cn/2019/09/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84js%E5%AE%9E%E7%8E%B0-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://kelekexiao.cn/2019/09/20/设计模式的js实现-单例模式/</id>
-    <published>2019-09-20T08:58:52.000Z</published>
-    <updated>2019-09-22T11:31:50.412Z</updated>
+    <title>设计模式的js实现(2)--装饰器模式</title>
+    <link href="https://kelekexiao.cn/2019/09/23/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84js%E5%AE%9E%E7%8E%B0(2)--%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://kelekexiao.cn/2019/09/23/设计模式的js实现(2)--装饰器模式/</id>
+    <published>2019-09-23T03:07:08.000Z</published>
+    <updated>2019-09-24T03:43:53.767Z</updated>
     
     <summary type="html">
     
@@ -29,19 +29,39 @@
     
     </summary>
     
-      <category term="设计模式" scheme="http://kelekexiao.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="架构设计" scheme="https://kelekexiao.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="es5" scheme="http://kelekexiao.cn/tags/es5/"/>
+      <category term="设计模式" scheme="https://kelekexiao.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式的js实现(1)--单例模式</title>
+    <link href="https://kelekexiao.cn/2019/09/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84js%E5%AE%9E%E7%8E%B0(1)--%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://kelekexiao.cn/2019/09/20/设计模式的js实现(1)--单例模式/</id>
+    <published>2019-09-20T08:58:52.000Z</published>
+    <updated>2019-09-23T03:30:43.650Z</updated>
+    
+    <summary type="html">
+    
+      了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了23类，分别为： 创建型模式（5种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式（11种）：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。 接下来我将针对其中常用的几种设计模式进行解读与实现，供大家参考。
+    
+    </summary>
+    
+      <category term="架构设计" scheme="https://kelekexiao.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计模式" scheme="https://kelekexiao.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>利用 React 高阶组件实现一个面包屑导航</title>
-    <link href="http://kelekexiao.cn/2018/11/12/%E5%88%A9%E7%94%A8%20React%20%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%9D%A2%E5%8C%85%E5%B1%91%E5%AF%BC%E8%88%AA/"/>
-    <id>http://kelekexiao.cn/2018/11/12/利用 React 高阶组件实现一个面包屑导航/</id>
+    <link href="https://kelekexiao.cn/2018/11/12/%E5%88%A9%E7%94%A8%20React%20%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%9D%A2%E5%8C%85%E5%B1%91%E5%AF%BC%E8%88%AA/"/>
+    <id>https://kelekexiao.cn/2018/11/12/利用 React 高阶组件实现一个面包屑导航/</id>
     <published>2018-11-12T03:51:01.000Z</published>
-    <updated>2019-09-22T11:31:50.411Z</updated>
+    <updated>2019-09-23T03:13:55.144Z</updated>
     
     <summary type="html">
     
@@ -49,17 +69,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://kelekexiao.cn/categories/JavaScript/"/>
     
     
-      <category term="react" scheme="http://kelekexiao.cn/tags/react/"/>
+      <category term="React" scheme="https://kelekexiao.cn/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>CSS常用技巧笔记</title>
-    <link href="http://kelekexiao.cn/2018/03/14/CSS%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E7%AC%94%E8%AE%B0/"/>
-    <id>http://kelekexiao.cn/2018/03/14/CSS常用技巧笔记/</id>
+    <link href="https://kelekexiao.cn/2018/03/14/CSS%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E7%AC%94%E8%AE%B0/"/>
+    <id>https://kelekexiao.cn/2018/03/14/CSS常用技巧笔记/</id>
     <published>2018-03-14T08:51:25.000Z</published>
     <updated>2019-09-22T11:31:50.405Z</updated>
     
@@ -69,19 +89,19 @@
     
     </summary>
     
-      <category term="CSS" scheme="http://kelekexiao.cn/categories/CSS/"/>
+      <category term="CSS" scheme="https://kelekexiao.cn/categories/CSS/"/>
     
     
-      <category term="css" scheme="http://kelekexiao.cn/tags/css/"/>
+      <category term="css" scheme="https://kelekexiao.cn/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>git常用命令笔记</title>
-    <link href="http://kelekexiao.cn/2018/01/03/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/"/>
-    <id>http://kelekexiao.cn/2018/01/03/git常用命令笔记/</id>
+    <link href="https://kelekexiao.cn/2018/01/03/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/"/>
+    <id>https://kelekexiao.cn/2018/01/03/git常用命令笔记/</id>
     <published>2018-01-03T08:53:25.000Z</published>
-    <updated>2019-09-22T11:31:50.407Z</updated>
+    <updated>2019-09-23T03:29:19.721Z</updated>
     
     <summary type="html">
     
@@ -89,19 +109,19 @@
     
     </summary>
     
-      <category term="技术栈" scheme="http://kelekexiao.cn/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="git" scheme="https://kelekexiao.cn/categories/git/"/>
     
     
-      <category term="git" scheme="http://kelekexiao.cn/tags/git/"/>
+      <category term="git" scheme="https://kelekexiao.cn/tags/git/"/>
     
   </entry>
   
   <entry>
-    <title>react原理深入（一）--virtual DOM</title>
-    <link href="http://kelekexiao.cn/2017/12/17/react%E5%8E%9F%E7%90%86%E6%B7%B1%E5%85%A5%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94virtual%20DOM/"/>
-    <id>http://kelekexiao.cn/2017/12/17/react原理深入（一）——virtual DOM/</id>
+    <title>React原理深入(1)--virtual DOM</title>
+    <link href="https://kelekexiao.cn/2017/12/17/React%E5%8E%9F%E7%90%86%E6%B7%B1%E5%85%A5(1)--virtual%20DOM/"/>
+    <id>https://kelekexiao.cn/2017/12/17/React原理深入(1)--virtual DOM/</id>
     <published>2017-12-17T08:02:34.000Z</published>
-    <updated>2019-09-22T11:31:50.410Z</updated>
+    <updated>2019-09-23T03:25:47.092Z</updated>
     
     <summary type="html">
     
@@ -109,19 +129,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://kelekexiao.cn/categories/JavaScript/"/>
     
     
-      <category term="react" scheme="http://kelekexiao.cn/tags/react/"/>
+      <category term="React" scheme="https://kelekexiao.cn/tags/React/"/>
     
   </entry>
   
   <entry>
-    <title>redux深入理解（四）</title>
-    <link href="http://kelekexiao.cn/2017/12/04/redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
-    <id>http://kelekexiao.cn/2017/12/04/redux深入理解（四）/</id>
+    <title>Redux深入理解(4)</title>
+    <link href="https://kelekexiao.cn/2017/12/04/Redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3(4)/"/>
+    <id>https://kelekexiao.cn/2017/12/04/Redux深入理解(4)/</id>
     <published>2017-12-04T07:22:30.000Z</published>
-    <updated>2019-09-22T11:31:50.411Z</updated>
+    <updated>2019-09-23T03:27:22.377Z</updated>
     
     <summary type="html">
     
@@ -129,19 +149,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://kelekexiao.cn/categories/JavaScript/"/>
     
     
-      <category term="react" scheme="http://kelekexiao.cn/tags/react/"/>
+      <category term="React" scheme="https://kelekexiao.cn/tags/React/"/>
     
   </entry>
   
   <entry>
-    <title>redux深入理解（三）</title>
-    <link href="http://kelekexiao.cn/2017/12/03/redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%EF%BC%88%E4%B8%89%EF%BC%89/"/>
-    <id>http://kelekexiao.cn/2017/12/03/redux深入理解（三）/</id>
+    <title>Redux深入理解(3)</title>
+    <link href="https://kelekexiao.cn/2017/12/03/Redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3(3)/"/>
+    <id>https://kelekexiao.cn/2017/12/03/Redux深入理解(3)/</id>
     <published>2017-12-03T05:00:52.000Z</published>
-    <updated>2019-09-22T11:31:50.410Z</updated>
+    <updated>2019-09-23T03:27:02.665Z</updated>
     
     <summary type="html">
     
@@ -149,19 +169,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://kelekexiao.cn/categories/JavaScript/"/>
     
     
-      <category term="react" scheme="http://kelekexiao.cn/tags/react/"/>
+      <category term="React" scheme="https://kelekexiao.cn/tags/React/"/>
     
   </entry>
   
   <entry>
-    <title>redux深入理解（二）</title>
-    <link href="http://kelekexiao.cn/2017/12/01/redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
-    <id>http://kelekexiao.cn/2017/12/01/redux深入理解（二）/</id>
+    <title>Redux深入理解(2)</title>
+    <link href="https://kelekexiao.cn/2017/12/01/Redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3(2)/"/>
+    <id>https://kelekexiao.cn/2017/12/01/Redux深入理解(2)/</id>
     <published>2017-12-01T04:44:56.000Z</published>
-    <updated>2019-09-22T11:31:50.410Z</updated>
+    <updated>2019-09-23T03:26:40.729Z</updated>
     
     <summary type="html">
     
@@ -169,19 +189,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://kelekexiao.cn/categories/JavaScript/"/>
     
     
-      <category term="react" scheme="http://kelekexiao.cn/tags/react/"/>
+      <category term="React" scheme="https://kelekexiao.cn/tags/React/"/>
     
   </entry>
   
   <entry>
-    <title>redux深入理解（一）</title>
-    <link href="http://kelekexiao.cn/2017/11/30/redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <id>http://kelekexiao.cn/2017/11/30/redux深入理解（一）/</id>
+    <title>Redux深入理解(1)</title>
+    <link href="https://kelekexiao.cn/2017/11/30/Redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3(1)/"/>
+    <id>https://kelekexiao.cn/2017/11/30/Redux深入理解(1)/</id>
     <published>2017-11-30T03:10:37.000Z</published>
-    <updated>2019-09-22T11:31:50.410Z</updated>
+    <updated>2019-09-23T03:26:46.329Z</updated>
     
     <summary type="html">
     
@@ -189,19 +209,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://kelekexiao.cn/categories/JavaScript/"/>
     
     
-      <category term="react" scheme="http://kelekexiao.cn/tags/react/"/>
+      <category term="React" scheme="https://kelekexiao.cn/tags/React/"/>
     
   </entry>
   
   <entry>
-    <title>MongoDB 极简实践入门</title>
-    <link href="http://kelekexiao.cn/2017/09/17/mongodb%E6%9E%81%E7%AE%80%E5%AE%9E%E8%B7%B5%E5%85%A5%E9%97%A8/"/>
-    <id>http://kelekexiao.cn/2017/09/17/mongodb极简实践入门/</id>
+    <title>MongoDB极简实践入门</title>
+    <link href="https://kelekexiao.cn/2017/09/17/MongoDB%E6%9E%81%E7%AE%80%E5%AE%9E%E8%B7%B5%E5%85%A5%E9%97%A8/"/>
+    <id>https://kelekexiao.cn/2017/09/17/MongoDB极简实践入门/</id>
     <published>2017-09-17T09:13:38.000Z</published>
-    <updated>2019-09-22T11:31:50.409Z</updated>
+    <updated>2019-09-23T03:30:30.289Z</updated>
     
     <summary type="html">
     
@@ -209,19 +229,19 @@
     
     </summary>
     
-      <category term="NodeJS" scheme="http://kelekexiao.cn/categories/NodeJS/"/>
+      <category term="NodeJS" scheme="https://kelekexiao.cn/categories/NodeJS/"/>
     
     
-      <category term="mongoDB" scheme="http://kelekexiao.cn/tags/mongoDB/"/>
+      <category term="MongoDB" scheme="https://kelekexiao.cn/tags/MongoDB/"/>
     
   </entry>
   
   <entry>
     <title>github建立repository并上传工程的方法</title>
-    <link href="http://kelekexiao.cn/2017/07/02/github-create-repository/"/>
-    <id>http://kelekexiao.cn/2017/07/02/github-create-repository/</id>
+    <link href="https://kelekexiao.cn/2017/07/02/github%E5%BB%BA%E7%AB%8Brepository%E5%B9%B6%E4%B8%8A%E4%BC%A0%E5%B7%A5%E7%A8%8B%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>https://kelekexiao.cn/2017/07/02/github建立repository并上传工程的方法/</id>
     <published>2017-07-02T15:46:32.000Z</published>
-    <updated>2019-09-22T11:31:50.407Z</updated>
+    <updated>2019-09-23T03:29:24.497Z</updated>
     
     <summary type="html">
     
@@ -229,19 +249,19 @@
     
     </summary>
     
-      <category term="技术栈" scheme="http://kelekexiao.cn/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="git" scheme="https://kelekexiao.cn/categories/git/"/>
     
     
-      <category term="git" scheme="http://kelekexiao.cn/tags/git/"/>
+      <category term="git" scheme="https://kelekexiao.cn/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>在linux下nodejs的安装方法大全</title>
-    <link href="http://kelekexiao.cn/2017/06/11/node-install-in-linux/"/>
-    <id>http://kelekexiao.cn/2017/06/11/node-install-in-linux/</id>
+    <link href="https://kelekexiao.cn/2017/06/11/%E5%9C%A8linux%E4%B8%8Bnodejs%E7%9A%84%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/"/>
+    <id>https://kelekexiao.cn/2017/06/11/在linux下nodejs的安装方法/</id>
     <published>2017-06-10T17:06:46.000Z</published>
-    <updated>2019-09-22T11:31:50.410Z</updated>
+    <updated>2019-09-23T03:12:17.966Z</updated>
     
     <summary type="html">
     
@@ -249,17 +269,17 @@
     
     </summary>
     
-      <category term="杂项" scheme="http://kelekexiao.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+      <category term="杂项" scheme="https://kelekexiao.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
   </entry>
   
   <entry>
     <title>flex布局初体验</title>
-    <link href="http://kelekexiao.cn/2017/05/25/flex/"/>
-    <id>http://kelekexiao.cn/2017/05/25/flex/</id>
+    <link href="https://kelekexiao.cn/2017/05/25/flex%E5%B8%83%E5%B1%80%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
+    <id>https://kelekexiao.cn/2017/05/25/flex布局初体验/</id>
     <published>2017-05-25T06:17:25.000Z</published>
-    <updated>2019-09-22T11:31:50.407Z</updated>
+    <updated>2019-09-23T03:10:14.121Z</updated>
     
     <summary type="html">
     
@@ -267,19 +287,19 @@
     
     </summary>
     
-      <category term="CSS" scheme="http://kelekexiao.cn/categories/CSS/"/>
+      <category term="CSS" scheme="https://kelekexiao.cn/categories/CSS/"/>
     
     
-      <category term="css" scheme="http://kelekexiao.cn/tags/css/"/>
+      <category term="css" scheme="https://kelekexiao.cn/tags/css/"/>
     
   </entry>
   
   <entry>
-    <title>如何解决github+Hexo的博客多终端同步问题</title>
-    <link href="http://kelekexiao.cn/2017/05/12/sync-hexo/"/>
-    <id>http://kelekexiao.cn/2017/05/12/sync-hexo/</id>
+    <title>解决github+Hexo的博客多终端同步问题</title>
+    <link href="https://kelekexiao.cn/2017/05/12/%E8%A7%A3%E5%86%B3github+Hexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98/"/>
+    <id>https://kelekexiao.cn/2017/05/12/解决github+Hexo的博客多终端同步问题/</id>
     <published>2017-05-12T07:51:06.000Z</published>
-    <updated>2019-09-22T11:31:50.411Z</updated>
+    <updated>2019-09-23T03:29:57.436Z</updated>
     
     <summary type="html">
     
@@ -287,19 +307,19 @@
     
     </summary>
     
-      <category term="技术栈" scheme="http://kelekexiao.cn/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="git" scheme="https://kelekexiao.cn/categories/git/"/>
     
     
-      <category term="hexo" scheme="http://kelekexiao.cn/tags/hexo/"/>
+      <category term="git" scheme="https://kelekexiao.cn/tags/git/"/>
     
   </entry>
   
   <entry>
-    <title>es6学习笔记（一）</title>
-    <link href="http://kelekexiao.cn/2017/04/16/es6-learning-01/"/>
-    <id>http://kelekexiao.cn/2017/04/16/es6-learning-01/</id>
+    <title>es6学习笔记</title>
+    <link href="https://kelekexiao.cn/2017/04/16/es6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://kelekexiao.cn/2017/04/16/es6学习笔记/</id>
     <published>2017-04-16T14:41:33.000Z</published>
-    <updated>2019-09-22T11:31:50.407Z</updated>
+    <updated>2019-09-23T03:10:03.377Z</updated>
     
     <summary type="html">
     
@@ -307,19 +327,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://kelekexiao.cn/categories/JavaScript/"/>
     
     
-      <category term="es6" scheme="http://kelekexiao.cn/tags/es6/"/>
+      <category term="es6" scheme="https://kelekexiao.cn/tags/es6/"/>
     
   </entry>
   
   <entry>
-    <title>js学习笔记梳理（二）</title>
-    <link href="http://kelekexiao.cn/2017/02/20/javascript-native-02/"/>
-    <id>http://kelekexiao.cn/2017/02/20/javascript-native-02/</id>
+    <title>js学习笔记梳理(2)</title>
+    <link href="https://kelekexiao.cn/2017/02/20/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%A2%B3%E7%90%86(2)/"/>
+    <id>https://kelekexiao.cn/2017/02/20/js学习笔记梳理(2)/</id>
     <published>2017-02-20T14:08:38.000Z</published>
-    <updated>2019-09-22T11:31:50.408Z</updated>
+    <updated>2019-09-23T03:13:02.849Z</updated>
     
     <summary type="html">
     
@@ -327,19 +347,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://kelekexiao.cn/categories/JavaScript/"/>
     
     
-      <category term="es5" scheme="http://kelekexiao.cn/tags/es5/"/>
+      <category term="es5" scheme="https://kelekexiao.cn/tags/es5/"/>
     
   </entry>
   
   <entry>
-    <title>js学习笔记梳理（一）</title>
-    <link href="http://kelekexiao.cn/2017/02/10/javascript-native-01/"/>
-    <id>http://kelekexiao.cn/2017/02/10/javascript-native-01/</id>
+    <title>js学习笔记梳理(1)</title>
+    <link href="https://kelekexiao.cn/2017/02/10/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%A2%B3%E7%90%86(1)/"/>
+    <id>https://kelekexiao.cn/2017/02/10/js学习笔记梳理(1)/</id>
     <published>2017-02-09T17:11:38.000Z</published>
-    <updated>2019-09-22T11:31:50.408Z</updated>
+    <updated>2019-09-23T03:12:47.497Z</updated>
     
     <summary type="html">
     
@@ -347,39 +367,39 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://kelekexiao.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://kelekexiao.cn/categories/JavaScript/"/>
     
     
-      <category term="es5" scheme="http://kelekexiao.cn/tags/es5/"/>
+      <category term="es5" scheme="https://kelekexiao.cn/tags/es5/"/>
     
   </entry>
   
   <entry>
-    <title>jquery 判断 checked 的三种方法</title>
-    <link href="http://kelekexiao.cn/2017/01/05/jquery-bool-checked/"/>
-    <id>http://kelekexiao.cn/2017/01/05/jquery-bool-checked/</id>
+    <title>jQuery判断及修改checked状态的方法</title>
+    <link href="https://kelekexiao.cn/2017/01/05/jQuery%E5%88%A4%E6%96%AD%E5%8F%8A%E4%BF%AE%E6%94%B9checked%E7%8A%B6%E6%80%81%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>https://kelekexiao.cn/2017/01/05/jQuery判断及修改checked状态的方法/</id>
     <published>2017-01-05T08:28:03.000Z</published>
-    <updated>2019-09-22T11:31:50.409Z</updated>
+    <updated>2019-09-23T03:25:35.316Z</updated>
     
     <summary type="html">
     
-      jquery 判断 checked 状态
+      表单中经常需要使用单选框或多选框来让用户选择，而我们经常使用jQuery来判断或改变选项中checked的状态，但是由于jQuery版本不同，判断的方法也不太一样，这个坑点在这里记录一下。
     
     </summary>
     
-      <category term="常见问题集锦" scheme="http://kelekexiao.cn/categories/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
+      <category term="常见问题集锦" scheme="https://kelekexiao.cn/categories/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
     
     
-      <category term="jquery" scheme="http://kelekexiao.cn/tags/jquery/"/>
+      <category term="jQuery" scheme="https://kelekexiao.cn/tags/jQuery/"/>
     
   </entry>
   
   <entry>
     <title>代码重构之我见</title>
-    <link href="http://kelekexiao.cn/2016/10/16/code-refactoring/"/>
-    <id>http://kelekexiao.cn/2016/10/16/code-refactoring/</id>
+    <link href="https://kelekexiao.cn/2016/10/16/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84%E4%B9%8B%E6%88%91%E8%A7%81/"/>
+    <id>https://kelekexiao.cn/2016/10/16/代码重构之我见/</id>
     <published>2016-10-16T12:41:33.000Z</published>
-    <updated>2019-09-22T11:31:50.406Z</updated>
+    <updated>2019-09-23T03:11:12.450Z</updated>
     
     <summary type="html">
     
@@ -387,25 +407,7 @@
     
     </summary>
     
-      <category term="技术栈" scheme="http://kelekexiao.cn/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>建站成功撒花~~~</title>
-    <link href="http://kelekexiao.cn/2016/05/10/blog-build-success/"/>
-    <id>http://kelekexiao.cn/2016/05/10/blog-build-success/</id>
-    <published>2016-05-10T12:37:38.000Z</published>
-    <updated>2019-09-22T11:31:50.405Z</updated>
-    
-    <summary type="html">
-    
-      一直看网上各种大神的精工巧作，今天终于下定决心要自己写下第一篇博客了。
-    
-    </summary>
-    
-      <category term="杂项" scheme="http://kelekexiao.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+      <category term="架构设计" scheme="https://kelekexiao.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
     
     
   </entry>
