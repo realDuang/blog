@@ -4,15 +4,15 @@
 
 # Site
 title: 枫之谷
-subtitle: 浮生若梦，铁马冰河
+subtitle: 好看的皮囊千篇一律，有趣的灵魂二百多斤。
 description:
-author: Chrison Chan
+author: Synccheng
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://kelekexiao.cn
+url: https://kelekexiao.cn
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
