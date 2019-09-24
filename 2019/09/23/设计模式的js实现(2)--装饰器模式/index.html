@@ -167,7 +167,7 @@
 <meta property="og:site_name" content="枫之谷">
 <meta property="og:description" content="了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了23类，分别为： 创建型模式（5种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式（11种）：策略模式、模板方法模式、观察者模式、迭代">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-24T03:43:53.767Z">
+<meta property="og:updated_time" content="2019-09-24T03:48:04.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式的js实现(2)--装饰器模式">
 <meta name="twitter:description" content="了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了23类，分别为： 创建型模式（5种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式（11种）：策略模式、模板方法模式、观察者模式、迭代">
@@ -506,7 +506,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-24 11:43:53" itemprop="dateModified" datetime="2019-09-24T11:43:53+08:00">2019-09-24</time>
+                <time title="修改时间：2019-09-24 11:48:04" itemprop="dateModified" datetime="2019-09-24T11:48:04+08:00">2019-09-24</time>
               
             
           </span>
@@ -578,23 +578,23 @@
       
         <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>上一篇中我们提到了装饰器模式，这也是一种非常实用的设计模式，主要的特点是非侵入式，能让组件功能能被更好的解耦和复用，解决了不同组件之间共享某些相同功能的难题。有时候我们并不关心函数的内部实现，仅仅想做功能增强，装饰器模式就能给我们带来良好的可读性的同时，减少我们修改需求的成本。</p>
 <p>在js中，我们可以构造一个装饰器函数，接收任何一个组件函数，返回一个增强功能的新组件，原组件其他功能不受影响，并且当该增强功能不再使用时，只需要在调用处去除包裹的装饰器函数即可，这样可插拔式的功能体验可使得代码变得简单而优雅。</p>
-<h2 id="修饰函数的修饰器实现"><a href="#修饰函数的修饰器实现" class="headerlink" title="修饰函数的修饰器实现"></a>修饰函数的修饰器实现</h2><p>正是因为装饰器模式带来的种种好处，在es7标准中已经正式引入了装饰器特性，标志符为 <code>@</code>。我们可以设定如下情况：设计一个通用型的日志补丁，能够输出组件中某些方法的调用日志的功能，我们可以这样写：</p>
+<h2 id="修饰函数的装饰器实现"><a href="#修饰函数的装饰器实现" class="headerlink" title="修饰函数的装饰器实现"></a>修饰函数的装饰器实现</h2><p>正是因为装饰器模式带来的种种好处，在es7标准中已经正式引入了装饰器特性，标志符为 <code>@</code>。我们可以设定如下情况：设计一个通用型的日志补丁，能够输出组件中某些方法的调用日志的功能，我们可以这样写：</p>
 <blockquote>
 <p>以下代码请务必在支持es7的环境下运行，如何使用请自行查阅babel相关文档</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  @decorateLog</span><br><span class="line">  addNum(num1, num2) &#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">decorateLog</span>(<span class="params">target, name, descriptor</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    value: <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;name&#125;</span>.arguments：`</span>, args);</span><br><span class="line">      <span class="keyword">return</span> descriptor.value.apply(<span class="keyword">this</span>, args);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> comp = <span class="keyword">new</span> Component();</span><br><span class="line"><span class="keyword">const</span> res = comp.addNum(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`answer is:`</span>, res); <span class="comment">// addNum.arguments：[1, 2] answer is: 3</span></span><br></pre></td></tr></table></figure>
 <p>不难看出，装饰器函数接收三个参数：被修饰对象，被修饰对象名，以及该对象属性描述符（参考<code>Object.defineProperty</code>中的<code>descriptor</code>属性），返回新的被修饰对象属性描述符。</p>
-<h2 id="修饰类的修饰器实现"><a href="#修饰类的修饰器实现" class="headerlink" title="修饰类的修饰器实现"></a>修饰类的修饰器实现</h2><p>修饰器不仅能被用于修饰类属性，甚至能够直接修饰类本身，增强类功能。这个特性也十分实用。本质上，装饰器的行为就是一个高阶函数，其作用全等于以下用法：</p>
+<h2 id="修饰类的装饰器实现"><a href="#修饰类的装饰器实现" class="headerlink" title="修饰类的装饰器实现"></a>修饰类的装饰器实现</h2><p>装饰器不仅能被用于修饰类属性，甚至能够直接修饰类本身，增强类功能。这个特性也十分实用。本质上，装饰器的行为就是一个高阶函数，其作用全等于以下用法：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">decorator</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;&#125;</span><br><span class="line">Component = decorator(Component) || Component;</span><br></pre></td></tr></table></figure>
 <p>之前在写redux相关的文章时也顺口提到过，connect这个高阶组件也能够用装饰器模式来实现，使得导出类变得更美观且易读。</p>
-<p>这是不使用修饰器的connect组件写法，高阶函数显得冗长不易读，export导出物不够明显与直观。</p>
+<p>这是不使用装饰器的connect组件写法，高阶函数显得冗长不易读，export导出物不够明显与直观。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(mapStateToProps, mapDispatchToProps)(Component);</span><br></pre></td></tr></table></figure>
 <p>使用装饰器后，写法变成了这样</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@connect(mapStateToProps, mapDispatchToProps)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Component</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>我们也参照上述写法，来实现自己的类修饰器。假设这样一种情况，我们需要对每一个类组件增添一个获取作者名的通用方法，那我们可以这样来做：</p>
+<p>我们也参照上述写法，来实现自己的类装饰器。假设这样一种情况，我们需要对每一个类组件增添一个获取作者名的通用方法，那我们可以这样来做：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@decorateAuthor</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...其他属性</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">decorateAuthor</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">  target.prototype.getAuthor = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'synccheng'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> comp = <span class="keyword">new</span> Component();</span><br><span class="line"><span class="built_in">console</span>.log(comp.getAuthor())</span><br></pre></td></tr></table></figure>
-<p>需要注意的一点的是，在js中，装饰器只能用于类和类中的方法，不能用于函数。这是因为，修饰器函数是在编译时执行，而不是在运行时执行。因此，若之间在普通函数中使用会存在函数提升的问题，即先定义函数名称，并不赋值，在被修饰函数声明时只能取到undefined的修饰器值，导致调用结果与预期不符。</p>
-<p>总而言之，在适当的时机使用修饰器模式能帮我们得到一份优雅、易读、可插拔式的代码体验，使用修饰器模式，不需要深入理解原有的代码逻辑就能直接开发新特性，在对老代码进行功能增强的时候，有着事半功倍的效果。</p>
+<p>需要注意的一点的是，在js中，装饰器只能用于类和类中的方法，不能用于函数。这是因为，装饰器函数是在编译时执行，而不是在运行时执行。因此，若之间在普通函数中使用会存在函数提升的问题，即先定义函数名称，并不赋值，在被修饰函数声明时只能取到undefined的装饰器值，导致调用结果与预期不符。</p>
+<p>总而言之，在适当的时机使用装饰器模式能帮我们得到一份优雅、易读、可插拔式的代码体验，使用装饰器模式，不需要深入理解原有的代码逻辑就能直接开发新特性，在对老代码进行功能增强的时候，有着事半功倍的效果。</p>
 
       
     </div>
@@ -890,7 +890,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰函数的修饰器实现"><span class="nav-number">2.</span> <span class="nav-text">修饰函数的修饰器实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰类的修饰器实现"><span class="nav-number">3.</span> <span class="nav-text">修饰类的修饰器实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰函数的装饰器实现"><span class="nav-number">2.</span> <span class="nav-text">修饰函数的装饰器实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰类的装饰器实现"><span class="nav-number">3.</span> <span class="nav-text">修饰类的装饰器实现</span></a></li></ol></div>
             
 
           </div>
