@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>枫之谷</title>
   
-  <subtitle>好看的皮囊千篇一律，有趣的灵魂二百多斤。</subtitle>
+  <subtitle>这个人很懒，但还是想留下些什么东西。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kelekexiao.cn/"/>
-  <updated>2019-09-24T03:48:04.743Z</updated>
+  <updated>2019-09-27T09:51:59.034Z</updated>
   <id>https://kelekexiao.cn/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>设计模式的js实现(3)--观察者模式</title>
+    <link href="https://kelekexiao.cn/2019/09/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84js%E5%AE%9E%E7%8E%B0(3)--%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://kelekexiao.cn/2019/09/26/设计模式的js实现(3)--观察者模式/</id>
+    <published>2019-09-26T02:35:19.000Z</published>
+    <updated>2019-09-27T09:51:59.034Z</updated>
+    
+    <summary type="html">
+    
+      了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了23类，分别为： 创建型模式（5种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式（11种）：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。 接下来我将针对其中常用的几种设计模式进行解读与实现，供大家参考。
+    
+    </summary>
+    
+      <category term="架构设计" scheme="https://kelekexiao.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计模式" scheme="https://kelekexiao.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>设计模式的js实现(2)--装饰器模式</title>
     <link href="https://kelekexiao.cn/2019/09/23/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84js%E5%AE%9E%E7%8E%B0(2)--%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
     <id>https://kelekexiao.cn/2019/09/23/设计模式的js实现(2)--装饰器模式/</id>
     <published>2019-09-23T03:07:08.000Z</published>
-    <updated>2019-09-24T03:48:04.743Z</updated>
+    <updated>2019-09-24T03:48:37.247Z</updated>
     
     <summary type="html">
     
@@ -391,24 +411,6 @@
     
     
       <category term="jQuery" scheme="https://kelekexiao.cn/tags/jQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>代码重构之我见</title>
-    <link href="https://kelekexiao.cn/2016/10/16/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84%E4%B9%8B%E6%88%91%E8%A7%81/"/>
-    <id>https://kelekexiao.cn/2016/10/16/代码重构之我见/</id>
-    <published>2016-10-16T12:41:33.000Z</published>
-    <updated>2019-09-23T03:11:12.450Z</updated>
-    
-    <summary type="html">
-    
-      最近在看一些软件工程和构建方面的书籍。俗话说，书读百遍，其义自见，看得多了，自然也就有一些知识可以拿得出手分享一二了。
-    
-    </summary>
-    
-      <category term="架构设计" scheme="https://kelekexiao.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
-    
     
   </entry>
   
