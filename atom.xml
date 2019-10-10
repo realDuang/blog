@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kelekexiao.cn/"/>
-  <updated>2019-09-27T09:51:59.034Z</updated>
+  <updated>2019-10-10T08:05:19.568Z</updated>
   <id>https://kelekexiao.cn/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式的js实现(4)--代理模式</title>
+    <link href="https://kelekexiao.cn/2019/10/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84js%E5%AE%9E%E7%8E%B0(4)--%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://kelekexiao.cn/2019/10/07/设计模式的js实现(4)--代理模式/</id>
+    <published>2019-10-07T08:42:54.000Z</published>
+    <updated>2019-10-10T08:05:19.568Z</updated>
+    
+    <summary type="html">
+    
+      了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了23类，分别为： 创建型模式（5种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式（11种）：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。 接下来我将针对其中常用的几种设计模式进行解读与实现，供大家参考。
+    
+    </summary>
+    
+      <category term="架构设计" scheme="https://kelekexiao.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计模式" scheme="https://kelekexiao.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式的js实现(3)--观察者模式</title>
@@ -78,10 +98,10 @@
   
   <entry>
     <title>利用 React 高阶组件实现一个面包屑导航</title>
-    <link href="https://kelekexiao.cn/2018/11/12/%E5%88%A9%E7%94%A8%20React%20%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%9D%A2%E5%8C%85%E5%B1%91%E5%AF%BC%E8%88%AA/"/>
-    <id>https://kelekexiao.cn/2018/11/12/利用 React 高阶组件实现一个面包屑导航/</id>
+    <link href="https://kelekexiao.cn/2018/11/12/%E5%88%A9%E7%94%A8react%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%9D%A2%E5%8C%85%E5%B1%91%E5%AF%BC%E8%88%AA/"/>
+    <id>https://kelekexiao.cn/2018/11/12/利用react高阶组件实现一个面包屑导航/</id>
     <published>2018-11-12T03:51:01.000Z</published>
-    <updated>2019-09-23T03:13:55.144Z</updated>
+    <updated>2019-10-10T08:02:59.446Z</updated>
     
     <summary type="html">
     
@@ -98,10 +118,10 @@
   
   <entry>
     <title>CSS常用技巧笔记</title>
-    <link href="https://kelekexiao.cn/2018/03/14/CSS%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E7%AC%94%E8%AE%B0/"/>
-    <id>https://kelekexiao.cn/2018/03/14/CSS常用技巧笔记/</id>
+    <link href="https://kelekexiao.cn/2018/03/14/css%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E7%AC%94%E8%AE%B0/"/>
+    <id>https://kelekexiao.cn/2018/03/14/css常用技巧笔记/</id>
     <published>2018-03-14T08:51:25.000Z</published>
-    <updated>2019-09-22T11:31:50.405Z</updated>
+    <updated>2019-10-10T08:02:21.650Z</updated>
     
     <summary type="html">
     
@@ -138,10 +158,10 @@
   
   <entry>
     <title>React原理深入(1)--virtual DOM</title>
-    <link href="https://kelekexiao.cn/2017/12/17/React%E5%8E%9F%E7%90%86%E6%B7%B1%E5%85%A5(1)--virtual%20DOM/"/>
-    <id>https://kelekexiao.cn/2017/12/17/React原理深入(1)--virtual DOM/</id>
+    <link href="https://kelekexiao.cn/2017/12/17/react%E5%8E%9F%E7%90%86%E6%B7%B1%E5%85%A5(1)--virtualdom/"/>
+    <id>https://kelekexiao.cn/2017/12/17/react原理深入(1)--virtualdom/</id>
     <published>2017-12-17T08:02:34.000Z</published>
-    <updated>2019-09-23T03:25:47.092Z</updated>
+    <updated>2019-10-10T08:03:36.968Z</updated>
     
     <summary type="html">
     
@@ -158,10 +178,10 @@
   
   <entry>
     <title>Redux深入理解(4)</title>
-    <link href="https://kelekexiao.cn/2017/12/04/Redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3(4)/"/>
-    <id>https://kelekexiao.cn/2017/12/04/Redux深入理解(4)/</id>
+    <link href="https://kelekexiao.cn/2017/12/04/redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3(4)/"/>
+    <id>https://kelekexiao.cn/2017/12/04/redux深入理解(4)/</id>
     <published>2017-12-04T07:22:30.000Z</published>
-    <updated>2019-09-23T03:27:22.377Z</updated>
+    <updated>2019-10-10T08:02:51.742Z</updated>
     
     <summary type="html">
     
@@ -178,10 +198,10 @@
   
   <entry>
     <title>Redux深入理解(3)</title>
-    <link href="https://kelekexiao.cn/2017/12/03/Redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3(3)/"/>
-    <id>https://kelekexiao.cn/2017/12/03/Redux深入理解(3)/</id>
+    <link href="https://kelekexiao.cn/2017/12/03/redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3(3)/"/>
+    <id>https://kelekexiao.cn/2017/12/03/redux深入理解(3)/</id>
     <published>2017-12-03T05:00:52.000Z</published>
-    <updated>2019-09-23T03:27:02.665Z</updated>
+    <updated>2019-10-10T08:02:48.801Z</updated>
     
     <summary type="html">
     
@@ -198,10 +218,10 @@
   
   <entry>
     <title>Redux深入理解(2)</title>
-    <link href="https://kelekexiao.cn/2017/12/01/Redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3(2)/"/>
-    <id>https://kelekexiao.cn/2017/12/01/Redux深入理解(2)/</id>
+    <link href="https://kelekexiao.cn/2017/12/01/redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3(2)/"/>
+    <id>https://kelekexiao.cn/2017/12/01/redux深入理解(2)/</id>
     <published>2017-12-01T04:44:56.000Z</published>
-    <updated>2019-09-23T03:26:40.729Z</updated>
+    <updated>2019-10-10T08:02:45.838Z</updated>
     
     <summary type="html">
     
@@ -218,10 +238,10 @@
   
   <entry>
     <title>Redux深入理解(1)</title>
-    <link href="https://kelekexiao.cn/2017/11/30/Redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3(1)/"/>
-    <id>https://kelekexiao.cn/2017/11/30/Redux深入理解(1)/</id>
+    <link href="https://kelekexiao.cn/2017/11/30/redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3(1)/"/>
+    <id>https://kelekexiao.cn/2017/11/30/redux深入理解(1)/</id>
     <published>2017-11-30T03:10:37.000Z</published>
-    <updated>2019-09-23T03:26:46.329Z</updated>
+    <updated>2019-10-10T08:02:42.878Z</updated>
     
     <summary type="html">
     
@@ -238,10 +258,10 @@
   
   <entry>
     <title>MongoDB极简实践入门</title>
-    <link href="https://kelekexiao.cn/2017/09/17/MongoDB%E6%9E%81%E7%AE%80%E5%AE%9E%E8%B7%B5%E5%85%A5%E9%97%A8/"/>
-    <id>https://kelekexiao.cn/2017/09/17/MongoDB极简实践入门/</id>
+    <link href="https://kelekexiao.cn/2017/09/17/mongodb%E6%9E%81%E7%AE%80%E5%AE%9E%E8%B7%B5%E5%85%A5%E9%97%A8/"/>
+    <id>https://kelekexiao.cn/2017/09/17/mongodb极简实践入门/</id>
     <published>2017-09-17T09:13:38.000Z</published>
-    <updated>2019-09-23T03:30:30.289Z</updated>
+    <updated>2019-10-10T08:02:34.382Z</updated>
     
     <summary type="html">
     
@@ -316,10 +336,10 @@
   
   <entry>
     <title>解决github+Hexo的博客多终端同步问题</title>
-    <link href="https://kelekexiao.cn/2017/05/12/%E8%A7%A3%E5%86%B3github+Hexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98/"/>
-    <id>https://kelekexiao.cn/2017/05/12/解决github+Hexo的博客多终端同步问题/</id>
+    <link href="https://kelekexiao.cn/2017/05/12/%E8%A7%A3%E5%86%B3github+hexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98/"/>
+    <id>https://kelekexiao.cn/2017/05/12/解决github+hexo的博客多终端同步问题/</id>
     <published>2017-05-12T07:51:06.000Z</published>
-    <updated>2019-09-23T03:29:57.436Z</updated>
+    <updated>2019-10-10T08:03:03.911Z</updated>
     
     <summary type="html">
     
@@ -391,26 +411,6 @@
     
     
       <category term="es5" scheme="https://kelekexiao.cn/tags/es5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jQuery判断及修改checked状态的方法</title>
-    <link href="https://kelekexiao.cn/2017/01/05/jQuery%E5%88%A4%E6%96%AD%E5%8F%8A%E4%BF%AE%E6%94%B9checked%E7%8A%B6%E6%80%81%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>https://kelekexiao.cn/2017/01/05/jQuery判断及修改checked状态的方法/</id>
-    <published>2017-01-05T08:28:03.000Z</published>
-    <updated>2019-09-23T03:25:35.316Z</updated>
-    
-    <summary type="html">
-    
-      表单中经常需要使用单选框或多选框来让用户选择，而我们经常使用jQuery来判断或改变选项中checked的状态，但是由于jQuery版本不同，判断的方法也不太一样，这个坑点在这里记录一下。
-    
-    </summary>
-    
-      <category term="常见问题集锦" scheme="https://kelekexiao.cn/categories/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
-    
-    
-      <category term="jQuery" scheme="https://kelekexiao.cn/tags/jQuery/"/>
     
   </entry>
   
