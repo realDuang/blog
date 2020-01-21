@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kelekexiao.cn/"/>
-  <updated>2019-10-10T08:05:19.568Z</updated>
+  <updated>2020-01-21T10:28:21.822Z</updated>
   <id>https://kelekexiao.cn/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React16.8 useHook特性</title>
+    <link href="https://kelekexiao.cn/2020/01/21/React16.8-useHook%E7%89%B9%E6%80%A7/"/>
+    <id>https://kelekexiao.cn/2020/01/21/React16.8-useHook特性/</id>
+    <published>2020-01-21T10:19:28.000Z</published>
+    <updated>2020-01-21T10:28:21.822Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://kelekexiao.cn/categories/JavaScript/"/>
+    
+    
+      <category term="React" scheme="https://kelekexiao.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React15与React16生命周期区别与使用方式</title>
+    <link href="https://kelekexiao.cn/2019/12/21/React15%E4%B8%8EReact16%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8C%BA%E5%88%AB%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/"/>
+    <id>https://kelekexiao.cn/2019/12/21/React15与React16生命周期区别与使用方式/</id>
+    <published>2019-12-21T09:38:35.000Z</published>
+    <updated>2020-01-21T10:01:31.601Z</updated>
+    
+    <summary type="html">
+    
+      工欲善其事，必先利其器。想要用好react这个前端View层大杀器，深入理解其工作原理必不可少。理解一个框架是如何让某种操作得到优化的至关重要，知其然也要知其所以然，它有助于我们对这个框架的正确高效的使用，这是一个前端工程师成长的必经路程。
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://kelekexiao.cn/categories/JavaScript/"/>
+    
+    
+      <category term="React" scheme="https://kelekexiao.cn/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式的js实现(4)--代理模式</title>
@@ -371,46 +417,6 @@
     
     
       <category term="es6" scheme="https://kelekexiao.cn/tags/es6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js学习笔记梳理(2)</title>
-    <link href="https://kelekexiao.cn/2017/02/20/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%A2%B3%E7%90%86(2)/"/>
-    <id>https://kelekexiao.cn/2017/02/20/js学习笔记梳理(2)/</id>
-    <published>2017-02-20T14:08:38.000Z</published>
-    <updated>2019-09-23T03:13:02.849Z</updated>
-    
-    <summary type="html">
-    
-      最近在梳理关于js一些原理层次的东西，感觉学的有点乱，是时候整理沉淀一下记录成文字了。在我看来，最难理解的核心就两点，一是对闭包的理解，二是对原型链的深入。
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://kelekexiao.cn/categories/JavaScript/"/>
-    
-    
-      <category term="es5" scheme="https://kelekexiao.cn/tags/es5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js学习笔记梳理(1)</title>
-    <link href="https://kelekexiao.cn/2017/02/10/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%A2%B3%E7%90%86(1)/"/>
-    <id>https://kelekexiao.cn/2017/02/10/js学习笔记梳理(1)/</id>
-    <published>2017-02-09T17:11:38.000Z</published>
-    <updated>2019-09-23T03:12:47.497Z</updated>
-    
-    <summary type="html">
-    
-      最近在梳理关于js一些原理层次的东西，感觉学的有点乱，是时候整理沉淀一下记录成文字了。在我看来，最难理解的核心就两点，一是对闭包的理解，二是对原型链的深入。
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://kelekexiao.cn/categories/JavaScript/"/>
-    
-    
-      <category term="es5" scheme="https://kelekexiao.cn/tags/es5/"/>
     
   </entry>
   

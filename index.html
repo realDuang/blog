@@ -443,6 +443,373 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kelekexiao.cn/2020/01/21/React16.8-useHook特性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Synccheng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="枫之谷">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/01/21/React16.8-useHook特性/" class="post-title-link" itemprop="https://kelekexiao.cn/index.html">React16.8 useHook特性</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-01-21 18:19:28 / 修改时间：18:28:21" itemprop="dateCreated datePublished" datetime="2020-01-21T18:19:28+08:00">2020-01-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/21/React16.8-useHook特性/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/01/21/React16.8-useHook特性/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>React16.8迎来了大众期盼已久的函数式编程利器：<code>useHook</code>特性。它能大大增强函数式组件的能力，使得立即执行的、没有生命周期与state等等类组件特性的函数式组件拥有相同的能力。</p>
+<p><code>useHook</code>的原理实际上是利用了JavaScript的闭包机制，因此在多次执行函数的同时记住一些状态。</p>
+<p><code>useHook</code>拥有多种函数，我们也可以自定义自己的hook。在这里主要来说说其中最常用的两种，简述他们的大致原理，以及使用时的注意事项。</p>
+<h1 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h1><p><code>useState</code>就是为了给纯函数组件加入class组件中的state能力。它返回一个有两个元素的数组，第一个元素是需要设置的state变量，第二个是改变这个变量的setter函数。<code>useState</code>的入参决定了返回变量的初始值。</p>
+<p>在每一次执行setter之后，使用了<code>useState</code>的整个函数组件都会被重新执行一次。但是此时<code>useState</code>函数本身并不会被再次执行。这是因为实际上，<code>useState</code>利用了闭包的特性，在闭包内设置了一个私有变量。事实上setter改变的值是这个私有变量，我们能取出的变量是这个私有变量的getter返回值。</p>
+<p>注意，只能在函数的最外层调用Hook，不能在循环、条件判断或子函数中使用。</p>
+<p>这是因为，为了支持在同一个函数组件中使用多次<code>useState</code>，在闭包中，被<code>useState</code>的赋值的私有变量本质上是一个数组类型，通过函数首次被调用的<code>useState</code>的顺序来决定被赋值变量的索引位置，最后getter通过索引顺序找到希望取得的变量值。若在循环、条件判断或子函数中使用，则有可能造成函数组件重新执行时顺序与首次执行不一致，这将导致<code>useState</code>的取值混乱。</p>
+<h1 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h1><p>useEffect为纯函数组件提供了class组件中的<code>componentDidMount</code>、<code>componentDidUpdate</code>、<code>componentWillUnMount</code>、<code>shouldComponentUpdate</code>这些生命周期能力。</p>
+<p>useEffect接收两个参数，第一个参数是一个函数，在函数中执行的动作相当于完成了<code>componentDidMount</code>、<code>componentDidUpdate</code>的工作，因为纯函数组件没有首次渲染和更新渲染的概念。该函数的返回值也是一个函数，若不为空的话它执行的时机等同于<code>componentWillUnMount</code>。</p>
+<p>第二个参数是一个数组，传入的是需要监听props的变量，若填写该值，则每次props更新时，若变更变量不在监听范围内，则不更新组件，相当于<code>shouldComponentUpdate</code>。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kelekexiao.cn/2019/12/21/React15与React16生命周期区别与使用方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Synccheng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="枫之谷">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/12/21/React15与React16生命周期区别与使用方式/" class="post-title-link" itemprop="https://kelekexiao.cn/index.html">React15与React16生命周期区别与使用方式</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-21 17:38:35" itemprop="dateCreated datePublished" datetime="2019-12-21T17:38:35+08:00">2019-12-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-01-21 18:01:31" itemprop="dateModified" datetime="2020-01-21T18:01:31+08:00">2020-01-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/12/21/React15与React16生命周期区别与使用方式/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/12/21/React15与React16生命周期区别与使用方式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          工欲善其事，必先利其器。想要用好react这个前端View层大杀器，深入理解其工作原理必不可少。理解一个框架是如何让某种操作得到优化的至关重要，知其然也要知其所以然，它有助于我们对这个框架的正确高效的使用，这是一个前端工程师成长的必经路程。
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/12/21/React15与React16生命周期区别与使用方式/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://kelekexiao.cn/2019/10/07/设计模式的js实现(4)--代理模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -992,382 +1359,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kelekexiao.cn/2019/09/20/设计模式的js实现(1)--单例模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Synccheng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="枫之谷">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/09/20/设计模式的js实现(1)--单例模式/" class="post-title-link" itemprop="https://kelekexiao.cn/index.html">设计模式的js实现(1)--单例模式</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-20 16:58:52" itemprop="dateCreated datePublished" datetime="2019-09-20T16:58:52+08:00">2019-09-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-09-23 11:30:43" itemprop="dateModified" datetime="2019-09-23T11:30:43+08:00">2019-09-23</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/架构设计/" itemprop="url" rel="index"><span itemprop="name">架构设计</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/20/设计模式的js实现(1)--单例模式/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/09/20/设计模式的js实现(1)--单例模式/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了23类，分别为： 创建型模式（5种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式（11种）：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。 接下来我将针对其中常用的几种设计模式进行解读与实现，供大家参考。
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/20/设计模式的js实现(1)--单例模式/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kelekexiao.cn/2018/11/12/利用react高阶组件实现一个面包屑导航/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Synccheng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="枫之谷">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/12/利用react高阶组件实现一个面包屑导航/" class="post-title-link" itemprop="https://kelekexiao.cn/index.html">利用 React 高阶组件实现一个面包屑导航</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-12 11:51:01" itemprop="dateCreated datePublished" datetime="2018-11-12T11:51:01+08:00">2018-11-12</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-10-10 16:02:59" itemprop="dateModified" datetime="2019-10-10T16:02:59+08:00">2019-10-10</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/12/利用react高阶组件实现一个面包屑导航/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/12/利用react高阶组件实现一个面包屑导航/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          在工作中，我们经常会有很多功能相似，组件代码重复的页面需求，通常我们可以通过完全复制一遍代码的方式实现功能，但是这样页面的维护可维护性就会变得极差，需要对每一个页面里的相同组件去做更改。因此，我们可以将其中共同的部分，比如接受相同的查询操作结果、组件外同一的标签包裹等抽离出来，做一个单独的函数，并传入不同的业务组件作为子组件参数，而这个函数不会修改子组件，只是通过组合的方式将子组件包装在容器组件中，是一个无副作用的纯函数，从而我们能够在不改变这些组件逻辑的情况下将这部分代码解耦，提升代码可维护性。
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/12/利用react高阶组件实现一个面包屑导航/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1417,7 +1408,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1575,7 +1566,7 @@
 
       <footer id="footer" class="footer">
 	<div class="footer-inner">
-	  <div class="copyright">  <a href="http://www.miitbeian.gov.cn" rel="noopener" target="_blank">kelekexiao.cn </a>&copy; 2016 – <span itemprop="copyrightYear">2019</span>
+	  <div class="copyright">  <a href="http://www.miitbeian.gov.cn" rel="noopener" target="_blank">kelekexiao.cn </a>&copy; 2016 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
