@@ -3,7 +3,6 @@ title: Redux深入理解(4)
 date: 2017-12-04 15:22:30
 categories: "JavaScript"
 tags: "React"
-description: "学习react的过程中，redux的熟练掌握是一个绕不开并且很难绕过去的坎。接触react已经有一段时间了，甚至连一些小项目都用react做了不少了，但redux的使用上还是有诸多不理解不熟练的地方。正好有很长一段时间没有更过博客了，就从这里着手，增强一下自己的理解。"
 ---
 
 这一节主要来讲讲redux在react项目中的具体使用。
