@@ -19,8 +19,6 @@ tags: "React"
 >
 > - 不能调用`Date.now()`或者`Math.random()`等不纯的方法，因为每次会得到不一样的结果
 
-
-
 我们知道，处理业务逻辑的过程中不可避免的要用到异步操作，而reducer是一个纯函数，无法完成这项使命，那怎么办呢？
 
 这又是一个非常复杂的故事了。
@@ -53,7 +51,4 @@ const store = createStore(
 
 另外，中间件的传入是有顺序讲究的，涉及到执行顺序的问题，通过redux中`applyMiddleware`的源码中可以看出，`applyMiddleware(middleware1，middleware2，middleware3)`的实际执行顺序为`store.dispatch`=>`middleware1`=>`middleware2`=>`middleware3`。这一点一定要非常小心，比如著名的redux-logger中间件是用来记录操作日志的，一定要放在最后一个参数中以便第一时间执行。
 
-
-
 redux中间件的各种组件可谓是博大精深，有各种各样好用的中间件让人去探索学习，本文着重讲解redux本身的原理，对中间件插件就不多做介绍了。
-

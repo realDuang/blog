@@ -27,7 +27,7 @@ jquery1.6+: prop的4种赋值:
 
 ```js
 $("#cb1″).prop("checked", true);  
-$("#cb1″).prop({ checked: true }); 
+$("#cb1″).prop({ checked: true });
 $("#cb1″).prop("checked", function() {
   return true; //函数返回 true 或 false
 });

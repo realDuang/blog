@@ -9,7 +9,7 @@ tags: "git"
 
 git是现如今最火的版本控制工具，尽管已经使用了github数年的时间了，但一直没有对git命令以及作用进行深入的分析和学习，对git的使用还仅停留在add、commit、push、clone上，这根本算不得掌握git。因此，这次一得出空来就开始从头恶补git知识了，分享出来与大家一同学习进步。
 
--------
+---
 
 ## 文件指针
 
@@ -19,35 +19,35 @@ git是现如今最火的版本控制工具，尽管已经使用了github数年�
 
 ## 文件版本控制操作
 
-1. git add <file>          // 将文件的修改从工作区添加至暂存区(staged)
+1. git add < file >          // 将文件的修改从工作区添加至暂存区(staged)
 
-2. git rm <file>            // 将删除文件这样一个修改操作提交到暂存区
+2. git rm < file >            // 将删除文件这样一个修改操作提交到暂存区
 
 3. git commit            // 将暂存区的所有修改提交入库
 
-   -m参数 填写提交内容的说明，--amend表示回退最近一次commit重新编写内容说明。
+   -m参数 填写提交内容的说明。
+
+   --amend表示回退最近一次commit重新编写内容说明。
 
    -a相当于自动做了一次`git add .`操作。
 
-
-
-
-
-4. git checkout -- <file>
+4. git checkout -- < file >
 
    checkout命令有两种作用，后面加上 -- （注意两边都有空格，是一个独立参数）后的意思是，将文件同步成版本库中最新的状态。相当于取消当前工作区的所有更改。但是这个操作不会影响暂存区(staged)中的内容。
 
-   这对本地已经删除但还没有git rm的文件同样适用，能够恢复本地工作区的文件。
+   这对本地已经删除但还没有git rm的文件同样适用，能够恢复本地工作区的文件。需要注意的是，此操作不可逆，工作区的修改中的文件内容将无法恢复。
 
    但如果要修改的文件已经在暂存区的话，无论是git add还是git rm，就只能通过git reset恢复了，接下来介绍。
 
    git checkout的另外一种意思在下面介绍。
 
+   更新：git2.23新增语法糖`git restore`命令，更语义化的本地修改撤销操作。
 
+   `git restore < file >` 作用效果与`git checkout -- < file >`相同，都是表示将工作区的修改全部取消。
 
+   而若加入--staged参数，则是表示将缓存区的文件撤销回工作区的意思，等价于`git reset HEAD`。
 
-
-5. git reset <hash>
+5. git reset < hash >
 
    这是个功能及其强大也及其复杂的命令。它表示在本地库回滚状态。
 
@@ -63,30 +63,55 @@ git是现如今最火的版本控制工具，尽管已经使用了github数年�
 
    --mixed，为git reset的默认参数，混合了--hard与--soft的特点，它也将文件的状态与HEAD指针都回退到指定版本的位置，但只将暂存区与该版本强制同步，工作区的内容不会被更改。并且它也不会剔除
 
-   一张图能很好的说明上述操作的所有功能：
+6. git stash  // 修改代码的临时存储
 
+   对于还没有commit但是被git跟踪到了的代码，如果需要临时存储一下可以使用`git stash`命令，会建立一个栈来存储当前的修改代码。
 
+   需要恢复时，可以使用`git stash pop`恢复最后一次临时存储的代码。若想恢复其他时间存储过的代码，使用`git stash list`查看所有被临时存储了的代码，然后找到某一次存储的stash id，然后使用`git stash drop stash@< id >`来进行恢复。
 
+   加入--include-untracked参数可以存储未被加入git跟踪的代码。
 
-6. git merge <branch>        // 将该分支合并进当前分支
+   使用`git stash clear`删除所有被临时存储的stash记录。
+
+7. git merge < branch >        // 将该分支合并进当前分支
 
    这里的merge分`fast-forward`和`recursive`等模式，但git都能自动匹配最佳方案，就不提了。
 
-   要注意的是，合并过程中可能产生文件冲突。这时，当前分支会变为名叫`<branch>|MERGING`的临时分支，需要手动解决后，再次git add，git commit，才能产生新的合并提交。
+   要注意的是，合并过程中可能产生文件冲突。这时，当前分支会变为名叫`<branch>|MERGING`的临时分支，需要手动解决后，使用`git merge --continue`，才能产生新的合并提交。若要取消这次合并，使用`git merge --abort`即可。
 
-   ![](https://ws1.sinaimg.cn/large/c527bb18gy1fn3alf1wl1j20fb08t3yx.jpg)
+8. git rebase < hash >        // 分支历史的变基
 
-   ​
+   这个命令是在不希望产生合并的分支历史的特殊要求下使用的，对清理出一条干净的git提交线非常有帮助。
 
-7. git rebase <branch>        // 分支的衍合
+   加入-i参数增加分布操作，能够使操作图形化，推荐使用时添加。
 
-   这个命令是在不希望产生合并的分支历史的特殊要求下使用的，功能方面大致类比git merge。因为不太常用，不做仔细介绍了。
+   命令参数:
 
-   ![](https://ws1.sinaimg.cn/large/c527bb18gy1fn3am5cjahj20i408u0t7.jpg)
+   p, pick <提交> = 使用提交
 
-8. git push <remote> <branch>        // 将本地某个分支的更新推送到远程
+   r, reword <提交> = 使用提交，但修改提交说明
 
-   其中本地分支名可以与远程分支名不同步，将<branch>部分改写为`<本地分支名>:<远程分支名>`即可。
+   e, edit <提交> = 使用提交，进入 shell 以便进行提交修补
+
+   s, squash <提交> = 使用提交，但融合到前一个提交
+
+   f, fixup <提交> = 类似于 "squash"，但丢弃提交说明日志
+
+   x, exec <命令> = 使用 shell 运行命令（此行剩余部分）
+
+   b, break = 在此处停止（使用 'git rebase --continue' 继续变基）
+
+   d, drop <提交> = 删除提交
+
+   l, label < label > = 为当前 HEAD 打上标记
+
+   t, reset < label > = 重置 HEAD 到该标记
+
+   m, merge [-C < commit > | -c < commit >] < label > [# < oneline >] 创建一个合并提交，并使用原始的合并提交说明
+
+9. git push < remote > < branch >        // 将本地某个分支的更新推送到远程
+
+   其中本地分支名可以与远程分支名不同步，将< branch >部分改写为`<本地分支名>:<远程分支名>`即可。
 
    这里还有一个特殊操作，如果不指定本地分支名，像是`:<远程分支名>`这样，表示删除该远程分支。
 
@@ -102,16 +127,15 @@ git是现如今最火的版本控制工具，尽管已经使用了github数年�
 
    --tags，推送时将本地的tags标签也推送上去（默认不推送）。
 
+10. git pull < remote > < branch >        // 取回远程主机某个分支的更新。
 
+   功能相当于同时执行了`git fetch`与`git merge`。参数大致与`git push`相同，就不多做介绍了。
 
-9. git pull <remote> <branch>        // 取回远程主机某个分支的更新。
+11. git revert < hash >   // 分支的回滚操作
 
-   功能相当于同时执行了git fetch与git merge。参数大致与git push 相同，就不多做介绍了。
+   与`git reset`的区别在于revert不会更改或删除原有的提交记录，反而会生成一条新的提交。对于线上代码或者多人使用的回滚来说一定要使用revert而不是reset，尽量不要修改多人合作分支的时间线。
 
-10. git pull <remote> <branch>        // 取回远程主机某个分支的更新。
-
-  功能相当于同时执行了git fetch与git merge。参数大致与git push 相同，就不多做介绍了。
-
+   加入-n参数能将多次回滚，合并成一次commit。如果不加-n，回滚了多少条commit就会新生成多少条commit。
 
 ## 状态信息查看操作
 
@@ -119,29 +143,23 @@ git是现如今最火的版本控制工具，尽管已经使用了github数年�
 
    `-v`选项，可以参看远程主机的网址。
 
-   git remote add <主机名>，添加远程主机。
+   git remote add <主机名> < git地址 >，添加远程主机。
 
    git remote rm <主机名>，删除远程主机。
-
-   ​
 
 2. git branch        // 查看该版本的所有分支
 
    默认只查看本地分支。`-r`选项，可以用来查看远程分支，`-a`选项查看所有分支。
 
-   git branch <branch>
+   git branch < branch >
 
    表示新建分支。（若分支已存在，则报错。）
 
-   ​
-
-3. git checkout <branch>
+3. git checkout < branch >
 
    又是这个命令，但是注意，这一次没有`--`命令，它表示将工作区跳转到该分支上。
 
    若不存在该分支，可以使用`-b`参数新建该分支并跳转到该分支上。
-
-   ​
 
 4. git status        // 查看当前的工作区和暂存区文件修改
 
@@ -163,10 +181,4 @@ git是现如今最火的版本控制工具，尽管已经使用了github数年�
 
    -[number]，表示只显示最后提交的若干列信息。
 
-   ​
-
 7. gitk                  // git log 的图形化界面版本
-
-
-
-不断更新~

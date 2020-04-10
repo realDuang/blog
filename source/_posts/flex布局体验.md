@@ -1,5 +1,5 @@
 ---
-title: flex布局初体验
+title: flex布局体验
 date: 2017-05-25 14:17:25
 categories: "CSS"
 tags: "css"
@@ -40,5 +40,4 @@ demo分割线
 
 然后附上我的实现代码：[flex_demo](https://github.com/kelekexiao123/markdown-image/blob/master/flex-test.html)
 
-因为我也是新手嘛，如果大家有什么更好的想法和建议，欢迎留言或者pull request呐～
-
+如果大家有什么更好的想法和建议，欢迎留言或者pull request呐～

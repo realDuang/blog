@@ -1,5 +1,5 @@
 ---
-title: CSS常用技巧笔记
+title: css的垂直居中方法
 date: 2018-03-14 16:51:25
 categories: "CSS"
 tags: "css"
@@ -9,16 +9,18 @@ tags: "css"
 
 CSS是每一个前端工程师都绕不过去的坎，熟练运用CSS后，实现同样一种效果我们可以有很多种写法，但由于兼容问题，通常简洁的写法并不能实现全平台统一效果，复杂的写法对性能又不太友好，导致我们在编写CSS过程中有很多需要注意的点，要踩很多的坑，因此用一个笔记来集中记录一下方法。
 
--------
+---
 
 (为方便表达代码，在此定义html结构为：
+
 ```html
   <div class="parent">
     <div class="target"></div>
-  </div> 
+  </div>
 ```
 
 默认的css样式为：
+
 ```css
   .parent {
     background-color: #ccc;
@@ -33,21 +35,23 @@ CSS是每一个前端工程师都绕不过去的坎，熟练运用CSS后，实�
 ```
 
 行内元素html结构改为：
+
 ```html
   <div class="parent">
     <label class="target">Duang</label>
   </div>
 ```
+
 css样式改为：
+
 ```css
   .target {
     background-color: #eee;
     font-size: 25px;
   }
 ```
+
 以下无特殊说明的话结构都使用这个)
-
-
 
 ## 水平居中
 
@@ -61,7 +65,7 @@ css样式改为：
   }
 ```
 
-![](http://ww1.sinaimg.cn/large/c527bb18gy1fpf1gom7jgj20d80bv3yd.jpg)
+![text-align](http://ww1.sinaimg.cn/large/c527bb18gy1fpf1gom7jgj20d80bv3yd.jpg)
 
 2. 块状元素
 
@@ -69,13 +73,11 @@ css样式改为：
 
 ```css
   .target {
-    margin: 0 auto;      
+    margin: 0 auto;
   }
 ```
 
-![](http://ww1.sinaimg.cn/large/c527bb18gy1fpf0c51dkpj20cn0c3744.jpg)
-
-
+![margin-0-auto](http://ww1.sinaimg.cn/large/c527bb18gy1fpf0c51dkpj20cn0c3744.jpg)
 
 ## 垂直居中
 
@@ -92,7 +94,7 @@ css样式改为：
   }
 ```
 
-![](http://ww1.sinaimg.cn/large/c527bb18gy1fpf1ei97zrj20dl0bpq2t.jpg)
+![line-height](http://ww1.sinaimg.cn/large/c527bb18gy1fpf1ei97zrj20dl0bpq2t.jpg)
 
 2. 行内元素多行居中
 
@@ -106,9 +108,7 @@ css样式改为：
   }
 ```
 
-![](http://ww1.sinaimg.cn/large/c527bb18gy1fpf1sw2qc6j20cv0btq32.jpg)
-
-
+![table-cell](http://ww1.sinaimg.cn/large/c527bb18gy1fpf1sw2qc6j20cv0btq32.jpg)
 
 ## 水平垂直居中
 
@@ -133,9 +133,10 @@ css样式改为：
     transform: translate(-50%, -50%);
   }
 ```
+
 (注：其实这里可以不用知道父子元素高度，为了方便显示才使用)
 
-![](http://ww1.sinaimg.cn/large/c527bb18gy1fpeycpucu1j20g10c5dfp.jpg)
+![absolute-top-left](http://ww1.sinaimg.cn/large/c527bb18gy1fpeycpucu1j20g10c5dfp.jpg)
 
 2. 如果已知父元素的高度，并且子元素有且只有一个的话，完全可以只对子元素使用相对定位完成同样的效果：
 
@@ -148,7 +149,7 @@ css样式改为：
   }
 ```
 
-![](http://ww1.sinaimg.cn/large/c527bb18gy1fpeycpucu1j20g10c5dfp.jpg)
+![relative-top-left](http://ww1.sinaimg.cn/large/c527bb18gy1fpeycpucu1j20g10c5dfp.jpg)
 
 3. 如果想实现多个子元素自适应的同时水平垂直居中，同时浏览器兼容性也支持的不错的话，推荐使用简单方便的flex布局。仅仅只设定父元素display属性为flex即可。
 
@@ -160,7 +161,7 @@ css样式改为：
   }
 ```
 
-![](http://ww1.sinaimg.cn/large/c527bb18gy1fpezr0dmvhj20ed0cbmx2.jpg)
+![flex](http://ww1.sinaimg.cn/large/c527bb18gy1fpezr0dmvhj20ed0cbmx2.jpg)
 
 4. 附加一个兼容性更好但是不太推荐的方法，就是由刚才多行行内元素垂直居中衍生出来的，再加一行行内水平居中的代码就能解决了。
 
@@ -173,11 +174,7 @@ css样式改为：
   }
 ```
 
-![](http://ww1.sinaimg.cn/large/c527bb18gy1fpf20akarxj20cm0bywel.jpg)
+![table-cell](http://ww1.sinaimg.cn/large/c527bb18gy1fpf20akarxj20cm0bywel.jpg)
 
 不太推荐的原因同垂直居中时说的。
 而且想实现这个效果还不如直接用一个块状元素包裹这些行内元素，然后再用块状元素的水平垂直居中即可，当然显示方式可能会有少许的不同，自己斟酌使用吧~
-
-
-
-持续更新~

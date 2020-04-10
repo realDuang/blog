@@ -37,7 +37,7 @@ UI组件不负责任何的交互逻辑，只负责展示，类比于纯函数，
 
 我在[redux深入理解（一）](http://kelekexiao.cn/2017/11/30/redux%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89/)里面悄悄的提到了一个东西：context，也就是上下文，它可以实现祖先与后台之间的状态直接传值。这个特性被`react-redux`利用了，放入了Provider组件中。
 
-<Provider>组件直接包裹在需要调用全局store的根组件的外层，然后传入属性store，即可在该根组件的任何后代组件中直接拿到state数据了。
+`Provider`组件直接包裹在需要调用全局store的根组件的外层，然后传入属性store，即可在该根组件的任何后代组件中直接拿到state数据了。
 
 如果你的项目还需要用到react-router的话，Provider组件应包裹在router组件的外层。
 
@@ -48,8 +48,6 @@ UI组件不负责任何的交互逻辑，只负责展示，类比于纯函数，
   </Router>
 </Provider>
 ```
-
-
 
 ## `connect(mapStateToProps, mapDispatchToProps)(App)`
 
@@ -87,7 +85,7 @@ const mapDispatchToProps = {
     const action = {
       type: 'SET_CURRENT_TARGET',
       payload: {
-         target: e.target       
+         target: e.target
       }
     }
     return action
@@ -104,11 +102,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch({
         type: 'SET_CURRENT_TARGET',
         payload: {
-           target: e.target       
+           target: e.target
         }
       });
     }
   };
 }
 ```
-

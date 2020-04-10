@@ -60,13 +60,11 @@ const reducer = (state, action) => {
         ...state,
         count: state.count - action.payload.num;
       }
-    default: 
+    default:
       return state;
   }
 };
 ```
-
-
 
 一行代码简单来说就是`(oldState, action) => newState`。由于`reducer`是直接替换`state`，因此`reducer`必须有返回值。不然整个redux就会得不到`state`了。
 
@@ -81,9 +79,4 @@ const actions = [
 const newState = actions.reduce(reducer, state); // {..., count: 3}
 ```
 
-
-
 由于redux中，`reducer`和`state`一样，也是唯一的，因此如果我们需要根据不同的处理逻辑分割`reducer`的话，需要用`combineReducers({reducer})`将这些`reducer`合并成一个`rootReducer`。
-
-
-
