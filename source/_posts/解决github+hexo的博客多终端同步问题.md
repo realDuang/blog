@@ -1,13 +1,14 @@
 ---
 title: 解决github+Hexo的博客多终端同步问题
+categories: git
+tags: git
+abbrlink: 28d
 date: 2017-05-12 15:51:06
-categories: "git"
-tags: "git"
 ---
 
-本文转载自：[http://blog.csdn.net/Monkey_LZL/article/details/60870891](http://blog.csdn.net/Monkey_LZL/article/details/60870891)
+解决github+Hexo的博客多终端同步的思路是将博文内容相关文件放在Github项目中master中，将Hexo配置写博客用的相关文件放在Github项目的hexo分支上，这个是关键，多终端的同步只需要对分支hexo进行操作。
 
->解决github+Hexo的博客多终端同步的思路是将博文内容相关文件放在Github项目中master中，将Hexo配置写博客用的相关文件放在Github项目的hexo分支上，这个是关键，多终端的同步只需要对分支hexo进行操作。
+<!-- more -->
 
 下面是详细的步骤讲解：
 
@@ -73,3 +74,5 @@ git commit -m "XX"
 git push origin hexo
 hexo d -g
 ```
+
+本文转载自：[http://blog.csdn.net/Monkey_LZL/article/details/60870891](http://blog.csdn.net/Monkey_LZL/article/details/60870891)

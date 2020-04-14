@@ -1,12 +1,16 @@
 ---
-title: "jQuery判断及修改checked状态的方法"
+title: jQuery判断及修改checked状态的方法
+categories: 常见问题集锦
+tags: jQuery
+description: >-
+  表单中经常需要使用单选框或多选框来让用户选择，而我们经常使用jQuery来判断或改变选项中checked的状态，但是由于jQuery版本不同，判断的方法也不太一样，这个坑点在这里记录一下。
+abbrlink: 634e
 date: 2017-01-05 16:28:03
-categories: "常见问题集锦"
-tags: "jQuery"
-description: "表单中经常需要使用单选框或多选框来让用户选择，而我们经常使用jQuery来判断或改变选项中checked的状态，但是由于jQuery版本不同，判断的方法也不太一样，这个坑点在这里记录一下。"
 ---
 
----
+表单中经常需要使用单选框或多选框来让用户选择，而我们经常使用jQuery来判断或改变选项中checked的状态，但是由于jQuery版本不同，判断的方法也不太一样，这个坑点在这里记录一下。
+
+<!-- more -->
 
 ```js
 .attr("checked"): //1.6+返回: "checked"或"undefined"; 1.5以下返回: true/false

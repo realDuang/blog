@@ -1,8 +1,9 @@
 ---
 title: React15与React16生命周期区别与使用方式
+categories: JavaScript
+tags: React
+abbrlink: 1cec
 date: 2019-12-21 17:38:35
-categories: "JavaScript"
-tags: "React"
 ---
 
 ## 为什么要变更生命周期
@@ -19,6 +20,8 @@ tags: "React"
 >
 > componentWillUpdate
 
+<!-- more -->
+
 很多开发者在`componentWillMount`或是`componentWillUpdate`里调用请求的原因是期望请求回更新的状态能在render之前刷新，但这样是不可能的，无论请求相应速度多快，异步操作的返回逻辑执行都会被安排在下一次tick之后，页面还是会被render两次。
 
 而在`componentWillReceiveProps`写同步逻辑也会存在一些问题，如当父组件传入的props变更非常频繁的时候，`componentWillReceiveProps`的调用次数是非常多的，但若是将这些逻辑放入render及以后的周期函数中则并不会这样，这是因为react进行setState的时候是会通过`transaction`进行合并的，实际render的执行次数并不会增多。
@@ -27,7 +30,11 @@ tags: "React"
 
 但仍然有开发者需要在render之前获取到props的更新，因此官方增加了新的生命周期函数`getDrivedStateFromProps`。它的作用其实与`componentWillReceiveProps`差不多，但优势在于在多次变更props操作的过程中，它与render一样，只更新一次。
 
+我画了一张图来清晰地展示React新旧生命周期过程的对比：
+
 ![React新旧生命周期对比.png](https://raw.githubusercontent.com/kelekexiao123/blog-storage/master/images/React%E6%96%B0%E6%97%A7%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%AF%B9%E6%AF%94.png)
+
+## componentWillXX生命周期函数的替代者
 
 首先来看看这个新增引入的生命周期函数：
 
