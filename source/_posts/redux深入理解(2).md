@@ -1,8 +1,9 @@
 ---
 title: Redux深入理解(2)
+categories: JavaScript
+tags: React
+abbrlink: 8db4
 date: 2017-12-01 12:44:56
-categories: "JavaScript"
-tags: "React"
 ---
 
 在理解了redux的作用原理后，我们来看看redux的基本概念。
@@ -22,6 +23,8 @@ tags: "React"
 > `subscribe(listener)` ：可以理解成是 DOM 中的 addEventListener ，也就是我在上一篇里说过的发布订阅模式中的订阅方法，在redux的使用中，这个方法通常不需要手动使用，一般会放在setState方法中。
 >
 > `replaceReducer(nextReducer)` ：这个不太常用，一般在 Webpack Code-Splitting 按需加载的时候用获取state的方式：
+
+<!-- more -->
 
 这几个方法中，`dispatch`函数略微难理解一点，单独提出来说说。
 

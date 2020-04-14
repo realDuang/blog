@@ -1,8 +1,9 @@
 ---
 title: Redux深入理解(4)
+categories: JavaScript
+tags: React
+abbrlink: 2db7
 date: 2017-12-04 15:22:30
-categories: "JavaScript"
-tags: "React"
 ---
 
 这一节主要来讲讲redux在react项目中的具体使用。
@@ -10,6 +11,8 @@ tags: "React"
 将学的新知识新组件集成进项目里是初学者最大的障碍，这也是我最初学习redux的时候很难有进展的原因。redux的源码体积很小，加起来连1k行都不到，利用的原理在之前已经说过，也很好理解，但由于redux只是flux对react的一种优化，但并不只是服务于react，如果你愿意，在vue中使用redux也是完全可行的，毕竟状态管理的思想还是不会变的嘛。
 
 因此我们需要一个redux与react之间的连接件来方便我们的搭建，这就是`react-redux`。也是我们将redux合并进react最后也是最大的难点。
+
+<!-- more -->
 
 ## `react-redux`的总体思想
 

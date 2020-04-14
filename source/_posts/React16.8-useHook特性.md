@@ -1,8 +1,9 @@
 ---
 title: React16.8 useHook特性
+categories: JavaScript
+tags: React
+abbrlink: 6b60
 date: 2020-01-21 18:19:28
-categories: "JavaScript"
-tags: "React"
 ---
 
 React16.8迎来了大众期盼已久的函数式编程利器：`useHook`特性。它能大大增强函数式组件的能力，使得立即执行的、没有生命周期与state等等类组件特性的函数式组件拥有相同的能力。
@@ -10,6 +11,8 @@ React16.8迎来了大众期盼已久的函数式编程利器：`useHook`特性�
 `useHook`的原理实际上是利用了JavaScript的闭包机制，因此在多次执行函数的同时记住一些状态。
 
 `useHook`拥有多种函数，我们也可以自定义自己的hook。在这里主要来说说其中最常用的几种，简述他们的大致原理，以及使用时的注意事项。
+
+<!-- more -->
 
 ## useState
 

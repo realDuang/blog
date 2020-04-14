@@ -6,7 +6,7 @@
 title: 枫之谷
 subtitle: 这个人很懒，但还是想留下些什么东西。
 description:
-author: Synccheng
+author: Chrison Chan
 language: zh-CN
 timezone:
 
@@ -14,7 +14,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://kelekexiao.cn
 root: /
-permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink/
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -40,7 +40,7 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace: ' '
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -49,7 +49,7 @@ index_generator:
   path: ''
   per_page: 5
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -85,19 +85,19 @@ deploy:
   branch: master
 
 sitemap:
-    path: sitemap.xml
+  path: sitemap.xml
 baidusitemap:
-    path: baidusitemap.xml
+  path: baidusitemap.xml
 
 feed:
-    type: atom
-    path: atom.xml
-    limit: 20
-    hub:
-    content:
-    content_limit: 140
-    content_limit_delim: ' '
-    order_by: -date
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
 
 jsonContent:
   meta: false
@@ -123,7 +123,7 @@ search:
   field: post
   format: html
   limit: 10000
-  
+
 live2d:
   enable: true
   scriptFrom: local
@@ -137,12 +137,32 @@ live2d:
     scale: 0.75
   display:
     position: right
+    hOffset: 0
+    vOffset: -80
   mobile:
-    show: true
+    show: false
   dialog:
     enable: true
     hitokoto: true
   react:
     opacityDefault: 0.8
-    opacityOnHover: 1
+    opacityOnHover: 0.2
 
+symbols_count_time:
+  # 文章上部是否显示字数
+  symbols: true
+  # 文章上部是否显示阅读时间
+  time: true
+  # 站点底端是否显示站点总字数
+  total_symbols: false
+  # 站点底端是否显示总阅读时间
+  total_time: false
+  # 是否移除代码块
+  exclude_codeblock: false
+  awl: 4
+  wpm: 200
+
+# abbrlink config 把标题转成唯一的英文或数字字符串
+abbrlink:
+  alg: crc16  #support crc16(default) and crc32
+  rep: hex    #support dec(default) and hex

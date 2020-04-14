@@ -1,9 +1,9 @@
 ---
 title: es6学习笔记
-date: 2017-4-16 22:41:33
-categories: "JavaScript"
-tags: "es6"
-description: "面向未来的javascript语法————ES6"
+categories: JavaScript
+tags: es6
+abbrlink: '6008'
+date: 2017-04-16 22:41:33
 ---
 
 ---
@@ -11,6 +11,8 @@ description: "面向未来的javascript语法————ES6"
 最近在尝试学习新框架，感觉学习曲线异常的陡峭，全然没有当时学习bootstrap和jquery的顺畅感觉。后面仔细想来，自己应该是缺了一些基础知识没有补上来，才会导致框架学习遇到了极大的阻力。那自己的知识栈到底缺失了哪一块呢？没错，就是面向未来的javascript语法————ES6。
 
 那么现在开始恶补吧，还不算晚。我将我的学习过程记录下来，为自己做notes，也与各位分享。
+
+<!-- more -->
 
 ---
 

@@ -1,10 +1,9 @@
 ---
 title: Redux深入理解(3)
+categories: JavaScript
+tags: React
+abbrlink: 1db5
 date: 2017-12-03 13:00:52
-categories: "JavaScript"
-tags: "React"
----
-
 ---
 
 上一节说到，reducer是一个纯函数。那么纯函数具体的定义是什么呢？阮一峰老师是这样说的：
@@ -18,6 +17,8 @@ tags: "React"
 >
 >
 > - 不能调用`Date.now()`或者`Math.random()`等不纯的方法，因为每次会得到不一样的结果
+
+<!-- more -->
 
 我们知道，处理业务逻辑的过程中不可避免的要用到异步操作，而reducer是一个纯函数，无法完成这项使命，那怎么办呢？
 
