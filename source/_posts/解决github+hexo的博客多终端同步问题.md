@@ -38,7 +38,7 @@ git push origin hexo  //push到Github项目的hexo分支上
 
 完成之后的效果图为:
 
-![hexo分支](https://raw.githubusercontent.com/kelekexiao123/markdown-image/master/sync-hexo-01.png)
+![hexo分支](https://raw.githubusercontent.com/kelekexiao123/blog-storage/master/images/sync-hexo-01.png)
 
 这样你的github项目中就会多出一个Hexo分支，这个就是用于多终端同步关键的部分。
 

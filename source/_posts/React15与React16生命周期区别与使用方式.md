@@ -27,6 +27,8 @@ tags: "React"
 
 但仍然有开发者需要在render之前获取到props的更新，因此官方增加了新的生命周期函数`getDrivedStateFromProps`。它的作用其实与`componentWillReceiveProps`差不多，但优势在于在多次变更props操作的过程中，它与render一样，只更新一次。
 
+![React新旧生命周期对比.png](https://raw.githubusercontent.com/kelekexiao123/blog-storage/master/images/React%E6%96%B0%E6%97%A7%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%AF%B9%E6%AF%94.png)
+
 首先来看看这个新增引入的生命周期函数：
 
 ```typescript

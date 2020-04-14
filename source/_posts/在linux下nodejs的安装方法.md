@@ -14,7 +14,7 @@ categories: "杂项"
 
 页面大概长成这样，上面有不同系统的不同位版本的下载，也可以点击上面的连接直接下载源码。
 
-![01.jpg](https://raw.githubusercontent.com/kelekexiao123/markdown-image/master/node-install-linux-01.jpg)
+![01.jpg](https://raw.githubusercontent.com/kelekexiao123/blog-storage/master/images/node-install-linux-01.jpg)
 
 ---
 

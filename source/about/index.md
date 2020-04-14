@@ -5,7 +5,7 @@ fancybox: false
 ---
 
 <div style="margin: 0 auto; text-align: center">
-<img src="https://raw.githubusercontent.com/kelekexiao123/blog-storage/master/avatar.jpg">
+<img src="https://raw.githubusercontent.com/kelekexiao123/blog-storage/master/images/avatar.jpg">
 
 成龙
 中南大学2014级

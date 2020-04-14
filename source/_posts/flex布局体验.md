@@ -19,7 +19,7 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 
 >采用 Flex 布局的元素，称为 Flex 容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称"项目"。
 
-![flex结构图](https://raw.githubusercontent.com/kelekexiao123/markdown-image/master/flex-02.png)
+![flex结构图](https://raw.githubusercontent.com/kelekexiao123/blog-storage/master/images/flex-02.png)
 
 >容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
 
@@ -34,10 +34,10 @@ demo分割线
 
 先给大家上个效果图：
 
-![demo示例](https://raw.githubusercontent.com/kelekexiao123/markdown-image/master/flex-01.png)
+![demo示例](https://raw.githubusercontent.com/kelekexiao123/blog-storage/master/images/flex-01.png)
 
 这是一个自适应宽高的九个骰子图（好吧我知道骰子没有9个），大家先根据以往的经验，每个骰子应该怎样实现，再用flex布局试一次。
 
-然后附上我的实现代码：[flex_demo](https://github.com/kelekexiao123/markdown-image/blob/master/flex-test.html)
+然后附上我的实现代码：[flex_demo](https://github.com/kelekexiao123/blog-storage/master/flex-test.html)
 
 如果大家有什么更好的想法和建议，欢迎留言或者pull request呐～
