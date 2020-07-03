@@ -20,6 +20,8 @@ JavaScript 最初的设计初衷是完成页面与用户的交互，操作 DOM �
 
 在现代大型前端项目中，随着代码的复杂程度越来越高，本地的计算型事务也在变得繁重，而运行在单线程下JS项目必定会忙于处理计算而无暇顾及用户接下来的频繁操作，造成卡顿等不太好的用户体验，更严重的情况是，当计算型事务过多时还有可能因为资源被占满带来网页无响应的卡死现象。因此，Web 项目的本地多线程运算能力势在必行，由此，Web Worker 应运而生了。
 
+<!-- more -->
+
 Web Worker 是 HTML5 中推出的标准，官方是这样定义它的：
 
 > Web Workers makes it possible to run a script operation in a background thread separate from the main execution thread of a web application.
