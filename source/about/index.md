@@ -5,12 +5,15 @@ fancybox: false
 ---
 
 <div style="margin: 0 auto; text-align: center">
-<img src="https://raw.githubusercontent.com/kelekexiao123/blog-storage/master/images/avatar.jpg">
+    <img src="https://raw.githubusercontent.com/kelekexiao123/blog-storage/master/images/avatar.jpg">
 
-成龙
-中南大学2014级
-计算机科学与技术
-腾讯云前端工程师
+    成龙
 
-嘻嘻，欢迎找我做朋友呀，看在花蘑菇的份上！
+    中南大学2018届
+
+    计算机科学与技术
+
+    腾讯 Alloy Team 前端工程师
+
+    嘻嘻，欢迎找我做朋友呀，看在花蘑菇的份上！
 </div>
