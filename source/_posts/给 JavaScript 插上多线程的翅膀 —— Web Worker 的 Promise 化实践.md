@@ -1,7 +1,9 @@
 ---
 title: 给 JavaScript 插上多线程的翅膀 —— Web Worker 的 Promise 化实践
+categories: JavaScript
+tags: React
+abbrlink: '8625'
 date: 2020-06-16 21:04:10
-tags:
 ---
 
 ## Web Worker 介绍
