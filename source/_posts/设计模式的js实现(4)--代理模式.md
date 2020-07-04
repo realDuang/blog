@@ -1,12 +1,12 @@
 ---
-title: 设计模式的js实现(4)--代理模式
+title: 设计模式的 js 实现 (4)--代理模式
 categories: 架构设计
 tags: 设计模式
 description: >-
-  了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了23类，分别为：
-  创建型模式（5种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。
-  结构型模式（7种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。
-  行为型模式（11种）：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。
+  了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了 23 类，分别为：
+  创建型模式（5 种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。
+  结构型模式（7 种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。
+  行为型模式（11 种）：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。
   接下来我将针对其中常用的几种设计模式进行解读与实现，供大家参考。
 abbrlink: 34cc
 date: 2019-10-07 16:42:54
@@ -54,7 +54,7 @@ date: 2019-10-07 16:42:54
     function lazyloadImage(node, src) {
       const intersectionObserver = new IntersectionObserver(function(entries) {
         if (entries[0].isIntersecting) {
-          // 进入viewport后加载图片，并解除监听，防止离开viewport后再次触发
+          // 进入 viewport 后加载图片，并解除监听，防止离开 viewport 后再次触发
           node.src = src;
           intersectionObserver.unobserve(node);
         }
@@ -117,7 +117,7 @@ window.onscroll = proxyScrollFunc
 
 保护代理适用于目标对象安全要求较高，需要鉴权功能时，将所有请求汇聚到代理对象中统一进行授权与控制，再将符合要求的请求转发给目标对象。这种代理解耦了复杂鉴权控制与实际业务处理之间的联系，并且负责鉴权控制的代理模块能做到可复用，从而进一步优化代码架构。
 
-能使用保护代理的情况也有很多，这里以最常见的登录验证为例。（为了更明显体现代理模式的存在，使用了es6规范下的Proxy对象特性）
+能使用保护代理的情况也有很多，这里以最常见的登录验证为例。（为了更明显体现代理模式的存在，使用了 es6 规范下的 Proxy 对象特性）
 
 ```js
 function getValidatorProxy(target) {
@@ -132,7 +132,7 @@ function getValidatorProxy(target) {
       },
       password: value => ({
         isValid: value.length >= 6,
-        error: "密码长度不能小于6",
+        error: "密码长度不能小于 6",
       }),
     },
     set(target, prop, value) {
@@ -141,7 +141,7 @@ function getValidatorProxy(target) {
         console.log(`${prop}参数校验通过`);
         return Reflect.set(target, prop, value);
       }
-      console.log(`${prop}参数校验不通过, 错误原因：${checkVar.error}`);
+      console.log(`${prop}参数校验不通过，错误原因：${checkVar.error}`);
       return Reflect.set(target, prop, "");
     },
   });
@@ -152,7 +152,7 @@ const loginProxy = getValidatorProxy({
   password: "",
 });
 
-loginProxy.account = "123"; // account参数校验通过
-loginProxy.password = "123"; // password参数校验不通过, 错误原因：密码长度不能小于6
+loginProxy.account = "123"; // account 参数校验通过
+loginProxy.password = "123"; // password 参数校验不通过，错误原因：密码长度不能小于 6
 console.log(loginProxy); // { account: '123', password: '' }
 ```

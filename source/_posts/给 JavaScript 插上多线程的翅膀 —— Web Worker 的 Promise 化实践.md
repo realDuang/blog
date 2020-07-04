@@ -18,7 +18,7 @@ JavaScript 最初的设计初衷是完成页面与用户的交互，操作 DOM �
 
 尽管 JavaScript 通过异步机制完美解决了高 I/O 性能的问题，但 JavaScript 单线程执行的本质还是没有变的。因此缺点就显而易见了，那就是处理 CPU 密集型的事务时没有办法充分调动现代多核心多线程机器的运算资源。
 
-在现代大型前端项目中，随着代码的复杂程度越来越高，本地的计算型事务也在变得繁重，而运行在单线程下JS项目必定会忙于处理计算而无暇顾及用户接下来的频繁操作，造成卡顿等不太好的用户体验，更严重的情况是，当计算型事务过多时还有可能因为资源被占满带来网页无响应的卡死现象。因此，Web 项目的本地多线程运算能力势在必行，由此，Web Worker 应运而生了。
+在现代大型前端项目中，随着代码的复杂程度越来越高，本地的计算型事务也在变得繁重，而运行在单线程下 JavaScript 项目必定会忙于处理计算而无暇顾及用户接下来的频繁操作，造成卡顿等不太好的用户体验，更严重的情况是，当计算型事务过多时还有可能因为资源被占满带来网页无响应的卡死现象。因此，Web 项目的本地多线程运算能力势在必行，由此，Web Worker 应运而生了。
 
 <!-- more -->
 
@@ -26,9 +26,9 @@ Web Worker 是 HTML5 中推出的标准，官方是这样定义它的：
 
 > Web Workers makes it possible to run a script operation in a background thread separate from the main execution thread of a web application.
 
-它允许 JavaScript 脚本创建多个线程，从而充分利用CPU的多核计算能力，不会阻塞主线程(一般指UI渲染线程)的运行。
+它允许 JavaScript 脚本创建多个线程，从而充分利用 CPU 的多核计算能力，不会阻塞主线程（一般指 UI 渲染线程）的运行。
 
-Web Worker 虽然是 HTML5 标准，但其实早在2009年W3C就已经提出了草案，因此它的兼容性良好，基本覆盖了所有主流浏览器。
+Web Worker 虽然是 HTML5 标准，但其实早在 2009 年 W3C 就已经提出了草案，因此它的兼容性良好，基本覆盖了所有主流浏览器。
 
 ![20200703113954](https://raw.githubusercontent.com/kelekexiao123/blog-storage/master/images/20200703113954.png)
 
@@ -36,9 +36,9 @@ Web Worker 虽然是 HTML5 标准，但其实早在2009年W3C就已经提出了�
 
 需要注意的是，Web Worker 本质上并没有突破 JavaScript 的单线程的性质。
 
-事实上，Web Worker 脚本中的代码并不能直接操作 DOM 节点，并且不能使用绝大多数BOM API。它的全局环境是 DedicatedWorkerGlobalScope而并不是 Window。运行 Worker 的实际上是一个沙箱，跑的是与主线程完全独立 JavaScript 文件。
+事实上，Web Worker 脚本中的代码并不能直接操作 DOM 节点，并且不能使用绝大多数 BOM API。它的全局环境是 DedicatedWorkerGlobalScope 而并不是 Window。运行 Worker 的实际上是一个沙箱，跑的是与主线程完全独立 JavaScript 文件。
 
-Worker 做的这些限制，实际上也是为了避免文章开头说过的抢占问题。它更多的使用场景是作为主线程的附属，完成高CPU计算型的数据处理，再通过线程间通信将执行结果传回给主线程。在整个过程中，主线程仍然能正常地相应用户操作，从而很好地避免页面的卡顿现象。
+Worker 做的这些限制，实际上也是为了避免文章开头说过的抢占问题。它更多的使用场景是作为主线程的附属，完成高 CPU 计算型的数据处理，再通过线程间通信将执行结果传回给主线程。在整个过程中，主线程仍然能正常地相应用户操作，从而很好地避免页面的卡顿现象。
 
 ## Web Worker 的使用
 
@@ -54,7 +54,7 @@ const worker = new Worker("./worker.js")
 
 ### 通信
 
-Worker 与主线程之间的通信只需要各有两个API：onmessage/addEventListener 与 postMessage 即可完成收发消息的交互。
+Worker 与主线程之间的通信只需要各有两个 API：onmessage/addEventListener 与 postMessage 即可完成收发消息的交互。
 
 ```js
 /* main.js */
@@ -73,16 +73,16 @@ worker.onmessage = (e) => {
 
 ```js
 /* worker.js */
-// worker线程接收消息
+// worker 线程接收消息
 self.addEventListener('message', (e) => {
     const { data } = e;
     if (!data) return;
-    // worker线程发送消息
+    // worker 线程发送消息
     self.postMessage({data: 'worker received data'})
 });
 ```
 
-注：Worker 中，this.xx， self.xx 与直接使用 xx，其作用域都指向worker的全局变量 DedicatedWorkerGlobalScope ，可以互换。
+注：Worker 中，this.xxx，self.xxx 与直接使用 xxx，其作用域都指向 worker 的全局变量 DedicatedWorkerGlobalScope，可以互换。
 
 ### 销毁
 
@@ -104,7 +104,7 @@ self.close();
 
 首先我们需要一个异步回调集合 actionHandlerMap，用于存放等待 Worker 响应的 Promise resolve 方法，其 key 值可以用通信中的某一 id 指定（保证其唯一性即可）。接着我们需要封装一下原生的 postMessage 与 onmessage 方法。
 
-我们在原生的 postMessage 发送的信息中加入id，并将当前的 Promise 的 resolve 方法放入 actionHandlerMap，等待 Worker 返回结果后触发。
+我们在原生的 postMessage 发送的信息中加入 id，并将当前的 Promise 的 resolve 方法放入 actionHandlerMap，等待 Worker 返回结果后触发。
 
 对于 onmessage 的监听，在接收到 Worker 发送过来的响应之后，匹配响应的 Promise 并执行 .then() 方法，完成后删除集合中的 Promise resolve 函数。
 
