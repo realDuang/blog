@@ -83,6 +83,10 @@ deploy:
   type: git
   repository: https://github.com/duang-repo/duang-repo.github.io.git
   branch: gh-pages
+  ignore_hidden: false
+
+include:
+  .nojekyll
 
 sitemap:
   path: sitemap.xml

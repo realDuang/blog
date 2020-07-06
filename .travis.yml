@@ -16,3 +16,6 @@ deploy:
   on:
     branch: master
   local-dir: public
+
+include:
+  .nojekyll
