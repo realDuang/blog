@@ -30,7 +30,7 @@ Web Worker 是 HTML5 中推出的标准，官方是这样定义它的：
 
 Web Worker 虽然是 HTML5 标准，但其实早在 2009 年 W3C 就已经提出了草案，因此它的兼容性良好，基本覆盖了所有主流浏览器。
 
-![20200703113954](https://raw.githubusercontent.com/kelekexiao123/blog-storage/master/images/20200703113954.png)
+![20200703113954](https://raw.githubusercontent.com/duang-repo/blog-storage/master/images/20200703113954.png)
 
 ## Web Worker 的局限
 
