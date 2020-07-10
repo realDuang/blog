@@ -5,7 +5,7 @@ fancybox: false
 ---
 
 <div style="margin: 0 auto; text-align: center">
-    <img src="https://raw.githubusercontent.com/duang-repo/blog-storage/master/images/avatar.jpg">
+    <img src="https://raw.githubusercontent.com/realDuang/blog-storage/master/images/avatar.jpg">
 
     成龙
 

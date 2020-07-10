@@ -176,8 +176,8 @@ social:
   QQ: http://wpa.qq.com/msgrd?v=3&uin=250407778&site=qq&menu=yes || fab fa-qq
   E-Mail: mailto:250407778@qq.com || fa fa-envelope
   Facebook: https://www.facebook.com/kelekexiao || fab fa-facebook
-  知乎: https://www.zhihu.com/people/cheng-long-96-27 || fab fa-zhihu
-  GitHub: https://github.com/duang-repo || fab fa-github
+  知乎: https://www.zhihu.com/people/realDuang || fab fa-zhihu
+  GitHub: https://github.com/realDuang || fab fa-github
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -199,7 +199,7 @@ links_settings:
   layout: block
 
 links:
-  Leetcode In JavaScript: https://kelekexiao.cn/leetcode-archive/
+  Leetcode In JavaScript: https://realDuang.github.io/leetcode-in-javascript/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
@@ -385,7 +385,7 @@ bookmark:
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
   enable: false
-  permalink: https://github.com/duang-repo
+  permalink: https://github.com/realDuang
   title: Follow me on GitHub
 
 # ---------------------------------------------------------------
@@ -629,7 +629,7 @@ gitalk:
   repo: blog-storage # Repository name to store issues
   client_id: e5724a2cdf100e37e7d9 # GitHub Application Client ID
   client_secret: 20f5f1654b3ebd035d2745cc1a4bab5427468661 # GitHub Application Client Secret
-  admin_user: duang-repo # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  admin_user: realDuang # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
@@ -954,12 +954,10 @@ vendors:
   velocity_ui:
 
   # Internal version: 1.0.2
-  # pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
+  pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
   # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
-  # pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
+  pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
   # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
-  pace:
-  pace_css:
 
   # Internal version: 1.0.0
   # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
@@ -972,8 +970,7 @@ vendors:
   canvas_sphere:
 
   # Internal version: 1.0.0
-  # canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
-  canvas_ribbon:
+  canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
 
 # Assets
 css: css

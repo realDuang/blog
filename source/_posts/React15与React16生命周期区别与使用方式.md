@@ -32,7 +32,7 @@ date: 2019-12-21 17:38:35
 
 我画了一张图来清晰地展示 React 新旧生命周期过程的对比：
 
-![React 新旧生命周期对比。png](https://raw.githubusercontent.com/duang-repo/blog-storage/master/images/React%E6%96%B0%E6%97%A7%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%AF%B9%E6%AF%94.png)
+![React 新旧生命周期对比。png](https://raw.githubusercontent.com/realDuang/blog-storage/master/images/React%E6%96%B0%E6%97%A7%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%AF%B9%E6%AF%94.png)
 
 ## componentWillXX 生命周期函数的替代者
 

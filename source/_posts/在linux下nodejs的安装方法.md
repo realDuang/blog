@@ -13,7 +13,7 @@ date: 2017-06-11 01:06:46
 
 页面大概长成这样，上面有不同系统的不同位版本的下载，也可以点击上面的连接直接下载源码。
 
-![01.jpg](https://raw.githubusercontent.com/duang-repo/blog-storage/master/images/node-install-linux-01.jpg)
+![01.jpg](https://raw.githubusercontent.com/realDuang/blog-storage/master/images/node-install-linux-01.jpg)
 
 ---
 

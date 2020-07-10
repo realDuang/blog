@@ -64,7 +64,7 @@ date: 2019-10-07 16:42:54
     }
 
     const imgNode = document.querySelector("#img");
-    lazyloadImage(imgNode, "https://github.com/duang-repo/blog-storage/blob/master/avatar.jpg?raw=true");
+    lazyloadImage(imgNode, "https://github.com/realDuang/blog-storage/blob/master/avatar.jpg?raw=true");
   </script>
 </body>
 </html>
