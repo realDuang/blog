@@ -69,7 +69,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: https://raw.githubusercontent.com/realDuang/blog-storage/master/images/avatar.jpg
+avatar: https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/avatar.jpg
 
 #是否开启分享
 share_jia: true
