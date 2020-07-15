@@ -64,7 +64,7 @@ css 样式改为：
   }
 ```
 
-![text-align](http://ww1.sinaimg.cn/large/c527bb18gy1fpf1gom7jgj20d80bv3yd.jpg)
+![text-align](https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/20200713145226.png)
 
 ### 2. 块状元素
 
@@ -76,7 +76,7 @@ css 样式改为：
   }
 ```
 
-![margin-0-auto](http://ww1.sinaimg.cn/large/c527bb18gy1fpf0c51dkpj20cn0c3744.jpg)
+![margin-0-auto](https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/20200713144819.png)
 
 ## 垂直居中
 
@@ -93,7 +93,7 @@ css 样式改为：
   }
 ```
 
-![line-height](http://ww1.sinaimg.cn/large/c527bb18gy1fpf1ei97zrj20dl0bpq2t.jpg)
+![line-height](https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/20200715165311.png)
 
 ### 2. 行内元素多行居中
 
@@ -107,7 +107,7 @@ css 样式改为：
   }
 ```
 
-![table-cell](http://ww1.sinaimg.cn/large/c527bb18gy1fpf1sw2qc6j20cv0btq32.jpg)
+![table-cell](https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/20200715165348.png)
 
 ## 水平垂直居中
 
@@ -135,7 +135,7 @@ css 样式改为：
 
 （注：其实这里可以不用知道父子元素高度，为了方便显示才使用）
 
-![absolute-top-left](http://ww1.sinaimg.cn/large/c527bb18gy1fpeycpucu1j20g10c5dfp.jpg)
+![absolute-top-left](https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/20200715165411.png)
 
 ### 2. 已知父元素的高度，并且子元素有且只有一个
 
@@ -150,7 +150,7 @@ css 样式改为：
   }
 ```
 
-![relative-top-left](http://ww1.sinaimg.cn/large/c527bb18gy1fpeycpucu1j20g10c5dfp.jpg)
+![relative-top-left](https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/20200715165411.png)
 
 ### 3. 多个子元素自适应的同时水平垂直居中
 
@@ -164,7 +164,7 @@ css 样式改为：
   }
 ```
 
-![flex](http://ww1.sinaimg.cn/large/c527bb18gy1fpezr0dmvhj20ed0cbmx2.jpg)
+![flex](https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/20200715165507.png)
 
 ### 4. table-cell 方式
 
@@ -179,7 +179,7 @@ css 样式改为：
   }
 ```
 
-![table-cell](http://ww1.sinaimg.cn/large/c527bb18gy1fpf20akarxj20cm0bywel.jpg)
+![table-cell](https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/20200715165534.png)
 
 不太推荐的原因同垂直居中时说的。
 
