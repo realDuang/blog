@@ -130,7 +130,7 @@ search:
 
 live2d:
   enable: true
-  scriptFrom: jsdelivr
+  scriptFrom: local
   pluginRootPath: live2dw/
   pluginJsPath: lib/
   pluginModelPath: assets/
