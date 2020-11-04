@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>枫之谷</title>
+  
+  <subtitle>这个人很懒，但还是想留下些什么东西。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://githubio.zakum.cn/"/>
+  <updated>2020-11-04T07:09:13.144Z</updated>
+  <id>https://githubio.zakum.cn/</id>
+  
+  <author>
+    <name>Duang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>有向无环图的数据模型设计与应用</title>
+    <link href="https://githubio.zakum.cn/posts/adeb/"/>
+    <id>https://githubio.zakum.cn/posts/adeb/</id>
+    <published>2020-11-02T15:59:22.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;从-TodoList-说起&quot;&gt;&lt;a href=&quot;#从-TodoList-说起&quot; class=&quot;headerlink&quot; title=&quot;从 TodoList 说起&quot;&gt;&lt;/a&gt;从 TodoList 说起&lt;/h2&gt;&lt;p&gt;对于我们前端开发来说，想要学习一个框架，从开发一个 TodoList 项目做起，这就像学习语言先学会写 Hello world 一样基础。但其实，简单的 TodoList 里面，同样可以蕴含一些复杂的结构。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="架构设计" scheme="https://githubio.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计模式" scheme="https://githubio.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实现一个版本自动控制的 IndexedDB</title>
+    <link href="https://githubio.zakum.cn/posts/3d6/"/>
+    <id>https://githubio.zakum.cn/posts/3d6/</id>
+    <published>2020-07-13T16:05:22.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;随着现代大型项目复杂度的提升，渲染一个 WEB 页面需要的数据越来越多，在多次打开并渲染的过程中，有许多数据都是重复并且不常更新的，因此这部分的数据需要通过浏览器缓存来缓解网络压力，同时提升页面打开速度。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+    
+    
+      <category term="IndexedDB" scheme="https://githubio.zakum.cn/tags/IndexedDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>给 JavaScript 插上多线程的翅膀 —— Web Worker 的 Promise 化实践</title>
+    <link href="https://githubio.zakum.cn/posts/8625/"/>
+    <id>https://githubio.zakum.cn/posts/8625/</id>
+    <published>2020-06-16T21:04:10.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Web-Worker-介绍&quot;&gt;&lt;a href=&quot;#Web-Worker-介绍&quot; class=&quot;headerlink&quot; title=&quot;Web Worker 介绍&quot;&gt;&lt;/a&gt;Web Worker 介绍&lt;/h2&gt;&lt;p&gt;众所周知，JavaScript 这门语言的一大特点就是单线程，即同一时间只能同步处理一件事情，这也是这门语言衍生出的 nodeJS 被后端开发诟病的的一点。&lt;/p&gt;
+&lt;p&gt;然而，JavaScript 在设计之初，其实是故意被设计成单线程语言的，这是由于它当时的主要用途的决定的。&lt;/p&gt;
+&lt;p&gt;JavaScript 最初的设计初衷是完成页面与用户的交互，操作 DOM 或者 BOM 元素，此时如果一味地追求效率使用多线程的话，会带来资源抢占，数据同步等等问题，因此必须规定，同一时间只有一个线程能直接操作页面元素，以保证系统的稳定性以及安全性。&lt;/p&gt;
+&lt;p&gt;尽管如此，但是 JavaScript 并不是只能线性处理任务。JS 拥有消息队列和事件循环机制，通过异步处理消息的能力来实现并发。在高 I/O 型并发事务处理的过程中，由于不需要手动生成与销毁线程以及占用额外管理线程的空间，性能表现及为优异。因此，nodeJS 作为 JavaScript 在服务端的探索者，在处理高并发网络请求的优势极为明显。&lt;/p&gt;
+&lt;p&gt;尽管 JavaScript 通过异步机制完美解决了高 I/O 性能的问题，但 JavaScript 单线程执行的本质还是没有变的。因此缺点就显而易见了，那就是处理 CPU 密集型的事务时没有办法充分调动现代多核心多线程机器的运算资源。&lt;/p&gt;
+&lt;p&gt;在现代大型前端项目中，随着代码的复杂程度越来越高，本地的计算型事务也在变得繁重，而运行在单线程下 JavaScript 项目必定会忙于处理计算而无暇顾及用户接下来的频繁操作，造成卡顿等不太好的用户体验，更严重的情况是，当计算型事务过多时还有可能因为资源被占满带来网页无响应的卡死现象。因此，Web 项目的本地多线程运算能力势在必行，由此，Web Worker 应运而生了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+    
+    
+      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React16.8 useHook 特性</title>
+    <link href="https://githubio.zakum.cn/posts/6b60/"/>
+    <id>https://githubio.zakum.cn/posts/6b60/</id>
+    <published>2020-01-21T18:19:28.000Z</published>
+    <updated>2020-11-04T07:09:13.140Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;React16.8 迎来了大众期盼已久的函数式编程利器：&lt;code&gt;useHook&lt;/code&gt;特性。它能大大增强函数式组件的能力，使得立即执行的、没有生命周期与 state 等等类组件特性的函数式组件拥有相同的能力。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;useHook&lt;/code&gt;的原理实际上是利用了 JavaScript 的闭包机制，因此在多次执行函数的同时记住一些状态。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;useHook&lt;/code&gt;拥有多种函数，我们也可以自定义自己的 hook。在这里主要来说说其中最常用的几种，简述他们的大致原理，以及使用时的注意事项。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+    
+    
+      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React15 与 React16 生命周期区别与使用方式</title>
+    <link href="https://githubio.zakum.cn/posts/1cec/"/>
+    <id>https://githubio.zakum.cn/posts/1cec/</id>
+    <published>2019-12-21T17:38:35.000Z</published>
+    <updated>2020-11-04T07:09:13.140Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;为什么要变更生命周期&quot;&gt;&lt;a href=&quot;#为什么要变更生命周期&quot; class=&quot;headerlink&quot; title=&quot;为什么要变更生命周期&quot;&gt;&lt;/a&gt;为什么要变更生命周期&lt;/h2&gt;&lt;p&gt;因为 React16 框架使用了全新的&lt;code&gt;Fiber&lt;/code&gt;架构，这其中有一个特性叫做&lt;code&gt;async rendering&lt;/code&gt;，render 过程可中断，因此，render 函数之前的所有生命周期函数都有可能被多次执行，如果在这些函数中存在异步请求的话将会造成许多无用的请求被调用。&lt;/p&gt;
+&lt;p&gt;涉及到的生命周期函数一共有 4 个：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;componentWillMount&lt;/p&gt;
+&lt;p&gt;componentWillReceiveProps&lt;/p&gt;
+&lt;p&gt;shouldComponentUpdate&lt;/p&gt;
+&lt;p&gt;componentWillUpdate&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+    
+    
+      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式的 js 实现 (4)--代理模式</title>
+    <link href="https://githubio.zakum.cn/posts/34cc/"/>
+    <id>https://githubio.zakum.cn/posts/34cc/</id>
+    <published>2019-10-07T16:42:54.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了 23 类，分别为： 创建型模式（5 种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7 种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式（11 种）：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。 接下来我将针对其中常用的几种设计模式进行解读与实现，供大家参考。
+    
+    </summary>
+    
+      <category term="架构设计" scheme="https://githubio.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计模式" scheme="https://githubio.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式的 js 实现 (3)--观察者模式</title>
+    <link href="https://githubio.zakum.cn/posts/8dda/"/>
+    <id>https://githubio.zakum.cn/posts/8dda/</id>
+    <published>2019-09-26T10:35:19.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了 23 类，分别为： 创建型模式（5 种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7 种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式（11 种）：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。 接下来我将针对其中常用的几种设计模式进行解读与实现，供大家参考。
+    
+    </summary>
+    
+      <category term="架构设计" scheme="https://githubio.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计模式" scheme="https://githubio.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式的 js 实现 (2)--装饰器模式</title>
+    <link href="https://githubio.zakum.cn/posts/948d/"/>
+    <id>https://githubio.zakum.cn/posts/948d/</id>
+    <published>2019-09-23T11:07:08.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了 23 类，分别为： 创建型模式（5 种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7 种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式（11 种）：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。 接下来我将针对其中常用的几种设计模式进行解读与实现，供大家参考。
+    
+    </summary>
+    
+      <category term="架构设计" scheme="https://githubio.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计模式" scheme="https://githubio.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式的 js 实现 (1)--单例模式</title>
+    <link href="https://githubio.zakum.cn/posts/68b8/"/>
+    <id>https://githubio.zakum.cn/posts/68b8/</id>
+    <published>2019-09-20T16:58:52.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了 23 类，分别为： 创建型模式（5 种）：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式（7 种）：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式（11 种）：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。 接下来我将针对其中常用的几种设计模式进行解读与实现，供大家参考。
+    
+    </summary>
+    
+      <category term="架构设计" scheme="https://githubio.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计模式" scheme="https://githubio.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>利用 React 高阶组件实现一个面包屑导航</title>
+    <link href="https://githubio.zakum.cn/posts/57/"/>
+    <id>https://githubio.zakum.cn/posts/57/</id>
+    <published>2018-11-12T11:51:01.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是-React-高阶组件&quot;&gt;&lt;a href=&quot;#什么是-React-高阶组件&quot; class=&quot;headerlink&quot; title=&quot;什么是 React 高阶组件&quot;&gt;&lt;/a&gt;什么是 React 高阶组件&lt;/h2&gt;&lt;p&gt;React 高阶组件就是以高阶函数的方式包裹需要修饰的 React 组件，并返回处理完成后的 React 组件。React 高阶组件在 React 生态中使用的非常频繁，比如&lt;code&gt;react-router&lt;/code&gt; 中的 &lt;code&gt;withRouter&lt;/code&gt; 以及 &lt;code&gt;react-redux&lt;/code&gt; 中 &lt;code&gt;connect&lt;/code&gt; 等许多 API 都是以这样的方式来实现的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+    
+    
+      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css 的垂直居中方法</title>
+    <link href="https://githubio.zakum.cn/posts/b04a/"/>
+    <id>https://githubio.zakum.cn/posts/b04a/</id>
+    <published>2018-03-14T16:51:25.000Z</published>
+    <updated>2020-11-04T07:09:13.140Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;CSS 是每一个前端工程师都绕不过去的坎，熟练运用 CSS 后，实现同样一种效果我们可以有很多种写法，但由于兼容问题，通常简洁的写法并不能实现全平台统一效果，复杂的写法对性能又不太友好，导致我们在编写 CSS 过程中有很多需要注意的点，要踩很多的坑，因此用一个笔记来集中记录一下方法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="CSS" scheme="https://githubio.zakum.cn/categories/CSS/"/>
+    
+    
+      <category term="css" scheme="https://githubio.zakum.cn/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 常用命令笔记</title>
+    <link href="https://githubio.zakum.cn/posts/b608/"/>
+    <id>https://githubio.zakum.cn/posts/b608/</id>
+    <published>2018-01-03T16:53:25.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;git 是现如今最火的版本控制工具，尽管已经使用了 GitHub 数年的时间了，但一直没有对 git 命令以及作用进行深入的分析和学习，对 git 的使用还仅停留在 add、commit、push、clone 上，这根本算不得掌握 git。因此，这次一得出空来就开始从头恶补 git 知识了，分享出来与大家一同学习进步。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="https://githubio.zakum.cn/categories/git/"/>
+    
+    
+      <category term="git" scheme="https://githubio.zakum.cn/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 原理深入 (1)--virtual DOM</title>
+    <link href="https://githubio.zakum.cn/posts/6bab/"/>
+    <id>https://githubio.zakum.cn/posts/6bab/</id>
+    <published>2017-12-17T16:02:34.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;工欲善其事，必先利其器。想要用好 react 这个前端 View 层大杀器，深入理解其工作原理必不可少。理解一个框架是如何让某种操作得到优化的至关重要，知其然也要知其所以然，它有助于我们对这个框架的正确高效的使用，这是一个前端工程师成长的必经路程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+    
+    
+      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redux 深入理解 (4)</title>
+    <link href="https://githubio.zakum.cn/posts/2db7/"/>
+    <id>https://githubio.zakum.cn/posts/2db7/</id>
+    <published>2017-12-04T15:22:30.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这一节主要来讲讲 Redux 在 React 项目中的具体使用。&lt;/p&gt;
+&lt;p&gt;将学的新知识新组件集成进项目里是初学者最大的障碍，这也是我最初学习 Redux 的时候很难有进展的原因。Redux 的源码体积很小，加起来连 1k 行都不到，利用的原理在之前已经说过，也很好理解，但由于 Redux 只是 Flux 对 React 的一种优化，但并不只是服务于 React，如果你愿意，在 Vue 中使用 Redux 也是完全可行的，毕竟状态管理的思想还是不会变的嘛。&lt;/p&gt;
+&lt;p&gt;因此我们需要一个 Redux 与 React 之间的连接件来方便我们的搭建，这就是&lt;code&gt;React-redux&lt;/code&gt;。也是我们将 Redux 合并进 React 最后也是最大的难点。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+    
+    
+      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redux 深入理解 (3)</title>
+    <link href="https://githubio.zakum.cn/posts/1db5/"/>
+    <id>https://githubio.zakum.cn/posts/1db5/</id>
+    <published>2017-12-03T13:00:52.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一节说到，reducer 是一个纯函数。那么纯函数具体的定义是什么呢？阮一峰老师是这样说的：&lt;/p&gt;
+&lt;p&gt;纯函数是函数式编程的概念，必须遵守以下一些约束。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不得改写参数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;不能调用系统 I/O 的 API&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;不能调用&lt;code&gt;Date.now()&lt;/code&gt;或者&lt;code&gt;Math.random()&lt;/code&gt;等不纯的方法，因为每次会得到不一样的结果&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+    
+    
+      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redux 深入理解 (2)</title>
+    <link href="https://githubio.zakum.cn/posts/8db4/"/>
+    <id>https://githubio.zakum.cn/posts/8db4/</id>
+    <published>2017-12-01T12:44:56.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在理解了 redux 的作用原理后，我们来看看 redux 的基本概念。&lt;/p&gt;
+&lt;h3 id=&quot;state&quot;&gt;&lt;a href=&quot;#state&quot; class=&quot;headerlink&quot; title=&quot;state&quot;&gt;&lt;/a&gt;state&lt;/h3&gt;&lt;p&gt;&lt;code&gt;state&lt;/code&gt;：state 是状态管理的根本。在 redux 中，有唯一的状态树 state，为整个应用共享。本质上是一个普通对象。处于程序逻辑中，无法直接调用。&lt;/p&gt;
+&lt;h3 id=&quot;store&quot;&gt;&lt;a href=&quot;#store&quot; class=&quot;headerlink&quot; title=&quot;store&quot;&gt;&lt;/a&gt;store&lt;/h3&gt;&lt;p&gt;&lt;code&gt;store&lt;/code&gt;：store 是 state 的管理者，一个应用同样只有唯一的 store，管理着唯一的 state。store 包含下列四个函数：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;getState()&lt;/code&gt; ：用于获取整个 state&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dispatch(action)&lt;/code&gt; ：View 触发 action 改变 state 的&lt;strong&gt;唯一途径&lt;/strong&gt;，请注意我用了&lt;strong&gt;唯一&lt;/strong&gt;这个词&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;subscribe(listener)&lt;/code&gt; ：可以理解成是 DOM 中的 addEventListener ，也就是我在上一篇里说过的发布订阅模式中的订阅方法，在 redux 的使用中，这个方法通常不需要手动使用，一般会放在 setState 方法中。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;replaceReducer(nextReducer)&lt;/code&gt; ：这个不太常用，一般在 Webpack Code-Splitting 按需加载的时候用获取 state 的方式：&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+    
+    
+      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redux 深入理解 (1)</title>
+    <link href="https://githubio.zakum.cn/posts/7db4/"/>
+    <id>https://githubio.zakum.cn/posts/7db4/</id>
+    <published>2017-11-30T11:10:37.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;学习 react 的过程中，redux 的熟练掌握是一个绕不开并且很难绕过去的坎。接触 react 已经有一段时间了，甚至连一些小项目都用 react 做了不少了，但 redux 的使用上还是有诸多不理解不熟练的地方。正好有很长一段时间没有更过博客了，就从这里着手，增强一下自己的理解。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+    
+    
+      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB 极简实践入门</title>
+    <link href="https://githubio.zakum.cn/posts/e000/"/>
+    <id>https://githubio.zakum.cn/posts/e000/</id>
+    <published>2017-09-17T17:13:38.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;为什么用-MongoDB&quot;&gt;&lt;a href=&quot;#为什么用-MongoDB&quot; class=&quot;headerlink&quot; title=&quot;为什么用 MongoDB&quot;&gt;&lt;/a&gt;为什么用 MongoDB&lt;/h2&gt;&lt;p&gt;传统的计算机应用大多使用关系型数据库来存储数据，比如大家可能熟悉的 MySql, Sqlite 等等，它的特点是数据以表格 (table) 的形式储存起来的。数据库由一张张排列整齐的表格构成，就好像一个 Excel 表单一样，每个表格会有若干列，比如一个学生信息表，可能包含学号、姓名、性别、入学年份、高考成绩、籍贯等等。而表格的每一排，则是一个个学生的具体信息。在企业级应用和前互联网时代，关系型数据库几乎是不二选择。关系型数据库的特点是有整齐划一的组织，很方便对数据进行描述、插入、搜索。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="NodeJS" scheme="https://githubio.zakum.cn/categories/NodeJS/"/>
+    
+    
+      <category term="MongoDB" scheme="https://githubio.zakum.cn/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>github 建立 repository 并上传工程的方法</title>
+    <link href="https://githubio.zakum.cn/posts/3e41/"/>
+    <id>https://githubio.zakum.cn/posts/3e41/</id>
+    <published>2017-07-02T23:46:32.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这不是什么新知识了，自从我用 github 以来一直就是这么用着的，但是最近有一段时间没上传过自己的 project 了，竟然手生了忘了怎么做了。想了想还是记录下来比较好，也给大家分享分享。&lt;/p&gt;
+&lt;p&gt;由于是给自己做的备忘，怎么注册 github 之类的新手问题我就不说了，不懂的朋友可以自行去百度相关问题，很多的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="https://githubio.zakum.cn/categories/git/"/>
+    
+    
+      <category term="git" scheme="https://githubio.zakum.cn/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在 Linux 下 nodejs 的安装方法大全</title>
+    <link href="https://githubio.zakum.cn/posts/fab0/"/>
+    <id>https://githubio.zakum.cn/posts/fab0/</id>
+    <published>2017-06-11T01:06:46.000Z</published>
+    <updated>2020-11-04T07:09:13.144Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这段时间为了上线测试很多 nodejs 代码的部署，开始鼓捣云服务器。由于不是很懂运维知识，首先在安装上就踩了很多大坑，于是决定记录下来做个备忘。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="杂项" scheme="https://githubio.zakum.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
+  
+</feed>

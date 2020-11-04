@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-loading-bar.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"githubio.zakum.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="上一节我梳理了一下闭包的概念，这些天各种学校的事情挺忙的，直到现在才有空余时间来写写博客这样杀时间的事儿。这一次整理一下原型链的那些事儿。">
+<meta name="keywords" content="es5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js 学习笔记梳理 (2)">
+<meta property="og:url" content="https://githubio.zakum.cn/posts/1312/index.html">
+<meta property="og:site_name" content="枫之谷">
+<meta property="og:description" content="上一节我梳理了一下闭包的概念，这些天各种学校的事情挺忙的，直到现在才有空余时间来写写博客这样杀时间的事儿。这一次整理一下原型链的那些事儿。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-11-04T07:09:13.144Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js 学习笔记梳理 (2)">
+<meta name="twitter:description" content="上一节我梳理了一下闭包的概念，这些天各种学校的事情挺忙的，直到现在才有空余时间来写写博客这样杀时间的事儿。这一次整理一下原型链的那些事儿。">
+
+<link rel="canonical" href="https://githubio.zakum.cn/posts/1312/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>js 学习笔记梳理 (2) | 枫之谷</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">枫之谷</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这个人很懒，但还是想留下些什么东西。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">27</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://githubio.zakum.cn/posts/1312/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/avatar.jpg">
+      <meta itemprop="name" content="Duang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="枫之谷">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          js 学习笔记梳理 (2)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-02-20 22:08:38" itemprop="dateCreated datePublished" datetime="2017-02-20T22:08:38+00:00">2017-02-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-04 07:09:13" itemprop="dateModified" datetime="2020-11-04T07:09:13+00:00">2020-11-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>上一节我梳理了一下闭包的概念，这些天各种学校的事情挺忙的，直到现在才有空余时间来写写博客这样杀时间的事儿。这一次整理一下原型链的那些事儿。</p>
+<a id="more"></a>
+<p>大家都知道在 JavaScript 的世界里，一切皆对象。而我们又知道，JavaScript 并不是完全的一门 OOP（面向对象编程）的语言，它是一门面向原型链编程的语言。综上我们可以得出，其实原型也是一个对象。这对我接下来要讲的内容的理解有至关重要的作用。</p>
+<p>OOP 中一个最重要的特性就是继承，那 JavaScript 作为一门完全独立的语言自然也需要有这一特性，而 JavaScript 本身并没有类继承或者接口继承相关的概念，我们需要使用原型链来模拟这一过程。不多说，先上一个例子。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line"><span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">Father.prototype = &#123;    <span class="comment">//Father 的原型</span></span><br><span class="line">    age: <span class="number">50</span>,</span><br><span class="line">    home: [<span class="string">'Beijing'</span>, <span class="string">'Shanghai'</span>]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> father = <span class="keyword">new</span> Father();</span><br><span class="line">Person.prototype = father; <span class="comment">//Person 的原型为 Father</span></span><br><span class="line"><span class="comment">// 这样写的好处是子类如果更改了 prototype，那么更改的东西也是附加到 father 这个实例对象上的</span></span><br><span class="line"><span class="comment">// 如果你直接写 Person.prototype = Father.prototype，</span></span><br><span class="line"><span class="comment">// 那你对 Person 的 prototype 的任何修改都会同时修改 Father 的 prototype</span></span><br></pre></td></tr></table></figure>
+<p>这个例子中，我定义了一个父类构造函数 Father，和一个子类构造函数 Person。至于为什么用构造函数这么奇怪的模式来定义一个类的原因我认为完全可以下次再开一篇专门的文章来阐述，简单来说这个构造函数模式是 JavaScript 生成自定义原型链的一种模式。</p>
+<p>好，那么接下来，重点来了。这里使用了父类构造函数的 prototype，这是个什么东东呢？在 JavaScript 里，对每一个函数，都自动会继承一个 prototype 的属性，指向了构造函数所继承的原型对象。</p>
+<p>我之前说过，万物皆对象。函数当然也是一个对象，它当然也需要继承另一个对象，那么被函数对象继承的对象，就叫原型对象，在例子里面，他就叫做 Father.prototype。</p>
+<p>原型对象，首先是一个对象呀。因此我在重写父类构造函数的原型对象的时候使用了字面量模式，也就是{……}的方法来指定一个对象。当然，你要这么书写也是对的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Father.prototype.age = <span class="number">50</span>;</span><br><span class="line">Father.prototype.home = [<span class="string">'Beijing'</span>, <span class="string">'Shanghai'</span>];</span><br></pre></td></tr></table></figure>
+<p>当然，它们之间会有一些差别，但就为对象赋值的情况他们的作用是等效的。</p>
+<p>在之后呢，我们为父类创建了一个实例，并将子类构造函数的原型对象指向了这个实例，到此继承原型链完成。</p>
+<p>啊啊啊不要问我为什么要这样继承了，这样做并不奇怪。首先我们知道函数的 prototype 必定指向一个 obj 对象，那么构造函数显然不能担当这一职责，只有被实例化的对象才能成为子类的原型对象。这里可以填入的对象有两个，一个是 father，另一个是 Father.prototype。那为什么不是后面这个呢？试试就知道了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype = Father.prototype;</span><br></pre></td></tr></table></figure>
+<p>这行代码一敲完我就觉得非常的搞笑了，按自然语言的理解来看看，你的父亲等于你父亲的父亲！？？那你爸是你表哥咯？实际上呢，这样子的赋值语句也经常用到，只不过含义完全不同，这是继承自同一原型的两个不同子类，相当于兄弟节点，这好理解吧？</p>
+<p>这里要讲的是子类继承，因此接下来子类的构造函数的 prototype 自然也指向这个被实例化的原型对象。JavaScript 的语言逻辑就是这么奇怪又好有道理的样子。</p>
+<p>好，接下来我要给子类实例化两个对象出来，分别是我和我弟弟。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">'成龙'</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">'成风'</span>);</span><br></pre></td></tr></table></figure>
+<p>前戏就讲到这里，接下来我们进入正题。基于原型到底有哪些特性。</p>
+<hr>
+<h2 id="简单赋值不会改变原型以及该对象的兄弟对象的属性，实例不能改变原型的基本值属性"><a href="#简单赋值不会改变原型以及该对象的兄弟对象的属性，实例不能改变原型的基本值属性" class="headerlink" title="简单赋值不会改变原型以及该对象的兄弟对象的属性，实例不能改变原型的基本值属性"></a>简单赋值不会改变原型以及该对象的兄弟对象的属性，实例不能改变原型的基本值属性</h2><p>还是先举一个例子，比如我肯定没有我爸年纪那么大，因此我继承了所有属性后，我还应该要自己有一个年龄属性覆盖上去。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">person1.age = <span class="number">20</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person1.age);    <span class="comment">//20</span></span><br><span class="line"><span class="built_in">console</span>.log(person1.__proto__.age);   <span class="comment">//50</span></span><br></pre></td></tr></table></figure>
+<p>子类改变了自己类内的属性（实质是覆盖，使用 delete 删去该属性后，仍然继承父类的值），但是这并不会影响父类中该属性的值。</p>
+<p>这很好理解吧，你虽然天生遗传了你爸的基因，但是你自己上课外班学会了唱歌跳舞你爸总不会就自然学会了吧？</p>
+<p>ps：这里说一说”<strong>proto</strong>“这个属性，ECMAScript5 中叫它 [prototype]，是每一个被实例化的对象都会被继承的属性，它的指向与该实例化对象的构造函数的 prototype 的指向相同，指向原型对象。</p>
+<hr>
+<h2 id="原型中引用类型的属性是共享的，实例对象能够修改原型对象中引用类型对象的属性"><a href="#原型中引用类型的属性是共享的，实例对象能够修改原型对象中引用类型对象的属性" class="headerlink" title="原型中引用类型的属性是共享的，实例对象能够修改原型对象中引用类型对象的属性"></a>原型中引用类型的属性是共享的，实例对象能够修改原型对象中引用类型对象的属性</h2><p>引用类型是什么呢，这里涉及到 js 的基础知识了，在 JavaScript 中，数据类型一共有 7 种，分别是：Number, String, Boolean, Undefined, Null, Object, Function。其中基本数据类型共 5 种：Number, String, Boolean, Undefined, Null。而剩下的统称为引用类型，包括 obj 对象，函数和数组。究其原理呢，是因为引用类型并不实际占用栈内存而只是其中的基本类型数据占用，引用类型仅用堆内存提供指针指向他们，于是就有了一个非常有趣的现象：基本数据类型永远无法被改变，而引用类型可以，原因就是引用类型只需要修改指针，指向另外一个基本类型数据就可以了呀。</p>
+<p>扯远了，总而言之，引用类型并不是保存值的，而只是一个指针堆，或者说是基本数据的引用堆，因此我们修改实例对象中的引用类型对象的时候，原型对象中引用类型对象的属性也会同时被修改，因为他们本来就指向的同一个内存块嘛。</p>
+<p>还是举一个例子加深一下理解。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(person1.home);    <span class="comment">//[ 'Beijing', 'Shanghai' ]</span></span><br><span class="line">person1.home[<span class="number">0</span>] = <span class="string">'Shenzhen'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(father.home);    <span class="comment">//[ 'Shenzhen', 'Shanghai' ]</span></span><br><span class="line"><span class="built_in">console</span>.log(person1.home);   <span class="comment">//[ 'Shenzhen', 'Shanghai' ]</span></span><br></pre></td></tr></table></figure>
+<p>本来啊，你们一家都住在北京，但是你长大了，跑到深圳去工作了，还在那里买了房子住下了，于是你的住址被迁移到了深圳。但是同时，你必须要和爸妈住在一起，拥有相同的住址（引用类型嘛，指向同一个地址位置），因此你爸也吧户口改了，迁移到了深圳。</p>
+<p>还是不能理解？哎，我也觉得有点牵强，还是不能随便类比，那还是来个基础编程吧。我们如果要让 person1 拥有一个 home 的数组属性，并且它的第 0 号元素为’Shenzhen’，该怎么办呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person1 = &#123;&#125;;</span><br><span class="line">person1.home[<span class="number">0</span>] = <span class="string">'Shenzhen'</span>;</span><br></pre></td></tr></table></figure>
+<p>这样行得通吗？你可以自己试试，显然是不可以的，这里会报错：’home’ not defined。它连 home 这个属性都还没有呀，怎么能给 home 的第一个元素赋值呢？所以我们应该这样写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person1 = &#123;&#125;;</span><br><span class="line">person1.home = [];</span><br><span class="line">person1.home[<span class="number">0</span>] = <span class="string">'Shenzhen'</span>;</span><br></pre></td></tr></table></figure>
+<p>先把 home 属性给它定义出来自然就不会有问题啦。其实呀，这跟我们的问题是一样一样的。person1 中，并没有一个名为 home 的属性，因此 person1.home[0] 是不行的。</p>
+<p>至于为什么没有报错呢，是因为 js 的原型链向上搜索机制：如果查找一个对象的属性没有找到，搜索会继续在继承的对象中搜索，如果还没有则逐级向上搜索直到找到为止。而此时，虽然 person1 中没有这个属性，但它继承的父类中有 home 这个属性，于是系统会认为找到了这个属性，并随着你的赋值语句更改了父类中该属性的值。</p>
+<p>再来举一个例子。我们开始说了，给子类改写属性的实质是一种覆盖。删除实例的属性之后，就会取消了子类的属性覆盖，这个时候再需要调用该对象的这个属性时，就会从原型链上一层一层找到头，直到找到为止。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(person1.home);    <span class="comment">//[ 'Shenzhen', 'Shanghai' ]</span></span><br><span class="line"><span class="keyword">delete</span> person1.home;</span><br><span class="line"><span class="built_in">console</span>.log(person1.home);    <span class="comment">//[ 'Beijing', 'Shanghai' ]</span></span><br></pre></td></tr></table></figure>
+<p>累死了，现在总该明白这西方的一套是怎么回事了吧？如果这样还不明白的话，我也只能说“不了不了“。</p>
+<hr>
+<h2 id="改写构造函数的原型，改写的属性能够动态反应到实例化的对象中"><a href="#改写构造函数的原型，改写的属性能够动态反应到实例化的对象中" class="headerlink" title="改写构造函数的原型，改写的属性能够动态反应到实例化的对象中"></a>改写构造函数的原型，改写的属性能够动态反应到实例化的对象中</h2><p>在定义父类完毕后，你突然想补充一点，比如说：我弟和我都是男的啊！你爸那一代身份证可能没考虑到性别这一属性，那你爸和你以及你弟怎么办呢，总不能性别模糊吧？</p>
+<p>办法还是有的，就是改写子类的原型对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype.sex = <span class="string">'male'</span>;</span><br><span class="line"><span class="comment">// 等同于 father.sex = 'male'，也等同于 person1.__proto__.sex = 'male'</span></span><br><span class="line"><span class="comment">// 这里不能写成：Father.sex = 'male'; 这是因为面向对象编程的规则：对象（实例）才是属性的拥有者。</span></span><br><span class="line"><span class="built_in">console</span>.log(person1.sex);   <span class="string">'male'</span></span><br><span class="line"><span class="built_in">console</span>.log(father.sex);    <span class="string">'male'</span></span><br></pre></td></tr></table></figure>
+<p>其实呀，这个 Person.prototype 就是 father，因此呢，你如果非要定义 father.sex = ‘male’ 也不是不可以，仅在此题中实现的效果是相同的。但是这不符合 JavaScript 规范，也是普遍面向对象编程的规则：对象（实例）才是属性的拥有者。</p>
+<p>改写原型对象后呢，子类也会动态地继承这些属性，因此这一招改原型大法还是非常的常用的。</p>
+<hr>
+<h3 id="4-重写构造函数的原型，使子类继承一个新的原型"><a href="#4-重写构造函数的原型，使子类继承一个新的原型" class="headerlink" title="4. 重写构造函数的原型，使子类继承一个新的原型"></a>4. 重写构造函数的原型，使子类继承一个新的原型</h3><p>比如呀，你有一个同母异父的弟弟，他的什么东西都和你跟你爸爸不像，显然啊，他跟你爸并没有什么血缘关系嘛，因此它没有任何属性是从你爸那里继承的呀。</p>
+<p>重写原型其实很简单，直接对 Person.prototype 附一个不同字面量对象即可。由于重写原型会使得原有的继承全部更换，因此不是特殊用途的情况下使用的很少。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype = &#123;</span><br><span class="line">    age: <span class="number">40</span>,</span><br><span class="line">    home: [<span class="string">'Guangzhou'</span>, <span class="string">'Changsha'</span>]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person3 = <span class="keyword">new</span> Person(<span class="string">'黄龙'</span>);</span><br><span class="line"><span class="comment">// 这个时候 Person 的原型已经完全变成了另一个对象，于是我连这个家伙的姓氏都改掉了~</span></span><br><span class="line"><span class="built_in">console</span>.log(person3.home);</span><br><span class="line"><span class="built_in">console</span>.log(person3.age);</span><br><span class="line"><span class="built_in">console</span>.log(person1.home);</span><br><span class="line"><span class="built_in">console</span>.log(person1.age);</span><br></pre></td></tr></table></figure>
+<p>你这个没有什么血缘关系的弟弟有一个更年轻的爸爸，住址也跟你完全不同，其实跟你完全就是两个世界的人了嘛，于是我连这个家伙的姓氏都改掉了~</p>
+<p>唔，大概我能总结出来的特性就这么多啦，想到再补充吧~</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>请作者恰一杯奶茶如何~</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="Duang 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Duang 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Duang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://githubio.zakum.cn/posts/1312/" title="js 学习笔记梳理 (2)">https://githubio.zakum.cn/posts/1312/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/es5/" rel="tag"><i class="fa fa-tag"></i> es5</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/e312/" rel="prev" title="js 学习笔记梳理 (1)">
+      <i class="fa fa-chevron-left"></i> js 学习笔记梳理 (1)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/6008/" rel="next" title="es6 学习笔记">
+      es6 学习笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单赋值不会改变原型以及该对象的兄弟对象的属性，实例不能改变原型的基本值属性"><span class="nav-number">1.</span> <span class="nav-text">简单赋值不会改变原型以及该对象的兄弟对象的属性，实例不能改变原型的基本值属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型中引用类型的属性是共享的，实例对象能够修改原型对象中引用类型对象的属性"><span class="nav-number">2.</span> <span class="nav-text">原型中引用类型的属性是共享的，实例对象能够修改原型对象中引用类型对象的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改写构造函数的原型，改写的属性能够动态反应到实例化的对象中"><span class="nav-number">3.</span> <span class="nav-text">改写构造函数的原型，改写的属性能够动态反应到实例化的对象中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-重写构造函数的原型，使子类继承一个新的原型"><span class="nav-number">3.1.</span> <span class="nav-text">4. 重写构造函数的原型，使子类继承一个新的原型</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Duang"
+      src="https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Duang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=250407778&site=qq&menu=yes" title="QQ → http://wpa.qq.com/msgrd?v=3&uin=250407778&site=qq&menu=yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:250407778@qq.com" title="E-Mail → mailto:250407778@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/kelekexiao" title="Facebook → https://www.facebook.com/kelekexiao" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/realDuang" title="知乎 → https://www.zhihu.com/people/realDuang" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/realDuang" title="GitHub → https://github.com/realDuang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://realDuang.github.io/leetcode-in-javascript/" title="https://realDuang.github.io/leetcode-in-javascript/" rel="noopener" target="_blank">Leetcode In JavaScript</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">zakum.cn </a>
+      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=6065381" rel="noopener" target="_blank">粤ICP备20067728号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Duang</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'e5724a2cdf100e37e7d9',
+      clientSecret: '20f5f1654b3ebd035d2745cc1a4bab5427468661',
+      repo        : 'blog',
+      owner       : 'realDuang',
+      admin       : ['realDuang'],
+      id          : 'f8a1a74089ed7a7751505ecd05400728',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":0.75,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","hOffset":0,"vOffset":-80},"mobile":{"show":false},"dialog":{"enable":true,"hitokoto":true},"react":{"opacityDefault":0.8,"opacityOnHover":0.2}});</script></body>
+</html>
