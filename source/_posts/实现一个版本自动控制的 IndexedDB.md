@@ -1,7 +1,7 @@
 ---
 title: 实现一个版本自动控制的 IndexedDB
 categories: JavaScript
-tags: React
+tags: IndexedDB
 abbrlink: 3d6
 date: 2020-07-13 16:05:22
 ---
