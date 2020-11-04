@@ -1,21 +1,19 @@
-sudo: false
 language: node_js
 node_js:
   - 10 # use nodejs v10 LTS
 cache: npm
+os: linux
 branches:
   only:
     - master # build master branch only
 script:
   - hexo generate # generate static files
 deploy:
+  strategy: git
   provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN
-  keep-history: true
+  cleanup: false
+  github_token: $GH_TOKEN
+  keep_history: true
   on:
     branch: master
-  local-dir: public
-
-include:
-  .nojekyll
+  local_dir: public
