@@ -30,7 +30,7 @@
 <meta property="og:site_name" content="枫之谷">
 <meta property="og:description" content="从 TodoList 说起对于我们前端开发来说，想要学习一个框架，从开发一个 TodoList 项目做起，这就像学习语言先学会写 Hello world 一样基础。但其实，简单的 TodoList 里面，同样可以蕴含一些复杂的结构。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-05T13:42:23.754Z">
+<meta property="og:updated_time" content="2020-11-05T13:44:15.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有向无环图的数据模型设计与应用">
 <meta name="twitter:description" content="从 TodoList 说起对于我们前端开发来说，想要学习一个框架，从开发一个 TodoList 项目做起，这就像学习语言先学会写 Hello world 一样基础。但其实，简单的 TodoList 里面，同样可以蕴含一些复杂的结构。">
@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-05 13:42:23" itemprop="dateModified" datetime="2020-11-05T13:42:23+00:00">2020-11-05</time>
+                <time title="修改时间：2020-11-05 13:44:15" itemprop="dateModified" datetime="2020-11-05T13:44:15+00:00">2020-11-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,7 +249,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -361,7 +361,29 @@
 <p>接下来沿着出度对所有继任节点染色，B1单元格、SUM函数进入计算队列。</p>
 <p>接下来遍历染色节点，由于这些节点处于依赖条件不满足，无法计算的状态，根据Excel产品的策略，他们返回计算错误结果 <code>#VALUE!</code>。</p>
 <p>（如果你在Excel中尝试了这个数据却发现没有出现错误结果，是因为Excel对空值做了默认处理，在数字计算时转化成了0。）</p>
-<p>之后更新他们的继任节点，B2单元格进入计算队列。（根据深度优先策略，B2其实应该会更早进入计算队列），由于<code>#VALUE!</code>的结果无法正常参与计算，因此B2单元格也返回<code>#VALUE!</code>。至此，一次依赖图结构以及数据就完成了一次更新。</p>
+<p>之后更新他们的继任节点，B2单元格进入计算队列。（根据深度优先策略，B2其实应该会更早进入计算队列），由于<code>#VALUE!</code>的结果无法正常参与计算，因此B2单元格也返回<code>#VALUE!</code>。最终Excel展示结果如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:right">A</th>
+<th style="text-align:right">B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">#VALUE!</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">#VALUE!</td>
+</tr>
+</tbody>
+</table>
+<p>至此，一次依赖图结构以及数据就完成了一次更新。</p>
 <h2 id="写在结尾"><a href="#写在结尾" class="headerlink" title="写在结尾"></a>写在结尾</h2><p>当然，在 Excel 中真实的依赖图架构的数据模型要比上节所介绍的设计复杂得多。从节点的种类上，我们可能需要区分单元格节点、范围节点、位置节点、函数节点、甚至各种各样的自定义节点，他们在接收图的变化时都有着不同的行为。在对图的操作上，也会多出来许多情况需要考虑，如行列变更、复制粘贴、数据格式继承等等可能导致依赖图需要重算甚至重构的情况。</p>
 <p>这里又可以细讲出很多篇文章，在此就不过多展开了，感兴趣的话可以在上节中基础的数据模型上自行扩展。</p>
 <p>在复杂的工程项目架构中，往往存在着大量精妙的算法设计。有向无环图的思路在 Excel 的设计中也只是其中一隅，下次我会介绍更多 Excel 中涉及到的算法思路，帮助大家认识合适的算法思想对复杂问题的解决有多大的帮助。</p>
