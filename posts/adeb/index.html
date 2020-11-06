@@ -30,7 +30,7 @@
 <meta property="og:site_name" content="枫之谷">
 <meta property="og:description" content="从 TodoList 说起对于我们前端开发来说，想要学习一个框架，从开发一个 TodoList 项目做起，这就像学习语言先学会写 Hello world 一样基础。但其实，简单的 TodoList 里面，同样可以蕴含一些复杂的结构。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-05T13:44:57.641Z">
+<meta property="og:updated_time" content="2020-11-06T02:47:17.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有向无环图的数据模型设计与应用">
 <meta name="twitter:description" content="从 TodoList 说起对于我们前端开发来说，想要学习一个框架，从开发一个 TodoList 项目做起，这就像学习语言先学会写 Hello world 一样基础。但其实，简单的 TodoList 里面，同样可以蕴含一些复杂的结构。">
@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-05 13:44:57" itemprop="dateModified" datetime="2020-11-05T13:44:57+00:00">2020-11-05</time>
+                <time title="修改时间：2020-11-06 02:47:17" itemprop="dateModified" datetime="2020-11-06T02:47:17+00:00">2020-11-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -298,7 +298,7 @@
 <p>当我们删除一个节点时，会使得其该节点所关联的所有入度与出度失效，因此处理这种情况时，应该先去除该节点所有的入度，取消掉对这些节点的监听，并沿着出度染色所有依赖该节点的继任节点，之后更新邻接表。</p>
 <p>由于前置节点删除导致这些染色节点无法完成原本的计算，因此也需要将这些染色节点进行清除处理（当然，染色节点是可以根据具体产品策略来判断是否需要保留的，如保留节点但存储的数据结果返回错误）。</p>
 <p>觉得比较难以理解的话，我们可以在下节的例子中实践一下。</p>
-<h2 id="在-Excel-函数模块中的应用"><a href="#在-Excel-函数模块中的应用" class="headerlink" title="在 Excel 函数模块中的应用"></a>在 Excel 函数模块中的应用</h2><p>在 Excel 的设计中，函数功能是一个非常重要且难点极多的部分。设计函数功能，其中的难点在于：如何以代价最小的方式获取到该 Excel 函数所有依赖的数据，并能建立起对这些依赖数据的监听机制，在依赖数据更改时触发重算。</p>
+<h2 id="在-Excel-中依赖图的应用"><a href="#在-Excel-中依赖图的应用" class="headerlink" title="在 Excel 中依赖图的应用"></a>在 Excel 中依赖图的应用</h2><p>在 Excel 的设计中，函数功能是一个非常重要且难点极多的部分。设计函数功能，其中的难点在于：如何以代价最小的方式获取到该 Excel 函数所有依赖的数据，并能建立起对这些依赖数据的监听机制，在依赖数据更改时触发重算。</p>
 <p>而对于这样复杂且频繁的数据变更，显然使用普通处理事件的方式：订阅者模式是不适用的，我们很难及时地进行事件的挂载与清理。</p>
 <p>我们知道，在 Excel 表格中，一个单元格，既可以依赖多个单元格的数据，该单元格的运算结果也可以被多个单元格所依赖。并且当单元格之间形成了相互依赖时会报出循环引用 <code>&quot;#REF!&quot;</code> 错误。</p>
 <p>经过了之前的介绍，我们很容易想到，函数的依赖关系恰好是符合 DAG 图的特性的，因此我们采用该数据结构来存储表格内所有函数之间的依赖关系，称为表格的<code>依赖图</code>。</p>
@@ -355,13 +355,13 @@
 </tr>
 </tbody>
 </table>
-<p>我们也可以来试试用户操作对依赖图的影响。我们可以看看把表格的B1单元格删除会发生什么。</p>
+<p>我们也可以来试试用户操作对依赖图的影响。我们可以看看把表格的A2单元格删除会发生什么。</p>
 <p>按照之前所介绍的，当节点删除时同时也要删去其入度，变成下图这样：</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/20201105213506.png" alt="20201105213506"></p>
 <p>接下来沿着出度对所有继任节点染色，B1单元格、SUM函数进入计算队列。</p>
 <p>接下来遍历染色节点，由于这些节点处于依赖条件不满足，无法计算的状态，根据Excel产品的策略，他们返回计算错误结果 <code>#VALUE!</code>。</p>
 <p>（如果你在Excel中尝试了这个数据却发现没有出现错误结果，是因为Excel对空值做了默认处理，在数字计算时转化成了0。）</p>
-<p>之后更新他们的继任节点，B2单元格进入计算队列。（根据深度优先策略，B2其实应该会更早进入计算队列），由于<code>#VALUE!</code>的结果无法正常参与计算，因此B2单元格也返回<code>#VALUE!</code>。最终Excel展示结果如下：</p>
+<p>之后更新他们的继任节点，根据拓扑排序结果，B2单元格进入计算队列。由于<code>#VALUE!</code>的结果无法正常参与计算，因此B2单元格也返回<code>#VALUE!</code>。最终Excel展示结果如下：</p>
 <table>
 <thead>
 <tr>
@@ -378,13 +378,13 @@
 </tr>
 <tr>
 <td style="text-align:center">2</td>
-<td style="text-align:right">2</td>
+<td style="text-align:right"></td>
 <td style="text-align:right">#VALUE!</td>
 </tr>
 </tbody>
 </table>
 <p>至此，Excel的依赖图结构以及数据就完成了一次更新。</p>
-<h2 id="写在结尾"><a href="#写在结尾" class="headerlink" title="写在结尾"></a>写在结尾</h2><p>当然，在 Excel 中真实的依赖图架构的数据模型要比上节所介绍的设计复杂得多。从节点的种类上，我们可能需要区分单元格节点、范围节点、位置节点、函数节点、甚至各种各样的自定义节点，他们在接收图的变化时都有着不同的行为。在对图的操作上，也会多出来许多情况需要考虑，如行列变更、复制粘贴、数据格式继承等等可能导致依赖图需要重算甚至重构的情况。</p>
+<h2 id="写在结尾"><a href="#写在结尾" class="headerlink" title="写在结尾"></a>写在结尾</h2><p>当然，在 Excel 中真实的依赖图架构的数据模型要比上节所介绍的复杂得多。从节点的种类上，我们可能需要区分单元格节点、范围节点、位置节点、函数节点、甚至各种各样的自定义节点，他们在接收图的变化时都有着不同的行为。在对图的操作上，也会多出来许多情况需要考虑，如行列变更、复制粘贴、数据格式继承等等可能导致依赖图需要重算甚至重构的情况。</p>
 <p>这里又可以细讲出很多篇文章，在此就不过多展开了，感兴趣的话可以在上节中基础的数据模型上自行扩展。</p>
 <p>在复杂的工程项目架构中，往往存在着大量精妙的算法设计。有向无环图的思路在 Excel 的设计中也只是其中一隅，下次我会介绍更多 Excel 中涉及到的算法思路，帮助大家认识合适的算法思想对复杂问题的解决有多大的帮助。</p>
 
@@ -525,7 +525,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#从-TodoList-说起"><span class="nav-number">1.</span> <span class="nav-text">从 TodoList 说起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有向无环图与拓扑排序"><span class="nav-number">2.</span> <span class="nav-text">有向无环图与拓扑排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DAG-图数据模型设计"><span class="nav-number">3.</span> <span class="nav-text">DAG 图数据模型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图结构变化后依赖关系的修复"><span class="nav-number">4.</span> <span class="nav-text">图结构变化后依赖关系的修复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Excel-函数模块中的应用"><span class="nav-number">5.</span> <span class="nav-text">在 Excel 函数模块中的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在结尾"><span class="nav-number">6.</span> <span class="nav-text">写在结尾</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#从-TodoList-说起"><span class="nav-number">1.</span> <span class="nav-text">从 TodoList 说起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有向无环图与拓扑排序"><span class="nav-number">2.</span> <span class="nav-text">有向无环图与拓扑排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DAG-图数据模型设计"><span class="nav-number">3.</span> <span class="nav-text">DAG 图数据模型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图结构变化后依赖关系的修复"><span class="nav-number">4.</span> <span class="nav-text">图结构变化后依赖关系的修复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Excel-中依赖图的应用"><span class="nav-number">5.</span> <span class="nav-text">在 Excel 中依赖图的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在结尾"><span class="nav-number">6.</span> <span class="nav-text">写在结尾</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
