@@ -5,9 +5,9 @@
   <subtitle>这个人很懒，但还是想留下些什么东西。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://githubio.zakum.cn/"/>
-  <updated>2020-11-06T02:47:17.400Z</updated>
-  <id>https://githubio.zakum.cn/</id>
+  <link href="https://www.zakum.cn/"/>
+  <updated>2020-11-06T03:00:26.879Z</updated>
+  <id>https://www.zakum.cn/</id>
   
   <author>
     <name>Duang</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>有向无环图的数据模型设计与应用</title>
-    <link href="https://githubio.zakum.cn/posts/adeb/"/>
-    <id>https://githubio.zakum.cn/posts/adeb/</id>
+    <link href="https://www.zakum.cn/posts/adeb/"/>
+    <id>https://www.zakum.cn/posts/adeb/</id>
     <published>2020-11-02T15:59:22.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -29,19 +29,19 @@
     
     </summary>
     
-      <category term="架构设计" scheme="https://githubio.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+      <category term="架构设计" scheme="https://www.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="设计模式" scheme="https://githubio.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://www.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>实现一个版本自动控制的 IndexedDB</title>
-    <link href="https://githubio.zakum.cn/posts/3d6/"/>
-    <id>https://githubio.zakum.cn/posts/3d6/</id>
+    <link href="https://www.zakum.cn/posts/3d6/"/>
+    <id>https://www.zakum.cn/posts/3d6/</id>
     <published>2020-07-13T16:05:22.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -49,19 +49,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.zakum.cn/categories/JavaScript/"/>
     
     
-      <category term="IndexedDB" scheme="https://githubio.zakum.cn/tags/IndexedDB/"/>
+      <category term="IndexedDB" scheme="https://www.zakum.cn/tags/IndexedDB/"/>
     
   </entry>
   
   <entry>
     <title>给 JavaScript 插上多线程的翅膀 —— Web Worker 的 Promise 化实践</title>
-    <link href="https://githubio.zakum.cn/posts/8625/"/>
-    <id>https://githubio.zakum.cn/posts/8625/</id>
+    <link href="https://www.zakum.cn/posts/8625/"/>
+    <id>https://www.zakum.cn/posts/8625/</id>
     <published>2020-06-16T21:04:10.000Z</published>
-    <updated>2020-11-06T02:47:17.404Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -74,19 +74,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.zakum.cn/categories/JavaScript/"/>
     
     
-      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+      <category term="React" scheme="https://www.zakum.cn/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>React16.8 useHook 特性</title>
-    <link href="https://githubio.zakum.cn/posts/6b60/"/>
-    <id>https://githubio.zakum.cn/posts/6b60/</id>
+    <link href="https://www.zakum.cn/posts/6b60/"/>
+    <id>https://www.zakum.cn/posts/6b60/</id>
     <published>2020-01-21T18:19:28.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -96,19 +96,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.zakum.cn/categories/JavaScript/"/>
     
     
-      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+      <category term="React" scheme="https://www.zakum.cn/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>React15 与 React16 生命周期区别与使用方式</title>
-    <link href="https://githubio.zakum.cn/posts/1cec/"/>
-    <id>https://githubio.zakum.cn/posts/1cec/</id>
+    <link href="https://www.zakum.cn/posts/1cec/"/>
+    <id>https://www.zakum.cn/posts/1cec/</id>
     <published>2019-12-21T17:38:35.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -123,19 +123,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.zakum.cn/categories/JavaScript/"/>
     
     
-      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+      <category term="React" scheme="https://www.zakum.cn/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>设计模式的 js 实现 (4)--代理模式</title>
-    <link href="https://githubio.zakum.cn/posts/34cc/"/>
-    <id>https://githubio.zakum.cn/posts/34cc/</id>
+    <link href="https://www.zakum.cn/posts/34cc/"/>
+    <id>https://www.zakum.cn/posts/34cc/</id>
     <published>2019-10-07T16:42:54.000Z</published>
-    <updated>2020-11-06T02:47:17.404Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -143,19 +143,19 @@
     
     </summary>
     
-      <category term="架构设计" scheme="https://githubio.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+      <category term="架构设计" scheme="https://www.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="设计模式" scheme="https://githubio.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://www.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式的 js 实现 (3)--观察者模式</title>
-    <link href="https://githubio.zakum.cn/posts/8dda/"/>
-    <id>https://githubio.zakum.cn/posts/8dda/</id>
+    <link href="https://www.zakum.cn/posts/8dda/"/>
+    <id>https://www.zakum.cn/posts/8dda/</id>
     <published>2019-09-26T10:35:19.000Z</published>
-    <updated>2020-11-06T02:47:17.404Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -163,19 +163,19 @@
     
     </summary>
     
-      <category term="架构设计" scheme="https://githubio.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+      <category term="架构设计" scheme="https://www.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="设计模式" scheme="https://githubio.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://www.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式的 js 实现 (2)--装饰器模式</title>
-    <link href="https://githubio.zakum.cn/posts/948d/"/>
-    <id>https://githubio.zakum.cn/posts/948d/</id>
+    <link href="https://www.zakum.cn/posts/948d/"/>
+    <id>https://www.zakum.cn/posts/948d/</id>
     <published>2019-09-23T11:07:08.000Z</published>
-    <updated>2020-11-06T02:47:17.404Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -183,19 +183,19 @@
     
     </summary>
     
-      <category term="架构设计" scheme="https://githubio.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+      <category term="架构设计" scheme="https://www.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="设计模式" scheme="https://githubio.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://www.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式的 js 实现 (1)--单例模式</title>
-    <link href="https://githubio.zakum.cn/posts/68b8/"/>
-    <id>https://githubio.zakum.cn/posts/68b8/</id>
+    <link href="https://www.zakum.cn/posts/68b8/"/>
+    <id>https://www.zakum.cn/posts/68b8/</id>
     <published>2019-09-20T16:58:52.000Z</published>
-    <updated>2020-11-06T02:47:17.404Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -203,19 +203,19 @@
     
     </summary>
     
-      <category term="架构设计" scheme="https://githubio.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+      <category term="架构设计" scheme="https://www.zakum.cn/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="设计模式" scheme="https://githubio.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://www.zakum.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>利用 React 高阶组件实现一个面包屑导航</title>
-    <link href="https://githubio.zakum.cn/posts/57/"/>
-    <id>https://githubio.zakum.cn/posts/57/</id>
+    <link href="https://www.zakum.cn/posts/57/"/>
+    <id>https://www.zakum.cn/posts/57/</id>
     <published>2018-11-12T11:51:01.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -223,19 +223,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.zakum.cn/categories/JavaScript/"/>
     
     
-      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+      <category term="React" scheme="https://www.zakum.cn/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>css 的垂直居中方法</title>
-    <link href="https://githubio.zakum.cn/posts/b04a/"/>
-    <id>https://githubio.zakum.cn/posts/b04a/</id>
+    <link href="https://www.zakum.cn/posts/b04a/"/>
+    <id>https://www.zakum.cn/posts/b04a/</id>
     <published>2018-03-14T16:51:25.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -243,19 +243,19 @@
     
     </summary>
     
-      <category term="CSS" scheme="https://githubio.zakum.cn/categories/CSS/"/>
+      <category term="CSS" scheme="https://www.zakum.cn/categories/CSS/"/>
     
     
-      <category term="css" scheme="https://githubio.zakum.cn/tags/css/"/>
+      <category term="css" scheme="https://www.zakum.cn/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>git 常用命令笔记</title>
-    <link href="https://githubio.zakum.cn/posts/b608/"/>
-    <id>https://githubio.zakum.cn/posts/b608/</id>
+    <link href="https://www.zakum.cn/posts/b608/"/>
+    <id>https://www.zakum.cn/posts/b608/</id>
     <published>2018-01-03T16:53:25.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -263,19 +263,19 @@
     
     </summary>
     
-      <category term="git" scheme="https://githubio.zakum.cn/categories/git/"/>
+      <category term="git" scheme="https://www.zakum.cn/categories/git/"/>
     
     
-      <category term="git" scheme="https://githubio.zakum.cn/tags/git/"/>
+      <category term="git" scheme="https://www.zakum.cn/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>React 原理深入 (1)--virtual DOM</title>
-    <link href="https://githubio.zakum.cn/posts/6bab/"/>
-    <id>https://githubio.zakum.cn/posts/6bab/</id>
+    <link href="https://www.zakum.cn/posts/6bab/"/>
+    <id>https://www.zakum.cn/posts/6bab/</id>
     <published>2017-12-17T16:02:34.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -283,19 +283,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.zakum.cn/categories/JavaScript/"/>
     
     
-      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+      <category term="React" scheme="https://www.zakum.cn/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>Redux 深入理解 (4)</title>
-    <link href="https://githubio.zakum.cn/posts/2db7/"/>
-    <id>https://githubio.zakum.cn/posts/2db7/</id>
+    <link href="https://www.zakum.cn/posts/2db7/"/>
+    <id>https://www.zakum.cn/posts/2db7/</id>
     <published>2017-12-04T15:22:30.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -305,19 +305,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.zakum.cn/categories/JavaScript/"/>
     
     
-      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+      <category term="React" scheme="https://www.zakum.cn/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>Redux 深入理解 (3)</title>
-    <link href="https://githubio.zakum.cn/posts/1db5/"/>
-    <id>https://githubio.zakum.cn/posts/1db5/</id>
+    <link href="https://www.zakum.cn/posts/1db5/"/>
+    <id>https://www.zakum.cn/posts/1db5/</id>
     <published>2017-12-03T13:00:52.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -336,19 +336,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.zakum.cn/categories/JavaScript/"/>
     
     
-      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+      <category term="React" scheme="https://www.zakum.cn/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>Redux 深入理解 (2)</title>
-    <link href="https://githubio.zakum.cn/posts/8db4/"/>
-    <id>https://githubio.zakum.cn/posts/8db4/</id>
+    <link href="https://www.zakum.cn/posts/8db4/"/>
+    <id>https://www.zakum.cn/posts/8db4/</id>
     <published>2017-12-01T12:44:56.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -364,19 +364,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.zakum.cn/categories/JavaScript/"/>
     
     
-      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+      <category term="React" scheme="https://www.zakum.cn/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>Redux 深入理解 (1)</title>
-    <link href="https://githubio.zakum.cn/posts/7db4/"/>
-    <id>https://githubio.zakum.cn/posts/7db4/</id>
+    <link href="https://www.zakum.cn/posts/7db4/"/>
+    <id>https://www.zakum.cn/posts/7db4/</id>
     <published>2017-11-30T11:10:37.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -384,19 +384,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://githubio.zakum.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.zakum.cn/categories/JavaScript/"/>
     
     
-      <category term="React" scheme="https://githubio.zakum.cn/tags/React/"/>
+      <category term="React" scheme="https://www.zakum.cn/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB 极简实践入门</title>
-    <link href="https://githubio.zakum.cn/posts/e000/"/>
-    <id>https://githubio.zakum.cn/posts/e000/</id>
+    <link href="https://www.zakum.cn/posts/e000/"/>
+    <id>https://www.zakum.cn/posts/e000/</id>
     <published>2017-09-17T17:13:38.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -404,19 +404,19 @@
     
     </summary>
     
-      <category term="NodeJS" scheme="https://githubio.zakum.cn/categories/NodeJS/"/>
+      <category term="NodeJS" scheme="https://www.zakum.cn/categories/NodeJS/"/>
     
     
-      <category term="MongoDB" scheme="https://githubio.zakum.cn/tags/MongoDB/"/>
+      <category term="MongoDB" scheme="https://www.zakum.cn/tags/MongoDB/"/>
     
   </entry>
   
   <entry>
     <title>github 建立 repository 并上传工程的方法</title>
-    <link href="https://githubio.zakum.cn/posts/3e41/"/>
-    <id>https://githubio.zakum.cn/posts/3e41/</id>
+    <link href="https://www.zakum.cn/posts/3e41/"/>
+    <id>https://www.zakum.cn/posts/3e41/</id>
     <published>2017-07-02T23:46:32.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -425,19 +425,19 @@
     
     </summary>
     
-      <category term="git" scheme="https://githubio.zakum.cn/categories/git/"/>
+      <category term="git" scheme="https://www.zakum.cn/categories/git/"/>
     
     
-      <category term="git" scheme="https://githubio.zakum.cn/tags/git/"/>
+      <category term="git" scheme="https://www.zakum.cn/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>在 Linux 下 nodejs 的安装方法大全</title>
-    <link href="https://githubio.zakum.cn/posts/fab0/"/>
-    <id>https://githubio.zakum.cn/posts/fab0/</id>
+    <link href="https://www.zakum.cn/posts/fab0/"/>
+    <id>https://www.zakum.cn/posts/fab0/</id>
     <published>2017-06-11T01:06:46.000Z</published>
-    <updated>2020-11-06T02:47:17.400Z</updated>
+    <updated>2020-11-06T03:00:26.879Z</updated>
     
     <summary type="html">
     
@@ -445,7 +445,7 @@
     
     </summary>
     
-      <category term="杂项" scheme="https://githubio.zakum.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+      <category term="杂项" scheme="https://www.zakum.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
   </entry>
