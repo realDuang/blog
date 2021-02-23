@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.zakum.cn/"/>
-  <updated>2020-11-06T11:06:54.724Z</updated>
+  <updated>2021-02-23T02:39:18.825Z</updated>
   <id>https://www.zakum.cn/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>中文输入法中光标跟随能力触发的浏览器事件探究</title>
+    <link href="https://www.zakum.cn/posts/e1af/"/>
+    <id>https://www.zakum.cn/posts/e1af/</id>
+    <published>2021-02-01T20:30:38.000Z</published>
+    <updated>2021-02-23T02:39:18.825Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近在着手腾讯文档的输入体验优化，在其中有一个不起眼的小需求引起了我的注意，并顺便研究了一些事件监听机制相结合的特点，特此记录一下填坑过程。&lt;/p&gt;
+&lt;h2 id=&quot;模拟光标跟随&quot;&gt;&lt;a href=&quot;#模拟光标跟随&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>有向无环图的模型设计与应用</title>
     <link href="https://www.zakum.cn/posts/adeb/"/>
     <id>https://www.zakum.cn/posts/adeb/</id>
     <published>2020-11-02T15:59:22.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.825Z</updated>
     
     <summary type="html">
     
@@ -41,7 +64,7 @@
     <link href="https://www.zakum.cn/posts/3d6/"/>
     <id>https://www.zakum.cn/posts/3d6/</id>
     <published>2020-07-13T16:05:22.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.825Z</updated>
     
     <summary type="html">
     
@@ -61,7 +84,7 @@
     <link href="https://www.zakum.cn/posts/8625/"/>
     <id>https://www.zakum.cn/posts/8625/</id>
     <published>2020-06-16T21:04:10.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.825Z</updated>
     
     <summary type="html">
     
@@ -86,7 +109,7 @@
     <link href="https://www.zakum.cn/posts/6b60/"/>
     <id>https://www.zakum.cn/posts/6b60/</id>
     <published>2020-01-21T18:19:28.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.821Z</updated>
     
     <summary type="html">
     
@@ -108,7 +131,7 @@
     <link href="https://www.zakum.cn/posts/1cec/"/>
     <id>https://www.zakum.cn/posts/1cec/</id>
     <published>2019-12-21T17:38:35.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.821Z</updated>
     
     <summary type="html">
     
@@ -135,7 +158,7 @@
     <link href="https://www.zakum.cn/posts/34cc/"/>
     <id>https://www.zakum.cn/posts/34cc/</id>
     <published>2019-10-07T16:42:54.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.825Z</updated>
     
     <summary type="html">
     
@@ -155,7 +178,7 @@
     <link href="https://www.zakum.cn/posts/8dda/"/>
     <id>https://www.zakum.cn/posts/8dda/</id>
     <published>2019-09-26T10:35:19.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.825Z</updated>
     
     <summary type="html">
     
@@ -175,7 +198,7 @@
     <link href="https://www.zakum.cn/posts/948d/"/>
     <id>https://www.zakum.cn/posts/948d/</id>
     <published>2019-09-23T11:07:08.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.825Z</updated>
     
     <summary type="html">
     
@@ -195,7 +218,7 @@
     <link href="https://www.zakum.cn/posts/68b8/"/>
     <id>https://www.zakum.cn/posts/68b8/</id>
     <published>2019-09-20T16:58:52.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.825Z</updated>
     
     <summary type="html">
     
@@ -215,7 +238,7 @@
     <link href="https://www.zakum.cn/posts/57/"/>
     <id>https://www.zakum.cn/posts/57/</id>
     <published>2018-11-12T11:51:01.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.825Z</updated>
     
     <summary type="html">
     
@@ -235,7 +258,7 @@
     <link href="https://www.zakum.cn/posts/b04a/"/>
     <id>https://www.zakum.cn/posts/b04a/</id>
     <published>2018-03-14T16:51:25.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.821Z</updated>
     
     <summary type="html">
     
@@ -255,7 +278,7 @@
     <link href="https://www.zakum.cn/posts/b608/"/>
     <id>https://www.zakum.cn/posts/b608/</id>
     <published>2018-01-03T16:53:25.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.821Z</updated>
     
     <summary type="html">
     
@@ -275,7 +298,7 @@
     <link href="https://www.zakum.cn/posts/6bab/"/>
     <id>https://www.zakum.cn/posts/6bab/</id>
     <published>2017-12-17T16:02:34.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.821Z</updated>
     
     <summary type="html">
     
@@ -295,7 +318,7 @@
     <link href="https://www.zakum.cn/posts/2db7/"/>
     <id>https://www.zakum.cn/posts/2db7/</id>
     <published>2017-12-04T15:22:30.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.821Z</updated>
     
     <summary type="html">
     
@@ -317,7 +340,7 @@
     <link href="https://www.zakum.cn/posts/1db5/"/>
     <id>https://www.zakum.cn/posts/1db5/</id>
     <published>2017-12-03T13:00:52.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.821Z</updated>
     
     <summary type="html">
     
@@ -348,7 +371,7 @@
     <link href="https://www.zakum.cn/posts/8db4/"/>
     <id>https://www.zakum.cn/posts/8db4/</id>
     <published>2017-12-01T12:44:56.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.821Z</updated>
     
     <summary type="html">
     
@@ -376,7 +399,7 @@
     <link href="https://www.zakum.cn/posts/7db4/"/>
     <id>https://www.zakum.cn/posts/7db4/</id>
     <published>2017-11-30T11:10:37.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.821Z</updated>
     
     <summary type="html">
     
@@ -396,7 +419,7 @@
     <link href="https://www.zakum.cn/posts/e000/"/>
     <id>https://www.zakum.cn/posts/e000/</id>
     <published>2017-09-17T17:13:38.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.821Z</updated>
     
     <summary type="html">
     
@@ -416,7 +439,7 @@
     <link href="https://www.zakum.cn/posts/3e41/"/>
     <id>https://www.zakum.cn/posts/3e41/</id>
     <published>2017-07-02T23:46:32.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
+    <updated>2021-02-23T02:39:18.821Z</updated>
     
     <summary type="html">
     
@@ -429,24 +452,6 @@
     
     
       <category term="git" scheme="https://www.zakum.cn/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在 Linux 下 nodejs 的安装方法大全</title>
-    <link href="https://www.zakum.cn/posts/fab0/"/>
-    <id>https://www.zakum.cn/posts/fab0/</id>
-    <published>2017-06-11T01:06:46.000Z</published>
-    <updated>2020-11-06T11:06:54.724Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这段时间为了上线测试很多 nodejs 代码的部署，开始鼓捣云服务器。由于不是很懂运维知识，首先在安装上就踩了很多大坑，于是决定记录下来做个备忘。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="杂项" scheme="https://www.zakum.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
     
   </entry>
   
