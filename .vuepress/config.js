@@ -18,8 +18,14 @@ module.exports = {
       },
     ],
   ],
+  locales: {
+    '/': {
+      lang: 'zh-CN'
+    }
+  },
   theme: 'reco',
   themeConfig: {
+    type: 'blog',
     nav: [
       {
         text: 'Home',
@@ -49,7 +55,6 @@ module.exports = {
       },
     ],
     // sidebar: {  },
-    type: 'blog',
     blogConfig: {
       category: {
         location: 2,
