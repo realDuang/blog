@@ -20,12 +20,13 @@ module.exports = {
   ],
   locales: {
     '/': {
-      lang: 'zh-CN'
-    }
+      lang: 'zh-CN',
+    },
   },
   theme: 'reco',
   themeConfig: {
     type: 'blog',
+    logo: '/avatar.jpg',
     nav: [
       {
         text: 'Home',
@@ -33,28 +34,27 @@ module.exports = {
         icon: 'reco-home',
       },
       {
-        text: '时间轴',
+        text: '时光轴',
         link: '/timeline/',
         icon: 'reco-date',
       },
       {
-        text: '联系我',
-        icon: 'reco-message',
-        items: [
-          {
-            text: 'GitHub',
-            link: 'https://github.com/realDuang',
-            icon: 'reco-github',
-          },
-          {
-            text: '知乎',
-            link: 'https://www.zhihu.com/people/realDuang',
-            icon: 'reco-zhihu',
-          },
-        ],
+        text: '订阅',
+        link: 'https://zakum.cn/rss.xml',
+        icon: 'reco-rss',
+      },
+      {
+        text: '关于我',
+        link: '/about/',
+        icon: 'reco-account',
+      },
+      {
+        text: 'GitHub',
+        link: 'https://github.com/realDuang/blog',
+        icon: 'reco-github',
       },
     ],
-    // sidebar: {  },
+    subSidebar: 'auto',
     blogConfig: {
       category: {
         location: 2,
@@ -73,6 +73,13 @@ module.exports = {
         { icon: 'reco-facebook', link: 'https://www.facebook.com/kelekexiao' },
       ],
     },
+    vssueConfig: {
+      platform: 'github',
+      owner: 'realDuang',
+      repo: 'blog',
+      clientId: 'c538ce05be000c1afab3',
+      clientSecret: '7755987b5e4e3964ac1096dbb626858ac7b40cb0',
+    },
     friendLink: [{ title: 'Leetcode In JavaScript', link: 'https://realDuang.github.io/leetcode-in-javascript/' }],
     // logo: '/logo.png',
     search: true,
@@ -88,4 +95,18 @@ module.exports = {
   markdown: {
     lineNumbers: true,
   },
+
+  plugins: [
+    // 看板娘
+    [
+      '@vuepress-reco/vuepress-plugin-kan-ban-niang',
+      {
+        theme: ['z16'],
+        clean: true,
+        messages: {
+          welcome: `欢迎来到枫之谷~`,
+        }
+      },
+    ],
+  ],
 };
