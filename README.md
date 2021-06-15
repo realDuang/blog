@@ -1,10 +1,11 @@
 ---
 home: true
-heroText: 枫之谷
-tagline: 这个人很懒，但还是想留下些什么东西。
-
+heroText: null
+tagline: null
+# bgImage: https://source.unsplash.com/random/
 bgImageStyle: {
-  height: 'calc(100vh - 3.6rem)'
+  height: '0'
+  # height: 'calc(100vh - 3.6rem)'
 }
 isShowTitleInHome: true
 actionText: Guide
