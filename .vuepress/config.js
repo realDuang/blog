@@ -88,7 +88,7 @@ module.exports = {
     authorAvatar: '/avatar.jpg',
     record: 'https://zakum.cn',
     cyberSecurityRecord: '粤ICP备2021078850号',
-    cyberSecurityLink: 'http://www.beian.gov.cn',
+    cyberSecurityLink: 'https://beian.miit.gov.cn',
     startYear: '2016',
   },
   markdown: {
