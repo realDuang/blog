@@ -1,0 +1,33 @@
+name: release blog CI
+
+on:
+  push:
+    branches:
+      - githubaction
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: 步骤：第一步 -> Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: 步骤：第二步 -> 安装依赖
+        env:
+          GITHUB_ACTIONS_TOKEN: ${{ secrets.GITHUB_ACTIONS_TOKEN }}
+          url: https://github.com/realDuang/blog/tree/main
+          branch: main
+        run: |
+          npm install
+          npm run build
+          echo ${{ secrets.GITHUB_ACTIONS_TOKEN }}
+          curl -o https://console.cloud.tencent.com/tcb/env/index?&action=CreateAndDeployCloudBaseProject&appUrl=${{ url }}&workDir=${{ branch }}
