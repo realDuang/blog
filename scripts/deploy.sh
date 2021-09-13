@@ -15,7 +15,8 @@ fi
 cd public # 进入生成的文件夹
 git config --global user.name "realDuang"
 git config --global user.email "250407778@qq.com"
+git config --global init.defaultBranch master
 git init
 git add -A
 git commit -m "${msg}"
-git push -f $githubUrl gh-pages # 推送到github
+git push -f $githubUrl master:gh-pages # 推送到github
