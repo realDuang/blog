@@ -12,22 +12,21 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
 
     steps:
       - uses: actions/checkout@v1
-      - name: 步骤：第一步 -> Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: 步骤：第二步 -> 安装依赖
-        env:
-          GITHUB_ACTIONS_TOKEN: ${{ secrets.GITHUB_ACTIONS_TOKEN }}
-          REPO_URL: https://github.com/realDuang/blog/tree/main
-          REPO_BRANCH: main
+      - name: 安装依赖并构建
         run: |
           npm ci
           npm run build
-          echo ${{ secrets.GITHUB_ACTIONS_TOKEN }}
-          curl -o https://console.cloud.tencent.com/tcb/env/index?&action=CreateAndDeployCloudBaseProject&appUrl=${REPO_URL}&workDir=${REPO_BRANCH}
+
+      - name: 更新各平台流程
+        env:
+          GITHUB_ACTIONS_TOKEN: ${{ secrets.GITHUB_ACTIONS_TOKEN }}
+        run: bash ./scripts/deploy.sh
