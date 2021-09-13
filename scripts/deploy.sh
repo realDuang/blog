@@ -12,7 +12,9 @@ else
   githubUrl=https://realDuang:${GITHUB_ACTIONS_TOKEN}@github.com/realDuang/blog.git
 fi
 
-echo ${GITHUB_ACTIONS_TOKEN}
+echo "???"
+echo "githubUrl=https://realDuang:${GITHUB_ACTIONS_TOKEN}@github.com/realDuang/blog.git"
+echo githubUrl=https://realDuang:${GITHUB_ACTIONS_TOKEN}@github.com/realDuang/blog.git
 
 cd public # 进入生成的文件夹
 git config --global user.name "realDuang"
