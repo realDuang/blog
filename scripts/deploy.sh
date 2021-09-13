@@ -9,12 +9,14 @@ if [ -z "$GITHUB_ACTIONS_TOKEN" ]; then
   githubUrl=git@github.com:realDuang/blog.git
 else
   msg='来自github action的自动部署'
-  git config --global user.name "realDuang"
-  git config --global user.email "250407778@qq.com"
   githubUrl=https://realDuang:${GITHUB_ACTIONS_TOKEN}@github.com/realDuang/blog.git
 fi
 
+echo ${GITHUB_ACTIONS_TOKEN}
+
 cd public # 进入生成的文件夹
+git config --global user.name "realDuang"
+git config --global user.email "250407778@qq.com"
 git config --global init.defaultBranch master
 git init
 git add -A
