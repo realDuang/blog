@@ -10,12 +10,12 @@ if [ -z "$GITHUB_TOKEN" ]; then
 else
   msg='来自github action的自动部署'
   githubUrl=https://realDuang:${GITHUB_TOKEN}@github.com/realDuang/blog.git
-  git config --global user.name "realDuang"
-  git config --global user.email "250407778@qq.com"
 fi
 
 cd public # 进入生成的文件夹
+git config --global user.name "realDuang"
+git config --global user.email "250407778@qq.com"
 git init
 git add -A
 git commit -m "${msg}"
-git push -f $githubUrl main:gh-pages # 推送到github
+git push -f $githubUrl gh-pages # 推送到github
