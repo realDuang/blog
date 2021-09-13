@@ -24,10 +24,10 @@ jobs:
       - name: 步骤：第二步 -> 安装依赖
         env:
           GITHUB_ACTIONS_TOKEN: ${{ secrets.GITHUB_ACTIONS_TOKEN }}
-          url: https://github.com/realDuang/blog/tree/main
-          branch: main
+          REPO_URL: https://github.com/realDuang/blog/tree/main
+          REPO_BRANCH: main
         run: |
-          npm install
+          npm ci
           npm run build
           echo ${{ secrets.GITHUB_ACTIONS_TOKEN }}
-          curl -o https://console.cloud.tencent.com/tcb/env/index?&action=CreateAndDeployCloudBaseProject&appUrl=${{ url }}&workDir=${{ branch }}
+          curl -o https://console.cloud.tencent.com/tcb/env/index?&action=CreateAndDeployCloudBaseProject&appUrl=${REPO_URL}&workDir=${REPO_BRANCH}
