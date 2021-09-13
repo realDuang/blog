@@ -2,7 +2,6 @@
 # 确保脚本抛出遇到的错误
 set -e
 npm run build # 生成静态文件
-cd public # 进入生成的文件夹
 
 # deploy to github
 if [ -z "$GITHUB_TOKEN" ]; then
@@ -14,7 +13,9 @@ else
   git config --global user.name "realDuang"
   git config --global user.email "250407778@qq.com"
 fi
+
+cd public # 进入生成的文件夹
 git init
 git add -A
 git commit -m "${msg}"
-git push -f $githubUrl gh-pages # 推送到github
+git push -f $githubUrl main:gh-pages # 推送到github
