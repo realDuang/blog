@@ -4,8 +4,8 @@
   "author": "Duang",
   "description": "",
   "scripts": {
-    "dev": "vuepress dev . --open --host \"localhost\"",
-    "build": "vuepress build",
+    "dev": "vuepress dev blog --open --host \"localhost\"",
+    "build": "vuepress build blog",
     "deploy": "cloudbase framework deploy"
   },
   "devDependencies": {
