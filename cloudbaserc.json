@@ -2,7 +2,7 @@
   "version": "2.0",
   "envId": "{{env.envId}}",
   "framework": {
-    "name": "静态网站部署",
+    "name": "Static Website Deploy",
     "plugins": {
       "client": {
         "use": "@cloudbase/framework-plugin-website",
