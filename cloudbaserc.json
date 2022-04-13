@@ -11,8 +11,6 @@
       "vuepress": {
         "use": "@cloudbase/framework-plugin-website",
         "inputs": {
-          "installCommand": "npm ci",
-          "buildCommand": "npm run build",
           "outputPath": "public",
           "cloudPath": "/"
         }
