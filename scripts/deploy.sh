@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 # 确保脚本抛出遇到的错误
 set -e
+
+npm ci
 npm run build # 生成静态文件
 
 # deploy to github
@@ -12,15 +14,11 @@ else
   githubUrl=https://realDuang:${GITHUB_ACTIONS_TOKEN}@github.com/realDuang/blog.git
 fi
 
-echo "???"
-echo "githubUrl=https://realDuang:${GITHUB_ACTIONS_TOKEN}@github.com/realDuang/blog.git"
-echo githubUrl=https://realDuang:${GITHUB_ACTIONS_TOKEN}@github.com/realDuang/blog.git
-
 cd public # 进入生成的文件夹
 git config --global user.name "realDuang"
 git config --global user.email "250407778@qq.com"
-git config --global init.defaultBranch master
+git config --global init.defaultBranch main
 git init
 git add -A
 git commit -m "${msg}"
-git push -f $githubUrl master:gh-pages # 推送到github
+git push -f $githubUrl main:gh-pages # 推送到github
