@@ -1,887 +1,108 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-loading-bar.css">
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.zakum.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="枫之谷">
-<meta property="og:url" content="https://www.zakum.cn/index.html">
-<meta property="og:site_name" content="枫之谷">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="枫之谷">
-
-<link rel="canonical" href="https://www.zakum.cn/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>枫之谷</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">枫之谷</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-      <p class="site-subtitle" itemprop="description">这个人很懒，但还是想留下些什么东西。</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">29</span></a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>枫之谷</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="这个人很懒，但还是想留下些什么东西。">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     
-  <div class="reading-progress-bar"></div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content index posts-expand">
-            
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.zakum.cn/posts/f082/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/avatar.jpg">
-      <meta itemprop="name" content="Duang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="枫之谷">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/f082/" class="post-title-link" itemprop="url">大型前端项目 DevOps 沉思录 —— CI 篇</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-11 20:37:21" itemprop="dateCreated datePublished" datetime="2021-05-11T20:37:21+00:00">2021-05-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-01 07:28:21" itemprop="dateModified" datetime="2021-06-01T07:28:21+00:00">2021-06-01</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><code>DevOps</code>一词源于<code>Development</code> 和 <code>Operations</code> 的组合，即将软件交付过程中开发与测试运维的环节通过工具链打通，并通过自动化的测试与监控，减少团队的时间损耗，更加高效稳定地交付制品。</p>
+    <link rel="preload" href="/assets/css/0.styles.e31b763f.css" as="style"><link rel="preload" href="/assets/js/app.9ab4aea9.js" as="script"><link rel="preload" href="/assets/js/3.4f1e8507.js" as="script"><link rel="preload" href="/assets/js/1.6e22f1b7.js" as="script"><link rel="preload" href="/assets/js/10.f75d0dd5.js" as="script"><link rel="prefetch" href="/assets/js/11.54ff27c1.js"><link rel="prefetch" href="/assets/js/12.5b1168a2.js"><link rel="prefetch" href="/assets/js/13.fef4b6fe.js"><link rel="prefetch" href="/assets/js/14.9bd1afd8.js"><link rel="prefetch" href="/assets/js/15.62b06f59.js"><link rel="prefetch" href="/assets/js/16.1ed70034.js"><link rel="prefetch" href="/assets/js/17.23d757ab.js"><link rel="prefetch" href="/assets/js/18.4f68407f.js"><link rel="prefetch" href="/assets/js/19.0ee00754.js"><link rel="prefetch" href="/assets/js/20.2d1edfdb.js"><link rel="prefetch" href="/assets/js/21.f6b0d224.js"><link rel="prefetch" href="/assets/js/22.1e3a44b6.js"><link rel="prefetch" href="/assets/js/23.5d8ea99d.js"><link rel="prefetch" href="/assets/js/24.a64aa81b.js"><link rel="prefetch" href="/assets/js/25.cabc29c0.js"><link rel="prefetch" href="/assets/js/26.eb57e878.js"><link rel="prefetch" href="/assets/js/27.550d65a3.js"><link rel="prefetch" href="/assets/js/28.61b2efb8.js"><link rel="prefetch" href="/assets/js/29.09f2d2f4.js"><link rel="prefetch" href="/assets/js/30.73ab5b63.js"><link rel="prefetch" href="/assets/js/31.c7213e0a.js"><link rel="prefetch" href="/assets/js/32.3c2dbfcd.js"><link rel="prefetch" href="/assets/js/33.91e158ac.js"><link rel="prefetch" href="/assets/js/34.ba6fb619.js"><link rel="prefetch" href="/assets/js/35.2a16f4b7.js"><link rel="prefetch" href="/assets/js/36.a4f87f0c.js"><link rel="prefetch" href="/assets/js/37.54fd3c6d.js"><link rel="prefetch" href="/assets/js/38.fa6ab195.js"><link rel="prefetch" href="/assets/js/39.b7511f12.js"><link rel="prefetch" href="/assets/js/4.58521505.js"><link rel="prefetch" href="/assets/js/40.f07fe416.js"><link rel="prefetch" href="/assets/js/41.93926c2a.js"><link rel="prefetch" href="/assets/js/42.3323f05b.js"><link rel="prefetch" href="/assets/js/5.4fed4883.js"><link rel="prefetch" href="/assets/js/6.f6c5fbb7.js"><link rel="prefetch" href="/assets/js/7.fbb63a49.js"><link rel="prefetch" href="/assets/js/8.0ca34924.js"><link rel="prefetch" href="/assets/js/9.315ca471.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e31b763f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <h3 class="title" data-v-d48f4d20>枫之谷</h3> <p class="description" data-v-d48f4d20>这个人很懒，但还是想留下些什么东西。</p></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>枫之谷</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>这个人很懒，但还是想留下些什么东西。</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>Duang</span>
+            
+          <span data-v-4e82dffc>2016 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" aria-current="page" class="home-link router-link-exact-active router-link-active"><img src="/avatar.jpg" alt="枫之谷" class="logo"> <span class="site-name">枫之谷</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/架构设计/" class="nav-link"><i class="undefined"></i>
+  架构设计
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常见问题集锦/" class="nav-link"><i class="undefined"></i>
+  常见问题集锦
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作流/" class="nav-link"><i class="undefined"></i>
+  工作流
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/其他/" class="nav-link"><i class="undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光轴
+</a></div><div class="nav-item"><a href="https://zakum.cn/rss.xml" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-rss"></i>
+  订阅
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/realDuang" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/avatar.jpg" alt="author-avatar" class="personal-img" data-v-828910c6> <h3 class="name" data-v-828910c6>
+    Duang
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>31</h3> <h6 data-v-828910c6>文章</h6></div> <div data-v-828910c6><h3 data-v-828910c6>12</h3> <h6 data-v-828910c6>标签</h6></div></div> <ul class="social-links" data-v-828910c6><li class="social-item" data-v-828910c6><i class="iconfont reco-github" style="color:#f8b26a;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-zhihu" style="color:#abbd81;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-qq" style="color:#67cc86;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-mail" style="color:#e15b64;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-facebook" style="color:#fb9b5f;" data-v-828910c6></i></li></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/架构设计/" class="nav-link"><i class="undefined"></i>
+  架构设计
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常见问题集锦/" class="nav-link"><i class="undefined"></i>
+  常见问题集锦
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作流/" class="nav-link"><i class="undefined"></i>
+  工作流
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/其他/" class="nav-link"><i class="undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光轴
+</a></div><div class="nav-item"><a href="https://zakum.cn/rss.xml" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-rss"></i>
+  订阅
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/realDuang" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc></h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>Duang</span>
+            
+          <span data-v-4e82dffc>2016 - </span>
+          2022
+        </a></span></div></div> <div data-v-1156296a><div class="home-blog"><div class="hero" style="text-align:center;overflow:hidden;background:url(/assets/img/bg.2cfdbb33.svg) center/cover no-repeat;height:0;"><div><!----> <!----> <!----></div></div> <div class="home-blog-wrapper"><div class="blog-list"><div class="abstract-wrapper" data-v-5a259143><div class="abstract-item" data-v-ff2c8be0 data-v-5a259143><!----> <div class="title" data-v-ff2c8be0><!----> <a href="/blogs/2022-03-15.html" data-v-ff2c8be0>DWS--前端制品服务的云原生部署实践</a></div> <div class="abstract" data-v-ff2c8be0><div class="custom-block tip"><p class="title"></p><p>云原生是一个很热门的话题，它将服务高可用性上升到了一个新的台阶。站点的高可用同时也是我们前端对自己的高要求。</p>
+<p>那么我们该如何设计，才能让我们的前端项目也搭上云原生的快车，实现自动化运维与部署呢？本篇文章我们就来浅谈一下这里的实践。</p>
+</div></div> <div data-v-1ff7123e data-v-ff2c8be0><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>Duang</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2022/3/15</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>云</span><span class="tag-item" data-v-1ff7123e>原</span><span class="tag-item" data-v-1ff7123e>生</span></i></div></div><div class="abstract-item" data-v-ff2c8be0 data-v-5a259143><!----> <div class="title" data-v-ff2c8be0><!----> <a href="/blogs/2022-01-25.html" data-v-ff2c8be0>大型前端项目 DevOps 沉思录 —— CD 篇</a></div> <div class="abstract" data-v-ff2c8be0><div class="custom-block tip"><p class="title"></p><p><code>DevOps</code>一词源于<code>Development</code> 和 <code>Operations</code> 的组合，即将软件交付过程中开发与测试运维的环节通过工具链打通，并通过自动化的测试与监控，减少团队的时间损耗，更加高效稳定地交付制品。</p>
+<p>本篇文章将着重探讨 <code>DevOps</code> 在 <code>持续部署阶段</code> 需要提供的能力，介绍大型项目应该如何稳定并高频率的迭代项目版本。</p>
+</div></div> <div data-v-1ff7123e data-v-ff2c8be0><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>Duang</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2022/1/25</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>云</span><span class="tag-item" data-v-1ff7123e>原</span><span class="tag-item" data-v-1ff7123e>生</span></i></div></div><div class="abstract-item" data-v-ff2c8be0 data-v-5a259143><!----> <div class="title" data-v-ff2c8be0><!----> <a href="/blogs/2021-07-25.html" data-v-ff2c8be0>NodeJS 服务 Docker 镜像极致优化指北</a></div> <div class="abstract" data-v-ff2c8be0><div class="custom-block tip"><p class="title"></p><p>这段时间在开发一个腾讯文档全品类通用的 HTML 动态服务，为了方便各品类接入的生成与部署，也顺应上云的趋势，考虑使用 Docker 的方式来固定服务内容，统一进行制品版本的管理。本篇文章就将我在服务 Docker 化的过程中积累起来的优化经验分享出来，供大家参考。</p>
+</div></div> <div data-v-1ff7123e data-v-ff2c8be0><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>Duang</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2021/7/25</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>云</span><span class="tag-item" data-v-1ff7123e>原</span><span class="tag-item" data-v-1ff7123e>生</span></i></div></div><div class="abstract-item" data-v-ff2c8be0 data-v-5a259143><!----> <div class="title" data-v-ff2c8be0><!----> <a href="/blogs/2021-05-11.html" data-v-ff2c8be0>大型前端项目 DevOps 沉思录 —— CI 篇</a></div> <div class="abstract" data-v-ff2c8be0><div class="custom-block tip"><p class="title"></p><p><code>DevOps</code>一词源于<code>Development</code> 和 <code>Operations</code> 的组合，即将软件交付过程中开发与测试运维的环节通过工具链打通，并通过自动化的测试与监控，减少团队的时间损耗，更加高效稳定地交付制品。</p>
 <p>本篇文章将着重探讨 <code>DevOps</code> 在 <code>持续集成阶段</code> 需要提供的能力，将对工作流的设计及流水线的优化思路做一个简要讲解。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/f082/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.zakum.cn/posts/e1af/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/avatar.jpg">
-      <meta itemprop="name" content="Duang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="枫之谷">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/e1af/" class="post-title-link" itemprop="url">中文输入法中光标跟随能力触发的浏览器事件探究</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-02-01 20:30:38" itemprop="dateCreated datePublished" datetime="2021-02-01T20:30:38+00:00">2021-02-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-01 07:28:21" itemprop="dateModified" datetime="2021-06-01T07:28:21+00:00">2021-06-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web踩坑集锦/" itemprop="url" rel="index"><span itemprop="name">Web踩坑集锦</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最近在着手腾讯文档的输入体验优化，在其中有一个不起眼的小需求引起了我的注意，并顺便研究了一些事件监听机制相结合的特点，特此记录一下填坑过程。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/e1af/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.zakum.cn/posts/adeb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/avatar.jpg">
-      <meta itemprop="name" content="Duang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="枫之谷">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/adeb/" class="post-title-link" itemprop="url">有向无环图的模型设计与应用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-11-02 15:59:22" itemprop="dateCreated datePublished" datetime="2020-11-02T15:59:22+00:00">2020-11-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-01 07:28:21" itemprop="dateModified" datetime="2021-06-01T07:28:21+00:00">2021-06-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/架构设计/" itemprop="url" rel="index"><span itemprop="name">架构设计</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="从-TodoList-说起"><a href="#从-TodoList-说起" class="headerlink" title="从 TodoList 说起"></a>从 TodoList 说起</h2><p>对于我们程序开发者来说，想要学习一个框架，从开发一个 TodoList 项目做起，这就像学习语言先学会写 Hello world 一样基础。但其实，简单的 TodoList 里面，同样可以蕴含一些复杂的算法思想。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/adeb/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.zakum.cn/posts/3d6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/avatar.jpg">
-      <meta itemprop="name" content="Duang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="枫之谷">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3d6/" class="post-title-link" itemprop="url">实现一个版本自动控制的 IndexedDB</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-13 16:05:22" itemprop="dateCreated datePublished" datetime="2020-07-13T16:05:22+00:00">2020-07-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-01 07:28:21" itemprop="dateModified" datetime="2021-06-01T07:28:21+00:00">2021-06-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>7.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>10 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>随着现代大型项目复杂度的提升，渲染一个 WEB 页面需要的数据越来越多，在多次打开并渲染的过程中，有许多数据都是重复并且不常更新的，因此这部分的数据需要通过浏览器缓存来缓解网络压力，同时提升页面打开速度。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/3d6/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.zakum.cn/posts/8625/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/avatar.jpg">
-      <meta itemprop="name" content="Duang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="枫之谷">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/8625/" class="post-title-link" itemprop="url">给 JavaScript 插上多线程的翅膀 —— Web Worker 的 Promise 化实践</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-16 21:04:10" itemprop="dateCreated datePublished" datetime="2020-06-16T21:04:10+00:00">2020-06-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-01 07:28:21" itemprop="dateModified" datetime="2021-06-01T07:28:21+00:00">2021-06-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5.7k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Web-Worker-介绍"><a href="#Web-Worker-介绍" class="headerlink" title="Web Worker 介绍"></a>Web Worker 介绍</h2><p>众所周知，JavaScript 这门语言的一大特点就是单线程，即同一时间只能同步处理一件事情，这也是这门语言衍生出的 nodeJS 被后端开发诟病的的一点。</p>
-<p>然而，JavaScript 在设计之初，其实是故意被设计成单线程语言的，这是由于它当时的主要用途的决定的。</p>
-<p>JavaScript 最初的设计初衷是完成页面与用户的交互，操作 DOM 或者 BOM 元素，此时如果一味地追求效率使用多线程的话，会带来资源抢占，数据同步等等问题，因此必须规定，同一时间只有一个线程能直接操作页面元素，以保证系统的稳定性以及安全性。</p>
-<p>尽管如此，但是 JavaScript 并不是只能线性处理任务。JS 拥有消息队列和事件循环机制，通过异步处理消息的能力来实现并发。在高 I/O 型并发事务处理的过程中，由于不需要手动生成与销毁线程以及占用额外管理线程的空间，性能表现及为优异。因此，nodeJS 作为 JavaScript 在服务端的探索者，在处理高并发网络请求的优势极为明显。</p>
-<p>尽管 JavaScript 通过异步机制完美解决了高 I/O 性能的问题，但 JavaScript 单线程执行的本质还是没有变的。因此缺点就显而易见了，那就是处理 CPU 密集型的事务时没有办法充分调动现代多核心多线程机器的运算资源。</p>
-<p>在现代大型前端项目中，随着代码的复杂程度越来越高，本地的计算型事务也在变得繁重，而运行在单线程下 JavaScript 项目必定会忙于处理计算而无暇顾及用户接下来的频繁操作，造成卡顿等不太好的用户体验，更严重的情况是，当计算型事务过多时还有可能因为资源被占满带来网页无响应的卡死现象。因此，Web 项目的本地多线程运算能力势在必行，由此，Web Worker 应运而生了。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/8625/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Duang"
-      src="https://cdn.jsdelivr.net/gh/realDuang/blog-storage/images/avatar.jpg">
-  <p class="site-author-name" itemprop="name">Duang</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">29</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">10</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=250407778&site=qq&menu=yes" title="QQ → http://wpa.qq.com/msgrd?v=3&uin=250407778&site=qq&menu=yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:250407778@qq.com" title="E-Mail → mailto:250407778@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.facebook.com/kelekexiao" title="Facebook → https://www.facebook.com/kelekexiao" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/realDuang" title="知乎 → https://www.zhihu.com/people/realDuang" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://github.com/realDuang" title="GitHub → https://github.com/realDuang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-  </div>
-  <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
-  </div>
-
-
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      友情链接
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://realDuang.github.io/leetcode-in-javascript/" title="https://realDuang.github.io/leetcode-in-javascript/" rel="noopener" target="_blank">Leetcode In JavaScript</a>
-        </li>
-    </ul>
-  </div>
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-  <div class="beian"><a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">zakum.cn </a>
-      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=6065381" rel="noopener" target="_blank">粤ICP备20067728号 </a>
-  </div>
-
-<div class="copyright">
-  
-  &copy; 2016 – 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Duang</span>
-</div>
-
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
-  <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
-<script src="/js/schemes/pisces.js"></script>
-<script src="/js/next-boot.js"></script>
-
-
-
-  
-
-
-
-
-  <script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-
-
-  <!-- 页面点击小红心 -->
-  <script type="text/javascript" src="/js/clicklove.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":0.75,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","hOffset":0,"vOffset":-80},"mobile":{"show":false},"dialog":{"enable":true,"hitokoto":true},"react":{"opacityDefault":0.8,"opacityOnHover":0.2}});</script></body>
+</div></div> <div data-v-1ff7123e data-v-ff2c8be0><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>Duang</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2021/5/11</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>云</span><span class="tag-item" data-v-1ff7123e>原</span><span class="tag-item" data-v-1ff7123e>生</span></i></div></div><div class="abstract-item" data-v-ff2c8be0 data-v-5a259143><!----> <div class="title" data-v-ff2c8be0><!----> <a href="/blogs/2021-02-01.html" data-v-ff2c8be0>中文输入法中光标跟随能力触发的浏览器事件探究</a></div> <div class="abstract" data-v-ff2c8be0><div class="custom-block tip"><p class="title"></p><p>最近在着手腾讯文档的输入体验优化，在其中有一个不起眼的小需求引起了我的注意，并顺便研究了一些事件监听机制相结合的特点，特此记录一下填坑过程。</p>
+</div></div> <div data-v-1ff7123e data-v-ff2c8be0><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>Duang</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2021/2/1</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>浏</span><span class="tag-item" data-v-1ff7123e>览</span><span class="tag-item" data-v-1ff7123e>器</span><span class="tag-item" data-v-1ff7123e>事</span><span class="tag-item" data-v-1ff7123e>件</span></i></div></div><div class="abstract-item" data-v-ff2c8be0 data-v-5a259143><!----> <div class="title" data-v-ff2c8be0><!----> <a href="/blogs/2020-11-02.html" data-v-ff2c8be0>有向无环图的模型设计与应用</a></div> <div class="abstract" data-v-ff2c8be0><div class="custom-block tip"><p class="title"></p><p>对于我们程序开发者来说，想要学习一个框架，从开发一个 TodoList 项目做起，这就像学习语言先学会写 Hello world 一样基础。但其实，简单的 TodoList 里面，同样可以蕴含一些复杂的算法思想。</p>
+</div></div> <div data-v-1ff7123e data-v-ff2c8be0><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>Duang</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2020/11/2</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>设</span><span class="tag-item" data-v-1ff7123e>计</span><span class="tag-item" data-v-1ff7123e>模</span><span class="tag-item" data-v-1ff7123e>式</span></i></div></div><div class="abstract-item" data-v-ff2c8be0 data-v-5a259143><!----> <div class="title" data-v-ff2c8be0><!----> <a href="/blogs/2020-07-13.html" data-v-ff2c8be0>实现一个版本自动控制的 IndexedDB</a></div> <div class="abstract" data-v-ff2c8be0><div class="custom-block tip"><p class="title"></p><p>随着现代大型项目复杂度的提升，渲染一个 WEB 页面需要的数据越来越多，在多次打开并渲染的过程中，有许多数据都是重复并且不常更新的，因此这部分的数据需要通过浏览器缓存来缓解网络压力，同时提升页面打开速度。</p>
+</div></div> <div data-v-1ff7123e data-v-ff2c8be0><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>Duang</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2020/7/13</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>I</span><span class="tag-item" data-v-1ff7123e>n</span><span class="tag-item" data-v-1ff7123e>d</span><span class="tag-item" data-v-1ff7123e>e</span><span class="tag-item" data-v-1ff7123e>x</span><span class="tag-item" data-v-1ff7123e>e</span><span class="tag-item" data-v-1ff7123e>d</span><span class="tag-item" data-v-1ff7123e>D</span><span class="tag-item" data-v-1ff7123e>B</span></i></div></div><div class="abstract-item" data-v-ff2c8be0 data-v-5a259143><!----> <div class="title" data-v-ff2c8be0><!----> <a href="/blogs/2020-06-16.html" data-v-ff2c8be0>给 JavaScript 插上多线程的翅膀 —— Web Worker 的 Promise 化实践</a></div> <div class="abstract" data-v-ff2c8be0><div class="custom-block tip"><p class="title"></p><p>在现代大型前端项目中，随着代码的复杂程度越来越高，本地的计算型事务也在变得繁重，而运行在单线程下 JavaScript 项目必定会忙于处理计算而无暇顾及用户接下来的频繁操作，造成卡顿等不太好的用户体验，更严重的情况是，当计算型事务过多时还有可能因为资源被占满带来网页无响应的卡死现象。因此，Web 项目的本地多线程运算能力势在必行，由此，Web Worker 应运而生了。</p>
+</div></div> <div data-v-1ff7123e data-v-ff2c8be0><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>Duang</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2020/6/16</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>W</span><span class="tag-item" data-v-1ff7123e>e</span><span class="tag-item" data-v-1ff7123e>b</span><span class="tag-item" data-v-1ff7123e> </span><span class="tag-item" data-v-1ff7123e>w</span><span class="tag-item" data-v-1ff7123e>o</span><span class="tag-item" data-v-1ff7123e>r</span><span class="tag-item" data-v-1ff7123e>k</span><span class="tag-item" data-v-1ff7123e>e</span><span class="tag-item" data-v-1ff7123e>r</span></i></div></div><div class="abstract-item" data-v-ff2c8be0 data-v-5a259143><!----> <div class="title" data-v-ff2c8be0><!----> <a href="/blogs/2020-01-21.html" data-v-ff2c8be0>React16.8 useHook 特性</a></div> <div class="abstract" data-v-ff2c8be0><div class="custom-block tip"><p class="title"></p><p>React16.8 迎来了大众期盼已久的函数式编程利器：<code>useHook</code>特性。它能大大增强函数式组件的能力，使得立即执行的、没有生命周期与 state 等等类组件特性的函数式组件拥有相同的能力。</p>
+<p><code>useHook</code>的原理实际上是利用了 JavaScript 的闭包机制，因此在多次执行函数的同时记住一些状态。</p>
+<p><code>useHook</code>拥有多种函数，我们也可以自定义自己的 hook。在这里主要来说说其中最常用的几种，简述他们的大致原理，以及使用时的注意事项。</p>
+</div></div> <div data-v-1ff7123e data-v-ff2c8be0><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>Duang</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2020/1/21</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>R</span><span class="tag-item" data-v-1ff7123e>e</span><span class="tag-item" data-v-1ff7123e>a</span><span class="tag-item" data-v-1ff7123e>c</span><span class="tag-item" data-v-1ff7123e>t</span></i></div></div><div class="abstract-item" data-v-ff2c8be0 data-v-5a259143><!----> <div class="title" data-v-ff2c8be0><!----> <a href="/blogs/2019-12-21.html" data-v-ff2c8be0>React15 与 React16 生命周期区别与使用方式</a></div> <div class="abstract" data-v-ff2c8be0><div class="custom-block tip"><p class="title"></p><p>因为 React16 框架使用了全新的<code>Fiber</code>架构，这其中有一个特性叫做<code>async rendering</code>，render 过程可中断，因此，render 函数之前的所有生命周期函数都有可能被多次执行，如果在这些函数中存在异步请求的话将会造成许多无用的请求被调用。</p>
+</div></div> <div data-v-1ff7123e data-v-ff2c8be0><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>Duang</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2019/12/21</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>R</span><span class="tag-item" data-v-1ff7123e>e</span><span class="tag-item" data-v-1ff7123e>a</span><span class="tag-item" data-v-1ff7123e>c</span><span class="tag-item" data-v-1ff7123e>t</span></i></div></div> <div class="pagation pagation" data-v-094d08e4 data-v-5a259143><div class="pagation-list" data-v-094d08e4><span unselectable="on" class="jump" style="display:none;" data-v-094d08e4>上一页</span> <span class="jump" style="display:none;" data-v-094d08e4>1</span> <span class="ellipsis" style="display:none;" data-v-094d08e4>...</span> <span class="jump bgprimary" data-v-094d08e4>1</span><span class="jump" data-v-094d08e4>2</span><span class="jump" data-v-094d08e4>3</span><span class="jump" data-v-094d08e4>4</span> <span class="ellipsis" style="display:none;" data-v-094d08e4>...</span> <span class="jump" style="display:none;" data-v-094d08e4>4</span> <span class="jump" style="display:;" data-v-094d08e4>下一页</span> <span class="jumppoint" data-v-094d08e4>跳转至</span> <span class="jumpinp" data-v-094d08e4><input type="text" value="" data-v-094d08e4></span> <span class="jump gobtn" data-v-094d08e4>前往</span></div></div></div></div> <div class="info-wrapper"><div class="personal-info-wrapper" data-v-828910c6><img src="/avatar.jpg" alt="author-avatar" class="personal-img" data-v-828910c6> <h3 class="name" data-v-828910c6>
+    Duang
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>31</h3> <h6 data-v-828910c6>文章</h6></div> <div data-v-828910c6><h3 data-v-828910c6>12</h3> <h6 data-v-828910c6>标签</h6></div></div> <ul class="social-links" data-v-828910c6><li class="social-item" data-v-828910c6><i class="iconfont reco-github" style="color:#f8b26a;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-zhihu" style="color:#abbd81;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-qq" style="color:#67cc86;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-mail" style="color:#e15b64;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-facebook" style="color:#fb9b5f;" data-v-828910c6></i></li></ul> <hr data-v-828910c6></div> <h4><i class="iconfont reco-category"></i> 分类</h4> <ul class="category-wrapper"><li class="category-item"><a href="/categories/架构设计/"><span class="category-name">架构设计</span> <span class="post-num" style="background-color:#f26d6d;">10</span></a></li><li class="category-item"><a href="/categories/常见问题集锦/"><span class="category-name">常见问题集锦</span> <span class="post-num" style="background-color:#f8b26a;">2</span></a></li><li class="category-item"><a href="/categories/JavaScript/"><span class="category-name">JavaScript</span> <span class="post-num" style="background-color:#f47e60;">12</span></a></li><li class="category-item"><a href="/categories/工作流/"><span class="category-name">工作流</span> <span class="post-num" style="background-color:#f26d6d;">3</span></a></li><li class="category-item"><a href="/categories/CSS/"><span class="category-name">CSS</span> <span class="post-num" style="background-color:#fb9b5f;">2</span></a></li><li class="category-item"><a href="/categories/其他/"><span class="category-name">其他</span> <span class="post-num" style="background-color:#f47e60;">2</span></a></li></ul> <hr> <h4><i class="iconfont reco-tag"></i> 标签</h4> <div class="tags" data-v-125939b4><span style="background-color:#849b87;display:;" data-v-125939b4>全部</span><span style="background-color:#f8b26a;display:;" data-v-125939b4>设计模式</span><span style="background-color:#f47e60;display:;" data-v-125939b4>jQuery</span><span style="background-color:#f47e60;display:;" data-v-125939b4>es5</span><span style="background-color:#f8b26a;display:;" data-v-125939b4>es6</span><span style="background-color:#fb9b5f;display:;" data-v-125939b4>git</span><span style="background-color:#abbd81;display:;" data-v-125939b4>css</span><span style="background-color:#e15b64;display:;" data-v-125939b4>MongoDB</span><span style="background-color:#e15b64;display:;" data-v-125939b4>React</span><span style="background-color:#67cc86;display:;" data-v-125939b4>Web worker</span><span style="background-color:#67cc86;display:;" data-v-125939b4>IndexedDB</span><span style="background-color:#f8b26a;display:;" data-v-125939b4>浏览器事件</span><span style="background-color:#3498db;display:;" data-v-125939b4>云原生</span></div> <h4><i class="iconfont reco-friend"></i> 友情链接</h4> <div class="friend-link-wrapper" data-v-7e691180><div target="_blank" class="friend-link-item" data-v-7e691180><span class="list-style" style="background-color:#f8b26a;" data-v-7e691180></span>
+    Leetcode In JavaScript
+    <div class="popup-window-wrapper" data-v-7e691180 data-v-7e691180><div class="popup-window" style="left:0;top:0;" data-v-7e691180><div class="logo" data-v-7e691180><img src="//1.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;amp;d=mm&amp;amp;r=x" data-v-7e691180></div> <div class="info" data-v-7e691180><div class="title" data-v-7e691180><h4 data-v-7e691180>Leetcode In JavaScript</h4> <a href="https://realDuang.github.io/leetcode-in-javascript/" target="_blank" class="btn-go" style="background-color:#f8b26a;" data-v-7e691180>GO</a></div> <!----></div></div></div></div></div></div></div> <div custom="" class="home-center content__default"><h1 id="枫之谷-duang-的个人技术博客"><a href="#枫之谷-duang-的个人技术博客" class="header-anchor">#</a> 枫之谷 - Duang 的个人技术博客</h1> <p><img src="https://github.com/realduang/blog/actions/workflows/main.yml/badge.svg" alt="CI Status"></p></div></div> <div class="footer-wrapper footer" data-v-0a3fd326><span data-v-0a3fd326><i class="iconfont reco-theme" data-v-0a3fd326></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-0a3fd326>vuepress-theme-reco@1.6.6</a></span> <span data-v-0a3fd326><i class="iconfont reco-beian" data-v-0a3fd326></i> <a href="#" data-v-0a3fd326>https://zakum.cn</a></span> <span data-v-0a3fd326><i class="iconfont reco-copyright" data-v-0a3fd326></i> <a data-v-0a3fd326><span data-v-0a3fd326>Duang</span>
+        
+      <span data-v-0a3fd326>2016 - </span>
+      2022
+    </a></span> <span style="display:none;" data-v-0a3fd326><i class="iconfont reco-eye" data-v-0a3fd326></i> <span id="/" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-0a3fd326><a class="leancloud-visitors-count"></a></span></span> <p class="cyber-security" data-v-0a3fd326><img src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" alt data-v-0a3fd326> <a href="https://beian.miit.gov.cn" data-v-0a3fd326>粤ICP备2021078850号</a></p> <div class="comments-wrapper" style="display:none;" data-v-0a3fd326><!----></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到枫之谷~
+    </div> <div class="operation" style="right:90px;bottom:40px;display:none;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:none;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/assets/js/app.9ab4aea9.js" defer></script><script src="/assets/js/3.4f1e8507.js" defer></script><script src="/assets/js/1.6e22f1b7.js" defer></script><script src="/assets/js/10.f75d0dd5.js" defer></script>
+  </body>
 </html>
