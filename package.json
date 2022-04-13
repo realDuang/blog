@@ -1,16 +1,17 @@
 {
-  "name": "maple-story-blog",
+  "name": "blog",
   "version": "1.0.0",
   "author": "Duang",
+  "description": "",
   "scripts": {
     "dev": "vuepress dev . --open --host \"localhost\"",
-    "build": "vuepress build ."
+    "build": "vuepress build",
+    "deploy": "cloudbase framework deploy"
   },
   "devDependencies": {
     "vuepress": "1.8.2",
     "vuepress-theme-reco": "1.6.6"
   },
-  "description": "",
   "dependencies": {
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
     "@vuepress-reco/vuepress-plugin-rss": "^1.0.2"

@@ -30,8 +30,3 @@ jobs:
           secretId: ${{secrets.TENCENT_CLOUD_SECRET_ID}}
           secretKey: ${{secrets.TENCENT_CLOUD_SECRET_KEY}}
           envId: ${{secrets.TENCENT_CLOUD_ENV_ID}}
-
-      # - name: 构建并更新各平台流程
-      #   env:
-      #     GITHUB_ACTIONS_TOKEN: ${{ secrets.GITHUB_ACTIONS_TOKEN }}
-      #   run: bash ./scripts/deploy.sh
