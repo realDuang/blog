@@ -43,8 +43,7 @@ jobs:
 
       - name: Build 🔧
         run: |
-          npm ci
-          npm run build
+          pnpm build
 
       - name: Deploy to Github Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
