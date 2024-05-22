@@ -8,15 +8,15 @@ dependencies:
   '@vuepress/bundler-vite':
     specifier: 2.0.0-rc.9
     version: 2.0.0-rc.9
-  '@vuepress/bundler-webpack':
-    specifier: 2.0.0-rc.9
-    version: 2.0.0-rc.9
+  '@vuepress/plugin-feed':
+    specifier: 2.0.0-rc.3
+    version: 2.0.0-rc.3(vuepress@2.0.0-rc.9)
   vue:
     specifier: ^3.4.19
     version: 3.4.27
   vuepress:
     specifier: 2.0.0-rc.9
-    version: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+    version: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
   vuepress-theme-reco:
     specifier: 2.0.0-rc.10
     version: 2.0.0-rc.10(@algolia/client-search@4.23.3)(search-insights@2.13.0)(vuepress@2.0.0-rc.9)
@@ -177,8 +177,8 @@ packages:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.19
+      '@jridgewell/gen-mapping': 0.3.5
+      '@jridgewell/trace-mapping': 0.3.25
     dev: false
 
   /@babel/code-frame@7.22.13:
@@ -204,7 +204,7 @@ packages:
       '@babel/helper-compilation-targets': 7.22.15
       '@babel/helper-module-transforms': 7.23.0(@babel/core@7.23.2)
       '@babel/helpers': 7.23.2
-      '@babel/parser': 7.23.0
+      '@babel/parser': 7.24.5
       '@babel/template': 7.22.15
       '@babel/traverse': 7.23.2
       '@babel/types': 7.23.0
@@ -233,7 +233,7 @@ packages:
     dependencies:
       '@babel/compat-data': 7.23.2
       '@babel/helper-validator-option': 7.22.15
-      browserslist: 4.22.1
+      browserslist: 4.23.0
       lru-cache: 5.1.1
       semver: 6.3.1
     dev: false
@@ -1174,7 +1174,7 @@ packages:
   /@types/markdown-it-emoji@2.0.5:
     resolution: {integrity: sha512-iJLsmCNpSWKtV6Ia3mLSjcXJPEt7ubGG342z+hGvYx++TpM19oTUrJcI7XjbOqRQ+W2UQ323E7B0eCLwlgT/9g==}
     dependencies:
-      '@types/markdown-it': 13.0.8
+      '@types/markdown-it': 14.1.1
     dev: false
 
   /@types/markdown-it@13.0.8:
@@ -1389,7 +1389,7 @@ packages:
       '@vuepress/plugin-theme-data': 2.0.0-rc.15(vuepress@2.0.0-rc.9)
       vue: 3.4.27
       vue-router: 4.3.2(vue@3.4.27)
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -1407,7 +1407,7 @@ packages:
       '@vuepress/plugin-theme-data': 2.0.0-rc.15(vuepress@2.0.0-rc.9)
       vue: 3.4.27
       vue-router: 4.3.2(vue@3.4.27)
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -1418,7 +1418,7 @@ packages:
       vuepress: 2.0.0-rc.9
     dependencies:
       vue-router: 4.3.2(vue@3.4.27)
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - vue
     dev: false
@@ -1435,7 +1435,7 @@ packages:
       valine: 1.4.18
       vue: 3.4.27
       vue-router: 4.3.2(vue@3.4.27)
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - '@vue/composition-api'
       - bufferutil
@@ -1458,7 +1458,7 @@ packages:
       '@vuepress-reco/shared': 2.0.0-rc.78(vuepress@2.0.0-rc.9)
       vue: 3.4.27
       vue-router: 4.3.2(vue@3.4.27)
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -1477,7 +1477,7 @@ packages:
       '@vuepress/plugin-prismjs': 2.0.0-rc.15(vuepress@2.0.0-rc.9)
       enhanced-resolve: 5.16.1
       slash2: 2.0.0
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1604,7 +1604,23 @@ packages:
       fflate: 0.8.2
       gray-matter: 4.0.3
       vue: 3.4.27
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
+  /@vuepress/helper@2.0.0-rc.3(vuepress@2.0.0-rc.9):
+    resolution: {integrity: sha512-Z6LuiFjIupgf6KecDqiO4o4M8GHhx0ShTrZvv/a5y2o2iofE5j5E74Q6Ww7ECQojwhRMvpzJ/Bq9YaIg25T2Yw==}
+    engines: {node: '>=18.16.0', npm: '>=8', pnpm: '>=7', yarn: '>=2'}
+    peerDependencies:
+      vuepress: 2.0.0-rc.2
+    dependencies:
+      '@vue/shared': 3.4.27
+      cheerio: 1.0.0-rc.12
+      fflate: 0.8.2
+      gray-matter: 4.0.3
+      vue: 3.4.27
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -1639,7 +1655,7 @@ packages:
     dependencies:
       '@vueuse/core': 10.9.0(vue@3.4.27)
       vue: 3.4.27
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - '@vue/composition-api'
       - typescript
@@ -1653,7 +1669,7 @@ packages:
       '@vuepress/helper': 2.0.0-rc.28(vuepress@2.0.0-rc.9)
       '@vueuse/core': 10.9.0(vue@3.4.27)
       vue: 3.4.27
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - '@vue/composition-api'
       - typescript
@@ -1667,7 +1683,7 @@ packages:
       '@types/markdown-it': 13.0.8
       markdown-it: 14.1.0
       markdown-it-container: 4.0.0
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     dev: false
 
   /@vuepress/plugin-docsearch@2.0.0-rc.17(@algolia/client-search@4.23.3)(search-insights@2.13.0)(vuepress@2.0.0-rc.9):
@@ -1681,7 +1697,7 @@ packages:
       '@vueuse/core': 10.9.0(vue@3.4.27)
       ts-debounce: 4.0.0
       vue: 3.4.27
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/react'
@@ -1698,7 +1714,20 @@ packages:
       vuepress: 2.0.0-rc.8
     dependencies:
       vue: 3.4.27
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
+  /@vuepress/plugin-feed@2.0.0-rc.3(vuepress@2.0.0-rc.9):
+    resolution: {integrity: sha512-kcuJ+LfDQOxnL8p5x9cTODIuSba7oflcjLu9ECYi2l9K3NWAXvh/Jp0FLeaYd8VZBH+ODWfdvY6ifKGCqgY4Kw==}
+    peerDependencies:
+      vuepress: 2.0.0-rc.2
+    dependencies:
+      '@vuepress/helper': 2.0.0-rc.3(vuepress@2.0.0-rc.9)
+      cheerio: 1.0.0-rc.12
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
+      xml-js: 1.6.11
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -1709,7 +1738,7 @@ packages:
       vuepress: 2.0.0-rc.8
     dependencies:
       execa: 8.0.1
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     dev: false
 
   /@vuepress/plugin-medium-zoom@2.0.0-rc.17(vuepress@2.0.0-rc.9):
@@ -1720,7 +1749,7 @@ packages:
       '@vuepress/helper': 2.0.0-rc.28(vuepress@2.0.0-rc.9)
       medium-zoom: 1.1.0
       vue: 3.4.27
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -1731,7 +1760,7 @@ packages:
       vuepress: 2.0.0-rc.8
     dependencies:
       vue: 3.4.27
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -1742,7 +1771,7 @@ packages:
       vuepress: 2.0.0-rc.8
     dependencies:
       chokidar: 3.6.0
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     dev: false
 
   /@vuepress/plugin-prismjs@2.0.0-rc.15(vuepress@2.0.0-rc.9):
@@ -1751,7 +1780,7 @@ packages:
       vuepress: 2.0.0-rc.8
     dependencies:
       prismjs: 1.29.0
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     dev: false
 
   /@vuepress/plugin-register-components@2.0.0-rc.15(vuepress@2.0.0-rc.9):
@@ -1760,7 +1789,7 @@ packages:
       vuepress: 2.0.0-rc.8
     dependencies:
       chokidar: 3.6.0
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     dev: false
 
   /@vuepress/plugin-search@2.0.0-rc.15(vuepress@2.0.0-rc.9):
@@ -1770,7 +1799,7 @@ packages:
     dependencies:
       chokidar: 3.6.0
       vue: 3.4.27
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -1782,7 +1811,7 @@ packages:
     dependencies:
       '@vue/devtools-api': 6.6.1
       vue: 3.4.27
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -5068,6 +5097,10 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: false
 
+  /sax@1.2.4:
+    resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
+    dev: false
+
   /schema-utils@3.3.0:
     resolution: {integrity: sha512-pN/yOAvcC+5rQ5nERGuwrjLlYvLTbCibnZ1I7B1LaiAz9BRBlE9GMgE/eqV30P7aJQUf7Ddimy/RsbYO/GrVGg==}
     engines: {node: '>= 10.13.0'}
@@ -5880,7 +5913,7 @@ packages:
       tailwindcss: 3.1.6(postcss@8.4.14)
       vue: 3.4.27
       vue-router: 4.3.2(vue@3.4.27)
-      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@rspack/core'
@@ -5911,7 +5944,7 @@ packages:
       - webpack-cli
     dev: false
 
-  /vuepress@2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(vue@3.4.27):
+  /vuepress@2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(vue@3.4.27):
     resolution: {integrity: sha512-jT1ln2lawdph+vVI6n2JfEUhQIcyc1RQWDdQu9DffhJGywJunFcumnUJudpqd1SNIES2Fz1hVCD6gdrE/rVKOQ==}
     engines: {node: '>=18.16.0'}
     hasBin: true
@@ -5926,7 +5959,6 @@ packages:
         optional: true
     dependencies:
       '@vuepress/bundler-vite': 2.0.0-rc.9
-      '@vuepress/bundler-webpack': 2.0.0-rc.9
       '@vuepress/cli': 2.0.0-rc.9
       '@vuepress/client': 2.0.0-rc.9
       '@vuepress/core': 2.0.0-rc.9
@@ -6179,6 +6211,13 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
+    dev: false
+
+  /xml-js@1.6.11:
+    resolution: {integrity: sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g==}
+    hasBin: true
+    dependencies:
+      sax: 1.2.4
     dev: false
 
   /xss@1.0.14:

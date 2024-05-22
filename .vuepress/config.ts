@@ -1,6 +1,9 @@
 import { defineUserConfig } from "vuepress";
 import recoTheme from "vuepress-theme-reco";
 import { viteBundler } from "@vuepress/bundler-vite";
+import { feedPlugin } from "@vuepress/plugin-feed";
+
+const hostname = "https://blog.realduang.com";
 
 export default defineUserConfig({
   title: "枫之谷",
@@ -24,7 +27,7 @@ export default defineUserConfig({
       { text: "时间轴", link: "/timeline.html", icon: "TimePlot" },
       {
         text: "订阅",
-        link: "https://blog.realduang.com/rss.xml",
+        link: `${hostname}/feed.json`,
         icon: "Rss",
       },
       { text: "留言板", link: "/docs/message-board/", icon: "Chat" },
@@ -49,8 +52,18 @@ export default defineUserConfig({
       type: "waline",
       options: {
         serverURL: "https://waline-roan-gamma.vercel.app",
-        hideComments: false
+        hideComments: false,
       },
     },
   }),
+  plugins: [
+    feedPlugin({
+      rss: true,
+      atom: true,
+      json: true,
+      hostname: hostname,
+      devServer: true,
+      devHostname: "http://localhost:8080",
+    }),
+  ],
 });
