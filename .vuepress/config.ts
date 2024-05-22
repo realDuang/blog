@@ -48,8 +48,8 @@ export default defineUserConfig({
     commentConfig: {
       type: "waline",
       options: {
-        serverUrl: "waline-roan-gamma.vercel.app",
-        // hideComments: true // 隐藏评论
+        serverURL: "https://waline-roan-gamma.vercel.app",
+        hideComments: false
       },
     },
   }),
