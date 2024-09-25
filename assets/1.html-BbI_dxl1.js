@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./app-G6HZ3mX7.js";const o={};function r(s,c){return t(),a("div")}const l=e(o,[["render",r],["__file","1.html.vue"]]),_=JSON.parse('{"path":"/tags/shejimoshi/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{l as comp,_ as data};

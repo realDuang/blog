@@ -6,8 +6,8 @@
     <link>https://blog.realduang.com/</link>
     <description>这个人很懒，但还是想留下些什么东西。</description>
     <language>en-US</language>
-    <pubDate>Tue, 25 Jun 2024 09:14:35 GMT</pubDate>
-    <lastBuildDate>Tue, 25 Jun 2024 09:14:35 GMT</lastBuildDate>
+    <pubDate>Wed, 25 Sep 2024 09:28:20 GMT</pubDate>
+    <lastBuildDate>Wed, 25 Sep 2024 09:28:20 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>架构设计</category>
@@ -3029,6 +3029,26 @@ git lo...</description>
 <p>对于我日常使用环境来说，目前需要用到dotfiles manager来管理配置的主要有如下一些功能：</p>
 <img src="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/image-20210120174747924.png" alt="image-20210120174747924" style="zoom:50%;">
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>Unreal Engine 5 逆向工程与游戏开发 - 黑神话悟空</title>
+      <link>https://blog.realduang.com/blogs/others/black-myth-ue5-reverse-engineering.html</link>
+      <guid>https://blog.realduang.com/blogs/others/black-myth-ue5-reverse-engineering.html</guid>
+      <source url="https://blog.realduang.com/rss.xml">Unreal Engine 5 逆向工程与游戏开发 - 黑神话悟空</source>
+      <description>20240925152320
+
+TIP本文将以 黑神话：悟空 为例，介绍如何对基于虚幻 5 引擎的游戏进行逆向工程。包括游戏解包、文件导出、资产制作、替换和打包，以及 mod 的安装和运行参数设置。
+
+获取游戏解包密码 AES
+首先，我们需要获取黑神话悟空的解包密码 AES，这是进行游戏文件解包的必要步骤。
+步骤:
+
+找到游戏安装执行目录: 通常位于 ...</description>
+      <category>其他</category>
+      <pubDate>Wed, 25 Sep 2024 17:21:22 GMT</pubDate>
+      <content:encoded><![CDATA[<p><img src="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20240925152320.png" alt="20240925152320"></p>
+]]></content:encoded>
+      <enclosure url="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20240925152320.png" type="image/png"/>
     </item>
     <item>
       <title>VS Code For Web 深入浅出 -- 导读篇</title>

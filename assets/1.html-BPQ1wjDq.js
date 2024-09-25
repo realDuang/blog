@@ -1,0 +1,1 @@
+import{_ as t,o as e,c as a}from"./app-BU-w-E0g.js";const n={};function l(o,r){return e(),a("div")}const s=t(n,[["render",l],["__file","1.html.vue"]]),i=JSON.parse('{"path":"/tags/liulanqishijian/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{s as comp,i as data};
