@@ -6,8 +6,8 @@
     <link>https://blog.realduang.com/</link>
     <description>这个人很懒，但还是想留下些什么东西。</description>
     <language>en-US</language>
-    <pubDate>Mon, 02 Dec 2024 12:11:31 GMT</pubDate>
-    <lastBuildDate>Mon, 02 Dec 2024 12:11:31 GMT</lastBuildDate>
+    <pubDate>Mon, 02 Dec 2024 12:17:07 GMT</pubDate>
+    <lastBuildDate>Mon, 02 Dec 2024 12:17:07 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>架构设计</category>
@@ -1573,8 +1573,8 @@ JavaScript 对象频繁进行更新即可。当需要更新 UI 时，React 拥�
 <p>我们知道，DOM 节点本质上是一个树型结构，因此通常来说，我们可以通过树的遍历算法来比较新旧 Virtual DOM 的差异。但是，即使在最前沿的算法中，将两棵树完全比对的复杂度仍为 O(n^3) （我们可以在 LeetCode 中很容易找到这样的题型，感兴趣可以自己实现一下），这显然是不可接受的。而 React Diff 算法将这一行为的时间复杂度降低到了 O(n)。</p>
 <p>当然，科学领域里没有银弹，React Diff 能实现这么优异的性能，也是因为设计团队根据 React 本身的特点，预设了比对的 3 个限制：</p>
 <ol>
-<li>只对同级元素 diff。若同一个 DOM 节点在更新中变更了层级，则 react 不会复用。</li>
-<li>不同类型的元素变更时，元素不会复用。例如元素从 div 变成 p，react 会销毁 div 和所有子孙节点，并重新建立。</li>
+<li><strong>只对同级元素 diff</strong>。若同一个 DOM 节点在更新中变更了层级，则 react 不会复用。</li>
+<li><strong>不同类型的元素变更时，元素不会复用</strong>。例如元素从 div 变成 p，react 会销毁 div 和所有子孙节点，并重新建立。</li>
 <li>开发者可以对元素指定 key 属性来表示该元素能在更新后保持稳定，帮助算法优化。</li>
 </ol>
 <p>正是由于 React 只针对同级同类型元素进行比对，所以 React Diff 将不会存在递归与回溯，从而保证了如此优异算法的复杂度。这就是 React Diff 算法的核心，也是八股文中真正有价值的内容，可惜不是每一个熟背的人都能真正理解。</p>
