@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./app-DG1e-Jaf.js";const r={};function n(o,c){return t(),a("div")}const l=e(r,[["render",n],["__file","1.html.vue"]]),_=JSON.parse('{"path":"/tags/InversifyJS/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{l as comp,_ as data};

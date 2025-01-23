@@ -3,7 +3,7 @@
   <id>https://blog.realduang.com/</id>
   <title>枫之谷</title>
   <subtitle>这个人很懒，但还是想留下些什么东西。</subtitle>
-  <updated>2024-12-02T12:17:07.078Z</updated>
+  <updated>2025-01-23T07:39:10.784Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://blog.realduang.com/atom.xml"/>
   <link rel="alternate" href="https://blog.realduang.com/"/>
@@ -17,7 +17,7 @@
     <title type="text">利用 kafka 做一个上报服务</title>
     <id>https://blog.realduang.com/draft/2021-05-07.html</id>
     <link href="https://blog.realduang.com/draft/2021-05-07.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<p>Kafka 是一个目前由 Apache 软件基金会接管的一个开源流处理平台，是一种高吞吐量的基于发布-订阅模式的分布式日志收集和消息系统，它能通过 O(1) 的磁盘数据结构提供消息的持久化，使得其读写性能十分优异。</p>
 <h2>Kafka 概念介绍</h2>
 <p>首先，Kafka 作为一个基于发布订阅模式的消息系统，一定少不了生产者 (producer) 与消费者 (consumer) 作为链路的两端。除此之外，Kafka 中还提出了一些特性，正是这些特性帮助我们解耦消息队列的处理过程，并增强其可扩展能力。</p>
@@ -42,7 +42,7 @@
     <title type="text">代码重构之我见</title>
     <id>https://blog.realduang.com/blogs/architecture/2016-10-16.html</id>
     <link href="https://blog.realduang.com/blogs/architecture/2016-10-16.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>最近在看一些软件工程和构建方面的书籍。俗话说，书读百遍，其义自见，看得多了，自然也就有一些知识可以拿得出手分享一二了。</p>
 <p>由于我在写代码的过程中往往很追求代码的优雅和简洁，因此我着重阅读了代码重构方面的知识，现在对代码的重构也算略有体会了。接下来我将结合我所吸收到的知识与我自己的一些理解和观点来阐述一下代码重构的艺术。</p>
 </div>]]></summary>
@@ -57,7 +57,7 @@
     <title type="text">设计模式的 js 实现 (1)--单例模式</title>
     <id>https://blog.realduang.com/blogs/architecture/2019-09-20.html</id>
     <link href="https://blog.realduang.com/blogs/architecture/2019-09-20.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了 23 类，分别为：</p>
 <ol>
 <li>创建型模式(5 种)：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。</li>
@@ -133,7 +133,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">设计模式的 js 实现 (2)--装饰器模式</title>
     <id>https://blog.realduang.com/blogs/architecture/2019-09-23.html</id>
     <link href="https://blog.realduang.com/blogs/architecture/2019-09-23.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了 23 类，分别为：</p>
 <ol>
 <li>创建型模式(5 种)：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。</li>
@@ -220,7 +220,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">设计模式的 js 实现 (3)--观察者模式</title>
     <id>https://blog.realduang.com/blogs/architecture/2019-09-26.html</id>
     <link href="https://blog.realduang.com/blogs/architecture/2019-09-26.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了 23 类，分别为：</p>
 <ol>
 <li>创建型模式(5 种)：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。</li>
@@ -310,7 +310,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">设计模式的 js 实现 (4)--代理模式</title>
     <id>https://blog.realduang.com/blogs/architecture/2019-10-07.html</id>
     <link href="https://blog.realduang.com/blogs/architecture/2019-10-07.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>了解设计模式是学习一切软件架构设计的基础，大到一个项目的整体框架设计，小到一个功能函数的优化，都有着重要意义。《代码大全》中将设计模式共分为了 23 类，分别为：</p>
 <ol>
 <li>创建型模式(5 种)：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。</li>
@@ -462,7 +462,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">前端首屏渲染时间的极致优化</title>
     <id>https://blog.realduang.com/blogs/architecture/2022-09-08.html</id>
     <link href="https://blog.realduang.com/blogs/architecture/2022-09-08.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>我们知道，用户体验是 Web 产品最为重要的部分。尽可能减少首屏加载时间，更为流畅地展示用户所需求的内容，会是用户是否留存的关键因素。</p>
 <p>而随着现代 Web 业务可供用户的交互行为越来越多，前端项目的复杂度越来越高，每个页面的渲染时间也必然越来越长，这就导致了用户的体验不佳，用户的操作变慢。</p>
 <p>为此，前端工程师们在此部分持续发力，不断探究如何将首次页面渲染的时间减少到更小，提供更为优秀的产品体验。</p>
@@ -529,7 +529,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">Redux 深入理解 (1)</title>
     <id>https://blog.realduang.com/blogs/frontend-basics/ 2017-11-30.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-basics/ 2017-11-30.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>学习 react 的过程中，redux 的熟练掌握是一个绕不开并且很难绕过去的坎。接触 react 已经有一段时间了，甚至连一些小项目都用 react 做了不少了，但 redux 的使用上还是有诸多不理解不熟练的地方。正好有很长一段时间没有更过博客了，就从这里着手，增强一下自己的理解。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>学习 react 的过程中，redux 的熟练掌握是一个绕不开并且很难绕过去的坎。接触 react 已经有一段时间了，甚至连一些小项目都用 react 做了不少了，但 redux 的使用上还是有诸多不理解不熟练的地方。正好有很长一段时间没有更过博客了，就从这里着手，增强一下自己的理解。</p>
@@ -735,7 +735,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">js 学习笔记梳理 (1)</title>
     <id>https://blog.realduang.com/blogs/frontend-basics/2017-02-10.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-basics/2017-02-10.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>最近在梳理关于 js 一些原理层次的东西，感觉学的有点乱，是时候整理沉淀一下记录成文字了。在我看来，最难理解的核心就两点，一是对闭包的理解，二是对原型链的深入。在这里我先说说闭包。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>最近在梳理关于 js 一些原理层次的东西，感觉学的有点乱，是时候整理沉淀一下记录成文字了。在我看来，最难理解的核心就两点，一是对闭包的理解，二是对原型链的深入。在这里我先说说闭包。</p>
@@ -854,7 +854,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">js 学习笔记梳理 (2)</title>
     <id>https://blog.realduang.com/blogs/frontend-basics/2017-02-20.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-basics/2017-02-20.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>上一节我梳理了一下闭包的概念，这些天各种学校的事情挺忙的，直到现在才有空余时间来写写博客这样杀时间的事儿。这一次整理一下原型链的那些事儿。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>上一节我梳理了一下闭包的概念，这些天各种学校的事情挺忙的，直到现在才有空余时间来写写博客这样杀时间的事儿。这一次整理一下原型链的那些事儿。</p>
@@ -903,7 +903,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">es6 学习笔记</title>
     <id>https://blog.realduang.com/blogs/frontend-basics/2017-04-16.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-basics/2017-04-16.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>最近在尝试学习新框架，感觉学习曲线异常的陡峭，全然没有当时学习 bootstrap 和 jquery 的顺畅感觉。后面仔细想来，自己应该是缺了一些基础知识没有补上来，才会导致框架学习遇到了极大的阻力。那自己的知识栈到底缺失了哪一块呢？没错，就是面向未来的 javascript 语法————ES6。</p>
 <p>那么现在开始恶补吧，还不算晚。我将我的学习过程记录下来，为自己做 notes，也与各位分享。</p>
 </div>]]></summary>
@@ -953,7 +953,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">Flex 布局体验</title>
     <id>https://blog.realduang.com/blogs/frontend-basics/2017-05-25.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-basics/2017-05-25.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>还在为各种布局的 hack 方法犯愁么？还在想着网上流传的各类垂直居中存在的各种奇怪 bug 而影响工作体验么？还在为找不到一个合适自己的规范而疯狂造轮子么？现在，一个全新的布局解决方案规范已经展现在我们面前，它就是 flex 布局。只要 998，各类布局完美解决方案带回家！</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>还在为各种布局的 hack 方法犯愁么？还在想着网上流传的各类垂直居中存在的各种奇怪 bug 而影响工作体验么？还在为找不到一个合适自己的规范而疯狂造轮子么？现在，一个全新的布局解决方案规范已经展现在我们面前，它就是 flex 布局。只要 998，各类布局完美解决方案带回家！</p>
@@ -982,7 +982,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">Redux 深入理解 (2)</title>
     <id>https://blog.realduang.com/blogs/frontend-basics/2017-12-01.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-basics/2017-12-01.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>在理解了 redux 的作用原理后，我们来看看 redux 的基本概念。</p>
 </div><h3>state</h3>
 <p><code>state</code>：state 是状态管理的根本。在 redux 中，有唯一的状态树 state，为整个应用共享。本质上是一个普通对象。处于程序逻辑中，无法直接调用。</p>
@@ -1054,7 +1054,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">Redux 深入理解 (3)</title>
     <id>https://blog.realduang.com/blogs/frontend-basics/2017-12-03.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-basics/2017-12-03.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>上一节说到，reducer 是一个纯函数。那么纯函数具体的定义是什么呢？阮一峰老师是这样说的：</p>
 <p>纯函数是函数式编程的概念，必须遵守以下一些约束。</p>
 <blockquote>
@@ -1115,7 +1115,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">Redux 深入理解 (4)</title>
     <id>https://blog.realduang.com/blogs/frontend-basics/2017-12-04.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-basics/2017-12-04.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>这一节主要来讲讲 Redux 在 React 项目中的具体使用。</p>
 <p>将学的新知识新组件集成进项目里是初学者最大的障碍，这也是我最初学习 Redux 的时候很难有进展的原因。Redux 的源码体积很小，加起来连 1k 行都不到，利用的原理在之前已经说过，也很好理解，但由于 Redux 只是 Flux 对 React 的一种优化，但并不只是服务于 React，如果你愿意，在 Vue 中使用 Redux 也是完全可行的，毕竟状态管理的思想还是不会变的嘛。</p>
 <p>因此我们需要一个 Redux 与 React 之间的连接件来方便我们的搭建，这就是<code>React-redux</code>。也是我们将 Redux 合并进 React 最后也是最大的难点。</p>
@@ -1143,7 +1143,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">CSS 的垂直居中方法</title>
     <id>https://blog.realduang.com/blogs/frontend-basics/2018-03-14.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-basics/2018-03-14.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>CSS 是每一个前端工程师都绕不过去的坎，熟练运用 CSS 后，实现同样一种效果我们可以有很多种写法，但由于兼容问题，通常简洁的写法并不能实现全平台统一效果，复杂的写法对性能又不太友好，导致我们在编写 CSS 过程中有很多需要注意的点，要踩很多的坑，因此用一个笔记来集中记录一下方法。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>CSS 是每一个前端工程师都绕不过去的坎，熟练运用 CSS 后，实现同样一种效果我们可以有很多种写法，但由于兼容问题，通常简洁的写法并不能实现全平台统一效果，复杂的写法对性能又不太友好，导致我们在编写 CSS 过程中有很多需要注意的点，要踩很多的坑，因此用一个笔记来集中记录一下方法。</p>
@@ -1257,7 +1257,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">利用 React 高阶组件实现一个面包屑导航</title>
     <id>https://blog.realduang.com/blogs/frontend-basics/2018-11-12.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-basics/2018-11-12.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<h2>什么是 React 高阶组件</h2>
 <p>React 高阶组件就是以高阶函数的方式包裹需要修饰的 React 组件，并返回处理完成后的 React 组件。React 高阶组件在 React 生态中使用的非常频繁，比如<code>react-router</code> 中的 <code>withRouter</code> 以及 <code>react-redux</code> 中 <code>connect</code> 等许多 API 都是以这样的方式来实现的。</p>
 ]]></summary>
@@ -1433,7 +1433,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">React15 与 React16 生命周期区别与使用方式</title>
     <id>https://blog.realduang.com/blogs/frontend-basics/2019-12-21.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-basics/2019-12-21.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>因为 React16 框架使用了全新的<code>Fiber</code>架构，这其中有一个特性叫做<code>async rendering</code>，render 过程可中断，因此，render 函数之前的所有生命周期函数都有可能被多次执行，如果在这些函数中存在异步请求的话将会造成许多无用的请求被调用。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>因为 React16 框架使用了全新的<code>Fiber</code>架构，这其中有一个特性叫做<code>async rendering</code>，render 过程可中断，因此，render 函数之前的所有生命周期函数都有可能被多次执行，如果在这些函数中存在异步请求的话将会造成许多无用的请求被调用。</p>
@@ -1477,7 +1477,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">React16.8 useHook 特性</title>
     <id>https://blog.realduang.com/blogs/frontend-basics/2020-01-21.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-basics/2020-01-21.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>React16.8 迎来了大众期盼已久的函数式编程利器：<code>useHook</code>特性。它能大大增强函数式组件的能力，使得立即执行的、没有生命周期与 state 等等类组件特性的函数式组件拥有相同的能力。</p>
 <p><code>useHook</code>的原理实际上是利用了 JavaScript 的闭包机制，因此在多次执行函数的同时记住一些状态。</p>
 <p><code>useHook</code>拥有多种函数，我们也可以自定义自己的 hook。在这里主要来说说其中最常用的几种，简述他们的大致原理，以及使用时的注意事项。</p>
@@ -1564,7 +1564,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <title type="text">一文讲透 React Diff 算法核心</title>
     <id>https://blog.realduang.com/blogs/frontend-basics/2024-12-02.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-basics/2024-12-02.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<h2>前言</h2>
 <p>一直以来我对八股文一直是深恶痛绝的，总觉得这种东西如空中楼阁，对实际解决工程问题没有任何帮助。并且很多人只从网上搜索面试题答案死记硬背，反而可能由于该题目版本老旧而自己又没有从实际场景中理解，而导致获得了过时的甚至是错误的知识。</p>
 <p>但随着工作的深入，我发现这种观点是有些偏颇的，因为在实际工程中，如果我们自己都不知道这个技术的运行原理，又何谈对它的深入优化呢？这在 AI 辅助工作的时代更是如此，AI 无法回答你提不出来的问题。</p>
@@ -1806,7 +1806,7 @@ JavaScript 对象频繁进行更新即可。当需要更新 UI 时，React 拥�
     <title type="text">MongoDB 极简实践入门</title>
     <id>https://blog.realduang.com/blogs/frontend-tech-institute/2017-09-17.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-tech-institute/2017-09-17.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<h2>为什么用 MongoDB</h2>
 <p>传统的计算机应用大多使用关系型数据库来存储数据，比如大家可能熟悉的 MySql, Sqlite 等等，它的特点是数据以表格 (table) 的形式储存起来的。数据库由一张张排列整齐的表格构成，就好像一个 Excel 表单一样，每个表格会有若干列，比如一个学生信息表，可能包含学号、姓名、性别、入学年份、高考成绩、籍贯等等。而表格的每一排，则是一个个学生的具体信息。在企业级应用和前互联网时代，关系型数据库几乎是不二选择。关系型数据库的特点是有整齐划一的组织，很方便对数据进行描述、插入、搜索。</p>
 ]]></summary>
@@ -1826,7 +1826,7 @@ JavaScript 对象频繁进行更新即可。当需要更新 UI 时，React 拥�
     <title type="text">给 JavaScript 插上多线程的翅膀 —— Web Worker 的 Promise 化实践</title>
     <id>https://blog.realduang.com/blogs/frontend-tech-institute/2020-06-16.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-tech-institute/2020-06-16.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>在现代大型前端项目中，随着代码的复杂程度越来越高，本地的计算型事务也在变得繁重，而运行在单线程下 JavaScript 项目必定会忙于处理计算而无暇顾及用户接下来的频繁操作，造成卡顿等不太好的用户体验，更严重的情况是，当计算型事务过多时还有可能因为资源被占满带来网页无响应的卡死现象。因此，Web 项目的本地多线程运算能力势在必行，由此，Web Worker 应运而生了。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>在现代大型前端项目中，随着代码的复杂程度越来越高，本地的计算型事务也在变得繁重，而运行在单线程下 JavaScript 项目必定会忙于处理计算而无暇顾及用户接下来的频繁操作，造成卡顿等不太好的用户体验，更严重的情况是，当计算型事务过多时还有可能因为资源被占满带来网页无响应的卡死现象。因此，Web 项目的本地多线程运算能力势在必行，由此，Web Worker 应运而生了。</p>
@@ -2010,7 +2010,7 @@ mainThreadController
     <title type="text">实现一个版本自动控制的 IndexedDB</title>
     <id>https://blog.realduang.com/blogs/frontend-tech-institute/2020-07-13.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-tech-institute/2020-07-13.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>随着现代大型项目复杂度的提升，渲染一个 WEB 页面需要的数据越来越多，在多次打开并渲染的过程中，有许多数据都是重复并且不常更新的，因此这部分的数据需要通过浏览器缓存来缓解网络压力，同时提升页面打开速度。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>随着现代大型项目复杂度的提升，渲染一个 WEB 页面需要的数据越来越多，在多次打开并渲染的过程中，有许多数据都是重复并且不常更新的，因此这部分的数据需要通过浏览器缓存来缓解网络压力，同时提升页面打开速度。</p>
@@ -2249,7 +2249,7 @@ mainThreadController
     <title type="text">有向无环图的模型设计与应用</title>
     <id>https://blog.realduang.com/blogs/frontend-tech-institute/2020-11-02.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-tech-institute/2020-11-02.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>对于我们程序开发者来说，想要学习一个框架，从开发一个 TodoList 项目做起，这就像学习语言先学会写 Hello world 一样基础。但其实，简单的 TodoList 里面，同样可以蕴含一些复杂的算法思想。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>对于我们程序开发者来说，想要学习一个框架，从开发一个 TodoList 项目做起，这就像学习语言先学会写 Hello world 一样基础。但其实，简单的 TodoList 里面，同样可以蕴含一些复杂的算法思想。</p>
@@ -2306,7 +2306,7 @@ mainThreadController
     <title type="text">大型前端项目 DevOps 沉思录 -- CI 篇</title>
     <id>https://blog.realduang.com/blogs/frontend-tech-institute/2021-05-11.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-tech-institute/2021-05-11.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p><code>DevOps</code>一词源于<code>Development</code> 和 <code>Operations</code> 的组合，即将软件交付过程中开发与测试运维的环节通过工具链打通，并通过自动化的测试与监控，减少团队的时间损耗，更加高效稳定地交付制品。</p>
 <p>本篇文章将着重探讨 <code>DevOps</code> 在 <code>持续集成阶段</code> 需要提供的能力，将对工作流的设计及流水线的优化思路做一个简要讲解。</p>
 </div>]]></summary>
@@ -2424,7 +2424,7 @@ mainThreadController
     <title type="text">NodeJS 服务 Docker 镜像极致优化指北</title>
     <id>https://blog.realduang.com/blogs/frontend-tech-institute/2021-07-25.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-tech-institute/2021-07-25.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>这段时间在开发一个腾讯文档全品类通用的 HTML 动态服务，为了方便各品类接入的生成与部署，也顺应上云的趋势，考虑使用 Docker 的方式来固定服务内容，统一进行制品版本的管理。本篇文章就将我在服务 Docker 化的过程中积累起来的优化经验分享出来，供大家参考。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>这段时间在开发一个腾讯文档全品类通用的 HTML 动态服务，为了方便各品类接入的生成与部署，也顺应上云的趋势，考虑使用 Docker 的方式来固定服务内容，统一进行制品版本的管理。本篇文章就将我在服务 Docker 化的过程中积累起来的优化经验分享出来，供大家参考。</p>
@@ -2510,7 +2510,7 @@ mainThreadController
     <title type="text">大型前端项目 DevOps 沉思录 -- CD 篇</title>
     <id>https://blog.realduang.com/blogs/frontend-tech-institute/2022-01-25.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-tech-institute/2022-01-25.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p><code>DevOps</code>一词源于<code>Development</code> 和 <code>Operations</code> 的组合，即将软件交付过程中开发与测试运维的环节通过工具链打通，并通过自动化的测试与监控，减少团队的时间损耗，更加高效稳定地交付制品。</p>
 <p>本篇文章将着重探讨 <code>DevOps</code> 在 <code>持续部署阶段</code> 需要提供的能力，介绍大型项目应该如何稳定并高频率的迭代项目版本。</p>
 </div>]]></summary>
@@ -2629,7 +2629,7 @@ mainThreadController
     <title type="text">DWS -- 前端制品服务的云原生部署实践</title>
     <id>https://blog.realduang.com/blogs/frontend-tech-institute/2022-03-15.html</id>
     <link href="https://blog.realduang.com/blogs/frontend-tech-institute/2022-03-15.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>云原生是一个很热门的话题，它将服务高可用性上升到了一个新的台阶。站点的高可用同时也是我们前端对自己的高要求。</p>
 <p>那么我们该如何设计，才能让我们的前端项目也搭上云原生的快车，实现自动化运维与部署呢？本篇文章我们就来浅谈一下这里的实践。</p>
 </div>]]></summary>
@@ -2804,7 +2804,7 @@ resource "aws_resource_group" "deployment" {
     <title type="text">设计一个基于大数据的机器学习全自动记账系统(基础篇)</title>
     <id>https://blog.realduang.com/blogs/machine-learning/2023-08-21.html</id>
     <link href="https://blog.realduang.com/blogs/machine-learning/2023-08-21.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>随着近些年消费结构的改变，抵制消费主义的行为越来越流行，越来越多的年轻人开始意识到个人财务管理的重要性。与此同时，年轻人也越来越意识到，如果他们想要实现自己的财务目标，如购买房屋、投资、旅游等，就需要掌握有效的财务管理技能。因此，记账已经成为了日常生活中不可或缺的一部分。</p>
 <p>但于此同时，真正尝试过记账的小伙伴很多，能年复一年坚持下来的却很少。原因在于记账是一个太过机械性的行为，且很容易因为或主观或客观的因素忘记漏记。这样记账变得枯燥乏味的同时，数据还不够可靠，无法准确地记录消费趋势，从而导致记账的动力不足。</p>
 <p>那么，此时如果有一个能够完全自动化的记账系统，能够完全不需要你手动录入每一笔交易，全自动完成所有的数据清洗和分类，并自动地分析消费趋势，最终以图表等形式生成报表，直观地展示出来，你会不会觉得很方便，记账的动力也会大大增强呢？这就是我近些年来一直在思考和优化的财务管理目标。</p>
@@ -2880,7 +2880,7 @@ resource "aws_resource_group" "deployment" {
     <title type="text">设计一个基于大数据的机器学习全自动记账系统(AI篇)</title>
     <id>https://blog.realduang.com/blogs/machine-learning/2024-05-07.html</id>
     <link href="https://blog.realduang.com/blogs/machine-learning/2024-05-07.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>随着基于大语言模型的 AI 技术发展越来越迅猛，使用自然语言处理大数据技术来设计一个全自动记账系统已经不再是梦想。在这篇文章中，我们将会介绍如何基于自己过往消费的大数据来设计一个只属于你自己的全自动账单分类记账系统。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>随着基于大语言模型的 AI 技术发展越来越迅猛，使用自然语言处理大数据技术来设计一个全自动记账系统已经不再是梦想。在这篇文章中，我们将会介绍如何基于自己过往消费的大数据来设计一个只属于你自己的全自动账单分类记账系统。</p>
@@ -2892,7 +2892,7 @@ resource "aws_resource_group" "deployment" {
     <title type="text">jQuery 判断及修改 checked 状态的方法</title>
     <id>https://blog.realduang.com/blogs/others/2017-01-05.html</id>
     <link href="https://blog.realduang.com/blogs/others/2017-01-05.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>表单中经常需要使用单选框或多选框来让用户选择，而我们经常使用 jQuery 来判断或改变选项中 checked 的状态，但是由于 jQuery 版本不同，判断的方法也不太一样，这个坑点在这里记录一下。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>表单中经常需要使用单选框或多选框来让用户选择，而我们经常使用 jQuery 来判断或改变选项中 checked 的状态，但是由于 jQuery 版本不同，判断的方法也不太一样，这个坑点在这里记录一下。</p>
@@ -2919,7 +2919,7 @@ resource "aws_resource_group" "deployment" {
     <title type="text">解决 github + Hexo 的博客多终端同步问题</title>
     <id>https://blog.realduang.com/blogs/others/2017-05-12.html</id>
     <link href="https://blog.realduang.com/blogs/others/2017-05-12.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>解决 github + Hexo 的博客多终端同步的思路是将博文内容相关文件放在 Github 项目中 master 中，将 Hexo 配置写博客用的相关文件放在 Github 项目的 hexo 分支上，这个是关键，多终端的同步只需要对分支 hexo 进行操作。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>解决 github + Hexo 的博客多终端同步的思路是将博文内容相关文件放在 Github 项目中 master 中，将 Hexo 配置写博客用的相关文件放在 Github 项目的 hexo 分支上，这个是关键，多终端的同步只需要对分支 hexo 进行操作。</p>
@@ -2970,7 +2970,7 @@ hexo d <span class="token parameter variable">-g</span>
     <title type="text">在 Linux 下 nodejs 的安装方法大全</title>
     <id>https://blog.realduang.com/blogs/others/2017-06-11.html</id>
     <link href="https://blog.realduang.com/blogs/others/2017-06-11.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>这段时间为了上线测试很多 nodejs 代码的部署，开始鼓捣云服务器。由于不是很懂运维知识，首先在安装上就踩了很多大坑，于是决定记录下来做个备忘。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>这段时间为了上线测试很多 nodejs 代码的部署，开始鼓捣云服务器。由于不是很懂运维知识，首先在安装上就踩了很多大坑，于是决定记录下来做个备忘。</p>
@@ -2986,7 +2986,7 @@ hexo d <span class="token parameter variable">-g</span>
     <title type="text">github 建立 repository 并上传工程的方法</title>
     <id>https://blog.realduang.com/blogs/others/2017-07-02.html</id>
     <link href="https://blog.realduang.com/blogs/others/2017-07-02.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>这不是什么新知识了，自从我用 github 以来一直就是这么用着的，但是最近有一段时间没上传过自己的 project 了，竟然手生了忘了怎么做了。想了想还是记录下来比较好，也给大家分享分享。</p>
 <p>由于是给自己做的备忘，怎么注册 github 之类的新手问题我就不说了，不懂的朋友可以自行去百度相关问题，很多的。</p>
 </div>]]></summary>
@@ -3024,7 +3024,7 @@ hexo d <span class="token parameter variable">-g</span>
     <title type="text">git 常用命令笔记</title>
     <id>https://blog.realduang.com/blogs/others/2018-01-03.html</id>
     <link href="https://blog.realduang.com/blogs/others/2018-01-03.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>git 是现如今最火的版本控制工具，尽管已经使用了 GitHub 数年的时间了，但一直没有对 git 命令以及作用进行深入的分析和学习，对 git 的使用还仅停留在 add、commit、push、clone 上，这根本算不得掌握 git。因此，这次一得出空来就开始从头恶补 git 知识了，分享出来与大家一同学习进步。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>git 是现如今最火的版本控制工具，尽管已经使用了 GitHub 数年的时间了，但一直没有对 git 命令以及作用进行深入的分析和学习，对 git 的使用还仅停留在 add、commit、push、clone 上，这根本算不得掌握 git。因此，这次一得出空来就开始从头恶补 git 知识了，分享出来与大家一同学习进步。</p>
@@ -3166,7 +3166,7 @@ hexo d <span class="token parameter variable">-g</span>
     <title type="text">中文输入法中光标跟随能力触发的浏览器事件探究</title>
     <id>https://blog.realduang.com/blogs/others/2021-02-01.html</id>
     <link href="https://blog.realduang.com/blogs/others/2021-02-01.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>最近在着手腾讯文档的输入体验优化，在其中有一个不起眼的小需求引起了我的注意，并顺便研究了一些事件监听机制相结合的特点，特此记录一下填坑过程。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>最近在着手腾讯文档的输入体验优化，在其中有一个不起眼的小需求引起了我的注意，并顺便研究了一些事件监听机制相结合的特点，特此记录一下填坑过程。</p>
@@ -3224,7 +3224,7 @@ hexo d <span class="token parameter variable">-g</span>
     <title type="text">优雅地管理与同步个人工作环境 -- dotfiles manager</title>
     <id>https://blog.realduang.com/blogs/others/2021-03-13.html</id>
     <link href="https://blog.realduang.com/blogs/others/2021-03-13.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>实现一个完美个性化标准的目标是：一个统一管理及备份所有应用配置方式。而本篇文章带来的，就是为了满足这个目标而诞生的最佳解决方案 Dotfiles manager。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>实现一个完美个性化标准的目标是：一个统一管理及备份所有应用配置方式。而本篇文章带来的，就是为了满足这个目标而诞生的最佳解决方案 Dotfiles manager。</p>
@@ -3251,7 +3251,7 @@ hexo d <span class="token parameter variable">-g</span>
     <title type="text">Unreal Engine 5 逆向工程与游戏开发 - 黑神话悟空</title>
     <id>https://blog.realduang.com/blogs/others/black-myth-ue5-reverse-engineering.html</id>
     <link href="https://blog.realduang.com/blogs/others/black-myth-ue5-reverse-engineering.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<p><img src="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20240925152320.png" alt="20240925152320"></p>
 <hr>
 <div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>本文将以 <strong>黑神话：悟空</strong> 为例，介绍如何对基于虚幻 5 引擎的游戏进行逆向工程。包括游戏解包、文件导出、资产制作、替换和打包，以及 mod 的安装和运行参数设置。</p>
@@ -3265,7 +3265,7 @@ hexo d <span class="token parameter variable">-g</span>
     <title type="text">VS Code For Web 深入浅出 -- 导读篇</title>
     <id>https://blog.realduang.com/blogs/vscode-for-web/0.introductory.html</id>
     <link href="https://blog.realduang.com/blogs/vscode-for-web/0.introductory.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>下一代 IDE 的形态究竟是什么呢？VS Code For Web 试图回答这个问题。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>下一代 IDE 的形态究竟是什么呢？VS Code For Web 试图回答这个问题。</p>
@@ -3312,7 +3312,7 @@ hexo d <span class="token parameter variable">-g</span>
     <title type="text">VS Code For Web 深入浅出 -- 进程间通信篇</title>
     <id>https://blog.realduang.com/blogs/vscode-for-web/1.inter-process-communication.html</id>
     <link href="https://blog.realduang.com/blogs/vscode-for-web/1.inter-process-communication.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>在上一篇中，我们一起分析了 VS Code 整体的代码架构，了解了 VS Code 是由前后端分离的方式开发的。且无论前端是基于 electron 还是 web，后端是本地还是云端，其调用方式并无不同。</p>
 <p>这样的架构下，前后端的通信方式是如何实现的呢？本篇我们将一起来探究 VS Code For Web 的进程间通信方式。</p>
 </div>]]></summary>
@@ -3395,7 +3395,7 @@ connection<span class="token punctuation">.</span><span class="token function">l
     <title type="text">VS Code For Web 深入浅出 -- Server 模块设计篇</title>
     <id>https://blog.realduang.com/blogs/vscode-for-web/2.server-module-design.html</id>
     <link href="https://blog.realduang.com/blogs/vscode-for-web/2.server-module-design.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>在了解了 VS Code 的通信机制后，我们可以着手分析 VS Code Server 中各模块的实现以及设计思路了。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>在了解了 VS Code 的通信机制后，我们可以着手分析 VS Code Server 中各模块的实现以及设计思路了。</p>
@@ -3545,7 +3545,7 @@ connection<span class="token punctuation">.</span><span class="token function">l
     <title type="text">VS Code For Web 深入浅出 -- 依赖注入设计</title>
     <id>https://blog.realduang.com/blogs/vscode-for-web/3.dependency-injection-design.html</id>
     <link href="https://blog.realduang.com/blogs/vscode-for-web/3.dependency-injection-design.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>在阅读 VSCode 代码的过程中，我们会发现每一个模块中都有大量装饰器的使用，用来装饰模块以及其中依赖的模块变量。这样做的目的是什么呢？在这一篇中我们来详细分析一下。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>在阅读 VSCode 代码的过程中，我们会发现每一个模块中都有大量装饰器的使用，用来装饰模块以及其中依赖的模块变量。这样做的目的是什么呢？在这一篇中我们来详细分析一下。</p>
@@ -3736,7 +3736,7 @@ connection<span class="token punctuation">.</span><span class="token function">l
     <title type="text">VSCode For Web 深入浅出 -- 插件加载机制</title>
     <id>https://blog.realduang.com/blogs/vscode-for-web/4.extension-loading-mechanism.html</id>
     <link href="https://blog.realduang.com/blogs/vscode-for-web/4.extension-loading-mechanism.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>最近我在浏览 VSCode for web 的 repo，在最近更新的一些 commit 中发现了一个新的 VSCode 插件特性支持，名为 <code>webOpener</code>，它的作用是什么呢？又是如何影响插件加载的呢？在这一篇中我们结合 VSCode For Web 的插件加载机制来详细分析一下。</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>最近我在浏览 VSCode for web 的 repo，在最近更新的一些 commit 中发现了一个新的 VSCode 插件特性支持，名为 <code>webOpener</code>，它的作用是什么呢？又是如何影响插件加载的呢？在这一篇中我们结合 VSCode For Web 的插件加载机制来详细分析一下。</p>
@@ -3821,10 +3821,64 @@ https://vscode.dev/+publisher.name/remoteAuthority/path/segments/<span class="to
     <published>2023-05-08T18:54:33.000Z</published>
   </entry>
   <entry>
+    <title type="text">VSCode For Web 深入浅出 -- VS Code Server 设计</title>
+    <id>https://blog.realduang.com/blogs/vscode-for-web/5.vscode-server-design.html</id>
+    <link href="https://blog.realduang.com/blogs/vscode-for-web/5.vscode-server-design.html"/>
+    <updated>2025-01-23T07:38:16.000Z</updated>
+    <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>最近收到了一些来自社区的反馈，希望我能够对 VSCode Server 的的设计思路以及内部实现进行一些解析。因此，本篇文章将会对 VSCode Server 的原理、架构、使用场景等方面进行一些分析与探讨。</p>
+</div>]]></summary>
+    <content type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>最近收到了一些来自社区的反馈，希望我能够对 VSCode Server 的的设计思路以及内部实现进行一些解析。因此，本篇文章将会对 VSCode Server 的原理、架构、使用场景等方面进行一些分析与探讨。</p>
+</div><!-- more -->
+<h2>什么是 VS Code Server</h2>
+<p>VS Code Server 是一个运行在远程服务器上的 VS Code 实例，它可以通过浏览器访问，提供了与本地 VS Code 相同的编辑体验。它基于远程开发扩展所使用的服务器构建，还具备交互式 CLI 等额外功能。</p>
+<p>通过在远程机器上运行 VS Code Server，开发者可以在本地 VS Code 客户端中编辑和调试远程的代码，拥有本地般的开发体验，包括智能感知、代码导航和调试等等。这种方式可以让开发者在不同的设备上保持一致的开发环境，同时也可以在不同的设备上共享开发环境。</p>
+<p>接下来我们介绍一下组成一个完整的 VSCode Server 体验的两个重要组成部分。</p>
+<p>一个是在服务器上下载并构建一个独立的 VS Code Server，让所有的 VS Code 交互都通过请求该 Server 来实现，使得任意的远程 client (甚至无需是 VS Code)，只要能发送网络请求，都能实现远程 VS Code 体验。</p>
+<p>VS Code Server 的架构图如下：</p>
+<p><img src="https://code.visualstudio.com/assets/docs/remote/vscode-server/server-arch-latest.png" alt="VSCode Server Architecture"></p>
+<p>另一个是通过 VS Code 扩展: <a href="https://code.visualstudio.com/docs/remote/tunnels" target="_blank" rel="noopener noreferrer">Remote - Tunnels extension</a> ，通过在 server 与 client 之间建立一个可信安全的 tunnel，使得 VS Code 能将远程服务器中的目录结构挂载映射到本地的客户端来实现。</p>
+<h2>VS Code Tunnel 实现原理</h2>
+<p>在上面的介绍中，我们发现一个很有意思的地方，VS Code Server 与客户端之间支持不直接通过 SSH 连接。因此，它理论上可以在无需安装 VS Code 的情况下运行，甚至可以在不支持 SSH 命令的环境中运行，例如在浏览器中运行。那么它是如何做到的呢？</p>
+<p>这里就不得不提到 VS Code tunnel 了。VS Code tunnel 是微软实现的一种隧道技术，我们可以在 MS Learn <a href="https://github.com/microsoft/dev-tunnels" target="_blank" rel="noopener noreferrer">隧道服务（点对点访问）</a> 这里找到更多信息。</p>
+<p>VS Code tunnel 本质上是在服务器和客户端上各启动了一个服务，并相互使用 HTTPS 连接，同时监听了服务器上的部分端口（通常是 443 等）的 https / wss 通信，从而使得客户端可以通过这个通道获取到服务器上的相关请求以及信息。在此过程中，服务器并不需要向外暴露任何端口或者 IP 地址，从而保证了服务器自身的安全性。</p>
+<p>当然，由于 VS Code Server 本身自动更新，安装扩展等需要，如果服务器在受限环境的情况下，还是需要为一些域名开放白名单的，详情可参考<a href="https://code.visualstudio.com/docs/setup/network#_common-hostnames" target="_blank" rel="noopener noreferrer">这里</a>。</p>
+<p>在实现上，VS Code Server 提供了一个专门的 <code>code</code> CLI。通过 <code>code tunnel</code> 命令，将会自动下载 VS Code Server 相关代码并启动隧道服务。其实它本质上并不需要连接的客户端也一定是 VS Code，仅需要保证连接双方匹配上同一个隧道即可。</p>
+<h3>配对与身份校验</h3>
+<p>那么问题就来了，VS Code tunnel 是如何配对的呢？这里其实是复用了之前介绍过的 VS Code 账户体系，通过校验客户端与服务器上登录 VS Code 账户(目前仅允许 Github 或 Microsoft 帐户)进行身份验证。</p>
+<p>在校验了身份后，会使用该账号在 Azure 同一 workspace 下创建<a href="https://github.com/microsoft/dev-tunnels" target="_blank" rel="noopener noreferrer">隧道服务（点对点访问）</a>，在这种情况下，VS Code 将与 Azure 托管的隧道服务建立出站连接。</p>
+<p>隧道成功匹配后即可通过在隧道内创建 SSH 连接实现端到端加密。目前 VS Code Tunnel 使用 AES 256 in CTR 模式，我们可以在<a href="https://github.com/microsoft/dev-tunnels" target="_blank" rel="noopener noreferrer">这里</a> 找到相关的加密算法。</p>
+<h3>在无 SSH 环境下的连接</h3>
+<p>那么，如果当客户端没有可用 terminal 环境（如浏览器）该如何连接呢？这里可以参考 VS Code For Web 与 Github Codespaces 的实现办法。本质上，隧道开启时，服务端会生成一个特殊的 URL</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>https://vscode.dev/tunnel/<span class="token operator">&lt;</span>machine_name<span class="token operator">&gt;</span>/<span class="token operator">&lt;</span>path<span class="token operator">&gt;</span>
+</code></pre></div><p>客户端访问这个 URL 时将重定向到特定的隧道服务，该服务会将客户端与服务器之间的连接进行匹配，从而实现 VS Code Server 与客户端之间的连接。当然，该 URL 的安全性也由上述的账号身份验证保证。</p>
+<h3>使用限制</h3>
+<p>由于 VS Code Server 的实现本质上是利用了点对点的隧道服务，这项特性显然会带来不小的成本以及被滥用的可能。因此，VS Code Server 对隧道数量和带宽等资源设置了使用限制。</p>
+<p>目前 VS Code Server 仅支持在 Azure 上运行，且需要使用 Microsoft 或 Github 账户进行登录。对于每个账户，仅能注册至多 10 个隧道。如果要创建新隧道并且已经注册了 10 个其他隧道，CLI 将随机选择一个未使用的隧道并将其删除。</p>
+<p>另外，一个 VS Code Server 实例仅设计为供单个用户访问。因此多租户的使用场景并不适用。如果需要多用户访问，可以考虑使用多个 VS Code Server 实例。</p>
+<h2>与其他 VS Code 特性对比</h2>
+<h3>与 SSH 连接的关系</h3>
+<p>如果你不愿意接受 VS Code Server 的隧道服务，例如需要更多连接数，或者有多用户服务器的需求，也可以直接使用 SSH 连接到远程服务器。</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh" target="_blank" rel="noopener noreferrer">Visual Studio Code Remote - SSH</a> 扩展允许你使用 SSH 连接到远程服务器，并在远程服务器上运行 VS Code Server。</p>
+<p>VS Code Server 本身也同样支持 SSH 连接，只需要在远程服务器上安装 SSH 服务，并在 VS Code 中配置好 SSH 连接信息即可。由于强需求 SSH 环境，并不在 VSCode for Web 系列的支持范围内，因此不是本系列文章的重点，在此就不多赘述了。</p>
+<h3>与 Dev Container 的组合使用</h3>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers" target="_blank" rel="noopener noreferrer">Dev Containers</a> 是 VS Code 的另外一项重要特性。它允许 VSCode 可以在 Docker 容器中运行开发环境。</p>
+<p>VS Code Server 与 Dev Containers 是两个独立的功能，我们知道 VS Code Server 可以在远程服务器上运行 VS Code 实例，因此它们可以很好的结合使用。</p>
+<p>通过在远程服务器上运行一个 Dev Containers，并利用 VS Code Tunnel 访问该 Dev Container，从而实现远程容器的开发体验，对开发环境的同一管理效率又提升了一个 level。</p>
+<h2>总结</h2>
+<p>在本篇文章中，我们介绍了 VS Code Server 的设计思路以及实现原理。通过 VS Code Tunnel，我们可以在任意客户端上连接远程服务器的 VS Code 实例，从而实现远程开发的体验。</p>
+<h2>参考资料</h2>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/remote/vscode-server" target="_blank" rel="noopener noreferrer">Visual Studio Code Server</a></li>
+</ul>
+]]></content>
+    <category term="VSCode For Web 深入浅出"/>
+    <published>2025-01-23T15:37:29.000Z</published>
+  </entry>
+  <entry>
     <title type="text">浅析依赖注入框架的生命周期(以 InversifyJS 为例)</title>
     <id>https://blog.realduang.com/blogs/vscode-for-web/di-framework-life-cycle.html</id>
     <link href="https://blog.realduang.com/blogs/vscode-for-web/di-framework-life-cycle.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>在上一篇介绍了 VSCode 的依赖注入设计，并且实现了一个简单的 IOC 框架。但是距离成为一个生产环境可用的框架还差的很远。</p>
 <p>行业内已经有许多非常优秀的开源 IOC 框架，它们划分了更为清晰地模块来应对复杂情况下依赖注入运行的正确性。</p>
 <p>这里我将以 InversifyJS 为例，分析它的生命周期设计，来弄清楚在一个优秀的 IOC 框架中，完成一次注入流程到底是什么样的。</p>
@@ -3927,7 +3981,7 @@ https://vscode.dev/+publisher.name/remoteAuthority/path/segments/<span class="to
     <title type="text">在 VSCode 中实现 Jupyter Debug Adapter</title>
     <id>https://blog.realduang.com/blogs/vscode-for-web/implementing-jupyter-debug-adapter-in-vscode.html</id>
     <link href="https://blog.realduang.com/blogs/vscode-for-web/implementing-jupyter-debug-adapter-in-vscode.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>说起 VSCode 中广受好评的功能，必须算上其优秀的调试（debug）功能，它拥有丰富的功能和直观的用户界面。</p>
 <p>更为难得的是，VSCode 为这套调试架构实现的插件化机制，使得我们可以很方便地为不同的自定义语言和框架实现调试功能，并具有统一且通用的用户界面。</p>
 </div>]]></summary>
@@ -4013,7 +4067,7 @@ https://vscode.dev/+publisher.name/remoteAuthority/path/segments/<span class="to
     <title type="text">使用依赖注入框架管理多实例服务（以 InversifyJS 为例）</title>
     <id>https://blog.realduang.com/blogs/vscode-for-web/multi-instance-service-management-in-di-framework.html</id>
     <link href="https://blog.realduang.com/blogs/vscode-for-web/multi-instance-service-management-in-di-framework.html"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>在大型项目的管理中，控制反转的思想是非常重要的。它可以帮助我们解耦代码，提高代码的可维护性。同时避免了不必要的重复实例化，降低内存泄漏的可能性。</p>
 <p>而在 JS/TS 技术栈中，我们通常会使用依赖注入框架来帮助我们管理服务。这其中最佳的选择当然是 Angular 这种大而全的大型工程开发框架。而对于使用了其他 UI 框架的项目来说，我们同样可以额外引入一个轻量化的依赖注入框架。而 InversifyJS 就是其中的佼佼者。我们可以通过使用它，来见微知著地了解依赖注入的原理与设计哲学。</p>
 </div>]]></summary>
@@ -4131,7 +4185,7 @@ container
     <title type="text">关于我</title>
     <id>https://blog.realduang.com/docs/about/</id>
     <link href="https://blog.realduang.com/docs/about/"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>你好我是 <code>Duang</code>，一名涉猎广泛的 Web 工程师。</p>
 <p>毕业于 中南大学 计算机专业。</p>
@@ -4155,7 +4209,7 @@ container
     <title type="text">留言板</title>
     <id>https://blog.realduang.com/docs/message-board/</id>
     <link href="https://blog.realduang.com/docs/message-board/"/>
-    <updated>2024-12-02T12:16:13.000Z</updated>
+    <updated>2025-01-23T07:38:16.000Z</updated>
     <summary type="html"><![CDATA[<div class="custom-container info"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">INFO</p><p>这里是一个好看的留言板，欢迎大家在此留下任何问题或者建议！一起进步！</p>
 </div>]]></summary>
     <content type="html"><![CDATA[<div class="custom-container info"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">INFO</p><p>这里是一个好看的留言板，欢迎大家在此留下任何问题或者建议！一起进步！</p>
