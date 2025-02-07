@@ -16,13 +16,8 @@ bannerBrand:
 blog:
   socialLinks:
     - { icon: "LogoGithub", link: "https://github.com/realDuang" }
-    - { icon: "LogoDiscord", link: "https://www.zhihu.com/people/realDuang" }
-    - {
-        icon: "LetterQq",
-        link: "http://wpa.qq.com/msgrd?v=3&uin=250407778&site=qq&menu=yes",
-      }
-    - { icon: "Email", link: "mailto:250407778@qq.com" }
-    - { icon: "LogoFacebook", link: "https://www.facebook.com/kelekexiao" }
+    - { icon: "IconZhihu", link: "https://www.zhihu.com/people/realDuang" }
+    - { icon: "IconEmail", link: "mailto:250407778@qq.com" }
 
 footer:
   record: blog.realduang.com
@@ -31,5 +26,3 @@ footer:
   cyberSecurityLink: "https://beian.miit.gov.cn"
   startYear: 2016
 ---
-
-![CI Status](https://github.com/realduang/blog/actions/workflows/main.yml/badge.svg)

@@ -2,66 +2,21 @@ import { defineUserConfig } from "vuepress";
 import recoTheme from "vuepress-theme-reco";
 import { viteBundler } from "@vuepress/bundler-vite";
 import { feedPlugin } from "@vuepress/plugin-feed";
+import { themeConfig } from "./configs";
 
-const hostname = "https://blog.realduang.com";
+export const HOST_NAME = "https://blog.realduang.com";
 
 export default defineUserConfig({
   title: "枫之谷",
   description: "这个人很懒，但还是想留下些什么东西。",
-  bundler: viteBundler(),
-  theme: recoTheme({
-    repo: "realDuang/blog",
-
-    colorMode: "dark",
-    primaryColor: "#366cf0",
-    style: "@vuepress-reco/style-default",
-
-    logo: "/avatar.jpg",
-    author: "Duang",
-    authorAvatar: "/avatar.jpg",
-
-    catalogTitle: "导航条",
-
-    navbar: [
-      { text: "Home", link: "/", icon: "Home" },
-      { text: "时间轴", link: "/timeline.html", icon: "TimePlot" },
-      {
-        text: "订阅",
-        link: `${hostname}/feed.json`,
-        icon: "Rss",
-      },
-      { text: "留言板", link: "/docs/message-board/", icon: "Chat" },
-      {
-        text: "更多",
-        icon: "Friendship",
-        children: [
-          {
-            text: "Leetcode In JavaScript",
-            link: "https://realDuang.github.io/leetcode-in-javascript/",
-          },
-        ],
-      },
-      {
-        text: "关于我",
-        link: "/docs/about/",
-        icon: "Collaborate",
-      },
-    ],
-
-    commentConfig: {
-      type: "waline",
-      options: {
-        serverURL: "https://waline-roan-gamma.vercel.app",
-        hideComments: false,
-      },
-    },
-  }),
+  bundler: viteBundler({}),
+  theme: recoTheme(themeConfig),
   plugins: [
     feedPlugin({
       rss: true,
       atom: true,
       json: true,
-      hostname: hostname,
+      hostname: HOST_NAME,
       devServer: true,
       devHostname: "http://localhost:8080",
     }),
