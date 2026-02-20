@@ -6,16 +6,33 @@
     <link>https://blog.realduang.com/</link>
     <description>这个人很懒，但还是想留下些什么东西。</description>
     <language>en-US</language>
-    <pubDate>Fri, 07 Feb 2025 12:14:16 GMT</pubDate>
-    <lastBuildDate>Fri, 07 Feb 2025 12:14:16 GMT</lastBuildDate>
+    <pubDate>Fri, 20 Feb 2026 11:54:21 GMT</pubDate>
+    <lastBuildDate>Fri, 20 Feb 2026 11:54:21 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>AI和机器学习</category>
     <category>架构设计</category>
     <category>前端基础</category>
     <category>前端技术研究院</category>
-    <category>机器学习</category>
     <category>其他</category>
     <category>VSCode For Web 深入浅出</category>
+    <item>
+      <title>Blog Writing Agent -- 枫之谷 (blog.realduang.com)</title>
+      <link>https://blog.realduang.com/CLAUDE.html</link>
+      <guid>https://blog.realduang.com/CLAUDE.html</guid>
+      <source url="https://blog.realduang.com/rss.xml">Blog Writing Agent -- 枫之谷 (blog.realduang.com)</source>
+      <description>Blog Writing Agent -- 枫之谷 (blog.realduang.com)
+Author: Duang | VuePress 2 + vuepress-theme-reco | 2016-present
+Role
+You are Duang&amp;apos;s blog writing agent. When asked to write a blo...</description>
+      <pubDate>Fri, 20 Feb 2026 11:53:04 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>Author: Duang | VuePress 2 + vuepress-theme-reco | 2016-present</p>
+<h2>Role</h2>
+<p>You are Duang's blog writing agent. When asked to write a blog post, follow the Workflow below. All blog content MUST be written in <strong>Chinese (Simplified)</strong>. Code comments and variable names remain in the language of the topic.</p>
+]]></content:encoded>
+      <enclosure url="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/&lt;filename&gt;.png" type="image/png"/>
+    </item>
     <item>
       <title>利用 kafka 做一个上报服务</title>
       <link>https://blog.realduang.com/draft/2021-05-07.html</link>
@@ -39,6 +56,211 @@ Kafka 概念介绍
 <p>此外，Kafka 为了实现高可用性，还对 Brokers 设计了选举淘汰机制以保证相应的唯一性，对 Producer 产生的消息进行消息路由，并对可能的产生的网络故障进行消息传递保障等等。在此不多做赘述，感兴趣的同学可以自行了解。</p>
 ]]></content:encoded>
       <enclosure url="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/kafka20210513113211.png" type="image/png"/>
+    </item>
+    <item>
+      <title>设计一个基于大数据的机器学习全自动记账系统(基础篇)</title>
+      <link>https://blog.realduang.com/blogs/ai/2023-08-21.html</link>
+      <guid>https://blog.realduang.com/blogs/ai/2023-08-21.html</guid>
+      <source url="https://blog.realduang.com/rss.xml">设计一个基于大数据的机器学习全自动记账系统(基础篇)</source>
+      <description>提示随着近些年消费结构的改变，抵制消费主义的行为越来越流行，越来越多的年轻人开始意识到个人财务管理的重要性。与此同时，年轻人也越来越意识到，如果他们想要实现自己的财务目标，如购买房屋、投资、旅游等，就需要掌握有效的财务管理技能。因此，记账已经成为了日常生活中不可或缺的一部分。
+但于此同时，真正尝试过记账的小伙伴很多，能年复一年坚持下来的却很少。原因在于...</description>
+      <category>AI和机器学习</category>
+      <pubDate>Mon, 21 Aug 2023 15:23:02 GMT</pubDate>
+      <content:encoded><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">提示</p><p>随着近些年消费结构的改变，抵制消费主义的行为越来越流行，越来越多的年轻人开始意识到个人财务管理的重要性。与此同时，年轻人也越来越意识到，如果他们想要实现自己的财务目标，如购买房屋、投资、旅游等，就需要掌握有效的财务管理技能。因此，记账已经成为了日常生活中不可或缺的一部分。</p>
+<p>但于此同时，真正尝试过记账的小伙伴很多，能年复一年坚持下来的却很少。原因在于记账是一个太过机械性的行为，且很容易因为或主观或客观的因素忘记漏记。这样记账变得枯燥乏味的同时，数据还不够可靠，无法准确地记录消费趋势，从而导致记账的动力不足。</p>
+<p>那么，此时如果有一个能够完全自动化的记账系统，能够完全不需要你手动录入每一笔交易，全自动完成所有的数据清洗和分类，并自动地分析消费趋势，最终以图表等形式生成报表，直观地展示出来，你会不会觉得很方便，记账的动力也会大大增强呢？这就是我近些年来一直在思考和优化的财务管理目标。</p>
+</div><h2>记账模板展示</h2>
+<p>先展示成果，以增强大家的记账动力。我使用了腾讯文档作为所有账单汇总的数据源。由于它支持多人协作，且可以随时随地在任何设备上面修改，且 UI 设计出色，非常适合作为小数据量的账单数据库使用。</p>
+<p>以下在不同时期根据自身需求优化出来的财务报表，从上面可以很清晰直观地看到自己的月度消费趋势，以及各个消费类别在每个月的占比，均摊及统计变化趋势。</p>
+<p><img src="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20230725161330.png" alt="20230725161330"></p>
+<p>甚至根据自身定制的需要，还可以展示使用的支付方式占比、每年各类别均摊支出及变化趋势等，都能很直观的以图表的形式展示出来。</p>
+<p><img src="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20230725161559.png" alt="20230725161559"></p>
+<p>当然只展示整体的显示效果，具体的数据涉及个人隐私都打了厚码，影响美观见谅。</p>
+<p>那么接下来就开始从零开始逐个讲解如何设计一个这样的自动记账系统了。</p>
+<p>一个完全自动化的记账系统，大体由三个重要部分组成：数据获取、数据清洗和数据分析。我将根据这三个部分依次介绍。</p>
+<h2>数据获取</h2>
+<p>数据获取是一个完全自动化记账系统的第一步，也是最重要的一步。交易数据的准确性以及信息丰富度直接决定了我们后续的数据清洗和数据分析的效果。因此，我们需要尽可能选择信息量更大的数据源，以获取更多的每条交易更多的上下文信息，从而减少进一步人工标注的干预。</p>
+<p>对中国大陆来说，微信和支付宝就是国民级的支付软件，它足够普及和便利，几乎不需要大多数人改变交易习惯。此外，它们的交易数据也是最丰富的。因此，我们的数据获取就以微信和支付宝为主。</p>
+<p>但很不幸的是，与国外一些信用卡每月会定期发送账单邮件不同，微信和支付宝并不会主动推送交易账单，并且没有开放获取交易数据的 API，且安全性校验很复杂，也无法使用无头的爬虫来获取数据。因此我们需要通过自行操作来获取交易账单。(当然，如果由愿意折腾的小伙伴也可以考虑模拟用户的行为获取账单)</p>
+<h3>微信支付账单获取</h3>
+<p>微信支付账单的获取需要在移动端完成(毕竟小而美)。需要在自己的微信 APP 中，依次点击<code>我</code> =&gt; <code>服务</code> =&gt; <code>钱包</code> =&gt; <code>账单</code> =&gt; <code>常见问题</code> =&gt; <code>下载账单</code> =&gt; <code>用于个人对账</code>，输入<code>账单时间</code> 和 <code>邮箱地址</code>，即可将账单发送到你的邮箱中。下载到本地后，输入发送到微信的密码，即可获取微信支付账单。</p>
+<p><img src="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/88ca321689b9f4f2310ec102d37132a9.png" alt="88ca321689b9f4f2310ec102d37132a9"></p>
+<p>但是，微信支付的账单只能获取最近三个月的数据。因此，我们最多每三个月就需要更新下载账单。</p>
+<h3>支付宝账单获取</h3>
+<p>支付宝账单的获取需要在 PC 端支付宝官网完成。登录后选择 <code>我是个人用户</code> =&gt; <code>我的支付宝</code> =&gt; <code>交易记录</code>，就可以选择对应的交易时间段，选择下载账单为 <code>Excel 格式</code> ，即可获取到支付宝账单。</p>
+<p><img src="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20230725155847.png" alt="20230725155847"></p>
+<h3>其他数据源</h3>
+<p>当然，如果微信和支付宝不是你主要使用的交易工具。其实所有的银行 APP 都提供打印流水服务，完全可以使用你主要使用的交易工具来作为数据源。当然具体入口可能会有区别，且单条交易记录的信息丰富度可能不足，需要手动补充，在此就不加赘述了。</p>
+<h2>数据清洗</h2>
+<p>数据清洗是一个记账系统很重要的一步。因为这种自动化导出的账单必定是非常杂乱的，不同的数据源，其交易记录的格式都不一样，且信息丰富度也不一样。因此，我们需要对不同的数据源进行不同的数据清洗。</p>
+<p>数据清洗的目的，首先是统一好来自不同数据源的格式以方便接下来的综合分析，其次是剔除掉一些我们不关心的噪声，例如我只想记录 100 元以上的大宗交易，或者我不希望个人不同账户直接的转账被计入进来等等，这部分也完全可以根据自身的需求进行定制。</p>
+<blockquote>
+<p>观前重要提醒：</p>
+<p>如果有读者完全没有编程基础也完全不用害怕，可以在 Excel 中自行操作出一模一样的格式，再合并数据即可，使用代码只是为了提升自动化效率。当然，我之后也将开源所有脱敏的预处理与训练代码，有兴趣的小伙伴可以自行尝试。</p>
+</blockquote>
+<p>以下的脚本都以 <code>typescript</code> 为例，也完全可以使用任何你所熟悉的语言。</p>
+<p>下面仍然以微信和支付宝为例，来介绍如何进行数据清洗。</p>
+<p>首先是统一各个数据源的账单格式。如果我们打开了在上一步中获取的微信与支付宝的账单文件，会发现它们之间其实有很多信息都很相似，可以经过一定的规则合并起来。例如，它们都有交易时间、交易类型、交易对方、交易金额等信息。因此，我们可以将它们统一为一个格式：</p>
+<div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts" data-title="ts"><pre><code><span class="line"><span class="token keyword">interface</span> <span class="token class-name">IBookKeepingRow</span> <span class="token punctuation">{</span></span>
+<span class="line">  交易时间：Date<span class="token punctuation">;</span></span>
+<span class="line">  类型：RecordType <span class="token operator">|</span> <span class="token string">""</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token string-property property">"金额(元)"</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token string-property property">"收/支"</span><span class="token operator">:</span> <span class="token string">"支出"</span> <span class="token operator">|</span> <span class="token string">"收入"</span> <span class="token operator">|</span> <span class="token string">"/"</span><span class="token punctuation">;</span></span>
+<span class="line">  支付方式：<span class="token builtin">string</span><span class="token punctuation">;</span></span>
+<span class="line">  交易对方：<span class="token builtin">string</span><span class="token punctuation">;</span></span>
+<span class="line">  商品名称：<span class="token builtin">string</span><span class="token punctuation">;</span></span>
+<span class="line">  备注：<span class="token builtin">string</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>找到了目标格式，接下来我们来看看如何将数据源进行转换。</p>
+<h3>微信支付账单清洗</h3>
+<p>使用记事本打开微信支付的账单 csv，会发现它的格式类似于：</p>
+<div class="language-txt line-numbers-mode" data-highlighter="prismjs" data-ext="txt" data-title="txt"><pre><code><span class="line">微信支付账单明细，,,,,,,,</span>
+<span class="line">微信昵称：[Duang],,,,,,,,</span>
+<span class="line">起始时间：[2023-06-04 00:00:00] 终止时间：[2023-07-04 00:00:00],,,,,,,,</span>
+<span class="line">导出类型：[全部],,,,,,,,</span>
+<span class="line">导出时间：[2023-07-25 18:08:39],,,,,,,,</span>
+<span class="line">,,,,,,,,</span>
+<span class="line">共 44 笔记录，,,,,,,,</span>
+<span class="line">收入：3 笔 1145.14 元，,,,,,,,</span>
+<span class="line">支出：40 笔 2333.33 元，,,,,,,,</span>
+<span class="line">中性交易：1 笔 888.00 元，,,,,,,,</span>
+<span class="line">注：,,,,,,,,</span>
+<span class="line">1. 充值/提现/理财通购买/零钱通存取/信用卡还款等交易，将计入中性交易，,,,,,,,</span>
+<span class="line">2. 本明细仅展示当前账单中的交易，不包括已删除的记录，,,,,,,,</span>
+<span class="line">3. 本明细仅供个人对账使用，,,,,,,,</span>
+<span class="line">,,,,,,,,</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+      <enclosure url="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20230725161330.png" type="image/png"/>
+    </item>
+    <item>
+      <title>设计一个基于大数据的机器学习全自动记账系统(AI篇)</title>
+      <link>https://blog.realduang.com/blogs/ai/2024-05-07.html</link>
+      <guid>https://blog.realduang.com/blogs/ai/2024-05-07.html</guid>
+      <source url="https://blog.realduang.com/rss.xml">设计一个基于大数据的机器学习全自动记账系统(AI篇)</source>
+      <description>提示随着基于大语言模型的 AI 技术发展越来越迅猛，使用自然语言处理大数据技术来设计一个全自动记账系统已经不再是梦想。在这篇文章中，我们将会介绍如何基于自己过往消费的大数据来设计一个只属于你自己的全自动账单分类记账系统。
+
+很抱歉鸽了这么久，这篇文章的内容其实是我在 2023 年 8 月份就已经开始构思的，但是由于自然语言处理这一片领域对我来说也是全新...</description>
+      <category>AI和机器学习</category>
+      <pubDate>Tue, 07 May 2024 12:40:01 GMT</pubDate>
+      <content:encoded><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">提示</p><p>随着基于大语言模型的 AI 技术发展越来越迅猛，使用自然语言处理大数据技术来设计一个全自动记账系统已经不再是梦想。在这篇文章中，我们将会介绍如何基于自己过往消费的大数据来设计一个只属于你自己的全自动账单分类记账系统。</p>
+</div>]]></content:encoded>
+      <enclosure url="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20240507164430.png" type="image/png"/>
+    </item>
+    <item>
+      <title>Coding Agent 的进化之路 —— 从代码建议到自主编程</title>
+      <link>https://blog.realduang.com/blogs/ai/2026-02-20.html</link>
+      <guid>https://blog.realduang.com/blogs/ai/2026-02-20.html</guid>
+      <source url="https://blog.realduang.com/rss.xml">Coding Agent 的进化之路 —— 从代码建议到自主编程</source>
+      <description>提示2025 年，软件开发正在经历一场范式转变。Coding Agent 从最初的代码补全建议者，进化到了能够自主规划、执行、验证的闭环编程系统。但在这条进化之路上，上下文丢失、成本膨胀、远程协作等工程问题接踵而至。本文将以全景视角，串讲 Coding Agent 在架构设计上的关键改进与优化模式，探讨它离真正&amp;quot;自主编程&amp;quot;还有多远。
+
+Coding A...</description>
+      <category>AI和机器学习</category>
+      <pubDate>Fri, 20 Feb 2026 20:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">提示</p><p>2025 年，软件开发正在经历一场范式转变。Coding Agent 从最初的代码补全建议者，进化到了能够自主规划、执行、验证的闭环编程系统。但在这条进化之路上，上下文丢失、成本膨胀、远程协作等工程问题接踵而至。本文将以全景视角，串讲 Coding Agent 在架构设计上的关键改进与优化模式，探讨它离真正"自主编程"还有多远。</p>
+</div><!-- more -->
+<p><img src="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/images/coding-agent-2026/summary.png" alt="Coding Agent 进化全景图"></p>
+<h2>从建议者到指挥者</h2>
+<p>如果你在 2023 年使用过 GitHub Copilot，那你一定对"Tab 补全"这个交互模式不陌生——AI 在你写代码的时候提供一行或几行建议，你按 Tab 接受，或者忽略继续往下写。这种模式是经典的 <strong>代码建议者（Code Suggester）</strong> 范式，AI 的角色仅仅是一个被动的补全工具。</p>
+<p>回顾这段历史，代码补全工具的进化经历了几个明确的阶段：</p>
+<ol>
+<li><strong>静态补全时代（~2020 年前）</strong>：基于语法树和符号表的传统 IDE 补全，只能提示已存在的变量名和方法签名</li>
+<li><strong>语言模型补全时代（2021-2023）</strong>：以 Copilot 为代表，基于 Codex/GPT 模型预测下一行代码，但仍然是被动的"建议者"角色</li>
+<li><strong>对话式编程时代（2023-2024）</strong>：ChatGPT、Copilot Chat 等产品引入对话交互，开发者可以用自然语言描述需求，AI 生成代码片段——但生成的代码仍需开发者手动复制、粘贴、调试</li>
+<li><strong>自主编程时代（2025-至今）</strong>：Coding Agent 直接操作文件系统、运行终端命令、执行测试，形成真正的闭环</li>
+</ol>
+<p>但到了 2025 年初，事情发生了根本性的变化。</p>
+<p>以 Claude Code CLI 为代表的新一代 Coding Agent，不再只是"建议"你该写什么代码，而是接管了整个开发流程：理解需求、制定计划、编写代码、运行测试、修复 bug、提交 PR。开发者的角色从"代码的编写者"变成了"任务的指挥者" —— 用自然语言描述你想要什么，然后审查 Agent 交付的结果。</p>
+<p>这种范式被称为 <strong>计划-执行闭环（Plan-Execute Loop）</strong>。终端（Terminal）作为整个架构的"重心"，这么做的核心目的是为了<strong>透明度与可审计性</strong>：Agent 的每一步行为都显式可见，开发者可以像指挥家一样实时"指挥"和纠偏整个编码过程。</p>
+<p>一个典型的 Plan-Execute Loop 大致如下：</p>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">用户输入需求 → Agent 分析并生成执行计划 → 逐步执行（编辑文件/运行命令/调用 API）</span>
+<span class="line">    ↑                                                              ↓</span>
+<span class="line">    ←———————————— 反馈观察结果（测试输出/报错信息/LSP 诊断） ←——————————</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在这个循环中，Agent 不仅要"写"代码，还要"理解"代码执行的结果。当测试失败时，它能读取错误栈、定位问题根因、修改代码、重新运行测试——整个过程可以完全自动化，无需人类干预。这和传统的"代码生成"有本质区别：传统工具只负责"生成"，而 Agent 还负责"验证"和"修正"。</p>
+<p>但这种转变也带来了一种新的心理压力。开发者不再因为编写数千行代码而感到体力疲惫，取而代之的是每小时需要进行数十次微观决策——审查代码差异、批准文件更改、验证架构选择——而产生的 <strong>决策疲劳</strong>。</p>
+<p>想象一下这个场景：Agent 连续修改了 15 个文件来实现一个新功能，你需要逐一审查每个文件的变更，判断它的设计决策是否合理、命名是否恰当、边界条件是否考虑到了。这种认知负担完全不亚于自己写代码，只是从"实现疲劳"转向了"决策疲劳"。</p>
+<p>更微妙的是，这种疲劳带来了一个危险的倾向——<strong>审查懈怠（Review Fatigue）</strong>。当 Agent 连续交付 20 个看起来"差不多对"的变更时，开发者很容易开始无脑点击"Approve"。而一旦养成这种习惯，Agent 引入的微妙 bug 或设计缺陷就可能悄无声息地溜进代码库。这恰恰是这场范式革命中尚未完全解决的人机交互命题——如何在保持效率的同时，让开发者始终保持足够的警觉性？</p>
+<h2>"记忆"问题：长周期任务中的上下文管理</h2>
+<p>Coding Agent 在处理一个简单的 bug 修复时表现优异，但当任务复杂度上升——比如一个跨越多个文件、需要持续数小时甚至数天的大型重构——问题就来了：<strong>AI 会"忘记"之前做过什么</strong>。</p>
+<p>这不是 AI 变傻了，而是 LLM 的上下文窗口天然有限。即使是 2026 年初最先进的模型，<a href="https://platform.claude.com/docs/en/docs/about-claude/models" target="_blank" rel="noopener noreferrer">标准上下文窗口也不过 200K Token</a>。当对话历史累积到一定长度后，早期的关键信息就会被挤出窗口之外。你告诉它的架构决策、你们讨论过的设计权衡、之前修改过哪些文件——这些关键信息可能在几十轮对话后就消失了。这个问题在业界被称为"上下文丢失"或"记忆失效"，它直接制约着 Coding Agent 处理大型工程任务的能力。</p>
+<p>这个问题有多严重？举一个真实的例子：在一个需要重构身份认证模块的任务中，Agent 在第 1 轮对话中理解了"我们要从 session-based 迁移到 JWT"这一核心决策，但到了第 30 轮对话时，它突然生成了一段基于 session 的代码——因为那个关键决策早已被挤出了上下文窗口。更糟糕的是，开发者如果没有仔细审查，这种"回退"可能直接被合入代码库。</p>
+<p>那么，如何解决这个问题？下面以 <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener noreferrer">OpenCode</a> 为例，介绍三层解决方案。其他 Coding Agent 也有相似的机制来保证长周期任务的可靠性。</p>
+<h3>第一层：实时环境感知（LSP 集成）</h3>
+<p>当 AI 使用 <code>edit</code> 工具修改代码后，OpenCode 的全局事件总线会立即向 LSP（Language Server Protocol）服务器发送通知。服务器返回的实时诊断信息（语法错误、类型不匹配、未定义变量等）会作为"观察结果"直接反馈给 LLM。</p>
+<p>简单来说，AI 改完代码后不需要靠"记忆"来判断改得对不对，编辑器会实时告诉它哪里有问题。这就像一个永远不会走神的 Code Review 搭档，每一次代码变更后都会立即检查并反馈。</p>
+<p>传统 IDE 中，LSP 主要服务于人类开发者——提供代码补全、错误高亮、跳转定义等功能。但在 Coding Agent 的场景下，LSP 被赋予了一个全新的角色：<strong>它是 Agent 的"感官系统"</strong>。Agent 通过 LSP 获得的不仅仅是"当前文件有没有语法错误"这种局部信息，而是整个项目的全局健康状态。</p>
+<p>举个栗子：AI 在文件 A 中重命名了一个函数，但忘记更新文件 B 中对该函数的调用。在传统模式下，这个错误可能要等到最后运行测试才会暴露。而有了 LSP 集成后，AI 修改文件 A 的瞬间就会收到文件 B 的诊断信息——"未定义的函数引用"——然后立即去修复。</p>
+<p>此外，LSP 还能自动进行文件间的函数引用和定义跳转，显著减少了 Agent 为了查找代码而消耗的 Token。这一点非常关键：在一个大型项目中，Agent 如果要靠 <code>grep</code> 逐文件搜索来理解代码结构，可能光搜索就要消耗掉上下文窗口的一大半。而 LSP 的"跳转到定义"只需要一次调用就能精确定位。</p>
+<p>具体来说，LSP 为 Agent 提供的关键能力包括：</p>
+<ul>
+<li><strong>goToDefinition</strong>：精确跳转到符号定义处，避免 Agent 盲目搜索</li>
+<li><strong>findReferences</strong>：找到某个函数/变量的所有引用点，确保重命名或重构时不遗漏</li>
+<li><strong>hover</strong>：获取类型信息和文档注释，帮助 Agent 理解代码语义</li>
+<li><strong>diagnostics</strong>：实时诊断，相当于给 Agent 配了一个永不下线的 TypeScript 编译器</li>
+</ul>
+<p>这些能力组合在一起，让 Agent 从"靠记忆编程"进化到了"靠感知编程"——即使它忘记了之前的对话内容，LSP 也能实时告诉它当前代码的状态。</p>
+<h3>第二层：持久化会话存储（SQLite）</h3>
+<p>第一层解决的是"实时感知"，而这一层解决的是更根本的问题——<strong>断点续传</strong>。</p>
+<p>LLM 本质上是无状态的——每次 API 调用都是独立的，模型不会"记住"上一次调用的内容。所有的"记忆"都依赖于将历史对话作为 prompt 重新发送。这意味着，如果没有持久化机制，关闭终端就等于失忆。</p>
+<p>OpenCode 通过 SQLite 数据库构建了一套完整的持久化方案：</p>
+<ul>
+<li><strong>跨会话记忆</strong>：使用本地 SQLite 数据库存储多轮对话历史和任务状态。当开发者关闭终端后重新打开，Agent 不会一脸懵地问"我们之前在做什么来着？"</li>
+<li><strong>断点续传</strong>：开发者可以在重启工具甚至重启机器后，随时恢复之前的会话。这使得处理长达数天的复杂开发任务成为可能——你可以下班回家，第二天接着上次的进度继续</li>
+<li><strong>全局指导文件</strong>：通过 <code>AGENTS.md</code> 等蓝图文件建立稳定的项目规则，不受对话轮次影响。这些文件在每次对话开始时都会被读取，确保 Agent 始终遵循项目的编码规范和架构约定。这其实也是 <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener noreferrer">OpenClaw</a> 的主要记忆存储方式（如 <code>SOUL.md</code> 定义 Agent 性格，<code>USER.md</code> 存储用户的个人偏好和工作习惯）</li>
+<li><strong>自动压缩机制（Auto Compact）</strong>：系统会实时监控 Token 使用情况。当达到 95% 的限制阈值时，自动触发摘要流程——将已完成的工作、当前活动的文件路径和剩余待办事项总结成精炼的上下文，并开启新会话。这样一来，Agent 既不会因为上下文溢出而崩溃，又能保留最关键的任务状态</li>
+</ul>
+<p>值得展开说说 <strong>Auto Compact 机制</strong>，因为它是整个持久化方案中最精妙的设计。</p>
+<p>想象一下：你和 Agent 已经进行了 50 轮对话，讨论了架构设计、实现了 3 个核心模块、修复了若干 bug。此时上下文窗口即将耗尽。如果直接截断历史对话，Agent 就会失去所有前因后果。而 Auto Compact 会在触发阈值时执行以下操作：</p>
+<ol>
+<li>将当前完整的对话历史交给一个专门的"摘要模型"，生成结构化的任务摘要</li>
+<li>摘要中包含：已完成的任务列表、当前正在进行的工作、待办事项、关键的架构决策、活跃文件路径</li>
+<li>用这个摘要作为新会话的初始上下文，开始一段全新的对话</li>
+</ol>
+<p>从开发者的体验来看，这个过程几乎是无缝的——Agent 在压缩前后的行为保持连贯，只是底层的对话窗口悄悄地"换了一帧"。这有点像人类大脑的记忆整理机制：你不需要记住今天上午写的每一行代码的细节，但你记得"上午完成了用户注册模块，下午要开始做登录"。</p>
+<h3>第三层：结构化上下文管理（编排者-子代理模式）</h3>
+<p>前两层分别解决了"实时感知"和"持久化存储"的问题，但还有一个更隐蔽的挑战：<strong>上下文膨胀</strong>。</p>
+<p>即使有了 SQLite 存储和自动压缩，如果一个复杂任务需要 Agent 搜索 100 个文件、读取 50 个函数定义、分析 20 个依赖关系，这些中间过程本身就会把上下文窗口塞满。为了解决这个问题，OpenCode 采用了 <strong>编排者-子代理（Orchestrator-Subagent）</strong> 架构。其设计核心在于代理与子代理的多层级编排体系：</p>
+<ul>
+<li><strong>主代理</strong>：开发者直接交互的主要对象，负责管理整个对话流和决策过程。主要功能是控制权限、拆解任务，分为 Build 和 Plan 两种模式，一般使用最高级模型</li>
+<li><strong>子代理（Subagents）</strong>：由主代理通过内置的 <code>task</code> 工具自动调用，或由用户在对话框中通过 <code>@</code> 符号手动唤起（如 <code>@explore</code>）。每个子代理在独立的上下文窗口中运行</li>
+</ul>
+<p>这种分离的好处是什么？</p>
+<p><strong>上下文净化</strong>。复杂的研究或搜索任务由子代理在独立会话中执行。子代理产生的海量搜索结果和冗长日志不会污染主会话的上下文，只有最终的精炼结论会被返回给主代理。</p>
+<p>这种模式的效果有多显著？数据说话：它曾成功将相当于 <strong>200 万个 Token</strong> 的工作量精简并适配到 <strong>15.7 万 Token</strong> 的主对话流中。也就是说，超过 90% 的"噪音"被子代理在独立空间中消化掉了，主代理只需要处理最终的"干货"。</p>
+<p><img src="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/images/coding-agent-2026/orchestrator.png" alt="编排者-子代理架构图"></p>
+<p>工具层内置了丰富的能力集：<code>edit</code>、<code>write</code>、<code>patch</code>、<code>read</code>、<code>grep</code>、<code>glob</code>、<code>list</code>、<code>bash</code>、<code>webfetch</code>、<code>task</code>、<code>todo</code>、<code>skill</code>、LSP 等等。当主代理遇到复杂问题时，它会使用 <code>task</code> 工具派生（Spawn）一个子会话。子代理在独立的上下文窗口中运行，产生的冗长搜索记录、日志或中间过程不会污染主会话的上下文窗口。子代理完成任务后，仅将精炼后的结论返回给主代理，主代理再将其整合进全局计划中。</p>
+<p>除此之外，系统还配备了一系列保障机制来确保整个流程的可靠性：</p>
+<ul>
+<li><strong>权限网关</strong>：敏感操作（如删除文件或推送代码）可配置为"询问（Ask）"模式，强制要求人类介入。这是 Agent 自动化和人类控制之间的重要平衡点</li>
+<li><strong>死循环检测（Doom Loop Detection）</strong>：如果系统检测到同一个工具调用连续三次失败且输入完全一致，会自动将该工具权限提升为"询问"，强制人类干预以打破循环。这个机制看似简单，但在实际使用中拯救了无数次"Agent 陷入无限重试"的窘境</li>
+<li><strong>快照恢复</strong>：每一轮工具执行前，系统会利用 Git 机制捕获当前工作区状态（Snapshot），若执行出错可随时回滚。这给了开发者一个"后悔药"——不管 Agent 做了什么，你都可以一键恢复到之前的状态</li>
+</ul>
+<h2>多模型分配：让专业的人做专业的事</h2>
+<p>解决了上下文管理问题后，另一个工程挑战浮出水面：<strong>成本与效率的平衡</strong>。</p>
+<p>不是所有任务都需要最强的模型。用 Claude Opus 去做一个简单的 <code>grep</code> 搜索，就像请大学教授帮你算小学数学题——能做到，但完全没必要。而在实际开发中，一个完整的功能实现可能包含数十次工具调用，其中大部分都是搜索文件、读取内容这样的简单操作。如果每次调用都使用最强模型，成本会迅速膨胀到不可接受的程度。</p>
+<p>来看一组数据：根据 <a href="https://www.swebench.com/" target="_blank" rel="noopener noreferrer">SWE-bench</a> 排行榜的统计，在标准化的编码任务中，不同模型的平均 API 调用次数从 33 次（Claude 4.5 Opus）到 60 次（MiniMax M2.5）不等，单个任务最多可达 100 次以上。从 Agent 的工作流来看，大部分步骤都是文件浏览、目录探索和代码搜索（探索阶段），真正的代码编辑和写入只占一小部分。如果全程使用最高级模型（如 Claude Opus），根据 <a href="https://aider.chat/docs/leaderboards/" target="_blank" rel="noopener noreferrer">Aider 编码基准</a>的数据，在涉及多轮迭代的复杂真实项目任务中，单次任务成本可能达到数美元量级。而 <a href="https://lmsys.org/blog/2024-07-01-routellm/" target="_blank" rel="noopener noreferrer">RouteLLM</a> 的研究表明，通过智能的模型路由——让简单任务使用快速模型，复杂任务才动用高级模型——可以在保持 95% 性能的前提下实现 <strong>45%-85% 的成本降低</strong>，同时响应速度还更快。</p>
+<h3>异步调用优化</h3>
+<p>在讨论多模型分配之前，先聊一个前置问题：<strong>同步交互的瓶颈</strong>。</p>
+<p>传统的 Coding Agent 交互模式是同步的——你发一条指令，然后盯着屏幕等 Agent 完成。对于耗时几分钟的简单任务来说这没什么问题，但当一个大型重构需要运行半小时甚至更久时，这种"人等机器"的模式就变得非常低效。</p>
+<p>这个问题在实际工作中表现得尤为突出。你可能正在 Agent 上跑一个"给整个项目添加单元测试"的任务，这需要 Agent 逐个文件分析、编写测试、运行验证。整个过程可能持续 30 分钟到一个小时，而这段时间你只能盯着终端看进度条——或者切到别的窗口做事，但又担心 Agent 在某个步骤卡住了需要你介入。</p>
+<p>典型的解决方案是 <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener noreferrer">OpenClaw</a> 支持的 Pi Agent。它主要解决的是通用工具调度能力的交互规则：用户通过任意客户端发送指令后即可离开，代理完成后会主动发消息告知进度，中间不再有同步监控思考过程的需要。这让开发者可以"发射后不管"——发完指令去开个会、喝杯咖啡，回来时任务已经完成了。</p>
+<p>这种异步模式的价值不仅仅是节省等待时间。更重要的是，它释放了开发者的<strong>注意力</strong>。人类的注意力是有限资源——如果你把注意力锁在一个正在自动运行的 Agent 上，你就无法同时进行其他需要深度思考的工作。而异步模式让你可以同时管理多个 Agent 任务，实现真正的"一个人当一个团队用"。</p>
+<p>事实上，异步执行已经成为 2025-2026 年 Coding Agent 的标配能力。除了 OpenClaw 的 Bot 方案，主流产品也纷纷跟进：</p>
+<ul>
+<li><strong><a href="https://code.claude.com/docs/en/claude-code-on-the-web" target="_blank" rel="noopener noreferrer">Claude Code on the Web</a></strong>：用户在 Web 界面提交任务后，代码在 Anthropic 管理的隔离 VM 中异步执行。提交后可直接关闭浏览器，甚至通过 iOS App 监控进度。更有趣的是它的 <strong>会话穿梭</strong> 能力——通过 <code>/teleport</code> 命令可以将 Web 云端的会话无缝拉回本地终端继续工作，反过来也可以用 <code>&amp;</code> 前缀将本地任务发送到云端后台执行</li>
+<li><strong><a href="https://openai.com/index/codex/" target="_blank" rel="noopener noreferrer">OpenAI Codex</a></strong>：集成在 ChatGPT 中的编码代理，每个任务在隔离的云沙箱（microVM）中运行，默认无网络访问以确保安全。支持并行多任务，完成后自动创建 PR</li>
+<li><strong><a href="https://github.blog/news-insights/product-news/github-copilot-the-agent-awakens/" target="_blank" rel="noopener noreferrer">GitHub Copilot Coding Agent</a></strong>：直接在 GitHub Issue 中 <code>@copilot</code> 或将 Issue 分配给 Copilot，Agent 在云沙箱中异步完成从代码分析到 PR 创建的全流程，并自动分配人类 reviewer 进行审查循环</li>
+</ul>
+<p>这些产品的共同趋势是：<strong>异步不再是可选项，而是默认的工作模式</strong>。开发者的角色正在从"盯着终端等结果"转变为"批量派发任务、定期检查进度、在关键节点做决策"。</p>
+<h3>任务执行者细化</h3>
+<p>专业的人做专业的事。将不同的子任务分配给不同的 Agent，从而获得专用 prompt 优化以及专用 model 优化，在速度和成本之间取得最佳平衡。</p>
+<p>例如，<a href="https://github.com/alvinunreal/oh-my-opencode-slim" target="_blank" rel="noopener noreferrer">oh-my-opencode-slim</a> 将角色分配为六个被称为 <strong>"万神殿"（Pantheon）</strong> 的专业代理，各自承担特定的职责：</p>
+<p>| 角色 | 职责 | 模型选择倾向 |
+|</p>
+]]></content:encoded>
+      <enclosure url="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/images/coding-agent-2026/summary.png" type="image/png"/>
     </item>
     <item>
       <title>代码重构之我见</title>
@@ -2889,97 +3111,6 @@ IndexedDB 的存储方案比较
 <p>这个坑很大，但也很有意思，对此感兴趣的小伙伴欢迎参与进来一起探讨，在云原生的大环境下，我们前端还能做些什么。</p>
 ]]></content:encoded>
       <enclosure url="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20211130111445.png" type="image/png"/>
-    </item>
-    <item>
-      <title>设计一个基于大数据的机器学习全自动记账系统(基础篇)</title>
-      <link>https://blog.realduang.com/blogs/machine-learning/2023-08-21.html</link>
-      <guid>https://blog.realduang.com/blogs/machine-learning/2023-08-21.html</guid>
-      <source url="https://blog.realduang.com/rss.xml">设计一个基于大数据的机器学习全自动记账系统(基础篇)</source>
-      <description>提示随着近些年消费结构的改变，抵制消费主义的行为越来越流行，越来越多的年轻人开始意识到个人财务管理的重要性。与此同时，年轻人也越来越意识到，如果他们想要实现自己的财务目标，如购买房屋、投资、旅游等，就需要掌握有效的财务管理技能。因此，记账已经成为了日常生活中不可或缺的一部分。
-但于此同时，真正尝试过记账的小伙伴很多，能年复一年坚持下来的却很少。原因在于...</description>
-      <category>机器学习</category>
-      <pubDate>Mon, 21 Aug 2023 15:23:02 GMT</pubDate>
-      <content:encoded><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">提示</p><p>随着近些年消费结构的改变，抵制消费主义的行为越来越流行，越来越多的年轻人开始意识到个人财务管理的重要性。与此同时，年轻人也越来越意识到，如果他们想要实现自己的财务目标，如购买房屋、投资、旅游等，就需要掌握有效的财务管理技能。因此，记账已经成为了日常生活中不可或缺的一部分。</p>
-<p>但于此同时，真正尝试过记账的小伙伴很多，能年复一年坚持下来的却很少。原因在于记账是一个太过机械性的行为，且很容易因为或主观或客观的因素忘记漏记。这样记账变得枯燥乏味的同时，数据还不够可靠，无法准确地记录消费趋势，从而导致记账的动力不足。</p>
-<p>那么，此时如果有一个能够完全自动化的记账系统，能够完全不需要你手动录入每一笔交易，全自动完成所有的数据清洗和分类，并自动地分析消费趋势，最终以图表等形式生成报表，直观地展示出来，你会不会觉得很方便，记账的动力也会大大增强呢？这就是我近些年来一直在思考和优化的财务管理目标。</p>
-</div><h2>记账模板展示</h2>
-<p>先展示成果，以增强大家的记账动力。我使用了腾讯文档作为所有账单汇总的数据源。由于它支持多人协作，且可以随时随地在任何设备上面修改，且 UI 设计出色，非常适合作为小数据量的账单数据库使用。</p>
-<p>以下在不同时期根据自身需求优化出来的财务报表，从上面可以很清晰直观地看到自己的月度消费趋势，以及各个消费类别在每个月的占比，均摊及统计变化趋势。</p>
-<p><img src="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20230725161330.png" alt="20230725161330"></p>
-<p>甚至根据自身定制的需要，还可以展示使用的支付方式占比、每年各类别均摊支出及变化趋势等，都能很直观的以图表的形式展示出来。</p>
-<p><img src="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20230725161559.png" alt="20230725161559"></p>
-<p>当然只展示整体的显示效果，具体的数据涉及个人隐私都打了厚码，影响美观见谅。</p>
-<p>那么接下来就开始从零开始逐个讲解如何设计一个这样的自动记账系统了。</p>
-<p>一个完全自动化的记账系统，大体由三个重要部分组成：数据获取、数据清洗和数据分析。我将根据这三个部分依次介绍。</p>
-<h2>数据获取</h2>
-<p>数据获取是一个完全自动化记账系统的第一步，也是最重要的一步。交易数据的准确性以及信息丰富度直接决定了我们后续的数据清洗和数据分析的效果。因此，我们需要尽可能选择信息量更大的数据源，以获取更多的每条交易更多的上下文信息，从而减少进一步人工标注的干预。</p>
-<p>对中国大陆来说，微信和支付宝就是国民级的支付软件，它足够普及和便利，几乎不需要大多数人改变交易习惯。此外，它们的交易数据也是最丰富的。因此，我们的数据获取就以微信和支付宝为主。</p>
-<p>但很不幸的是，与国外一些信用卡每月会定期发送账单邮件不同，微信和支付宝并不会主动推送交易账单，并且没有开放获取交易数据的 API，且安全性校验很复杂，也无法使用无头的爬虫来获取数据。因此我们需要通过自行操作来获取交易账单。(当然，如果由愿意折腾的小伙伴也可以考虑模拟用户的行为获取账单)</p>
-<h3>微信支付账单获取</h3>
-<p>微信支付账单的获取需要在移动端完成(毕竟小而美)。需要在自己的微信 APP 中，依次点击<code>我</code> =&gt; <code>服务</code> =&gt; <code>钱包</code> =&gt; <code>账单</code> =&gt; <code>常见问题</code> =&gt; <code>下载账单</code> =&gt; <code>用于个人对账</code>，输入<code>账单时间</code> 和 <code>邮箱地址</code>，即可将账单发送到你的邮箱中。下载到本地后，输入发送到微信的密码，即可获取微信支付账单。</p>
-<p><img src="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/88ca321689b9f4f2310ec102d37132a9.png" alt="88ca321689b9f4f2310ec102d37132a9"></p>
-<p>但是，微信支付的账单只能获取最近三个月的数据。因此，我们最多每三个月就需要更新下载账单。</p>
-<h3>支付宝账单获取</h3>
-<p>支付宝账单的获取需要在 PC 端支付宝官网完成。登录后选择 <code>我是个人用户</code> =&gt; <code>我的支付宝</code> =&gt; <code>交易记录</code>，就可以选择对应的交易时间段，选择下载账单为 <code>Excel 格式</code> ，即可获取到支付宝账单。</p>
-<p><img src="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20230725155847.png" alt="20230725155847"></p>
-<h3>其他数据源</h3>
-<p>当然，如果微信和支付宝不是你主要使用的交易工具。其实所有的银行 APP 都提供打印流水服务，完全可以使用你主要使用的交易工具来作为数据源。当然具体入口可能会有区别，且单条交易记录的信息丰富度可能不足，需要手动补充，在此就不加赘述了。</p>
-<h2>数据清洗</h2>
-<p>数据清洗是一个记账系统很重要的一步。因为这种自动化导出的账单必定是非常杂乱的，不同的数据源，其交易记录的格式都不一样，且信息丰富度也不一样。因此，我们需要对不同的数据源进行不同的数据清洗。</p>
-<p>数据清洗的目的，首先是统一好来自不同数据源的格式以方便接下来的综合分析，其次是剔除掉一些我们不关心的噪声，例如我只想记录 100 元以上的大宗交易，或者我不希望个人不同账户直接的转账被计入进来等等，这部分也完全可以根据自身的需求进行定制。</p>
-<blockquote>
-<p>观前重要提醒：</p>
-<p>如果有读者完全没有编程基础也完全不用害怕，可以在 Excel 中自行操作出一模一样的格式，再合并数据即可，使用代码只是为了提升自动化效率。当然，我之后也将开源所有脱敏的预处理与训练代码，有兴趣的小伙伴可以自行尝试。</p>
-</blockquote>
-<p>以下的脚本都以 <code>typescript</code> 为例，也完全可以使用任何你所熟悉的语言。</p>
-<p>下面仍然以微信和支付宝为例，来介绍如何进行数据清洗。</p>
-<p>首先是统一各个数据源的账单格式。如果我们打开了在上一步中获取的微信与支付宝的账单文件，会发现它们之间其实有很多信息都很相似，可以经过一定的规则合并起来。例如，它们都有交易时间、交易类型、交易对方、交易金额等信息。因此，我们可以将它们统一为一个格式：</p>
-<div class="language-typescript line-numbers-mode" data-highlighter="prismjs" data-ext="ts" data-title="ts"><pre><code><span class="line"><span class="token keyword">interface</span> <span class="token class-name">IBookKeepingRow</span> <span class="token punctuation">{</span></span>
-<span class="line">  交易时间：Date<span class="token punctuation">;</span></span>
-<span class="line">  类型：RecordType <span class="token operator">|</span> <span class="token string">""</span><span class="token punctuation">;</span></span>
-<span class="line">  <span class="token string-property property">"金额(元)"</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span></span>
-<span class="line">  <span class="token string-property property">"收/支"</span><span class="token operator">:</span> <span class="token string">"支出"</span> <span class="token operator">|</span> <span class="token string">"收入"</span> <span class="token operator">|</span> <span class="token string">"/"</span><span class="token punctuation">;</span></span>
-<span class="line">  支付方式：<span class="token builtin">string</span><span class="token punctuation">;</span></span>
-<span class="line">  交易对方：<span class="token builtin">string</span><span class="token punctuation">;</span></span>
-<span class="line">  商品名称：<span class="token builtin">string</span><span class="token punctuation">;</span></span>
-<span class="line">  备注：<span class="token builtin">string</span><span class="token punctuation">;</span></span>
-<span class="line"><span class="token punctuation">}</span></span>
-<span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>找到了目标格式，接下来我们来看看如何将数据源进行转换。</p>
-<h3>微信支付账单清洗</h3>
-<p>使用记事本打开微信支付的账单 csv，会发现它的格式类似于：</p>
-<div class="language-txt line-numbers-mode" data-highlighter="prismjs" data-ext="txt" data-title="txt"><pre><code><span class="line">微信支付账单明细，,,,,,,,</span>
-<span class="line">微信昵称：[Duang],,,,,,,,</span>
-<span class="line">起始时间：[2023-06-04 00:00:00] 终止时间：[2023-07-04 00:00:00],,,,,,,,</span>
-<span class="line">导出类型：[全部],,,,,,,,</span>
-<span class="line">导出时间：[2023-07-25 18:08:39],,,,,,,,</span>
-<span class="line">,,,,,,,,</span>
-<span class="line">共 44 笔记录，,,,,,,,</span>
-<span class="line">收入：3 笔 1145.14 元，,,,,,,,</span>
-<span class="line">支出：40 笔 2333.33 元，,,,,,,,</span>
-<span class="line">中性交易：1 笔 888.00 元，,,,,,,,</span>
-<span class="line">注：,,,,,,,,</span>
-<span class="line">1. 充值/提现/理财通购买/零钱通存取/信用卡还款等交易，将计入中性交易，,,,,,,,</span>
-<span class="line">2. 本明细仅展示当前账单中的交易，不包括已删除的记录，,,,,,,,</span>
-<span class="line">3. 本明细仅供个人对账使用，,,,,,,,</span>
-<span class="line">,,,,,,,,</span>
-<span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-      <enclosure url="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20230725161330.png" type="image/png"/>
-    </item>
-    <item>
-      <title>设计一个基于大数据的机器学习全自动记账系统(AI篇)</title>
-      <link>https://blog.realduang.com/blogs/machine-learning/2024-05-07.html</link>
-      <guid>https://blog.realduang.com/blogs/machine-learning/2024-05-07.html</guid>
-      <source url="https://blog.realduang.com/rss.xml">设计一个基于大数据的机器学习全自动记账系统(AI篇)</source>
-      <description>提示随着基于大语言模型的 AI 技术发展越来越迅猛，使用自然语言处理大数据技术来设计一个全自动记账系统已经不再是梦想。在这篇文章中，我们将会介绍如何基于自己过往消费的大数据来设计一个只属于你自己的全自动账单分类记账系统。
-
-很抱歉鸽了这么久，这篇文章的内容其实是我在 2023 年 8 月份就已经开始构思的，但是由于自然语言处理这一片领域对我来说也是全新...</description>
-      <category>机器学习</category>
-      <pubDate>Tue, 07 May 2024 12:40:01 GMT</pubDate>
-      <content:encoded><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">提示</p><p>随着基于大语言模型的 AI 技术发展越来越迅猛，使用自然语言处理大数据技术来设计一个全自动记账系统已经不再是梦想。在这篇文章中，我们将会介绍如何基于自己过往消费的大数据来设计一个只属于你自己的全自动账单分类记账系统。</p>
-</div>]]></content:encoded>
-      <enclosure url="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20240507164430.png" type="image/png"/>
     </item>
     <item>
       <title>jQuery 判断及修改 checked 状态的方法</title>
