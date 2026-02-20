@@ -2,12 +2,19 @@
 
 import { parseArgs } from 'node:util';
 import { resolve } from 'node:path';
-import { exec } from 'node:child_process';
 import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
-import { loadConfig, getProjectRoot } from './utils/config.mjs';
+import { loadConfig, getProjectRoot, saveConfig } from './utils/config.mjs';
 import { parseArticle, tipToBlockquote } from './core/parser.mjs';
 import { render } from './core/renderer.mjs';
 import { processImages } from './core/image-pipeline.mjs';
+import { runLogin } from './core/auth.mjs';
+import {
+  checkEnvironment,
+  selectAction,
+  selectArticle,
+  selectPlatforms,
+  confirmSync,
+} from './core/interactive.mjs';
 import { JuejinAdapter } from './adapters/juejin.mjs';
 import { ZhihuAdapter } from './adapters/zhihu.mjs';
 import { WechatAdapter } from './adapters/wechat.mjs';
@@ -30,23 +37,23 @@ const HTML_FORMAT_MAP = {
 
 function printUsage() {
   console.log(`
-Usage: pnpm sync <article.md> [options]
+Usage: pnpm sync [article.md] [options]
+
+  Run without arguments for interactive mode.
 
 Options:
   -p, --platform <names>  Comma-separated platform names (default: from config)
-                          Available: ${AVAILABLE_PLATFORMS.join(', ')}
+                           Available: ${AVAILABLE_PLATFORMS.join(', ')}
+  -l, --login <platform>  Check auth & login via browser (or 'all')
   --preview               Generate local HTML preview without uploading
-  -c, --clipboard         Copy formatted content to clipboard (first platform only)
-  --dry-run               Show what would happen without doing it
-  --check-auth            Check authentication status for all platforms
   -h, --help              Show this help message
 
 Examples:
-  pnpm sync blogs/ai/2026-02-20.md
-  pnpm sync blogs/ai/2026-02-20.md -p juejin,zhihu
-  pnpm sync blogs/ai/2026-02-20.md --preview
-  pnpm sync blogs/ai/2026-02-20.md -p wechat --clipboard
-  pnpm sync --check-auth
+  pnpm sync                                      # Interactive mode
+  pnpm sync blogs/ai/2026-02-20.md               # Sync with interactive platform select
+  pnpm sync blogs/ai/2026-02-20.md -p juejin     # Direct sync
+  pnpm sync blogs/ai/2026-02-20.md --preview     # Preview
+  pnpm sync --login all                          # Login to all platforms
 `);
 }
 
@@ -72,91 +79,26 @@ function createAdapter(name, config) {
   return new AdapterClass(config);
 }
 
-function copyToClipboard(text) {
-  return new Promise((resolve, reject) => {
-    const proc = exec('clip', (err) => {
-      if (err) reject(err);
-      else resolve();
-    });
-    proc.stdin.write(text);
-    proc.stdin.end();
-  });
-}
-
 function prepareContent(markdown, platformName) {
   const adapter = ADAPTER_MAP[platformName];
   if (!adapter) return markdown;
 
-  // Determine content format based on platform
   const htmlFormat = HTML_FORMAT_MAP[platformName];
 
   if (htmlFormat) {
-    // HTML platforms: render markdown to HTML
     return render(markdown, htmlFormat);
   } else {
-    // Markdown platforms: just clean up :::tip blocks
     return tipToBlockquote(markdown);
   }
 }
 
-async function main() {
-  const { values: opts, positionals } = parseArgs({
-    args: process.argv.slice(2),
-    options: {
-      platform: { type: 'string', short: 'p' },
-      preview: { type: 'boolean', default: false },
-      clipboard: { type: 'boolean', short: 'c', default: false },
-      'dry-run': { type: 'boolean', default: false },
-      'check-auth': { type: 'boolean', default: false },
-      help: { type: 'boolean', short: 'h', default: false },
-    },
-    allowPositionals: true,
-  });
-
-  if (opts.help) {
-    printUsage();
-    return;
-  }
-
-  const config = loadConfig();
-
-  // --check-auth: verify all platform cookies
-  if (opts['check-auth']) {
-    console.log('Checking auth status...\n');
-    for (const name of AVAILABLE_PLATFORMS) {
-      const platformConfig = config[name];
-      if (!platformConfig) {
-        console.log(`  [${name}] No config found`);
-        continue;
-      }
-      const hasValues = Object.values(platformConfig).some((v) => v && v.length > 0);
-      if (!hasValues) {
-        console.log(`  [${name}] Not configured (empty values)`);
-        continue;
-      }
-      try {
-        const adapter = createAdapter(name, platformConfig);
-        await adapter.checkAuth();
-      } catch (err) {
-        console.error(`  [${name}] Auth check error: ${err.message}`);
-      }
-    }
-    return;
-  }
-
-  if (positionals.length === 0) {
-    console.error('Error: Please provide a markdown file path.');
-    printUsage();
-    process.exit(1);
-  }
-
-  const filePath = resolve(getProjectRoot(), positionals[0]);
-  const platforms = resolvePlatforms(opts.platform, config);
-
-  // Parse article
+// ---------------------------------------------------------------------------
+// Shared sync/preview pipeline
+// ---------------------------------------------------------------------------
+async function syncArticle(filePath, platforms, config, { isPreview = false, needConfirm = false } = {}) {
   const { meta, markdown, images } = parseArticle(filePath);
 
-  console.log(`Article: "${meta.title}"`);
+  console.log(`\nArticle: "${meta.title}"`);
   console.log(`  Date: ${meta.date}`);
   console.log(`  Categories: ${(meta.categories || []).join(', ')}`);
   console.log(`  Tags: ${(meta.tags || []).join(', ')}`);
@@ -164,6 +106,15 @@ async function main() {
   console.log(`  Content: ${markdown.length} chars`);
   console.log(`  Platforms: ${platforms.join(', ')}`);
   console.log();
+
+  if (needConfirm) {
+    const confirmed = await confirmSync();
+    if (!confirmed) {
+      console.log('Cancelled.');
+      return;
+    }
+    console.log();
+  }
 
   for (const platformName of platforms) {
     console.log(`--- ${platformName} ---`);
@@ -177,14 +128,8 @@ async function main() {
     // Prepare content (MD or HTML based on platform)
     let content = prepareContent(markdown, platformName);
 
-    if (opts['dry-run']) {
-      console.log(`  [dry-run] Would sync "${meta.title}" (${content.length} chars, ${images.length} images)`);
-      console.log(`  [dry-run] Content format: ${HTML_FORMAT_MAP[platformName] ? 'HTML' : 'Markdown'}`);
-      continue;
-    }
-
     // --preview: save formatted content to local file
-    if (opts.preview) {
+    if (isPreview) {
       const outputDir = resolve(getProjectRoot(), 'scripts/sync/output');
       if (!existsSync(outputDir)) mkdirSync(outputDir, { recursive: true });
 
@@ -211,13 +156,6 @@ ${content}
       }
 
       console.log(`  Preview saved: ${outputFile}`);
-      continue;
-    }
-
-    // --clipboard: copy content and stop
-    if (opts.clipboard) {
-      await copyToClipboard(content);
-      console.log(`  Content copied to clipboard (${content.length} chars)`);
       continue;
     }
 
@@ -251,6 +189,87 @@ ${content}
 
     console.log();
   }
+}
+
+// ---------------------------------------------------------------------------
+// Main entry point
+// ---------------------------------------------------------------------------
+async function main() {
+  const { values: opts, positionals } = parseArgs({
+    args: process.argv.slice(2),
+    options: {
+      platform: { type: 'string', short: 'p' },
+      login: { type: 'string', short: 'l' },
+      preview: { type: 'boolean', default: false },
+      help: { type: 'boolean', short: 'h', default: false },
+    },
+    allowPositionals: true,
+  });
+
+  if (opts.help) {
+    printUsage();
+    return;
+  }
+
+  const config = loadConfig({ exitIfMissing: !opts.login });
+
+  // --login: check auth & open browser login
+  if (opts.login) {
+    const updatedConfig = await runLogin(opts.login, config, ADAPTER_MAP);
+    saveConfig(updatedConfig);
+    console.log('\nCredentials updated in .sync.config.json');
+    return;
+  }
+
+  // === INTERACTIVE MODE: no file argument, running in TTY ===
+  if (positionals.length === 0 && process.stdin.isTTY) {
+    console.log('\n=== Blog Sync Tool ===');
+
+    const authStatus = await checkEnvironment(config, ADAPTER_MAP);
+    const action = await selectAction();
+
+    if (action === 'login') {
+      const updatedConfig = await runLogin('all', config, ADAPTER_MAP);
+      saveConfig(updatedConfig);
+      console.log('\nCredentials updated in .sync.config.json');
+      return;
+    }
+
+    const filePath = await selectArticle(getProjectRoot());
+    const isPreview = action === 'preview';
+
+    let platforms;
+    if (isPreview) {
+      platforms = resolvePlatforms(null, config);
+    } else {
+      platforms = await selectPlatforms(config.defaultPlatforms || ['juejin'], authStatus);
+    }
+
+    await syncArticle(filePath, platforms, config, { isPreview, needConfirm: !isPreview });
+    return;
+  }
+
+  // === NON-INTERACTIVE MODE ===
+  if (positionals.length === 0) {
+    console.error('Error: Please provide a markdown file path.');
+    printUsage();
+    process.exit(1);
+  }
+
+  const filePath = resolve(getProjectRoot(), positionals[0]);
+  const platforms = resolvePlatforms(opts.platform, config);
+  const isPreview = opts.preview;
+
+  // If no -p flag and not preview, allow interactive platform selection
+  const needInteractivePlatforms = !opts.platform && !isPreview && process.stdin.isTTY;
+  const finalPlatforms = needInteractivePlatforms
+    ? await selectPlatforms(config.defaultPlatforms || ['juejin'])
+    : platforms;
+
+  await syncArticle(filePath, finalPlatforms, config, {
+    isPreview,
+    needConfirm: needInteractivePlatforms,
+  });
 }
 
 main().catch((err) => {

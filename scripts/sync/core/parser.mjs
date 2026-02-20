@@ -37,7 +37,7 @@ function parseSimpleYaml(yamlStr) {
  * @returns {{ meta: object, markdown: string, images: string[] }}
  */
 export function parseArticle(filePath) {
-  const raw = readFileSync(filePath, 'utf-8');
+  const raw = readFileSync(filePath, 'utf-8').replace(/\r\n/g, '\n');
 
   // Extract frontmatter
   let meta = {};

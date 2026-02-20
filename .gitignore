@@ -4,3 +4,4 @@ node_modules
 dist/
 .sync.config.json
 scripts/sync/output/
+scripts/sync/.browser-profile/
