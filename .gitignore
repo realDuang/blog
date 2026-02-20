@@ -2,3 +2,5 @@
 .vuepress/.temp
 node_modules
 dist/
+.sync.config.json
+scripts/sync/output/

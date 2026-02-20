@@ -5,7 +5,8 @@
   "description": "",
   "scripts": {
     "dev": "vuepress dev .",
-    "build": "vuepress build ."
+    "build": "vuepress build .",
+    "sync": "node scripts/sync/index.mjs"
   },
   "dependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.19",
@@ -13,5 +14,9 @@
     "vue": "^3.4.27",
     "vuepress": "2.0.0-rc.19",
     "vuepress-theme-reco": "2.0.0-rc.26"
+  },
+  "devDependencies": {
+    "highlight.js": "^11.11.1",
+    "marked": "^17.0.3"
   }
 }
