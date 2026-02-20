@@ -7,7 +7,6 @@ const PROJECT_ROOT = resolve(__dirname, '..', '..', '..');
 const CONFIG_PATH = resolve(PROJECT_ROOT, '.sync.config.json');
 
 const DEFAULT_CONFIG = {
-  defaultPlatforms: ['juejin'],
   juejin: { sessionid: '' },
   zhihu: { z_c0: '', _xsrf: '' },
   wechat: { cookie: '', token: '' },

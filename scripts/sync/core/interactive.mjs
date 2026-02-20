@@ -73,13 +73,13 @@ export async function checkEnvironment(config, adapterMap) {
 // ---------------------------------------------------------------------------
 export async function selectAction() {
   console.log('What would you like to do?\n');
-  console.log('  [1] Sync article to platforms');
-  console.log('  [2] Preview article locally');
-  console.log('  [3] Login to platforms');
+  console.log('  [1] Login to platforms');
+  console.log('  [2] Sync article to platforms');
+  console.log('  [3] Preview article locally');
   console.log();
 
   const answer = await ask('> ');
-  const actions = { '1': 'sync', '2': 'preview', '3': 'login' };
+  const actions = { '1': 'login', '2': 'sync', '3': 'preview' };
   const action = actions[answer];
 
   if (!action) {

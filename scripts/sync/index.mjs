@@ -57,7 +57,7 @@ Examples:
 `);
 }
 
-function resolvePlatforms(platformArg, config) {
+function resolvePlatforms(platformArg) {
   if (platformArg) {
     const names = platformArg.split(/[,\s]+/).filter(Boolean).map((s) => s.toLowerCase());
     for (const name of names) {
@@ -68,7 +68,7 @@ function resolvePlatforms(platformArg, config) {
     }
     return names;
   }
-  return config.defaultPlatforms || ['juejin'];
+  return AVAILABLE_PLATFORMS;
 }
 
 function createAdapter(name, config) {
@@ -240,9 +240,10 @@ async function main() {
 
     let platforms;
     if (isPreview) {
-      platforms = resolvePlatforms(null, config);
+      // Preview generates output for all platforms by default
+      platforms = [...AVAILABLE_PLATFORMS];
     } else {
-      platforms = await selectPlatforms(config.defaultPlatforms || ['juejin'], authStatus);
+      platforms = await selectPlatforms(AVAILABLE_PLATFORMS, authStatus);
     }
 
     await syncArticle(filePath, platforms, config, { isPreview, needConfirm: !isPreview });
@@ -257,18 +258,23 @@ async function main() {
   }
 
   const filePath = resolve(getProjectRoot(), positionals[0]);
-  const platforms = resolvePlatforms(opts.platform, config);
   const isPreview = opts.preview;
 
-  // If no -p flag and not preview, allow interactive platform selection
-  const needInteractivePlatforms = !opts.platform && !isPreview && process.stdin.isTTY;
-  const finalPlatforms = needInteractivePlatforms
-    ? await selectPlatforms(config.defaultPlatforms || ['juejin'])
-    : platforms;
+  // Preview defaults to all platforms; sync uses -p flag or interactive selection
+  let finalPlatforms;
+  if (isPreview) {
+    finalPlatforms = opts.platform ? resolvePlatforms(opts.platform) : [...AVAILABLE_PLATFORMS];
+  } else if (opts.platform) {
+    finalPlatforms = resolvePlatforms(opts.platform);
+  } else if (process.stdin.isTTY) {
+    finalPlatforms = await selectPlatforms(AVAILABLE_PLATFORMS);
+  } else {
+    finalPlatforms = resolvePlatforms(null);
+  }
 
   await syncArticle(filePath, finalPlatforms, config, {
     isPreview,
-    needConfirm: needInteractivePlatforms,
+    needConfirm: !opts.platform && !isPreview && process.stdin.isTTY,
   });
 }
 
