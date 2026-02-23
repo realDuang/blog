@@ -6,12 +6,13 @@
     <link>https://blog.realduang.com/</link>
     <description>这个人很懒，但还是想留下些什么东西。</description>
     <language>en-US</language>
-    <pubDate>Fri, 20 Feb 2026 16:58:16 GMT</pubDate>
-    <lastBuildDate>Fri, 20 Feb 2026 16:58:16 GMT</lastBuildDate>
+    <pubDate>Mon, 23 Feb 2026 06:17:30 GMT</pubDate>
+    <lastBuildDate>Mon, 23 Feb 2026 06:17:30 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>AI和机器学习</category>
     <category>架构设计</category>
+    <category>金融分析</category>
     <category>前端基础</category>
     <category>前端技术研究院</category>
     <category>其他</category>
@@ -25,13 +26,13 @@
 Author: Duang | VuePress 2 + vuepress-theme-reco | 2016-present
 Role
 You are Duang&amp;apos;s blog writing agent. When asked to write a blo...</description>
-      <pubDate>Fri, 20 Feb 2026 16:57:03 GMT</pubDate>
+      <pubDate>Mon, 23 Feb 2026 06:16:10 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>Author: Duang | VuePress 2 + vuepress-theme-reco | 2016-present</p>
 <h2>Role</h2>
 <p>You are Duang's blog writing agent. When asked to write a blog post, follow the Workflow below. All blog content MUST be written in <strong>Chinese (Simplified)</strong>. Code comments and variable names remain in the language of the topic.</p>
 ]]></content:encoded>
-      <enclosure url="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/&lt;filename&gt;.png" type="image/png"/>
+      <enclosure url="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/images/coding-agent-2026/&lt;filename&gt;.png" type="image/png"/>
     </item>
     <item>
       <title>利用 kafka 做一个上报服务</title>
@@ -739,6 +740,33 @@ Coding A...</description>
 <p>前端的页面首屏时间优化是永恒的话题，本文介绍了前端界对首屏时间优化的进程，并提供了一种 SSR 与 NSR 混合的新思路，通过并行处理耗时任务的方式，进一步提升首屏加载时间，希望能够给大家提供一点参考价值。</p>
 ]]></content:encoded>
       <enclosure url="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/20220722174820.png" type="image/png"/>
+    </item>
+    <item>
+      <title>从零推导指数估值模型 —— 一个三因子打分系统的设计思路</title>
+      <link>https://blog.realduang.com/blogs/financial-analysis/2026-02-22.html</link>
+      <guid>https://blog.realduang.com/blogs/financial-analysis/2026-02-22.html</guid>
+      <source url="https://blog.realduang.com/rss.xml">从零推导指数估值模型 —— 一个三因子打分系统的设计思路</source>
+      <description>提示&amp;quot;估值&amp;quot;是投资领域中最常被提及却最容易被误解的概念之一。本文将从第一性原理出发，逐步推导出一个实用的三因子估值打分系统（PE 百分位 + PB 百分位 + 股权风险溢价），详细剖析每个因子的数学含义与相关性，并讨论为什么看似合理的&amp;quot;五因子模型&amp;quot;在实践中反而不如更精简的三因子模型。
+
+估值到底在度量什么
+当我们说一个指数&amp;quot;被低估&amp;quot;了，这句话到底是什么...</description>
+      <category>金融分析</category>
+      <pubDate>Sun, 22 Feb 2026 15:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">提示</p><p>"估值"是投资领域中最常被提及却最容易被误解的概念之一。本文将从第一性原理出发，逐步推导出一个实用的三因子估值打分系统（PE 百分位 + PB 百分位 + 股权风险溢价），详细剖析每个因子的数学含义与相关性，并讨论为什么看似合理的"五因子模型"在实践中反而不如更精简的三因子模型。</p>
+</div><!-- more -->
+<h2>估值到底在度量什么</h2>
+<p>当我们说一个指数"被低估"了，这句话到底是什么意思？</p>
+<p>很多人的第一反应是"PE 低就是低估"——市盈率 10 倍比 30 倍便宜，所以 PE 低的时候买入。这个直觉方向没错，但过于粗糙。同一个指数，在不同的历史时期，"合理"的 PE 是不一样的。沪深 300 在 2015 年牛市顶峰的 PE 是 18 倍，而在 2018 年底部是 10 倍——但你不能说 15 倍就一定是"贵"的，因为 2010 年时它的 PE 中位数在 14 倍左右。</p>
+<p>所以，我们需要的不是绝对值的判断，而是<strong>相对于自身历史的位置判断</strong>。这就引出了估值模型的第一个核心概念：<strong>历史百分位</strong>。</p>
+<p>一个指数当前的 PE 百分位 = 30%，意思是在过去 N 年的交易日中，有 30% 的时间 PE 比现在更低。换言之，当前估值处于历史偏低的位置。</p>
+<p>这看起来很简单对不对？但如果我们只靠一个 PE 百分位就能做投资决策，那量化投资也太容易了。实际上，单一指标存在很多盲区，而如何选择和组合多个指标，才是估值模型设计中最值得深入思考的问题。</p>
+<h2>从单因子到多因子：不是越多越好</h2>
+<p>在设计估值模型时，一个自然的想法是：既然一个指标不够，那就多加几个。PE 百分位不够就加 PB 百分位，PB 还不够就加股息率、股权风险溢价（ERP）、股息-债息利差……指标越多，覆盖越全面，模型越"科学"，对吧？</p>
+<p>我最初也是这么想的。在第一个版本的行业估值系统中，我设计了一个五因子模型：</p>
+<p>| 因子 | 含义 |
+|</p>
+]]></content:encoded>
+      <enclosure url="https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/images/coding-agent-2026/factor_orthogonality.png" type="image/png"/>
     </item>
     <item>
       <title>Redux 深入理解 (1)</title>
