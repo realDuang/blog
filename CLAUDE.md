@@ -19,6 +19,13 @@ blogs/
   others/                    → 其他
   vscode-for-web/            → VSCode For Web 深入浅出
 draft/                       → Draft articles (not published)
+scripts/
+  diagrams/                  → Blog diagram generation toolkit
+    __init__.py              → Package entry: BlogDiagram, Theme, THEMES
+    diagram.py               → Core builder (context manager API over Graphviz)
+    theme.py                 → Theme system (frozen dataclass color palettes)
+    output/                  → Generated .py scripts & .png files (gitignored)
+  sync/                      → Blog sync tool (cross-platform publishing)
 ```
 
 New categories (create directory when first used):
@@ -107,13 +114,66 @@ Use naturally, not forced:
 - **Derive from principles**: Explain the "why" behind best practices. Anti-rote-memorization. (Exemplar: `blogs/frontend-basics/2024-12-02.md`)
 - **Engineering pragmatism**: Consider ROI, cost, real-world trade-offs. Reference actual project experience.
 - **Code blocks**: 15-50 lines typical, with comments on key logic. Proper syntax highlighting.
-- **Diagrams**: Mark positions with `[DIAGRAM: <description>]`. Generate Mermaid code in appendix.
+- **Diagrams**: Generate using the `scripts/diagrams/` toolkit (see Diagram Generation below). Each diagram should be simple (mobile-friendly), visually clean, with centered/symmetric layout. Keep content per diagram minimal to avoid small fonts.
 
 ### Image Handling
 
-- Hosting: `https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/`
-- Format: `![alt](https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/<filename>.png)`
-- For new articles: insert `[DIAGRAM: <description>]` placeholders in body, append Mermaid source in HTML comment block at end of file.
+- **CDN Hosting**: `https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/`
+- **Upload tool**: PicGo CLI (`picgo upload <file>`), pre-configured with Tencent COS (`tcyun` uploader)
+- **Upload path**: Images are uploaded to `images/coding-agent-2026/` prefix automatically
+- **Markdown format**: `![alt](https://zakum-1252497671.cos.ap-guangzhou.myqcloud.com/images/coding-agent-2026/<filename>.png)`
+
+### Diagram Generation
+
+Use the `scripts/diagrams/` toolkit to generate consistent, beautiful diagrams programmatically. The toolkit wraps Graphviz with a declarative API and unified theme system.
+
+**Quick reference:**
+
+```python
+import sys
+sys.path.insert(0, r"<project-root>/scripts")
+
+from diagrams import BlogDiagram
+
+with BlogDiagram("Title", "Subtitle") as d:
+    # Nodes: style = primary | secondary | accent | warm | muted | danger | success | info
+    a = d.node("id_a", "Title", "description", style="primary")
+    b = d.node("id_b", "Title", "description", style="accent")
+
+    # Groups (cluster subgraphs)
+    with d.group("group_name", "Display Label", style="primary"):
+        c = d.node("id_c", "Title", "desc", style="secondary")
+
+    # Edges: style = primary | secondary | accent | warm | muted | danger | dashed | bidirectional
+    d.edge(a, b, "label", style="primary")
+    d.edge(a, c, "label", style="dashed")
+
+    # Layout control
+    d.same_rank(a, b)           # Force same horizontal level
+    d.invisible_edge(a, b)      # Influence ordering without visible arrow
+
+    # Special nodes
+    d.summary("Conclusion text")
+
+d.render(r"scripts/diagrams/output/my_diagram")  # → .png
+```
+
+**Style guidelines for diagrams:**
+- Keep content per diagram minimal — avoid cramming too much into one image
+- Layout must be centered and symmetric
+- Use adequate line spacing (the theme handles this automatically)
+- Don't use playful/cute copy in node labels — keep text professional and concise
+- Use semantic node styles to differentiate by role, not by adding visual gimmicks
+- Output to `scripts/diagrams/output/` (gitignored), then upload via `picgo upload`
+
+**Complete workflow for a single diagram:**
+
+```bash
+# 1. Write generation script to scripts/diagrams/output/
+# 2. Run it: python scripts/diagrams/output/gen_xxx.py
+# 3. Upload: picgo upload scripts/diagrams/output/xxx.png
+# 4. Insert returned CDN URL into article markdown
+```
 
 ---
 
@@ -169,24 +229,20 @@ Present to user for approval:
 Write the complete article following the style guide:
 - Follow progressive narrative structure
 - Include code blocks with comments where relevant
-- Insert `[DIAGRAM: description]` at appropriate positions
+- Insert `[DIAGRAM: description]` placeholders at positions where diagrams will go
 - Maintain consistent voice throughout
 
-### Step 5: Diagram Appendix
+### Step 5: Diagram Generation & Upload
 
-Append to end of file:
+For each `[DIAGRAM: ...]` placeholder in the draft:
 
-```
-<!-- DIAGRAMS: Render with Mermaid, upload to COS, replace [DIAGRAM: xxx] placeholders above.
+1. Write a generation script to `scripts/diagrams/output/gen_<name>.py` using the `BlogDiagram` API
+2. Run it to produce `scripts/diagrams/output/<name>.png`
+3. Verify the output image — check layout, alignment, font readability
+4. Upload via `picgo upload scripts/diagrams/output/<name>.png`
+5. Replace the `[DIAGRAM: ...]` placeholder with `![alt](returned_CDN_URL)`
 
-Diagram 1: <title>
-(mermaid code block)
-
-Diagram 2: <title>
-(mermaid code block)
-
--->
-```
+All intermediate files (`.py` scripts and `.png` outputs) stay in `scripts/diagrams/output/` which is gitignored.
 
 ### Step 6: Self-Review
 
@@ -200,7 +256,8 @@ Verify before output:
 - [ ] Characteristic transitions used naturally
 - [ ] Colleague tone, not textbook tone
 - [ ] Trade-offs and limitations discussed honestly
-- [ ] Diagram placeholders in logical positions
+- [ ] All `[DIAGRAM: ...]` placeholders replaced with actual CDN image URLs
+- [ ] Diagrams are visually verified (centered, symmetric, readable on mobile)
 
 ### Step 7: Output
 
