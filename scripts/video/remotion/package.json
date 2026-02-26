@@ -1,0 +1,20 @@
+{
+  "name": "blog-video-remotion",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "remotion render src/index.tsx VideoComposition",
+    "preview": "remotion preview src/index.tsx",
+    "render": "remotion render src/index.tsx VideoComposition"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.261",
+    "remotion": "4.0.261",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "typescript": "^5.7.0"
+  }
+}

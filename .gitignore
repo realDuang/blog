@@ -7,3 +7,5 @@ scripts/sync/output/
 scripts/sync/.browser-profile/
 scripts/diagrams/output/
 __pycache__/
+scripts/video/output/
+scripts/video/remotion/public/
