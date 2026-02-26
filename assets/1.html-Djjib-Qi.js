@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app-XOvSJP54.js";const r={};function c(n,o){return a(),t("div")}const l=e(r,[["render",c]]),i=JSON.parse('{"path":"/tags/gerenlicai/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{l as comp,i as data};
