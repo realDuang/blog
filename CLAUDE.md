@@ -323,6 +323,10 @@ output/            → Rendered output (gitignored)
 - TTS generates per-line audio with speaker switching, then concatenates with 0.3s silence gaps.
 - Subtitle timing uses `line_durations` from TTS for frame-accurate positioning.
 - Speaker profiles are passed via CLI args (`--speaker-b-*`) and registered on the GPT-SoVITS provider.
+- **Per-speaker speed**: Each speaker profile supports `speed_factor` (e.g., slower voice at 1.0 vs default 1.2). Set via `--speaker-b-speed`.
+- **Speaker names**: Use `--speaker-a-name` / `--speaker-b-name` to replace A/B labels with character names throughout the pipeline (subtitles, dialogue bubbles, avatars).
 
-**Trained voice models** (`D:\workspace\GPT-SoVITS-v2pro-20250604\trained_models\`):
-- 派蒙_ZH, 胡桃_ZH, 钟离_ZH — each has GPT weights, SoVITS weights, and reference audio under `reference_audios\中文\emotions\`.
+**Remotion rendering:**
+- **Long video OOM**: Videos over ~5 minutes (9000+ frames) crash Remotion with default concurrency. Use `--concurrency 1` in the Remotion render command to prevent OOM.
+- **Subprocess timeout**: Default 600s is insufficient for long videos. Currently set to 2400s (40 min).
+- **Audio copy to public/**: `render.py` copies audio from `output/audio/` to `remotion/public/audio/` because Remotion's `staticFile()` requires files in the `public/` directory. Both directories are gitignored.
