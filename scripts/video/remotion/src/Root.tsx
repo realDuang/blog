@@ -13,7 +13,13 @@ import { BilibiliHook } from "./compositions/BilibiliHook";
 import { BilibiliOutro } from "./compositions/BilibiliOutro";
 import { Dialogue } from "./compositions/Dialogue";
 
-const SceneRenderer: React.FC<{ scene: Scene; speakerNames?: Record<string, string> }> = ({ scene, speakerNames }) => {
+const SceneRenderer: React.FC<{
+  scene: Scene;
+  speakerNames?: Record<string, string>;
+  speakerAvatars?: Record<string, string>;
+  hookCharacterImage?: string;
+  hookBackgroundImage?: string;
+}> = ({ scene, speakerNames, speakerAvatars, hookCharacterImage, hookBackgroundImage }) => {
   switch (scene.type) {
     case "chapter_title":
       return <ChapterTitle visual={scene.visual as any} />;
@@ -30,18 +36,18 @@ const SceneRenderer: React.FC<{ scene: Scene; speakerNames?: Record<string, stri
     case "summary":
       return <Summary visual={scene.visual as any} />;
     case "bilibili_hook":
-      return <BilibiliHook visual={scene.visual as any} />;
+      return <BilibiliHook visual={scene.visual as any} characterImage={hookCharacterImage} backgroundImage={hookBackgroundImage} />;
     case "bilibili_outro":
       return <BilibiliOutro visual={scene.visual as any} />;
     case "dialogue":
-      return <Dialogue visual={scene.visual as any} lines={scene.lines || []} speakerNames={speakerNames} />;
+      return <Dialogue visual={scene.visual as any} lines={scene.lines || []} speakerNames={speakerNames} speakerAvatars={speakerAvatars} lineDurations={scene.line_durations} audioStartOffsetFrames={scene.audio_start_offset_frames || 0} />;
     default:
       return null;
   }
 };
 
 export const VideoComposition: React.FC<VideoProps> = (props) => {
-  const { scenes, speaker_names } = props;
+  const { scenes, speaker_names, speaker_avatars, hook_character_image, hook_background_image } = props;
 
   return (
     <div style={{ position: "relative", width: 1920, height: 1080 }}>
@@ -56,7 +62,13 @@ export const VideoComposition: React.FC<VideoProps> = (props) => {
             durationInFrames={durationInFrames}
             name={`${scene.type}: ${scene.id}`}
           >
-            <SceneRenderer scene={scene} speakerNames={speaker_names} />
+            <SceneRenderer
+              scene={scene}
+              speakerNames={speaker_names}
+              speakerAvatars={speaker_avatars}
+              hookCharacterImage={hook_character_image}
+              hookBackgroundImage={hook_background_image}
+            />
             {scene.audio_file && (
               <Sequence from={scene.audio_start_offset_frames || 0}>
                 <Audio src={staticFile(scene.audio_file)} />

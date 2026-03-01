@@ -64,6 +64,9 @@ def _build_provider_kwargs(args) -> dict:
         sovits_w = getattr(args, "sovits_weights", "")
         if sovits_w:
             kwargs["sovits_weights"] = sovits_w
+        extra_urls = getattr(args, "extra_api_urls", [])
+        if extra_urls:
+            kwargs["extra_api_urls"] = extra_urls
         return kwargs
     return {}
 
@@ -173,6 +176,24 @@ def _build_speaker_names(args) -> dict[str, str] | None:
     return names
 
 
+def _build_speaker_avatars(args) -> dict[str, str] | None:
+    """Build speaker avatar path mapping from CLI args.
+
+    Returns None if no avatars are configured.
+    Returns e.g. {"A": "/path/to/zhongli.png", "B": "/path/to/paimon.png"}.
+    """
+    a_avatar = getattr(args, "speaker_a_avatar", "")
+    b_avatar = getattr(args, "speaker_b_avatar", "")
+    if not a_avatar and not b_avatar:
+        return None
+    avatars = {}
+    if a_avatar:
+        avatars["A"] = a_avatar
+    if b_avatar:
+        avatars["B"] = b_avatar
+    return avatars
+
+
 def cmd_tts(args):
     """Step 3: Generate TTS audio from scenes.json."""
     scenes_path = Path(args.output) / "scenes.json"
@@ -204,6 +225,9 @@ def cmd_render(args):
     provider_kwargs = _build_provider_kwargs(args)
     speaker_profiles = _build_speaker_profiles(args)
     speaker_names = _build_speaker_names(args)
+    speaker_avatars = _build_speaker_avatars(args)
+    hook_image = getattr(args, "hook_character_image", "")
+    hook_bg = getattr(args, "hook_background_image", "")
     result = render_video(
         str(scenes_path), args.output,
         voice=args.voice, rate=args.rate, fps=args.fps,
@@ -212,6 +236,11 @@ def cmd_render(args):
         subtitles=not getattr(args, "no_subtitles", False),
         speaker_profiles=speaker_profiles,
         speaker_names=speaker_names,
+        speaker_avatars=speaker_avatars,
+        hook_character_image=hook_image or None,
+        hook_background_image=hook_bg or None,
+        video_bitrate=getattr(args, "video_bitrate", "") or None,
+        scale=getattr(args, "scale", 0) or None,
     )
 
     if result:
@@ -325,6 +354,25 @@ def main():
                         help="Speaker A display name (default: A)")
         p.add_argument("--speaker-b-name", default="", dest="speaker_b_name",
                         help="Speaker B display name (default: B)")
+        # Speaker avatar images
+        p.add_argument("--speaker-a-avatar", default="", dest="speaker_a_avatar",
+                        help="Speaker A avatar image path")
+        p.add_argument("--speaker-b-avatar", default="", dest="speaker_b_avatar",
+                        help="Speaker B avatar image path")
+        # Hook scene character image
+        p.add_argument("--hook-character-image", default="", dest="hook_character_image",
+                        help="Character image for bilibili_hook scene")
+        # Hook scene background image
+        p.add_argument("--hook-background-image", default="", dest="hook_background_image",
+                        help="Background image for bilibili_hook scene")
+        # Parallel TTS: extra GPT-SoVITS API URLs
+        p.add_argument("--extra-api-urls", nargs="*", default=[], dest="extra_api_urls",
+                        help="Extra GPT-SoVITS API URLs for parallel TTS (e.g. http://127.0.0.1:9881)")
+        # Video render options
+        p.add_argument("--video-bitrate", default="", dest="video_bitrate",
+                        help="Video bitrate for Remotion render (e.g. 10M, 5M)")
+        p.add_argument("--scale", type=float, default=0, dest="scale",
+                        help="Remotion scale factor (e.g. 2 for 4K output from 1080p)")
 
     # parse
     p_parse = subparsers.add_parser("parse", help="Step 1: Markdown -> segments.json")

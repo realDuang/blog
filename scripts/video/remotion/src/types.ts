@@ -106,6 +106,7 @@ export interface Scene {
   start_frame?: number;
   audio_start_offset_frames?: number;
   subtitles?: SubtitleSegment[];
+  line_durations?: number[];
 }
 
 /** Props passed to the Remotion composition */
@@ -116,4 +117,7 @@ export interface VideoProps {
   total_duration_seconds: number;
   scenes: Scene[];
   speaker_names?: Record<string, string>;
+  speaker_avatars?: Record<string, string>;
+  hook_character_image?: string;
+  hook_background_image?: string;
 }

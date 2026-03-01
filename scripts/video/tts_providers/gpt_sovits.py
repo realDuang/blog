@@ -1,6 +1,7 @@
 """GPT-SoVITS provider — local voice cloning via GPT-SoVITS API v2."""
 
 import asyncio
+import struct
 import wave
 from pathlib import Path
 
@@ -25,6 +26,181 @@ def _get_wav_duration(filepath: str) -> float:
     # fallback: estimate from file size (16-bit mono 32kHz ≈ 64KB/s)
     size = Path(filepath).stat().st_size
     return round(size / 64000, 2)
+
+
+def _trim_trailing_silence(filepath: str, threshold: float = 150, min_silence_sec: float = 0.8, keep_tail_sec: float = 0.15) -> float:
+    """Trim trailing silence from a WAV file in-place.
+
+    Scans backwards from the end to find the last sample above threshold,
+    then truncates the file keeping a short tail for natural fade-out.
+
+    Args:
+        filepath: path to the WAV file (modified in-place)
+        threshold: RMS amplitude threshold below which a chunk is considered silent
+        min_silence_sec: only trim if trailing silence exceeds this duration
+        keep_tail_sec: seconds of silence to keep after the last voiced chunk
+
+    Returns:
+        New duration in seconds (unchanged if no trim was needed).
+    """
+    with wave.open(filepath, "rb") as wf:
+        params = wf.getparams()
+        nframes = wf.getnframes()
+        rate = wf.getframerate()
+        nch = wf.getnchannels()
+        sw = wf.getsampwidth()
+        raw = wf.readframes(nframes)
+
+    if nframes == 0 or rate == 0:
+        return 0.0
+
+    original_dur = nframes / rate
+    chunk_samples = int(rate * 0.05)  # 50ms chunks for precision
+    chunk_bytes = chunk_samples * nch * sw
+    total_chunks = nframes // chunk_samples
+
+    if total_chunks < 2:
+        return round(original_dur, 2)
+
+    # Find last non-silent chunk (scanning backwards)
+    last_voiced_chunk = total_chunks - 1
+    for ci in range(total_chunks - 1, -1, -1):
+        offset = ci * chunk_bytes
+        chunk = raw[offset:offset + chunk_bytes]
+        if len(chunk) < chunk_bytes:
+            continue
+        samples = struct.unpack(f"<{len(chunk) // 2}h", chunk)
+        rms = (sum(s * s for s in samples) / len(samples)) ** 0.5
+        if rms >= threshold:
+            last_voiced_chunk = ci
+            break
+    else:
+        # Entire file is silent — don't trim everything
+        return round(original_dur, 2)
+
+    voiced_end_sec = (last_voiced_chunk + 1) * chunk_samples / rate
+    trailing_silence = original_dur - voiced_end_sec
+
+    if trailing_silence < min_silence_sec:
+        return round(original_dur, 2)
+
+    # Trim: keep voiced audio + a short tail
+    keep_frames = int((voiced_end_sec + keep_tail_sec) * rate)
+    keep_frames = min(keep_frames, nframes)
+    trimmed_bytes = raw[: keep_frames * nch * sw]
+
+    with wave.open(filepath, "wb") as wf:
+        wf.setparams(params)
+        wf.writeframes(trimmed_bytes)
+
+    new_dur = round(keep_frames / rate, 2)
+    trimmed = round(original_dur - new_dur, 2)
+    print(f"    Trimmed {trimmed}s trailing silence ({original_dur:.1f}s → {new_dur}s)")
+    return new_dur
+
+
+def _squeeze_internal_silence(filepath: str, threshold: float = 150, max_gap_sec: float = 0.6) -> float:
+    """Compress long internal silence gaps in a WAV file.
+
+    Scans through the audio and shortens any silence gap longer than
+    max_gap_sec down to max_gap_sec. Preserves all voiced content.
+
+    Args:
+        filepath: path to the WAV file (modified in-place)
+        threshold: RMS amplitude threshold for silence detection
+        max_gap_sec: maximum allowed silence duration between voiced segments
+
+    Returns:
+        New duration in seconds.
+    """
+    with wave.open(filepath, "rb") as wf:
+        params = wf.getparams()
+        nframes = wf.getnframes()
+        rate = wf.getframerate()
+        nch = wf.getnchannels()
+        sw = wf.getsampwidth()
+        raw = wf.readframes(nframes)
+
+    if nframes == 0 or rate == 0:
+        return 0.0
+
+    chunk_samples = int(rate * 0.05)  # 50ms chunks
+    chunk_bytes = chunk_samples * nch * sw
+    total_chunks = nframes // chunk_samples
+    max_gap_chunks = int(max_gap_sec / 0.05)
+
+    # Classify each chunk as voiced or silent
+    voiced = []
+    for ci in range(total_chunks):
+        offset = ci * chunk_bytes
+        chunk = raw[offset:offset + chunk_bytes]
+        if len(chunk) < chunk_bytes:
+            voiced.append(False)
+            continue
+        samples = struct.unpack(f"<{len(chunk) // 2}h", chunk)
+        rms = (sum(s * s for s in samples) / len(samples)) ** 0.5
+        voiced.append(rms >= threshold)
+
+    # Find silence runs and check if any exceed max_gap
+    silence_runs = []
+    run_start = None
+    for ci in range(total_chunks):
+        if not voiced[ci]:
+            if run_start is None:
+                run_start = ci
+        else:
+            if run_start is not None:
+                run_len = ci - run_start
+                if run_len > max_gap_chunks and run_start > 0:  # skip leading silence
+                    silence_runs.append((run_start, run_len))
+                run_start = None
+
+    if not silence_runs:
+        return round(nframes / rate, 2)
+
+    # Rebuild audio: keep voiced chunks, compress silence gaps
+    output_chunks = bytearray()
+    ci = 0
+    total_trimmed = 0
+    while ci < total_chunks:
+        # Check if this is the start of a compressible silence run
+        matched_run = None
+        for start, length in silence_runs:
+            if ci == start:
+                matched_run = (start, length)
+                break
+
+        if matched_run:
+            start, length = matched_run
+            # Keep only max_gap_chunks worth of silence
+            keep = max_gap_chunks
+            for k in range(keep):
+                offset = (start + k) * chunk_bytes
+                output_chunks.extend(raw[offset:offset + chunk_bytes])
+            total_trimmed += length - keep
+            ci = start + length
+        else:
+            offset = ci * chunk_bytes
+            output_chunks.extend(raw[offset:offset + chunk_bytes])
+            ci += 1
+
+    # Also include any remaining samples after the last full chunk
+    remaining_start = total_chunks * chunk_bytes
+    if remaining_start < len(raw):
+        output_chunks.extend(raw[remaining_start:])
+
+    if total_trimmed > 0:
+        with wave.open(filepath, "wb") as wf:
+            wf.setparams(params)
+            wf.writeframes(bytes(output_chunks))
+
+        new_frames = len(output_chunks) // (nch * sw)
+        new_dur = round(new_frames / rate, 2)
+        trimmed_sec = round(total_trimmed * 0.05, 2)
+        print(f"    Squeezed {trimmed_sec}s internal silence ({nframes/rate:.1f}s → {new_dur}s)")
+        return new_dur
+
+    return round(nframes / rate, 2)
 
 
 class GPTSoVITSProvider(TTSProvider):
@@ -206,6 +382,7 @@ class GPTSoVITSProvider(TTSProvider):
             "top_p": kwargs.get("top_p", self.top_p),
             "repetition_penalty": kwargs.get("repetition_penalty", self.repetition_penalty),
             "seed": kwargs.get("seed", self.seed),
+            "batch_size": kwargs.get("batch_size", 4),
         }
 
         # Remove empty optional fields so the API uses its defaults
@@ -227,7 +404,12 @@ class GPTSoVITSProvider(TTSProvider):
             output_path.parent.mkdir(parents=True, exist_ok=True)
             output_path.write_bytes(resp.content)
 
-        duration = _get_wav_duration(str(output_path))
+        # Auto-trim trailing silence to prevent GPT-SoVITS generating long silent tails
+        duration = _trim_trailing_silence(str(output_path))
+        # Compress any internal silence gaps > 0.6s
+        duration = _squeeze_internal_silence(str(output_path))
+        if duration == 0.0:
+            duration = _get_wav_duration(str(output_path))
 
         return {
             "audio_file": str(output_path),

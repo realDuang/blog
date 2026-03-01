@@ -9,3 +9,5 @@ scripts/diagrams/output/
 __pycache__/
 scripts/video/output/
 scripts/video/remotion/public/
+
+nul

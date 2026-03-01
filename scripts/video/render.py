@@ -39,6 +39,68 @@ def _prepare_audio_for_remotion(timing_data: dict, remotion_dir: Path) -> dict:
     return timing_data
 
 
+def _prepare_assets_for_remotion(
+    remotion_dir: Path,
+    speaker_avatars: Optional[dict[str, str]] = None,
+    hook_character_image: Optional[str] = None,
+    hook_background_image: Optional[str] = None,
+) -> tuple[Optional[dict[str, str]], Optional[str], Optional[str]]:
+    """Copy image assets into remotion/public/assets/ and return relative paths.
+
+    Returns (resolved_avatars, resolved_hook_image, resolved_hook_bg) with paths relative to public/.
+    """
+    resolved_avatars = None
+    resolved_hook = None
+    resolved_hook_bg = None
+
+    if speaker_avatars:
+        resolved_avatars = {}
+        public_avatars = remotion_dir / "public" / "assets" / "avatars"
+        public_avatars.mkdir(parents=True, exist_ok=True)
+        for speaker, path in speaker_avatars.items():
+            src = Path(path)
+            if src.exists():
+                dst = public_avatars / src.name
+                if src.resolve() != dst.resolve():
+                    shutil.copy2(src, dst)
+                resolved_avatars[speaker] = f"assets/avatars/{src.name}"
+                print(f"  Avatar for speaker {speaker}: {src.name}")
+            else:
+                # Treat as already-relative path (e.g. "assets/avatars/paimon.png")
+                resolved_avatars[speaker] = path
+                print(f"  Avatar for speaker {speaker}: {path} (relative)")
+
+    if hook_character_image:
+        src = Path(hook_character_image)
+        if src.exists():
+            public_assets = remotion_dir / "public" / "assets" / "avatars"
+            public_assets.mkdir(parents=True, exist_ok=True)
+            dst = public_assets / src.name
+            if src.resolve() != dst.resolve():
+                shutil.copy2(src, dst)
+            resolved_hook = f"assets/avatars/{src.name}"
+            print(f"  Hook character image: {src.name}")
+        else:
+            resolved_hook = hook_character_image
+            print(f"  Hook character image: {hook_character_image} (relative)")
+
+    if hook_background_image:
+        src = Path(hook_background_image)
+        if src.exists():
+            public_backgrounds = remotion_dir / "public" / "assets" / "backgrounds"
+            public_backgrounds.mkdir(parents=True, exist_ok=True)
+            dst = public_backgrounds / src.name
+            if src.resolve() != dst.resolve():
+                shutil.copy2(src, dst)
+            resolved_hook_bg = f"assets/backgrounds/{src.name}"
+            print(f"  Hook background image: {src.name}")
+        else:
+            resolved_hook_bg = hook_background_image
+            print(f"  Hook background image: {hook_background_image} (relative)")
+
+    return resolved_avatars, resolved_hook, resolved_hook_bg
+
+
 def render_video(
     scenes_path: str,
     output_dir: str,
@@ -51,6 +113,11 @@ def render_video(
     subtitles: bool = True,
     speaker_profiles: Optional[dict] = None,
     speaker_names: Optional[dict[str, str]] = None,
+    speaker_avatars: Optional[dict[str, str]] = None,
+    hook_character_image: Optional[str] = None,
+    hook_background_image: Optional[str] = None,
+    video_bitrate: Optional[str] = None,
+    scale: Optional[float] = None,
 ) -> Optional[str]:
     """Full render pipeline: TTS -> subtitles -> timing -> Remotion -> MP4.
 
@@ -66,6 +133,11 @@ def render_video(
         subtitles: generate subtitles from narration text (default True)
         speaker_profiles: optional speaker profiles for dialogue scenes
         speaker_names: optional display name mapping e.g. {"A": "钟离", "B": "派蒙"}
+        speaker_avatars: optional avatar image paths e.g. {"A": "path/to/img.png"}
+        hook_character_image: optional character image for bilibili_hook scene
+        hook_background_image: optional background image for bilibili_hook scene
+        video_bitrate: Remotion video bitrate e.g. "10M" (default: Remotion's default)
+        scale: Remotion scale factor e.g. 2.0 for 4K output (default: 1.0)
 
     Returns:
         path to rendered video file, or None on failure
@@ -114,6 +186,17 @@ def render_video(
         remotion_dir,
     )
 
+    # Copy image assets into remotion/public/
+    resolved_avatars, resolved_hook, resolved_hook_bg = _prepare_assets_for_remotion(
+        remotion_dir, speaker_avatars, hook_character_image, hook_background_image,
+    )
+    if resolved_avatars:
+        remotion_timing["speaker_avatars"] = resolved_avatars
+    if resolved_hook:
+        remotion_timing["hook_character_image"] = resolved_hook
+    if resolved_hook_bg:
+        remotion_timing["hook_background_image"] = resolved_hook_bg
+
     # Write props.json for Remotion
     props_path = output / "props.json"
     props_path.write_text(
@@ -143,7 +226,15 @@ def render_video(
         str(video_path.resolve()),
         "--props", str(props_path.resolve()),
         "--frames", f"0-{remotion_timing['total_frames'] - 1}",
+        "--port", "3100",
+        "--concurrency", "50%",
     ]
+
+    if video_bitrate:
+        cmd.extend(["--video-bitrate", video_bitrate])
+
+    if scale and scale != 1.0:
+        cmd.extend(["--scale", str(scale)])
 
     print(f"  Running: {' '.join(cmd)}")
     print(f"  CWD: {remotion_dir}")

@@ -13,6 +13,7 @@ import go from 'highlight.js/lib/languages/go';
 import rust from 'highlight.js/lib/languages/rust';
 import yaml from 'highlight.js/lib/languages/yaml';
 import diff from 'highlight.js/lib/languages/diff';
+import plaintext from 'highlight.js/lib/languages/plaintext';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('js', javascript);
@@ -31,6 +32,7 @@ hljs.registerLanguage('rust', rust);
 hljs.registerLanguage('yaml', yaml);
 hljs.registerLanguage('yml', yaml);
 hljs.registerLanguage('diff', diff);
+hljs.registerLanguage('plaintext', plaintext);
 
 // ---------------------------------------------------------------------------
 // WeChat inline styles map — every tag must carry its own styles because
@@ -110,6 +112,61 @@ function postprocessTipContainers(html, format) {
 }
 
 // ---------------------------------------------------------------------------
+// One Dark color map: convert hljs class names to inline styles for WeChat.
+// WeChat strips class attributes, so we must inline the colors to preserve
+// syntax highlighting.
+// ---------------------------------------------------------------------------
+const HLJS_CLASS_TO_STYLE = {
+  'hljs-keyword':        'color:#c678dd;',
+  'hljs-built_in':       'color:#e6c07b;',
+  'hljs-type':           'color:#e6c07b;',
+  'hljs-literal':        'color:#d19a66;',
+  'hljs-number':         'color:#d19a66;',
+  'hljs-string':         'color:#98c379;',
+  'hljs-regexp':         'color:#98c379;',
+  'hljs-symbol':         'color:#61aeee;',
+  'hljs-bullet':         'color:#61aeee;',
+  'hljs-link':           'color:#61aeee;text-decoration:underline;',
+  'hljs-title':          'color:#61aeee;',
+  'hljs-title function_':'color:#61aeee;',
+  'hljs-title class_':   'color:#e6c07b;',
+  'hljs-params':         'color:#abb2bf;',
+  'hljs-comment':        'color:#5c6370;font-style:italic;',
+  'hljs-doctag':         'color:#c678dd;',
+  'hljs-meta':           'color:#61aeee;',
+  'hljs-attr':           'color:#d19a66;',
+  'hljs-attribute':      'color:#98c379;',
+  'hljs-name':           'color:#e06c75;',
+  'hljs-tag':            'color:#abb2bf;',
+  'hljs-variable':       'color:#e06c75;',
+  'hljs-variable language_': 'color:#e06c75;',
+  'hljs-template-variable':'color:#e06c75;',
+  'hljs-selector-tag':   'color:#e06c75;',
+  'hljs-selector-id':    'color:#61aeee;',
+  'hljs-selector-class': 'color:#d19a66;',
+  'hljs-subst':          'color:#e06c75;',
+  'hljs-property':       'color:#e06c75;',
+  'hljs-section':        'color:#61aeee;font-weight:bold;',
+  'hljs-addition':       'color:#98c379;background:rgba(152,195,121,0.1);',
+  'hljs-deletion':       'color:#e06c75;background:rgba(224,108,117,0.1);',
+};
+
+/**
+ * Replace hljs class-based <span> tags with inline-styled <span> tags.
+ * Unrecognized classes fall back to inheriting the parent color.
+ */
+function hljsClassToInlineStyle(html) {
+  return html.replace(/<span class="([^"]+)">/g, (_match, classes) => {
+    const style = HLJS_CLASS_TO_STYLE[classes];
+    if (style) {
+      return `<span style="${style}">`;
+    }
+    // Unknown class — render as unstyled span (inherits parent color)
+    return '<span>';
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Highlight a code string. Falls back to plain text if the language is
 // unknown or auto-detection fails.
 // ---------------------------------------------------------------------------
@@ -122,13 +179,44 @@ function highlightCode(code, lang) {
     }
   }
 
-  // Auto-detect
-  try {
-    return hljs.highlightAuto(code).value;
-  } catch {
-    return code;
-  }
+  // No language specified or unknown — use plaintext (no <span> tags).
+  // Avoids highlightAuto which generates <span class="hljs-*"> that breaks
+  // on platforms stripping class attrs (WeChat) or missing language class (Bilibili).
+  return hljs.highlight(code, { language: 'plaintext' }).value;
 }
+
+// ---------------------------------------------------------------------------
+// Bilibili code block language mapping.
+// Format: markdown lang -> "mimetype@mode@DisplayName"
+// Bilibili's editor uses CodeMirror modes internally.
+// ---------------------------------------------------------------------------
+const BILIBILI_LANG_MAP = {
+  javascript: 'javascript@javascript@JavaScript',
+  js:         'javascript@javascript@JavaScript',
+  typescript: 'text/typescript@javascript@TypeScript',
+  ts:         'text/typescript@javascript@TypeScript',
+  python:     'python@python@Python',
+  bash:       'shell@shell@Shell',
+  sh:         'shell@shell@Shell',
+  shell:      'shell@shell@Shell',
+  json:       'application/json@javascript@JSON',
+  html:       'text/html@html@HTML',
+  xml:        'text/html@html@XML',
+  css:        'css@css@CSS',
+  go:         'go@go@Go',
+  rust:       'rust@rust@Rust',
+  yaml:       'yaml@yaml@YAML',
+  yml:        'yaml@yaml@YAML',
+  diff:       'diff@diff@Diff',
+  java:       'text/x-java@clike@Java',
+  c:          'text/x-csrc@clike@C',
+  cpp:        'text/x-c++src@clike@C++',
+  sql:        'sql@sql@SQL',
+  php:        'php@php@PHP',
+  ruby:       'ruby@ruby@Ruby',
+  markdown:   'markdown@markdown@Markdown',
+  md:         'markdown@markdown@Markdown',
+};
 
 // ---------------------------------------------------------------------------
 // Build a custom marked renderer for the given format.
@@ -138,14 +226,27 @@ function createRenderer(format) {
 
   // ---- Code blocks --------------------------------------------------------
   renderer.code = function ({ text, lang }) {
-    const highlighted = highlightCode(text, lang);
+    const effectiveLang = lang || 'plaintext';
+    const highlighted = highlightCode(text, effectiveLang);
 
     if (format === 'wechat-html') {
-      return `<pre style="${WECHAT_STYLES.pre}"><code style="${WECHAT_STYLES.code_block}">${highlighted}</code></pre>`;
+      const styled = hljsClassToInlineStyle(highlighted);
+      return `<section class="code-snippet__js">` +
+        `<pre class="code-snippet__js code-snippet code-snippet_nowrap" data-lang="${effectiveLang}">` +
+        `<code>${styled}</code></pre></section>`;
     }
 
-    // html / bilibili-html — use class for highlight.js theme if desired
-    return `<pre><code class="hljs${lang ? ` language-${lang}` : ''}">${highlighted}</code></pre>`;
+    if (format === 'bilibili-html') {
+      const dataLang = BILIBILI_LANG_MAP[effectiveLang] || '';
+      // Bilibili requires codecontent attribute with raw text
+      const escaped = text.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return `<figure class="code-box" contenteditable="false">` +
+        `<pre data-lang="${dataLang}" codecontent="${escaped}" class="language-${effectiveLang}">` +
+        `<code class="language-${effectiveLang}">${highlighted}</code></pre></figure>`;
+    }
+
+    // html (zhihu etc.) — standard pre>code
+    return `<pre><code class="hljs language-${effectiveLang}">${highlighted}</code></pre>`;
   };
 
   // ---- Inline code --------------------------------------------------------

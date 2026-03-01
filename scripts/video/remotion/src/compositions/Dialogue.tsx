@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, interpolate, spring, useVideoConfig } from "remotion";
+import { useCurrentFrame, interpolate, spring, useVideoConfig, Img, staticFile } from "remotion";
 import { theme } from "../theme";
 import type { DialogueVisual, DialogueLine } from "../types";
 
@@ -7,6 +7,9 @@ interface DialogueProps {
   visual: DialogueVisual;
   lines: DialogueLine[];
   speakerNames?: Record<string, string>;
+  speakerAvatars?: Record<string, string>;
+  lineDurations?: number[];
+  audioStartOffsetFrames?: number;
 }
 
 // Speaker color scheme
@@ -18,7 +21,43 @@ const SPEAKER_STYLES: Record<string, { color: string; align: "left" | "right" }>
 const getSpeakerStyle = (speaker: string) =>
   SPEAKER_STYLES[speaker] || { color: theme.colors.textSecondary, align: "left" as const };
 
-export const Dialogue: React.FC<DialogueProps> = ({ visual, lines, speakerNames }) => {
+/**
+ * Calculate the frame at which each dialogue line's audio starts playing.
+ * Accounts for audio_start_offset_frames and 0.3s gaps between lines.
+ */
+function getLineEntryFrames(
+  lines: DialogueLine[],
+  lineDurations: number[] | undefined,
+  fps: number,
+  audioStartOffsetFrames: number,
+): number[] {
+  if (!lineDurations || lineDurations.length !== lines.length) {
+    // Fallback: stagger by fixed delay
+    return lines.map((_, i) => 10 + i * 12);
+  }
+
+  const gapSeconds = 0.3; // must match tts.py _concat_wav_files gap
+  const entryFrames: number[] = [];
+  let cumulativeTime = 0;
+
+  for (let i = 0; i < lines.length; i++) {
+    // The bubble should appear when this line's audio starts
+    const entryFrame = audioStartOffsetFrames + Math.round(cumulativeTime * fps);
+    entryFrames.push(entryFrame);
+    cumulativeTime += lineDurations[i] + gapSeconds;
+  }
+
+  return entryFrames;
+}
+
+export const Dialogue: React.FC<DialogueProps> = ({
+  visual,
+  lines,
+  speakerNames,
+  speakerAvatars,
+  lineDurations,
+  audioStartOffsetFrames = 0,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -28,10 +67,8 @@ export const Dialogue: React.FC<DialogueProps> = ({ visual, lines, speakerNames 
     extrapolateRight: "clamp",
   });
 
-  // Calculate how many lines to show based on frame progression
-  // Each line appears with a staggered delay
-  const linesPerScene = lines.length;
-  const lineDelay = 12; // frames between each line appearing
+  // Calculate entry frame for each line based on audio timing
+  const lineEntryFrames = getLineEntryFrames(lines, lineDurations, fps, audioStartOffsetFrames);
 
   return (
     <div
@@ -88,7 +125,7 @@ export const Dialogue: React.FC<DialogueProps> = ({ visual, lines, speakerNames 
         }}
       >
         {lines.map((line, i) => {
-          const entryFrame = 10 + i * lineDelay;
+          const entryFrame = lineEntryFrames[i];
           const progress = spring({
             frame: frame - entryFrame,
             fps,
@@ -129,18 +166,31 @@ export const Dialogue: React.FC<DialogueProps> = ({ visual, lines, speakerNames 
                   justifyContent: "center",
                   alignItems: "center",
                   flexShrink: 0,
+                  overflow: "hidden",
+                  border: `3px solid ${style.color}`,
                 }}
               >
-                <span
-                  style={{
-                    fontFamily: theme.fonts.heading,
-                    fontSize: displayName.length > 1 ? 20 : 28,
-                    fontWeight: "bold",
-                    color: "white",
-                  }}
-                >
-                  {displayName}
-                </span>
+                {speakerAvatars?.[line.speaker] ? (
+                  <Img
+                    src={staticFile(speakerAvatars[line.speaker])}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                ) : (
+                  <span
+                    style={{
+                      fontFamily: theme.fonts.heading,
+                      fontSize: displayName.length > 1 ? 20 : 28,
+                      fontWeight: "bold",
+                      color: "white",
+                    }}
+                  >
+                    {displayName}
+                  </span>
+                )}
               </div>
 
               {/* Speech bubble */}

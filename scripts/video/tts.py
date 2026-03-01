@@ -124,10 +124,6 @@ async def _generate_dialogue_audio(
         line_durations.append(result["duration_seconds"])
         total_chars += len(text)
 
-        # Small cooldown between lines to prevent model state leakage
-        if isinstance(provider, GPTSoVITSProvider):
-            await asyncio.sleep(0.3)
-
     # Concatenate all line audio into a single scene file
     scene_audio_path = str(output_dir / f"{scene_id}.{ext}")
     if line_audio_paths:
@@ -185,17 +181,65 @@ async def generate_all_audio(
                 provider, scene["id"], narration, out_path
             )
 
-    # For GPT-SoVITS, generate sequentially with a cooldown between scenes
-    # to prevent sentence swallowing caused by model state leakage.
+    # For GPT-SoVITS with multiple API instances, distribute scenes
+    # across instances for true parallel generation.
     is_local_tts = provider.name == "gpt-sovits"
     if is_local_tts:
-        results = []
-        for scene in scenes:
-            result = await limited_generate(scene)
-            results.append(result)
-            # Small cooldown between scenes to let the model fully reset
-            await asyncio.sleep(0.5)
-        return results
+        extra_providers = getattr(provider, "_extra_instances", [])
+
+        if extra_providers:
+            # Parallel: round-robin scenes across all instances
+            all_providers = [provider] + extra_providers
+            n = len(all_providers)
+            print(f"  Parallel TTS: {n} instances")
+
+            # Group scenes by instance index
+            groups: list[list[tuple[int, dict]]] = [[] for _ in range(n)]
+            for i, scene in enumerate(scenes):
+                groups[i % n].append((i, scene))
+
+            async def run_group(prov, group):
+                """Generate scenes assigned to one provider, sequentially."""
+                group_results = []
+                for idx, scene in group:
+                    if scene.get("type") == "dialogue" and scene.get("lines"):
+                        result = await _generate_dialogue_audio(
+                            prov, scene["id"], scene["lines"], out_path
+                        )
+                    else:
+                        narration = scene.get("narration", "")
+                        if not narration.strip():
+                            result = {
+                                "scene_id": scene["id"],
+                                "audio_file": None,
+                                "duration_seconds": 3.0,
+                                "char_count": 0,
+                            }
+                        else:
+                            result = await _generate_scene_audio(
+                                prov, scene["id"], narration, out_path
+                            )
+                    group_results.append((idx, result))
+                return group_results
+
+            # Run all groups concurrently
+            group_tasks = [run_group(p, g) for p, g in zip(all_providers, groups)]
+            group_results = await asyncio.gather(*group_tasks)
+
+            # Merge and sort by original index
+            all_indexed = []
+            for gr in group_results:
+                all_indexed.extend(gr)
+            all_indexed.sort(key=lambda x: x[0])
+            return [r for _, r in all_indexed]
+        else:
+            # Single instance: sequential, no cooldown needed (requests are
+            # fully synchronous — previous response completes before next call)
+            results = []
+            for scene in scenes:
+                result = await limited_generate(scene)
+                results.append(result)
+            return results
 
     tasks = [limited_generate(scene) for scene in scenes]
     results = await asyncio.gather(*tasks)
@@ -297,6 +341,24 @@ async def run_tts_pipeline(
         if isinstance(provider, GPTSoVITSProvider):
             for speaker_name, profile in speaker_profiles.items():
                 provider.register_speaker(speaker_name, profile)
+
+    # Create extra GPT-SoVITS instances for parallel generation
+    if provider_name == "gpt-sovits":
+        from .tts_providers.gpt_sovits import GPTSoVITSProvider
+        extra_urls = kwargs.pop("extra_api_urls", [])
+        if extra_urls and isinstance(provider, GPTSoVITSProvider):
+            extra_instances = []
+            for url in extra_urls:
+                extra_kwargs = dict(kwargs)
+                extra_kwargs["api_url"] = url
+                extra_prov = GPTSoVITSProvider(**extra_kwargs)
+                # Register same speaker profiles on extra instances
+                if speaker_profiles:
+                    for speaker_name, profile in speaker_profiles.items():
+                        extra_prov.register_speaker(speaker_name, profile)
+                extra_instances.append(extra_prov)
+            provider._extra_instances = extra_instances
+            print(f"  Extra TTS instances: {extra_urls}")
 
     print(f"Generating TTS for {len(scenes_data['scenes'])} scenes...")
     print(f"  Provider: {provider.name}")
