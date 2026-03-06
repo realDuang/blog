@@ -1,13 +1,14 @@
 import React from "react";
 import { useCurrentFrame, interpolate } from "remotion";
-import { theme } from "../theme";
+import { theme as defaultTheme, type Theme } from "../theme";
 import type { TextCardVisual } from "../types";
 
 interface Props {
   visual: TextCardVisual;
+  theme?: Theme;
 }
 
-export const TextCard: React.FC<Props> = ({ visual }) => {
+export const TextCard: React.FC<Props> = ({ visual, theme = defaultTheme }) => {
   const frame = useCurrentFrame();
   const { bullets, highlight_index } = visual;
 

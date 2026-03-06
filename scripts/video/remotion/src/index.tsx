@@ -2,6 +2,7 @@ import React from "react";
 import { registerRoot, Composition } from "remotion";
 import { VideoComposition } from "./Root";
 import type { VideoProps } from "./types";
+import { getTheme } from "./theme";
 
 // Default props for preview mode
 const defaultProps: VideoProps = {
@@ -44,9 +45,13 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={defaultProps as any}
         calculateMetadata={async ({ props }: { props: any }) => {
+          const format = props.format || "landscape";
+          const t = getTheme(format);
           return {
             durationInFrames: props.total_frames || 300,
             fps: props.fps || 30,
+            width: t.sizes.width,
+            height: t.sizes.height,
           };
         }}
       />

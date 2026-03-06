@@ -241,6 +241,7 @@ def cmd_render(args):
         hook_background_image=hook_bg or None,
         video_bitrate=getattr(args, "video_bitrate", "") or None,
         scale=getattr(args, "scale", 0) or None,
+        video_format=getattr(args, "video_format", "") or None,
     )
 
     if result:
@@ -373,6 +374,9 @@ def main():
                         help="Video bitrate for Remotion render (e.g. 10M, 5M)")
         p.add_argument("--scale", type=float, default=0, dest="scale",
                         help="Remotion scale factor (e.g. 2 for 4K output from 1080p)")
+        p.add_argument("--format", default="", dest="video_format",
+                        choices=["", "landscape", "portrait"],
+                        help="Video format: landscape (16:9) or portrait (9:16 vertical)")
 
     # parse
     p_parse = subparsers.add_parser("parse", help="Step 1: Markdown -> segments.json")

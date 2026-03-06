@@ -1,13 +1,14 @@
 import React from "react";
 import { useCurrentFrame, interpolate } from "remotion";
-import { theme } from "../theme";
+import { theme as defaultTheme, type Theme } from "../theme";
 import type { SummaryVisual } from "../types";
 
 interface Props {
   visual: SummaryVisual;
+  theme?: Theme;
 }
 
-export const Summary: React.FC<Props> = ({ visual }) => {
+export const Summary: React.FC<Props> = ({ visual, theme = defaultTheme }) => {
   const frame = useCurrentFrame();
 
   const titleOpacity = interpolate(frame, [0, 15], [0, 1], {
@@ -35,9 +36,10 @@ export const Summary: React.FC<Props> = ({ visual }) => {
             fontSize: theme.sizes.titleMedium,
             fontFamily: theme.fonts.heading,
             fontWeight: 700,
-            color: theme.colors.primary,
+            color: theme.colors.accentLight,
             marginBottom: theme.sizes.gap * 2,
             opacity: titleOpacity,
+            textShadow: "0 2px 8px rgba(0,0,0,0.5)",
           }}
         >
           {visual.title}

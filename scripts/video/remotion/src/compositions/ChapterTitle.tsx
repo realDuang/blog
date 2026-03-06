@@ -5,14 +5,15 @@ import {
   spring,
   useVideoConfig,
 } from "remotion";
-import { theme } from "../theme";
+import { theme as defaultTheme, type Theme } from "../theme";
 import type { ChapterTitleVisual } from "../types";
 
 interface Props {
   visual: ChapterTitleVisual;
+  theme?: Theme;
 }
 
-export const ChapterTitle: React.FC<Props> = ({ visual }) => {
+export const ChapterTitle: React.FC<Props> = ({ visual, theme = defaultTheme }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -53,6 +54,7 @@ export const ChapterTitle: React.FC<Props> = ({ visual }) => {
           transform: `scale(${titleSpring})`,
           lineHeight: 1.3,
           maxWidth: "80%",
+          textShadow: "0 2px 12px rgba(0,0,0,0.6)",
         }}
       >
         {visual.title}

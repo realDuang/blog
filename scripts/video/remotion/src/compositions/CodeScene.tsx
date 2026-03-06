@@ -1,13 +1,14 @@
 import React from "react";
 import { useCurrentFrame, interpolate } from "remotion";
-import { theme } from "../theme";
+import { theme as defaultTheme, type Theme } from "../theme";
 import type { CodeVisual } from "../types";
 
 interface Props {
   visual: CodeVisual;
+  theme?: Theme;
 }
 
-export const CodeScene: React.FC<Props> = ({ visual }) => {
+export const CodeScene: React.FC<Props> = ({ visual, theme = defaultTheme }) => {
   const frame = useCurrentFrame();
 
   const lines = visual.code.split("\n");

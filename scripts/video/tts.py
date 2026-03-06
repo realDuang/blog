@@ -120,6 +120,10 @@ async def _generate_dialogue_audio(
         line_path = line_dir / f"line_{i:03d}_{speaker}.{ext}"
         result = await provider.generate(text, line_path)
 
+        # Cooldown between dialogue lines to prevent GPT-SoVITS sentence swallowing
+        if i < len(lines) - 1:
+            await asyncio.sleep(0.3)
+
         line_audio_paths.append(result["audio_file"])
         line_durations.append(result["duration_seconds"])
         total_chars += len(text)
@@ -185,6 +189,9 @@ async def generate_all_audio(
     # across instances for true parallel generation.
     is_local_tts = provider.name == "gpt-sovits"
     if is_local_tts:
+        # Warm-up delay: GPT-SoVITS cold start can swallow the first sentence
+        await asyncio.sleep(0.8)
+
         extra_providers = getattr(provider, "_extra_instances", [])
 
         if extra_providers:
@@ -233,12 +240,16 @@ async def generate_all_audio(
             all_indexed.sort(key=lambda x: x[0])
             return [r for _, r in all_indexed]
         else:
-            # Single instance: sequential, no cooldown needed (requests are
-            # fully synchronous — previous response completes before next call)
+            # Single instance: sequential with cooldown between scenes.
+            # GPT-SoVITS can swallow/truncate sentences when requests fire
+            # too quickly due to model state leakage between inferences.
             results = []
-            for scene in scenes:
+            for i, scene in enumerate(scenes):
                 result = await limited_generate(scene)
                 results.append(result)
+                # Cooldown between scenes to prevent sentence swallowing
+                if i < len(scenes) - 1:
+                    await asyncio.sleep(0.5)
             return results
 
     tasks = [limited_generate(scene) for scene in scenes]

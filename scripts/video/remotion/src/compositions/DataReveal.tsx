@@ -5,14 +5,15 @@ import {
   spring,
   useVideoConfig,
 } from "remotion";
-import { theme } from "../theme";
+import { theme as defaultTheme, type Theme } from "../theme";
 import type { DataRevealVisual } from "../types";
 
 interface Props {
   visual: DataRevealVisual;
+  theme?: Theme;
 }
 
-export const DataReveal: React.FC<Props> = ({ visual }) => {
+export const DataReveal: React.FC<Props> = ({ visual, theme = defaultTheme }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 

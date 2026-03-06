@@ -1,13 +1,14 @@
 import React from "react";
 import { useCurrentFrame, interpolate, Img } from "remotion";
-import { theme } from "../theme";
+import { theme as defaultTheme, type Theme } from "../theme";
 import type { ImageVisual } from "../types";
 
 interface Props {
   visual: ImageVisual;
+  theme?: Theme;
 }
 
-export const ImageScene: React.FC<Props> = ({ visual }) => {
+export const ImageScene: React.FC<Props> = ({ visual, theme = defaultTheme }) => {
   const frame = useCurrentFrame();
 
   const opacity = interpolate(frame, [0, 15], [0, 1], {
@@ -46,7 +47,7 @@ export const ImageScene: React.FC<Props> = ({ visual }) => {
           alignItems: "center",
           overflow: "hidden",
           borderRadius: theme.sizes.borderRadius,
-          maxHeight: theme.sizes.height - 250,
+          maxHeight: theme.format === "portrait" ? theme.sizes.height - 500 : theme.sizes.height - 250,
           width: "100%",
         }}
       >
@@ -67,11 +68,12 @@ export const ImageScene: React.FC<Props> = ({ visual }) => {
         <div
           style={{
             marginTop: 24,
-            fontSize: theme.sizes.bodySmall,
+            fontSize: theme.format === "portrait" ? theme.sizes.body : theme.sizes.bodySmall,
             fontFamily: theme.fonts.body,
-            color: theme.colors.textMuted,
+            color: theme.colors.textSecondary,
             opacity: captionOpacity,
             textAlign: "center",
+            textShadow: "0 1px 4px rgba(0,0,0,0.5)",
           }}
         >
           {visual.caption}

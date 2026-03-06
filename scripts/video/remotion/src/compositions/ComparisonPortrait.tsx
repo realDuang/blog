@@ -1,14 +1,14 @@
 import React from "react";
 import { useCurrentFrame, interpolate } from "remotion";
-import { theme as defaultTheme, type Theme } from "../theme";
 import type { ComparisonVisual } from "../types";
+import type { Theme } from "../theme";
 
 interface Props {
   visual: ComparisonVisual;
-  theme?: Theme;
+  theme: Theme;
 }
 
-export const Comparison: React.FC<Props> = ({ visual, theme = defaultTheme }) => {
+export const ComparisonPortrait: React.FC<Props> = ({ visual, theme }) => {
   const frame = useCurrentFrame();
 
   const leftOpacity = interpolate(frame, [0, 15], [0, 1], {
@@ -33,7 +33,7 @@ export const Comparison: React.FC<Props> = ({ visual, theme = defaultTheme }) =>
         backgroundColor: theme.colors.bgCard,
         borderRadius: theme.sizes.borderRadius,
         padding: theme.sizes.paddingSmall,
-        borderTop: `4px solid ${color}`,
+        borderLeft: `4px solid ${color}`,
         opacity,
       }}
     >
@@ -43,8 +43,8 @@ export const Comparison: React.FC<Props> = ({ visual, theme = defaultTheme }) =>
           fontFamily: theme.fonts.heading,
           fontWeight: 700,
           color,
-          marginBottom: 24,
-          textAlign: "center",
+          marginBottom: 16,
+          textAlign: "left",
         }}
       >
         {label}
@@ -62,8 +62,8 @@ export const Comparison: React.FC<Props> = ({ visual, theme = defaultTheme }) =>
               fontSize: theme.sizes.body,
               fontFamily: theme.fonts.body,
               color: theme.colors.textSecondary,
-              marginBottom: 16,
-              paddingLeft: 16,
+              marginBottom: 12,
+              paddingLeft: 14,
               borderLeft: `3px solid ${color}40`,
               opacity: pointOpacity,
               lineHeight: 1.5,
@@ -83,9 +83,10 @@ export const Comparison: React.FC<Props> = ({ visual, theme = defaultTheme }) =>
         height: theme.sizes.height,
         backgroundColor: theme.colors.bg,
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
-        alignItems: "center",
-        gap: theme.sizes.gap * 2,
+        alignItems: "stretch",
+        gap: theme.sizes.gap,
         padding: theme.sizes.padding,
       }}
     >
@@ -102,6 +103,7 @@ export const Comparison: React.FC<Props> = ({ visual, theme = defaultTheme }) =>
           fontWeight: 700,
           color: theme.colors.accent,
           opacity: vsOpacity,
+          textAlign: "center",
         }}
       >
         VS

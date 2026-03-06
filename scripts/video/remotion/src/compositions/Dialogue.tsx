@@ -1,6 +1,6 @@
 import React from "react";
 import { useCurrentFrame, interpolate, spring, useVideoConfig, Img, staticFile } from "remotion";
-import { theme } from "../theme";
+import { theme as defaultTheme, type Theme } from "../theme";
 import type { DialogueVisual, DialogueLine } from "../types";
 
 interface DialogueProps {
@@ -10,16 +10,21 @@ interface DialogueProps {
   speakerAvatars?: Record<string, string>;
   lineDurations?: number[];
   audioStartOffsetFrames?: number;
+  theme?: Theme;
 }
 
-// Speaker color scheme
-const SPEAKER_STYLES: Record<string, { color: string; align: "left" | "right" }> = {
-  A: { color: theme.colors.primaryLight, align: "left" },
-  B: { color: theme.colors.accent, align: "right" },
-};
+// Speaker color scheme — uses a theme-aware factory
+function getSpeakerStyles(t: Theme): Record<string, { color: string; align: "left" | "right" }> {
+  return {
+    A: { color: t.colors.primaryLight, align: "left" },
+    B: { color: t.colors.accent, align: "right" },
+  };
+}
 
-const getSpeakerStyle = (speaker: string) =>
-  SPEAKER_STYLES[speaker] || { color: theme.colors.textSecondary, align: "left" as const };
+const getSpeakerStyle = (speaker: string, t: Theme) => {
+  const styles = getSpeakerStyles(t);
+  return styles[speaker] || { color: t.colors.textSecondary, align: "left" as const };
+};
 
 /**
  * Calculate the frame at which each dialogue line's audio starts playing.
@@ -57,6 +62,7 @@ export const Dialogue: React.FC<DialogueProps> = ({
   speakerAvatars,
   lineDurations,
   audioStartOffsetFrames = 0,
+  theme = defaultTheme,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -73,7 +79,8 @@ export const Dialogue: React.FC<DialogueProps> = ({
   return (
     <div
       style={{
-        flex: 1,
+        width: theme.sizes.width,
+        height: theme.sizes.height,
         backgroundColor: theme.colors.bg,
         display: "flex",
         flexDirection: "column",
@@ -105,6 +112,7 @@ export const Dialogue: React.FC<DialogueProps> = ({
             fontFamily: theme.fonts.body,
             fontSize: theme.sizes.bodySmall,
             color: theme.colors.textSecondary,
+            textShadow: "0 1px 4px rgba(0,0,0,0.5)",
           }}
         >
           {visual.topic}
@@ -132,7 +140,7 @@ export const Dialogue: React.FC<DialogueProps> = ({
             config: { damping: 15, stiffness: 120 },
           });
 
-          const style = getSpeakerStyle(line.speaker);
+          const style = getSpeakerStyle(line.speaker, theme);
           const displayName = speakerNames?.[line.speaker] || line.speaker;
           const isRight = style.align === "right";
 

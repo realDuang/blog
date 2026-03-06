@@ -120,4 +120,5 @@ export interface VideoProps {
   speaker_avatars?: Record<string, string>;
   hook_character_image?: string;
   hook_background_image?: string;
+  format?: "landscape" | "portrait";
 }

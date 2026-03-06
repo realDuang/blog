@@ -118,6 +118,7 @@ def render_video(
     hook_background_image: Optional[str] = None,
     video_bitrate: Optional[str] = None,
     scale: Optional[float] = None,
+    video_format: Optional[str] = None,
 ) -> Optional[str]:
     """Full render pipeline: TTS -> subtitles -> timing -> Remotion -> MP4.
 
@@ -138,6 +139,7 @@ def render_video(
         hook_background_image: optional background image for bilibili_hook scene
         video_bitrate: Remotion video bitrate e.g. "10M" (default: Remotion's default)
         scale: Remotion scale factor e.g. 2.0 for 4K output (default: 1.0)
+        video_format: "landscape" (default 16:9) or "portrait" (9:16 vertical)
 
     Returns:
         path to rendered video file, or None on failure
@@ -197,6 +199,11 @@ def render_video(
     if resolved_hook_bg:
         remotion_timing["hook_background_image"] = resolved_hook_bg
 
+    # Set video format (landscape or portrait)
+    if video_format:
+        remotion_timing["format"] = video_format
+        print(f"  Format: {video_format}")
+
     # Write props.json for Remotion
     props_path = output / "props.json"
     props_path.write_text(
@@ -213,6 +220,10 @@ def render_video(
     print("=" * 60)
     print("Step 4/4: Rendering video with Remotion...")
     print("=" * 60)
+
+    # Auto-adjust output filename for portrait format (avoid overwriting landscape)
+    if video_format == "portrait" and output_filename == "video.mp4":
+        output_filename = "video_portrait.mp4"
 
     video_path = output / output_filename
 
