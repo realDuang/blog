@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a}from"./app-BNj5Ah5L.js";const o={};function n(r,c){return a(),e("div")}const l=t(o,[["render",n]]),_=JSON.parse('{"path":"/tags/Python/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{l as comp,_ as data};

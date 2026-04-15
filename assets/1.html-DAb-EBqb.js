@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./app-BNj5Ah5L.js";const o={};function r(c,n){return a(),t("div")}const i=e(o,[["render",r]]),l=JSON.parse('{"path":"/categories/AIhejiqixuexi/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{i as comp,l as data};

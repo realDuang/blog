@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app-C2gd1iAr.js";const c={};function n(o,r){return a(),t("div")}const i=e(c,[["render",n]]),l=JSON.parse('{"path":"/categories/qianduanjichu/2.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{i as comp,l as data};
