@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "highlight.js": "^11.11.1",
-    "marked": "^17.0.3"
+    "marked": "^17.0.3",
+    "playwright-core": "^1.52.0"
   }
 }
