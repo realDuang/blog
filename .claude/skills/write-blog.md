@@ -57,15 +57,17 @@ tags:
 1. **:::tip opener** -- 1-3 sentences establishing the core topic and reader value. This is the article preview.
 2. **`<!-- more -->`** -- Always immediately after the :::tip block.
 3. **Progressive flow** -- "why it matters → what it is → how it works → best practices / implications". Never jump straight into implementation.
-4. **Evolutionary narrative** -- When covering technology evolution or comparing approaches, use stage-based storytelling (e.g., CSR → SSR → NSR → ESR, or "石器时代 → 青铜时代 → 蒸汽时代"). Each stage reveals limitations that motivate the next.
-5. **结语** -- Summarize key takeaways, elevate to broader significance. No new concepts here.
+4. **Evolutionary narrative** -- When covering technology evolution or comparing approaches, use stage-based storytelling (e.g., CSR → SSR → NSR → ESR, or "石器时代 → 青铜时代 → 蒸汽时代"). Each stage reveals limitations that motivate the next. Suitable for new-tech introductions and paradigm comparisons.
+5. **Problem-solving journey** -- When the article originates from encountering a real problem: "遇到问题 → 尝试方案 → 踩坑/失败 → 深入研究 → 找到解法". The failed attempts and detours are part of the story, not something to skip. Suitable for project experience, debugging war stories, and technical explorations.
+6. **结语** -- Summarize key takeaways, elevate to broader significance. No new concepts here.
 
 ### Voice & Tone
 
-- **Professional but approachable**: Like a senior colleague explaining to a competent peer. Not a textbook.
+- **Professional but fun, never distant**: Like chatting with a sharp colleague over coffee — expertise is implicit, not performed. Use analogies, light humor, and colloquial asides to keep the reader engaged. The goal is zero distance with the reader: they should feel "this person thinks like me" rather than "this person is lecturing me".
 - **First-person usage**: "我们" for shared engineering concerns; "我" for personal experience/opinions.
 - **Intellectual honesty**: Openly share pitfalls, failed attempts, and trade-offs. Phrases like "很抱歉鸽了这么久" or "准确度一直是个问题" are characteristic.
 - **No silver bullets**: Always discuss limitations. "科学领域里没有银弹" attitude.
+- **Avoid AI-sounding language**: Do NOT use stiff, ornate, or pretentious words common in AI-generated text. Examples of words/phrases to avoid: "顿悟", "缘起", "赋能", "深度赋能", "底层逻辑", "全方位", "一文读懂", "保姆级", "深度解析". These create distance with readers. Prefer natural, conversational Chinese that a real person would use in speech.
 
 ### Characteristic Expressions
 
@@ -85,6 +87,7 @@ Use naturally, not forced:
 
 - **Derive from principles**: Explain the "why" behind best practices. Anti-rote-memorization. (Exemplar: `blogs/frontend-basics/2024-12-02.md`)
 - **Engineering pragmatism**: Consider ROI, cost, real-world trade-offs. Reference actual project experience.
+- **Reference relevance**: Every external reference, study, or example cited MUST directly support the article's thesis. Remove anything "interesting but tangential" — if it doesn't serve the argument, it distracts the reader.
 - **Code blocks**: 15-50 lines typical, with comments on key logic. Proper syntax highlighting.
 - **Diagrams**: Generate using the `scripts/diagrams/` toolkit (see Diagram Generation below). Each diagram should be simple (mobile-friendly), visually clean, with centered/symmetric layout. Keep content per diagram minimal to avoid small fonts.
 
