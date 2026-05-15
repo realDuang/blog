@@ -1,0 +1,1 @@
+import{_ as t,a as e,o as a}from"./app-CPUkXjZU.js";const o={};function r(n,s){return a(),e("div")}const l=t(o,[["render",r]]),_=JSON.parse('{"path":"/tags/dashuju/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{l as comp,_ as data};

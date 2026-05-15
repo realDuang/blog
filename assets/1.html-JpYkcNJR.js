@@ -1,0 +1,1 @@
+import{_ as t,a as e,o as a}from"./app-CPUkXjZU.js";const r={};function n(o,s){return a(),e("div")}const l=t(r,[["render",n]]),_=JSON.parse('{"path":"/tags/InversifyJS/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{l as comp,_ as data};

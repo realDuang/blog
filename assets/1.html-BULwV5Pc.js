@@ -1,0 +1,1 @@
+import{_ as e,a as t,o as a}from"./app-CPUkXjZU.js";const o={};function r(n,c){return a(),t("div")}const l=e(o,[["render",r]]),i=JSON.parse('{"path":"/categories/VSCode-For-Web-shenruqianchu/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{l as comp,i as data};
