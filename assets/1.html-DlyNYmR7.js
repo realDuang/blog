@@ -1,0 +1,1 @@
+import{_ as e,a as t,o as a}from"./app-WvoLL7Fa.js";const r={};function o(n,c){return a(),t("div")}const l=e(r,[["render",o]]),_=JSON.parse('{"path":"/tags/Web-worker/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{l as comp,_ as data};

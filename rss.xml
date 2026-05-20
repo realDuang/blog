@@ -6,8 +6,8 @@
     <link>https://blog.realduang.com/</link>
     <description>这个人很懒，但还是想留下些什么东西。</description>
     <language>en-US</language>
-    <pubDate>Wed, 20 May 2026 12:05:32 GMT</pubDate>
-    <lastBuildDate>Wed, 20 May 2026 12:05:32 GMT</lastBuildDate>
+    <pubDate>Wed, 20 May 2026 12:16:41 GMT</pubDate>
+    <lastBuildDate>Wed, 20 May 2026 12:16:41 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>AI和机器学习</category>
@@ -29,7 +29,7 @@ Project Structure
 New categories (create directory when first used):
 
 ai-frontier/ → AI...</description>
-      <pubDate>Wed, 20 May 2026 12:04:24 GMT</pubDate>
+      <pubDate>Wed, 20 May 2026 12:11:43 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>Author: Duang | VuePress 2 + vuepress-theme-reco | 2016-present</p>
 <h2>Project Structure</h2>
@@ -5808,7 +5808,7 @@ VS Code Server 是一个运行在远程服务器上的 VS Code 实例，它可�
 
 角色 A（讲师）：负责讲解核心知识。语气自信、干脆，像一个真正懂行的朋友在给你讲干货。
 角色 B（捧哏/提问者）：代表观众视角，负责提问、吐槽、总...</description>
-      <pubDate>Wed, 20 May 2026 12:04:24 GMT</pubDate>
+      <pubDate>Wed, 20 May 2026 12:11:43 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>你是一个专业的内容改编专家。你的任务是将结构化的博客文章内容（segments.json）改编为适合 B站科普视频的<strong>两人对话式</strong>场景脚本（scenes.json）。</p>
 <h2>角色设定</h2>
@@ -6018,7 +6018,7 @@ VS Code Server 是一个运行在远程服务器上的 VS Code 实例，它可�
 
 总时长控制：所有场景的旁白文字总量控制在 3000-3500 字以内（对应约 12-14 分钟的视频），绝对不超过 4000 字。
 内容精炼：不是逐段翻译原...</description>
-      <pubDate>Wed, 20 May 2026 12:04:24 GMT</pubDate>
+      <pubDate>Wed, 20 May 2026 12:11:43 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>你是一个专业的内容改编专家。你的任务是将结构化的博客文章内容（segments.json）改编为适合 B站科普视频的场景脚本（scenes.json）。</p>
 <h2>核心原则</h2>

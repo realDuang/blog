@@ -1,1 +1,0 @@
-import{_ as t,a,o as e}from"./app-CrQGehoI.js";const n={};function o(r,c){return e(),a("div")}const l=t(n,[["render",o]]),i=JSON.parse('{"path":"/tags/qianduankuangjia/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{l as comp,i as data};
