@@ -6,12 +6,11 @@
     <link>https://blog.realduang.com/</link>
     <description>这个人很懒，但还是想留下些什么东西。</description>
     <language>en-US</language>
-    <pubDate>Fri, 15 May 2026 10:35:17 GMT</pubDate>
-    <lastBuildDate>Fri, 15 May 2026 10:35:17 GMT</lastBuildDate>
+    <pubDate>Wed, 20 May 2026 12:05:32 GMT</pubDate>
+    <lastBuildDate>Wed, 20 May 2026 12:05:32 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>AI和机器学习</category>
-    <category>AI 前沿</category>
     <category>架构设计</category>
     <category>金融分析</category>
     <category>前端基础</category>
@@ -30,7 +29,7 @@ Project Structure
 New categories (create directory when first used):
 
 ai-frontier/ → AI...</description>
-      <pubDate>Fri, 15 May 2026 10:34:21 GMT</pubDate>
+      <pubDate>Wed, 20 May 2026 12:04:24 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>Author: Duang | VuePress 2 + vuepress-theme-reco | 2016-present</p>
 <h2>Project Structure</h2>
@@ -362,13 +361,13 @@ AutoForge 管线架构
     </item>
     <item>
       <title>我把 Claude、Codex、Copilot、Gemini 拼成了一个工作流，接力写代码</title>
-      <link>https://blog.realduang.com/blogs/ai-frontier/2026-05-15.html</link>
-      <guid>https://blog.realduang.com/blogs/ai-frontier/2026-05-15.html</guid>
+      <link>https://blog.realduang.com/blogs/ai/2026-05-15.html</link>
+      <guid>https://blog.realduang.com/blogs/ai/2026-05-15.html</guid>
       <source url="https://blog.realduang.com/rss.xml">我把 Claude、Codex、Copilot、Gemini 拼成了一个工作流，接力写代码</source>
       <description>提示现在主流的 AI coding agent 各有所长，Claude Code 的 plan、Codex 的 debug、Copilot CLI 的 GitHub 工作流、Gemini 的 UI 直觉，没一个是真正全能的。我做了一个叫 CodeMux 的客户端，让它们之间能互相接力——一个出方案，一个查 bug, 一个写代码，共享同一份上下文。
 
 这...</description>
-      <category>AI 前沿</category>
+      <category>AI和机器学习</category>
       <pubDate>Fri, 15 May 2026 16:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">提示</p><p>现在主流的 AI coding agent 各有所长，Claude Code 的 plan、Codex 的 debug、Copilot CLI 的 GitHub 工作流、Gemini 的 UI 直觉，没一个是真正全能的。我做了一个叫 <a href="https://github.com/realDuang/codemux" target="_blank" rel="noopener noreferrer">CodeMux</a> 的客户端，让它们之间能互相接力——一个出方案，一个查 bug, 一个写代码，共享同一份上下文。</p>
 </div><!-- more -->
@@ -5809,7 +5808,7 @@ VS Code Server 是一个运行在远程服务器上的 VS Code 实例，它可�
 
 角色 A（讲师）：负责讲解核心知识。语气自信、干脆，像一个真正懂行的朋友在给你讲干货。
 角色 B（捧哏/提问者）：代表观众视角，负责提问、吐槽、总...</description>
-      <pubDate>Fri, 15 May 2026 10:34:21 GMT</pubDate>
+      <pubDate>Wed, 20 May 2026 12:04:24 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>你是一个专业的内容改编专家。你的任务是将结构化的博客文章内容（segments.json）改编为适合 B站科普视频的<strong>两人对话式</strong>场景脚本（scenes.json）。</p>
 <h2>角色设定</h2>
@@ -6019,7 +6018,7 @@ VS Code Server 是一个运行在远程服务器上的 VS Code 实例，它可�
 
 总时长控制：所有场景的旁白文字总量控制在 3000-3500 字以内（对应约 12-14 分钟的视频），绝对不超过 4000 字。
 内容精炼：不是逐段翻译原...</description>
-      <pubDate>Fri, 15 May 2026 10:34:21 GMT</pubDate>
+      <pubDate>Wed, 20 May 2026 12:04:24 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>你是一个专业的内容改编专家。你的任务是将结构化的博客文章内容（segments.json）改编为适合 B站科普视频的场景脚本（scenes.json）。</p>
 <h2>核心原则</h2>

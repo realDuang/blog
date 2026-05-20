@@ -1,0 +1,1 @@
+import{_ as t,a as e,o as a}from"./app-CrQGehoI.js";const o={};function r(n,c){return a(),e("div")}const i=t(o,[["render",r]]),l=JSON.parse('{"path":"/tags/jiqixuexi/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{i as comp,l as data};
